@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>background设置颜色</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid black;
+			margin-bottom: 10px;
+		}	
+		/*设置颜色的三种方式：
+		  （1）英文单词
+		  （2）rgb 三原色r(red)g(green)b(blue)  rgba  a(0-1透明度)
+		  有三个值都是（0-255,0-255,0-255）
+		  白色（255,255,255） （0,0,0）黑色
+		  （3）十六进制  #FFFFFF
+
+
+		*/
+		.div1{
+			background: skyblue;
+		}
+
+		.div2{
+            background: rgb(255,192,22);
+		}
+		
+		.div3{
+			background: #ffF220;
+		}
+	</style>
+</head>
+<body>
+	<!-- 改div设置颜色有三种写法 -->
+	<div class="div1"></div>
+	<div class="div2"></div>
+	<div class="div3"></div>
+	
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画项目演示</title>
+
+	<style>
+		@keyframes animation1{
+			form{
+					transform:translate(-600px,-400px) scale(2,2) rotate(0deg);
+					background:orange;
+					}to{
+						transform:translate(0px,0px) scale(1,1) rotate(720deg);
+						background:skyblue;
+				}
+
+		}
+
+		div{
+			background: orange;
+			width: 200px;
+			height: 200px;
+			margin:400px auto;
+
+			/*给他调整动画开始的位置*/
+			transform:translate(-600px,-400px) scale(2,2) rotate(0deg);
+
+			animation:animation1  6s;
+			animation-fill-mode:forwards;
+			animation-timing-function:linear;		 	
+
+		}
+
+
+	</style>
+
+
+</head>
+<body>
+	<!-- 动画设计，着缩小着，回来 -->
+	<div>1
+		
+
+	</div>
+
+
+</body>
+</html>

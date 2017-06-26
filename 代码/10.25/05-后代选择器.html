@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>后代选择器</title>
+
+	<style>
+		.one ul li{
+			color: red;
+			font-size: 30px;
+		}
+		div ul li.first,.second{
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<div class="one">
+		<ul>
+			<li class="second">html5</li>
+			<li>html5</li>
+			<li>html5</li>
+			<li>html5</li>
+			<li>html5</li>
+			<li>html5</li>
+			<li>html5</li>
+			<li>html5</li>
+			<li>html5</li>
+			<li>html5</li>
+		</ul>
+	</div>
+	<div>
+		<ul>
+			<li class="first">Android</li>
+			<li>Android</li>
+			<li>Android</li>
+			<li>Android</li>
+			<li>Android</li>
+			<li>Android</li>
+			<li>Android</li>
+			<li>Android</li>
+			<li>Android</li>
+			<li>Android</li>
+		</ul>
+	</div>
+	<p class="first">ios</p>
+</body>
+</html>

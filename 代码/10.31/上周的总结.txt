@@ -1,0 +1,43 @@
+第一天 （HTML语法和基本标签、表单、相对路径和绝对路径）
+
+（1）HTML语法。
+	超文本标记语言。利用具有语义的标签。
+	最基础的HTML的结构：<!DOCTYPE html> <html> <head></head>  <body></body> </html>
+ (2)相对路径和绝对路径
+	相对路径：以当前文件为参照物出发。（网站素材可移植性）
+        绝对路径：
+ （3）基本标签
+	成对出现的标签一般可以里面存放其他的标签和文字
+	单标记标签 img input，利用他们的属性 <img  src ="">
+  (4)表单 
+        form -------表单元素 
+        input type ="text" ="password" ="color" ="date"
+        button 
+第二天 (CSS入门、选择器、三原则、属性的继承)
+ （1）CSS文件是什么：是层叠样式表。主要负责给HTML标签设置样式
+ （2）CSS三种写法：行内、业内、外部链接
+ （3）选择器：class\标签\ID  后代选择器(ul li)    直系后代选择器（div>p）  div.green(交集选择器)  div,p(并集选择器器)  
+ （4）CSS原则   叠加原则---》优先级权重--》就近原则（代码）
+ （5）继承只要记住就近原则（和CSS的就近原则完全没关系），就父标签近
+  (6) 优先级权重  继承来的属性 0   
+                  id  class   标签
+                  0，  0   ,   0
+
+第三天（盒子模型、行级块级元素、float）
+ （1）标准的盒子分为：内容部分（width\height） padding  border  ||  margin
+ （2）inline:(不完整的盒子)
+      block
+      inline-block
+      display
+  （3）float 
+       float带来属性：脱离标准流（转为block）、字围、并排上对齐、缩进
+       float带来的问题：不占父标签里的高度，导致父标签高度减少、光标上移
+       清除浮动带来的影响：内墙法、overflow:hidden
+   （4）magin带来的问题
+        塌陷现象：垂直有塌陷现象、水平没有塌陷现象。  脱标以后，没有塌陷现象
+        margin外泄：OverFLOAW
+    （5）水平居中
+         inline\inline-block\文字 ： text-align:center
+         block：margin:0px auto
+
+

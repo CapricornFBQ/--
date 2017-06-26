@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		div#rotate {
+			position: relative;
+			margin-top: 100px;
+			width:100px;
+			height: 50px;
+			border-radius: 4px;
+			border: 1px solid #111;
+			background-color: #444;
+			transform: rotate(45deg);
+			-ms-transform:rotate(45deg);
+			-webkit-transform:rotate(45deg);
+			animation: firstCartoon 5s;
+			-webkit-animation: firstCartoon 5s;
+		}
+		@keyframes firstCartoon {
+			0% {background-color: #444; top: 0px; left: 0px;}
+			25% {background-color: #f00; top: 100px; left: 0px;}
+			50% {background-color: #0f0; top: 100px; left: 100px;}
+			75% {background-color: #00f; top: 0px; left: 100px;}
+			75% {background-color: #00f; top: 0px; left: 100px;}
+			100% {background-color: #444; top: 0px; left: 0px;}
+		}
+		@-webkit-keyframes firstCartoon {
+			0% {background-color: #444; top: 0px; left: 0px;}
+			25% {background-color: #f00; top: 100px; left: 0px;}
+			50% {background-color: #0f0; top: 100px; left: 100px;}
+			75% {background-color: #00f; top: 0px; left: 100px;}
+			75% {background-color: #00f; top: 0px; left: 100px;}
+			100% {background-color: #444; top: 0px; left: 0px;}
+		}
+		div#scale {
+			margin: 100px;
+			width: 100px;
+			height: 50px;
+			border-radius: 4px;
+			border: 1px solid #111;
+			background-color: #0ff;
+			transform: scale(2.4);
+			-ms-transform: scale(2.4);
+			-webkit-transform: scale(2.4);
+		}
+		div#skew {
+			margin: 100px;
+			width: 100px;
+			height: 50px;
+			border-radius: 4px;
+			border: 1px solid #111;
+			background-color: #0ff;
+			transform: skew(0deg,45deg);
+			-ms-transform: skew(0deg,45deg);
+			-webkit-transform: skew(0deg,45deg);
+		}
+		div#translate {
+			margin: 100px;
+			width: 100px;
+			height: 50px;
+			border-radius: 4px;
+			border: 1px solid #111;
+			background-color: #0ff;
+			transform: rotateX(145deg);
+			-webkit-transform: rotateX(145deg);
+			transform: rotateY(145deg);
+			-webkit-transform: rotateY(145deg);
+		}
+		div#transition {
+			position: relative;
+			margin: 100px;
+			width: 100px;
+			height: 50px;
+			border-radius: 4px;
+			border: 1px solid #111;
+			background-color: #0ff;
+			transition: width 2s, height 2s, transform 2s, background-color 2s;
+			-webkit-transition: width 2s, height 2s, transform 2s, background-color 2s;
+			animation: cartoon 5s;
+			-webkit-animation: cartoon 5s;
+
+		}
+		div#transition:hover {
+			margin: 100px;
+			width: 200px;
+			height: 100px;
+			border-radius: 6px;
+			border: 1px solid #111;
+			background-color: #f0f;
+			transform: rotate(45deg);
+			-webkit-transform:rotate(45deg);
+			transform: skew(45deg,45deg);
+			-webkit-transform:skew(45deg, 45deg);
+		}
+		@keyframes cartoon {
+			from {
+				background-color: #ccc;
+				top: 0px;
+				right: 0px;
+			}
+			to {
+				background-color: #444;
+				top: 100px;
+				right: 100px;
+			}
+		}
+		@-webkit-keyframes cartoon {
+			from {
+				background-color: #ccc;
+				top: 0px;
+				left: 0px;
+			}
+			to {
+				background-color: #444;
+				top: 100px;
+				left: 100px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="rotate"></div>
+	<div id="scale"></div>
+	<div id="skew"></div>
+	<div id="translate"></div>
+	<div id="transition"></div>
+</body>
+</html>

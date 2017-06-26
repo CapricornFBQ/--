@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>页内样式</title>
+	<!-- 页内样式CSS -->
+	<style>
+		/*这是head模块里的代码*/
+		/*要努力养成使用基本类的习惯*/
+		a{
+			color: green;
+			background: red;
+		}
+		.strong{
+			font-size: 50px;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- CSS三种样式（只是写法不同，但是都是层叠样式表） -->
+	<!-- 1.行内样式 -->
+	<!-- 2.业内样式 -->
+	<!-- 3.外部链接CSS -->
+
+	<!-- 行内样式CSS -->
+	<!-- 优点：方便阅读，也不需要选择器。
+		 缺点: 失去批量设置属性的优势
+
+		 使用情况：要求阅读性强的时候，网站简单的时候。其他单独出现不太重要的标签
+	 -->
+	<div style="color:red;font-size: 20px;">我是行内样式CSS</div>
+
+	<!-- 页内样式CSS -->
+	<!-- 诞生：选择器的发明 
+		 优点：批量设置，快捷，方便，组合型强
+		 缺点：不容易找代码。
+	-->
+	<a href="">郑爽</a>
+	<a href="">李毅</a>
+	<a href="" class="strong">魏胖子</a>
+
+
+
+	
+</body>
+</html>

@@ -1,0 +1,251 @@
+body{
+	
+	background:url(images/bg.jpg);
+	background-size:100% 100%;
+	margin:0px;
+}
+
+.changpianyi1{
+	/*可以不设置平铺，因为size*/
+	background:url(images/changpian1.png) no-repeat;
+	width:250px;
+	height:250px;
+	background-size:100% 100%;
+	position:absolute;
+	top:200px;
+	left:-110px;
+		
+}
+.changpianyi2{
+	
+	background:url(images/changpian1.png) no-repeat;
+	width:270px;
+	height:270px;
+	background-size:100% 100%;
+	position:absolute;
+	right:-85px;
+	/*里下边50px*/
+	bottom:5px;
+	
+}
+.liushengji{
+	/*可以不设置平铺*/
+	background:url(images/liushengji.png);
+	width:400px;
+	height:430px;
+	background-size:100% 100%;
+	position:absolute;
+	left:-80px;
+	top:-20px;
+	
+}
+.zhen{
+	
+	width:185px;
+	height:278px;
+	background:url(images/zhen.png);
+	background-size:100% 100%;
+	position:absolute;
+	top:20px;
+	right:10px;
+	transform:scale(.65,.65);
+	
+	
+	
+	
+}
+
+
+
+
+.envelope{
+	
+	background:url(images/xin.png);
+	width:573px;
+	height:408px;
+	transform:scale(.65,.65) translate(800px,800px);
+	
+	position:absolute;
+	bottom:25px;
+	left:35px;
+	transform-origin:0% 100%;
+	animation:animation2 2s;
+	-webkit-animation-fill-mode:forwards;
+
+	
+	
+	
+}
+
+@keyframes animation2{
+	
+	
+	
+	form{
+		transform:scale(0.65,0.65) translate(800px,800px);
+		
+	}to{
+	    transform:scale(0.65,0.65) translate(0px,0px);
+	}
+	
+}
+
+
+
+
+
+
+
+
+.xiangqing{
+	background:url(images/xiangqing.png);
+	width:120px;
+	height:58px;
+	position:absolute;
+	left:55px;
+	top:130px;
+	
+	opacity:0;
+	animation:animation3 2s;
+	animation-delay:3s;
+	animation-fill-mode:forwards;
+	
+}
+.begin{
+	background:url(images/begin.png);
+	width:63px;
+	height:42px;
+	position:absolute;
+	left:80px;
+	top:230px;
+	
+	
+	opacity:0;
+	animation:animation3 2s;
+	animation-delay: 3s;
+	animation-fill-mode:forwards;
+}
+
+
+.pen{
+	background:url(images/pen.png);
+	width:336px;
+	height:241px;
+	position:absolute;
+	transform-origin:100% 100%;
+	transform:scale(.55,.55)translate(800px,800px);
+	
+	right:-30px;
+	bottom:-15px;
+	
+	/*动画演示*/
+	animation:animation4 2s;
+	
+	/**/
+	animation-fill-mode:forwards;
+	/*线性*/
+	animation-timing-function:linear;
+	animation-delay:0.5s;
+	
+	
+}
+@keyframes animation4{
+	
+	form{
+		transform:scale(.55,.55)translate(800px,800px);
+		
+	}
+	to{
+		
+		transform:scale(.55,.55)translate(0px,0px);
+	}
+	
+	
+}
+
+
+
+.title{
+	
+	background:url(images/title.png);
+	width:160px;
+	height:574px;
+	position:absolute;
+	left:150px;
+	top: 50px;
+	opacity:0;
+	
+	animation: animation3 2s;
+	-webkit-animation-fill-mode:forwards;
+	
+}
+@keyframes animation3{
+	
+	form{
+		opacity:0;
+	}
+	
+	to{
+		
+		opacity:1;
+		
+	}
+	
+	
+}
+
+
+
+
+
+.center{
+	background:url(images/center.png);
+	width:75px;
+	height:75px;
+	background-size:100% 100%;
+	position:absolute;
+	top:140px;
+	left:152px;
+	
+	animation:animation1 2s;
+	
+	animation-iteration-count:infinite;/*无限循环*/
+	/*设置动画匀速*/
+	animation-timing-function:linear;
+	
+	
+}
+@keyframes animation1{
+	form{
+		
+		transform:rotate(0deg);
+		
+		
+	}to{
+		transform:rotate(360deg);
+		
+		
+		
+	}
+	
+}
+
+
+
+
+.point{
+	
+	background:url(images/point.png);
+	width:33px;
+	height:33px;
+	margin:21px auto;
+	line-height:33px;
+	
+	
+	
+}
+
+
+
+
+

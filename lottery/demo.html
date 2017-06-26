@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>toggle</title>
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./jquery-3.2.1.min.js"></script>
+		<style>
+			.colorBoll{
+				margin-left: 5px;
+				text-align: center;
+				line-height: 20px;
+				float: left;
+				font-size: 15px;
+				background-color: transparent;
+				width: 21px;
+				height: 21px;
+				border: 1px solid #444;
+				border-radius: 50%;
+				cursor: pointer;
+			}
+			.active{
+				background-color: #444;
+				color:#ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h4 style="margin-left: 10px;">选择7张彩票：</h4>
+			<div style="float: none; width: 100%; height: 25px; border: none; margin:5px; display: block;">
+				<div class="colorBoll">1</div>
+				<div class="colorBoll">2</div>
+				<div class="colorBoll">3</div>
+				<div class="colorBoll">4</div>
+				<div class="colorBoll">5</div>
+				<div class="colorBoll">6</div>
+				<div class="colorBoll">7</div>
+				<div class="colorBoll">8</div>
+				<div class="colorBoll">9</div>
+				<div class="colorBoll">10</div>
+			</div>
+			<div style="float: none; width: 100%; height: 25px; border: none; margin:5px; display: block;">
+				<div class="colorBoll">11</div>
+				<div class="colorBoll">12</div>
+				<div class="colorBoll">13</div>
+				<div class="colorBoll">14</div>
+				<div class="colorBoll">15</div>
+				<div class="colorBoll">16</div>
+				<div class="colorBoll">17</div>
+				<div class="colorBoll">18</div>
+				<div class="colorBoll">19</div>
+				<div class="colorBoll">20</div>
+			</div>
+			<div style="float: none; width: 100%; height: 25px; border: none; margin:5px; display: block;">
+				<div class="colorBoll">21</div>
+				<div class="colorBoll">22</div>
+				<div class="colorBoll">23</div>
+				<div class="colorBoll">24</div>
+				<div class="colorBoll">25</div>
+				<div class="colorBoll">26</div>
+				<div class="colorBoll">27</div>
+				<div class="colorBoll">28</div>
+				<div class="colorBoll">29</div>
+				<div class="colorBoll">30</div>
+			</div>
+			<button id="submit" class="btn" style="display: none; float: left; margin-left: 10px;">提交</button>
+			<button id="lottery" class="btn" style="display: none; float: left; margin-left: 10px;">开奖</button>
+		</div>
+	</body>
+	<script>
+		function Count() {
+			var num = 0;
+			var objNum = " ";
+			$('.active').each(function() {
+				num++;
+				// alert($(this).html());
+				objNum += " " + $(this).html();
+				if (num >= 7) {
+					$('.colorBoll').not('.active').css({'pointer-events': 'none'});
+					$('#submit').css({'display': 'block'});
+					$('#lottery').css({'display': 'none'});
+					alert(objNum);
+				} else {
+					$('#submit').css({'display': 'none'});
+					$('.colorBoll').not('.active').css({'pointer-events': 'auto'});
+					$('#lottery').css({'display': 'none'});
+				}
+			})
+		}
+		$(function() {
+			$('.colorBoll').each(function() {
+				$(this).addClass('')
+			})
+			var num;
+			var objNum;
+			$('.colorBoll').click(function() {
+				$(this).toggleClass('active');
+				Count();
+			})
+			$('#submit').click(function() {
+				$('.colorBoll').css({'pointer-events': 'none'});
+				$(this).css({'pointer-events': 'none'});
+				$('#lottery').css({'display': 'block'});
+				var body = {
+					number: objNum,
+				}
+				$.post( '' , body, function() {				//此处加入提交后ajax的逻辑
+
+				})
+			})
+			$('#lottery').click(function() {				//此处为开奖后的逻辑
+
+			})
+
+
+		})
+	</script>
+</html>

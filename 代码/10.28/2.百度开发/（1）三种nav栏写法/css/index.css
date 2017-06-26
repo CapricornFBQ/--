@@ -1,0 +1,29 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+/*---------------第一种写法：a标签对齐法------*/
+/*header部分*/
+#header{
+	background: red;
+	text-align: right;
+}
+/*-------------第二种写法：div 包裹标签浮动法------*/
+/*#header{
+	background: red;
+	height: 100px;
+}
+
+#header .header-ul{
+	float: right;
+}*/
+/*------------第三种：UL li -------------------*/
+/*#header{
+	background: red;
+}
+#header ul{
+	float: right;
+}
+#header ul li{
+	float: left;
+}*/
