@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>offset</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		#one{
+			width: 80px;
+			height: 90px;
+			padding: 60px;
+			border: 2px solid red;
+			margin: 10px 0px 0px 10px;
+			position: relative ; /*absolute relative fixed*/
+		}
+		#two {
+			width: 50px;
+			height: 80px;
+			border:1px solid orange;
+		}
+	</style>
+</head>
+<body>
+	<div id="one">
+		<div id="two"></div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1
+	<script>
+		//获得元素的宽和高
+		//element.offsetWidth 宽  element.offsetHeight 高 ①返回的是数值 ② 包含padding和border的尺寸值
+		// var a = document.querySelector('div');
+		// console.log(a.offsetWidth,a.offsetHeight)
+		//获取距离上一个定位元素边框的水平和垂直距离
+		//element.offsetLeft  距离左边框的水平距离 element.offsetTop  距离上边边框的垂直距离 
+		// var two = document.querySelector('#two');
+		// console.log(two.offsetLeft,two.offsetTop)
+		//获取上一层定位元素
+		//element.offsetParent
+		// var two = document.querySelector('#two');
+		// two.offsetParent.offsetParent.style = "background-color:pink" ;
+		//获取鼠标点击位置距离屏幕左上角的位置
+		//event.screenX 水平方向  event.screenY
+		// document.onclick = function(event) {
+		// 	console.log(event.screenX)
+		// 	console.log(event.screenY)
+		// }
+		// 获取鼠标点击位置距离浏览器窗口的位置
+		// event.clientX  水平方向  event.clientY
+		// document.onclick = function(event) {
+		// 	console.log(event.clientX)
+		// 	console.log(event.clientY)
+		// }	
+		// 获取鼠标点击位置距离文档左上角的位置
+		// event.pageX 水平方向  event.pageY 竖直方向
+		document.onclick = function(event) {
+			console.log(event.pageX)
+			console.log(event.pageY)
+		}
+
+
+
+
+
+
+		</script>
+</body>
+</html>

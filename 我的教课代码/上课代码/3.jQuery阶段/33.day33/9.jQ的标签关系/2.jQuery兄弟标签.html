@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery兄弟标签</title>
+</head>
+<body>
+	<ul>
+		<li class="one">1</li>
+		<li>2</li>
+		<li class="three">3</li>
+		<li>4</li>
+		<li>5</li>
+		<li class="six">6</li>
+	</ul>
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+	$(function() {
+
+		//把4变为红色---下一个兄弟节点
+		$(".three").next().css("color","red");
+		//所有后面的兄弟节点
+		$(".three").nextAll().css("font-size","30px");
+		//后面到内容为5的元素，背景色为绿色;
+		$(".three").nextUntil(".six").css("background","pink");
+
+
+
+
+
+
+		//把2变成绿色     ======prevAll()-====prevUntil()
+		// $(".three").prev().css("color","green");
+		//兄弟元素变为蓝色
+		// $(".three").siblings().css("color","blue");
+
+
+
+
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="div-1">div</div>
+    <div class="inner">
+        <!--h1#title_$.title$*3-->
+        <h1 id="title_1">Header 1</h1>
+        <h1 id="title_2">Header 2</h1>
+        <h1 id="title_3">Header 3</h1>
+        <h1 id="title_4">Header 4</h1>
+        <h1 id="title_5">Header 5</h1>
+        <h1 id="title_6">Header 6</h1>
+        <div class="div-1">Div</div>
+        <span id="span_1" class="span-1">span</span>
+        <ul class="list">
+            <li class="item">item 1</li>
+            <li class="item">item 2</li>
+            <li class="item">item 3</li>
+            <li class="item">item 4</li>
+            <li class="item">item 5</li>
+            <li class="item">item 6</li>
+            <li class="item">item 7</li>
+            <li class="item">item 8</li>
+            <li class="item">item 9</li>
+            <li class="item">item 10</li>
+        </ul>
+        <ul class="list1">
+            <li class="item">item 1</li>
+            <li class="item">item 2</li>
+            <li class="item">item 3</li>
+            <li class="item">item 4</li>
+            <li class="item">item 5</li>
+            <li class="item">item 6</li>
+            <li class="item">item 7</li>
+            <li class="item">item 8</li>
+            <li class="item">item 9</li>
+            <li class="item">item 10</li>
+        </ul>
+    </div>
+</div>
+<script>
+//    querySelector 选中的是选择器选中的第一个元素
+//    querySelectorAll 选中的是选择器选中的所有元素
+//    引号里面就是css的选择器
+    //    通过id选择 数组
+    var h1Element = document.getElementById('title_1');
+    console.log(h1Element);
+    //    通过标签类型选择 数组
+    var divElements = document.getElementsByTagName('div');
+    console.log(divElements);
+    //    通过类名选择 返回数组
+    var itemElements = document.getElementsByClassName('item');
+
+
+    var firstdiv = document.querySelector('.div-1');
+    firstdiv.style.backgroundColor = 'blue';
+    var lis = document.querySelectorAll('li');
+//    因为lis是数组 需要for循环
+    for (var i = 0;i < lis.length;i++){
+        lis[i].style.backgroundColor = 'yellow';
+    }
+    var firstli = document.querySelector('li');
+    firstli.style.color = 'red';
+    lis[0].style.color = 'red';
+
+    var lis1 = document.querySelectorAll('.list1>li');
+    for (var i = 0;i < lis1.length;i++){
+        lis1[i].style.color = 'blue';
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绝对定位以父标签为参照系</title>
+	<style>
+		*{
+			margin: 0px;
+			padding:0px;
+		}
+
+		.father{
+			height: 200px;
+			background: red;
+			margin-top: 100px;
+			position: relative;
+		}
+		.child{
+			width: 20px;
+			height: 20px;
+			background: orange;
+
+			position: absolute;
+			top:0px;
+			right: 0px;
+
+		}
+
+	</style>
+</head>
+<body>
+	<!--但是当父标签有定位的时候，就以父标签为参照系。父标签没有定位，则往上找父标签的父标签，如果父标签的父标签没定位，继续往上找，直到找到body -->
+
+	<!-- 自绝父相  -->
+	<div class="father">
+		<div class="child"></div>
+	</div>
+
+</body>
+</html>

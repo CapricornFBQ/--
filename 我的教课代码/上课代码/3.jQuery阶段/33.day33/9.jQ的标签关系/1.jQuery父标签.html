@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery父标签</title>
+</head>
+<body>
+	<div>
+		<p>
+			<a href="">百度一下</a>
+		</p>
+	</div>
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			//选定父标签
+			var parentNode = $("a").parent();
+			// console.log(parentNode);
+
+
+			var parentNodes = $("a").parents();
+			console.log(parentNodes);
+
+
+			var parents = $("a").parentsUntil("body");
+			console.log(parents);
+
+		})
+	</script>
+</body>
+</html>

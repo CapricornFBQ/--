@@ -1,0 +1,55 @@
+
+/* -----------------属性选择器-------------- */
+/* 属性选择器：有无属性 
+[属性值]
+
+*/
+/* [data-name]{
+	color: orange;
+} */
+
+/* 属性等于什么 可以不加"" */
+/* [data-name = nine]{
+	color: red;
+} */
+
+/* 查找包含一个属性，属性值是以某个单词为开头的对象 */
+/* [data-name |= nine]{
+	color: skyblue;
+} */
+
+
+/* ----------伪类------------------- */
+ /* i love i hate 
+	link: 链接默认状态
+	visited: 访问过的
+	hover： 鼠标悬停
+	active: 点按下
+
+  */
+
+
+  /* 获得某一个对象的第一个字符或者第一句话 */
+  /* .item2:first-letter{
+
+  	color: red;
+  } */
+
+
+  /* 获得第一句话 */
+  /* .item2:first-line{
+  	font-size: 40px;
+  }
+   */
+
+   /* 伪元素 */
+/*    before
+   after */
+
+   p::before{
+	content: "威哥";
+
+   }
+   p::after{
+   	content: "大家";
+   }

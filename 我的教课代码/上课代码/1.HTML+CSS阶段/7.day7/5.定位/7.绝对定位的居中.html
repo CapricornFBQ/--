@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绝对定位标签的居中</title>
+	<style>
+		*{
+			margin: 0px;
+			padding:0px;
+		}
+		
+		div{
+			width: 200px;
+			height: 200px;
+			background: red;
+
+			position: absolute;
+			/*绝对定位以后不符合标准流的规则了，所以标准流规则下的居中不好用了*/
+			/*margin: 0px auto;*/
+
+			left: 50%;
+			margin-left: -100px;
+
+		}
+		
+
+	</style>
+</head>
+<body>
+	<div>
+
+
+	</div>
+
+</body>
+</html>

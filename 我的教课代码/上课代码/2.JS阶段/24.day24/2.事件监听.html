@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件监听</title>
+	<style>
+		div {
+			width: 200px;
+			height: 200px;
+			background: #ccc;
+			margin-top: 2px;
+		}
+	</style>
+</head>
+<body>
+	<div id="a"></div>
+	<script>
+		// var a = document.getElementById("a");
+		// a.onclick = function() {
+		// 	a.style.background = "yellow";
+		// }
+		// a.onclick = function() {
+		// 	a.style.width = "400px";
+		// }
+//事件监听------------------------
+		//.addEventListener(事件名，执行内容)
+		var a = document.getElementById("a");
+		a.addEventListener("click", function() {
+			a.style.background = "yellow";
+		})
+		a.addEventListener("click", function() {
+			a.style.width = "400px";
+		})
+
+
+	</script>
+</body>
+</html>

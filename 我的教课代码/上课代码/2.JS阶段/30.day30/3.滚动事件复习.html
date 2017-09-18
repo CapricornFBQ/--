@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滚动事件复习</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.top,.nav {
+			width: 1423px;
+			margin: 0 auto;
+			position: relative;
+			left:0;
+		}
+	/*	.nav{
+			transition: all 0.5s;
+		}*/
+		.nav.selected {
+			position: fixed;
+			top: 0;
+		}
+		.main {
+			width: 1001px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="top">
+		<img src="images/top.png" alt="">
+	</div>
+	<div class="nav">
+		<img src="images/nav.png" alt="">
+	</div>
+	<div class="main">
+		<img src="images/main.png" alt="">
+	</div>
+
+	<script>
+		//对文档绑定一个滚动事件
+		// document.body.onscroll = function() {
+		// 	//获得菜单栏===
+		// 	var picture = document.querySelector(".nav");
+		// 	//获取滚动的高度
+		// 	var a = document.body.scrollTop;
+		// 	//通过offsetTop来获取
+		// 	var top = picture.offsetTop;
+		// 	console.log(top);
+		// 	if(a<175) {
+		// 		picture.style.top = "0px";    //亚峰的思路-----
+		// 	}else {
+		// 		picture.style.top = a-175 + "px";
+		// 	}
+		// }
+
+ 
+		//对文档绑定一个滚动事件
+		//获得菜单栏===
+		var picture = document.querySelector(".nav");
+		//通过offsetTop来获取
+		var atop = picture.offsetTop;
+		console.log(atop);
+
+		document.body.onscroll = function() {
+			//获取滚动的高度
+			var a = document.body.scrollTop;
+			
+
+			if(a<atop) {  
+				picture.className = "nav"; //巧银的思路-----
+				picture.style.left= "0px";
+			}else {
+				picture.className = "nav selected";
+				picture.style.left = (window.innerWidth - picture.offsetWidth)/2 + "px";
+			}
+		}
+	</script>
+</body>
+</html>

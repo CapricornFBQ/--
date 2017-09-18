@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过滤</title>
+	<script src ="../jquery-3.1.1.min.js" ></script>
+</head>
+<body>
+	
+	<div style="width:100px;height:100px;background:#aa2; "></div><br>
+	<div style="width:100px;height:100px;background:#aa2; "></div><br>	
+	<div style="width:100px;height:100px;background:#aa2; "></div><br>	
+	<button>渐出</button>
+	<script>
+		
+		$(document).ready(function () {
+			$("button").click(function(){
+				$("div").eq(0).fadeOut();
+				$("div").eq(1).fadeOut("slow");
+				$("div").eq(2).fadeOut(5000);
+
+
+			});
+
+		});
+
+
+	</script>
+
+
+</body>
+</html>

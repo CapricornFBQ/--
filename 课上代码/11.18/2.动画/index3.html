@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<script src ="../jquery-3.1.1.min.js"></script>
+	<style>
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+	</style>
+
+
+</head>
+<body>
+	<div style="width: 200px;height: 200px;background:red;position: relative;"></div>
+	
+	<script>
+		$(document).ready(function () {
+			
+		
+			//动画队列  
+			var div =$("div");
+			//速度可以用 slow fast
+			div.animate({height:"400px",opacity:".4"},3000);
+			div.animate({height:"200px",opacity:"1"},"fast");
+			div.animate({width:"1000px"},2000);
+			div.animate({width:"10px",height:"2000px"},2000);
+
+			
+
+		});
+
+
+	</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滚动事件</title>
+	<style>
+		.one{
+			width:100px;
+			height: 100px; 
+			overflow: scroll;
+		}
+		div{
+			width: 500px;
+			height: 3000px;
+			background: pink;
+			margin:20px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="one">H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好H5班周一天假好</div>
+	<div></div>
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+	//原生js里面 onscroll和scrollTop是用于body
+	// document.body.onscroll = function() {
+	// 	console.log(1)
+	// }
+	$(function() {   //1.可以检测window对象和document对象的滚动事件
+		$(document).scroll(function() {
+			console.log("a")
+		})
+
+		//2.overflow为scroll 的元素，可以使用scroll监听事件
+		$(".one").scroll(function() {
+			console.log("one")
+		})
+	})
+	
+	</script>
+</body>
+</html>

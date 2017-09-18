@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>宽度</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<button>点我</button>
+	<div></div>
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+	$(function() {
+		var width = $(window).width(); //获取宽度
+		console.log(width);
+
+		$("button").click(function() {
+			$(this).next().width(500); //设置宽度
+		})
+	})
+	</script>
+</body>
+</html>

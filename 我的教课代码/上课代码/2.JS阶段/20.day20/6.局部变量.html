@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>局部变量</title>
+</head>
+<body>
+	<script>
+		//局部变量：在函数内部用var声明的变量
+		function number() {
+			var a = 10;    //闭包：变量起作用的范围（作用域）相关 
+			console.log(a);
+		}
+		number();
+		// console.log(a);
+		//定义变量不用var 直接在函数中进行定义，会变成全局变量 
+		function say () {
+			b = 20;
+		}
+		say();
+		console.log(b); 
+	</script>
+</body>
+</html>

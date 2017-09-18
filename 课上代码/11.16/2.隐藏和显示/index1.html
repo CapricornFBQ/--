@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过滤</title>
+	<script src ="../jquery-3.1.1.min.js" ></script>
+</head>
+<body>
+	
+	<p style="display: none;">我是一个P标签</p>
+	<button class="hide">隐藏</button>
+	<button class="show">显示</button>
+	<script>
+		$(document).ready(function () {
+			//对display:none的对象进行 show ，对正常的对象hide()
+			$("button").first().click(function(){
+				$("p").hide();
+
+			});
+
+			//show 显示代码
+			$("button").last().click(function(){
+
+				$("p").show();
+			});
+			
+
+		});	
+	</script>
+
+
+</body>
+</html>

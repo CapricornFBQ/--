@@ -1,0 +1,9 @@
+/* 声明字体 */
+@font-face{
+	font-family: 'kouchao';
+	src: url('hanyi25/a.ttf');
+}
+
+body{
+	font-family: 'kouchao';
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM练习</title>
+	<style>
+		div {
+			width: 100px;
+			height: 100px;
+			background: orange;
+			margin-top:2px;
+		}
+	</style>
+</head>
+<body>
+	<button onclick="first()">开始</button>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script>
+		//点击按钮，所有的div消失，同时按钮变为一个内容为“百度一下”的到百度首页的链接	
+		function first() {
+			var f = document.getElementsByTagName("div");
+			var e = document.getElementsByTagName("body")[0];
+			var length = f.length;
+			for (var i=0; i<length; i++) {
+				e.removeChild(f[0]);
+			}
+			var d = document.getElementsByTagName("button")[0].firstChild;
+			var a = document.createElement("a");
+			var newd = document.createTextNode("百度一下");
+			a.appendChild(newd);
+			a.setAttribute("href","http://www.baidu.com");
+			d.parentNode.replaceChild(a,d);
+		}
+	</script>
+	<!-- <button><a href="http://baidu.com">百度一下</a></button> -->
+</body>
+</html>

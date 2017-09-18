@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>节点的关系</title>
+</head>
+<body>
+	
+	<!-- 
+		节点的关系：
+		parentNode 父节点
+		childNodes 子节点
+		firstChild 第一个子节点
+		lastChild 最后一个子节点
+		nextSibling  下一个兄弟节点
+		previousSibling 前一个兄弟节点
+
+
+
+	 -->
+
+	<!-- 目标二代码 -->
+		<div id ="father">
+			<div style="width:100px;height: 100px;background: red;">1</div>
+			<br>
+			<div style="width:100px;height: 100px;background: red;">3</div>
+			<br>
+			<div style="width:100px;height: 100px;background: red;">5</div>
+		</div>
+	
+
+	<script>
+			//取fatherdiv里的所有的子节点（包含标签和其他 nodeType 表示）
+			var father = document.getElementById("father");
+			//查看下共有多少个子节点
+			var array = father.childNodes;
+			console.log(array);
+			console.log(array.length);
+
+			//为什么要去除不用的节点呢？？？净化子节点
+
+			for(var i =0;i< array.length; i++){
+
+				if (array[i].nodeType != 1) {
+					//吧不需要的子标签从哪里清除了？？father.childNodes里清楚了
+					//father.childNodes 郑爽 李毅 刘磊 二狗子
+					//array   名单      郑爽 李毅 刘磊 二狗子
+
+					array[i].parentNode.removeChild(array[i]);
+
+					// 可以这么写成father.removeChild(array[i]);
+				}
+			}
+			//现在的father.childNodes就不等于array了
+			// console.log(father.childNodes);
+			// var newArray = father.childNodes;
+			//我删除father标钱第一个节点
+			father.firstChild.parentNode.removeChild(father.firstChild);
+			father.lastChild.parentNode.removeChild(father.lastChild);
+
+
+
+		
+	</script>
+
+
+	<!-- 
+		//1.是想对father标签里的第一个div进行删除操作
+		//2. father.removeChild(father.firstChild);   但是发现没有删除，为啥啊？？？
+		//3. 是因为div不是father的第一个节点， text div text div text，查询后（father.childNodes）发现有很多没用的节点，造成不好的影响
+		//4. 清除没用的节点 .遍历所有的节点，如果它是没用的，则从father里删除，删除以后father离就只剩有用的标签
+		//5.可以做想做的操作了
+	
+
+	 -->
+
+
+</body>
+</html>

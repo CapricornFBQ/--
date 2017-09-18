@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绝对定位</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+
+		.box1{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			top:0px;
+			left: 0px;
+			
+			
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			
+			
+		}
+		.box3{
+			width: 100px;
+			height: 100px;
+			background: green;
+			position: absolute;
+			right: 0px;
+			top:0px;
+			
+			
+		}
+		.box4{
+			width: 100px;
+			height: 100px;
+			background: orange;
+			position: absolute;
+			bottom: 0px;
+			right: 0px;
+			
+		}
+
+
+
+	</style>
+
+</head>
+<body>
+	<!-- 绝对定位会脱标：1.不安标准流排列 2.不受标签种类的限制 -->
+	<!-- 绝对定位的默认参照系为body标签 -->
+
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="box4"></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>遍历对象</title>
+</head>
+<body>
+	
+
+	<script>
+		
+		// 我有一个数组，可以进行遍历
+		var array = ["weiwei","kc","maergou","wangerxiao"];
+		// console.log(array.length);
+		for(var i = 0; i< array.length;i++){
+			console.log(array[i]);
+		}
+
+		// ---------------对象的遍历用for In---------------
+		var object ={
+
+			name:"yi",
+			age:18,
+			sex:"man"
+		}
+
+		// for in 快速遍历
+		// 将object里面的key一个个拿出来存到var key里面
+		for(var a in object){
+			// console.log(key);
+			console.log(object[a]);
+		}
+
+
+	</script>
+</body>
+</html>

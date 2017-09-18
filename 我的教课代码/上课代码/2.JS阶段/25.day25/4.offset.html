@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>offset</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		#one {
+			width: 200px;
+			height: 100px;
+			padding:50px;
+			border:1px solid red;
+			margin:20px;
+			background: #ddd;
+			/*position: relative;*/
+		}
+		#two {
+			width: 50px;
+			height: 70px;
+			padding: 20px;
+			border:1px solid green;
+			background-color: red;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="one" style="width: 400px; height: 200px;">
+		<div id="two">
+			
+		</div>
+	</div>
+	1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>
+	<script>
+		//offset 获取元素的宽和高：
+		//ele.offsetWidth  ele.offsetHieght    返回一个数值
+		//ele.style.width  ele.style.height	   返回一个字符串  XXpx
+		//ele.offsetTop   ele.offsetLeft   距离上一层已定位元素的垂直距离和左侧的水平距离
+		//ele.offsetParent  上一层定位的对象
+		//event.clientX   event.clentY  鼠标事件的位置 (窗口的左上角)
+		//event.screenX   event.screenY  鼠标的位置 （屏幕的左上角）
+		//event.pageX   event.pageY    鼠标距离文本的边框的位置（文档的左上角）
+		var one = document.getElementById("one");
+		console.log(one.offsetWidth);
+		console.log(one.style.width);    //只能取行内样式 
+		console.log(one.offsetHeight); 
+		console.log(one.style.height); 
+		var two = document.getElementById("two");
+		console.log(two.offsetTop);   //距离有定位的上层元素的距离 （至边框的距离）
+		console.log(two.offsetLeft);
+		console.log(two.offsetParent.offsetTop); 
+		console.log(two.offsetParent.offsetLeft);
+		two.onclick = function(event) {
+			console.log(event.clientX);
+			console.log(event.clientY);
+			console.log(event.screenX);
+			console.log(event.screenY);
+			console.log(event.pageX);
+			console.log(event.pageY);
+		}
+
+		document.onclick= function(event) {
+			console.log(event.clientX);
+			console.log(event.clientY);
+			console.log(event.pageX);
+			console.log(event.pageY); //距离中包含滚动条的距离
+		}
+	</script>
+</body>
+</html>

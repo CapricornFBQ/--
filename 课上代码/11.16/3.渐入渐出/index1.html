@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过滤</title>
+	<script src ="../jquery-3.1.1.min.js" ></script>
+</head>
+<body>
+	
+	<div style="width:100px;height:100px;background:#aa2; display:none"></div><br>
+	<div style="width:100px;height:100px;background:#aa2; display:none"></div><br>	
+	<div style="width:100px;height:100px;background:#aa2; display:none"></div><br>	
+	<button>渐入</button>
+	<script>
+		
+		$(document).ready(function () {
+			$("button").click(function(){
+				// fade渐入
+				$("div").eq(0).fadeIn();
+				//slow 慢 fast 快
+				$("div").eq(1).fadeIn("slow");
+				//设置时间
+				$("div").eq(2).fadeIn(5000);
+
+
+			});
+
+		});
+
+
+	</script>
+
+
+</body>
+</html>

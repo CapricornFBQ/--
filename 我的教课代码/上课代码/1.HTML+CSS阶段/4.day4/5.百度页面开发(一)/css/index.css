@@ -1,0 +1,25 @@
+*{
+	margin: 0px;
+	padding:0px;
+}
+
+/*----------header部分---------------*/
+.header{
+	height: 100px;
+
+	/*background-color: red;*/
+
+	text-align: right;
+	/*（2）第二种方法*/
+	/*margin-top:20px;*/
+
+	/*（3）第三种方法*/
+	padding-top:20px;
+
+}
+
+/*(1)庄海磊方法*/
+/*.header a{
+	display: inline-block;
+	margin-top:10px;
+}*/

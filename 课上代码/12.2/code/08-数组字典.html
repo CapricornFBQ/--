@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    数组
+    var array = ["张三","李四","王五"];
+//    数组通过下标取元素
+    var first = array[0];
+//    取数组中所有元素用for循环
+    for (var i = 0;i < array.length;i++){
+//        i是从 0 到 array.length
+        console.log(array[i]);
+    }
+    for (var id in array){
+//        在数组中id是数组的下标
+        console.log(array[id]);
+    }
+//    字典 key:value
+//    var dict = {101:"张1",102:"张2",103:"张3"};
+    var dict = {101:array,102:"张2",103:"张3"};
+//取值用字典[key值]
+//    console.log(dict[101]);
+//这个key就是dict的每一个key值
+    for (var key in dict){
+        console.log(key);
+//        item就是key对应的值
+        var item = dict[key];
+        console.log(item);
+    }
+</script>
+</body>
+</html>

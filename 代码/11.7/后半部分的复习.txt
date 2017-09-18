@@ -1,0 +1,27 @@
+DOM操作
+
+1.获得标签
+  document.getElementByID()----->单个
+  document.getElemnetsByClassName()---->数组
+  document.getElemnentsByTagName()----->数组
+
+
+2.新方法
+ documnet.querySelector()；-----》 ID CLASS 标签 获得的是单个的标签
+ document.querySelectorAll();---->数组 class 标签
+
+3.增加
+  //1.创建
+  dovument.createElement();
+
+ //2.添加
+  X.parentNode.appendChild();
+  
+ //3.删除
+  X.parentNode.removeChild();
+ 
+ //4.替换
+ X.parentNode.replace();
+
+ //5.插入
+ X.paremtNode.insertBefore();

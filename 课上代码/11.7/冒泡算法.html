@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>冒泡算法</title>
+</head>
+<body>
+	<script>
+		// for(var i=1; i<=20; i++) {
+		// 	document.write(parseInt(100*Math.random()) + ",")
+		// }
+
+		// var arrays = [37,8,36,53,66,0,13,92,28,37,41,99,11,35,25,79,82,44,76,30];
+		// for (var j=0; j<arrays.length; j++) {
+		// 	for (var i=0; i<arrays.length-j; i++) {
+		// 		var max = 0;
+		// 		if(arrays[i] > arrays[i+1] ) {
+		// 			max = arrays[i+1];
+		// 			arrays[i+1] = arrays[i];
+		// 			arrays[i] = max;
+		// 		}
+		// 	}
+		// }
+
+		// document.write(arrays);
+
+		var string = prompt("hh");
+		var array = string.split(",")
+		function sort(arrays) {
+			for (var j=0; j<arrays.length; j++) {
+				for (var i=0; i<arrays.length-j; i++) {
+					var max = 0;
+					if(Number(arrays[i]) > Number(arrays[i+1]) ) {
+						max = arrays[i+1];
+						arrays[i+1] = arrays[i];
+						arrays[i] = max;
+					}
+				}
+			}
+			return arrays	
+		}
+
+		sort(array)
+		document.write(sort(array));
+		document.write(array);
+	</script>
+</body>
+</html>

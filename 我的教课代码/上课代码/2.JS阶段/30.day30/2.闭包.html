@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包</title>
+</head>
+<body>
+	<script>
+		//闭包 ：对变量的作用范围的控制
+		var a = 3;
+		function hanshu1() {
+			var b = 4;
+			console.log(a);
+			hanshu2(b);
+		}
+		function hanshu2(b) {
+			console.log(b);     // 变量的值会由该函数一层一层向上查询----
+		}
+
+		hanshu1();
+		
+
+
+
+
+		// var a = 3;
+		// function hanshu1() {
+		// 	var b = 4;
+		// 	console.log(a);
+		// 	function hanshu2() {
+		// 		console.log(b);     // 变量的值会由该函数一层一层向上查询----
+		// 	}
+		// 	hanshu2()
+		// }
+		// hanshu1();
+
+
+
+
+
+		// var a = 3;
+		// function hanshu1() {
+		// 	var b = 4;
+		// 	console.log(a);
+		// 	function hanshu2() {
+		// 		console.log(b);     // 变量的值会由该函数一层一层向上查询----
+		// 	}
+
+		// }
+		// hanshu1();
+		// hanshu2(); //会报错   定义的hanshu2也被作为局部变量放在了hanshu1中
+	</script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: '微软雅黑';
+            background-color: #F7F7F7;
+        }
+
+        .wrapper {
+            width: 1024px;
+            margin: 0 auto;
+        }
+
+        .wrapper > section {
+            min-height: 300px;
+            margin-bottom: 30px;
+            box-shadow: 1px 1px 4px #DDD;
+            background-color: #FFF;
+        }
+
+        .wrapper > header {
+            text-align: center;
+            line-height: 1;
+            padding: 20px;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .wrapper section > header {
+            line-height: 1;
+            padding: 10px;
+            font-size: 22px;
+            color: #333;
+            background-color: #EEE;
+        }
+
+        .wrapper .wrap-box {
+            padding: 20px;
+        }
+        /*以上是骨架结构*/
+        /*匹配父元素的第一个子元素E li的父元素是ul 这就选择ul的第一个子元素*/
+        .list1 li:first-child {
+            background-color: red;
+        }
+        /*匹配父元素的最后的子元素E li的父元素是ul 这就选择ul的最后子元素*/
+        .list2 li:last-child {
+            background-color: blue;
+        }
+        /*匹配父元素仅有的一个子元素E */
+        li:only-child {
+            color: yellow;
+        }
+        /*匹配父元素的第n个子元素E*/
+        .list3 li:nth-child(2) {
+            color: red;
+        }
+        /*匹配父元素的倒数第n个子元素E*/
+        .list4 li:nth-last-child(2) {
+            font-size: 40px;
+        }
+        /*匹配同类型中的第一个同级兄弟元素E*/
+        .div1 p:first-of-type {
+            background-color: orange;
+        }
+        /*匹配同类型中的最后一个同级兄弟元素E*/
+        .div2 p:last-of-type {
+            background-color: pink;
+        }
+        /*匹配同类型中的唯一的一个同级兄弟元素E*/
+        p:only-of-type {
+            background-color: blue;
+        }
+        /*匹配同类型中的第n个同级兄弟元素E*/
+        /*p标签同级中的第二个p标签*/
+        p:nth-of-type(2) {
+            font-size: 25px;
+        }
+        /*n从1开始计算*/
+        p:nth-of-type(2n) {
+            background-color: rosybrown;
+        }
+        /*匹配同类型中的倒数第n个同级兄弟元素E*/
+        span:nth-last-of-type(2) {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>CSS3-选择器</header>
+    <section>
+        <header>E:first-child</header>
+        <div class="wrap-box">
+            <ul class="list1">
+                <li>结构性伪类选择符 E:first-child</li>
+                <li>结构性伪类选择符 E:first-child</li>
+                <li>结构性伪类选择符 E:first-child</li>
+                <li>结构性伪类选择符 E:first-child</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>E:last-child</header>
+        <div class="wrap-box">
+            <ul class="list2">
+                <li>结构性伪类选择符 E:last-child</li>
+                <li>结构性伪类选择符 E:last-child</li>
+                <li>结构性伪类选择符 E:last-child</li>
+                <li>结构性伪类选择符 E:last-child</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>E:only-child</header>
+        <div class="wrap-box">
+            <ul>
+                <li>结构性伪类选择符 E:only-child</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>E:nth-child(n)</header>
+        <div class="wrap-box">
+            <!--第二行变红-->
+            <ul class="list3">
+                <li>结构性伪类选择符 E:nth-child(n)</li>
+                <li>结构性伪类选择符 E:nth-child(n)</li>
+                <li>结构性伪类选择符 E:nth-child(n)</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>E:nth-last-child(n)</header>
+        <div class="wrap-box">
+            <ul class="list4">
+                <li>结构性伪类选择符 E:nth-last-child(n)</li>
+                <li>结构性伪类选择符 E:nth-last-child(n)</li>
+                <li>结构性伪类选择符 E:nth-last-child(n)</li>
+                <li>结构性伪类选择符 E:nth-last-child(n)</li>
+                <li>结构性伪类选择符 E:nth-last-child(n)</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>E:first-of-type</header>
+        <!--匹配同类型中的第一个同级兄弟元素E-->
+        <div class="wrap-box">
+            <div class="div1">
+                <div>我是一个div元素</div>
+                <p>我是一个p元素</p>
+                <p>我是一个p元素</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <header>E:last-of-type</header>
+        <!--匹配同类型中的最后一个同级兄弟元素E-->
+        <div class="wrap-box">
+            <div class="div2">
+                <div>我是一个div元素</div>
+                <p>我是一个p元素</p>
+                <p>我是一个p元素</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <header>E:only-of-type</header>
+        <!--匹配同类型中的唯一的一个同级兄弟元素E-->
+        <div class="wrap-box">
+            <div>
+                <p>结构性伪类选择符 E:only-of-type</p>
+            </div>
+            <div>
+                <p>结构性伪类选择符 E:only-of-type</p>
+                <p>结构性伪类选择符 E:only-of-type</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <header>E:nth-of-type(n)</header>
+        <!--匹配同类型中的第n个同级兄弟元素E-->
+        <div class="wrap-box">
+            <div>
+                <p>我是p标签</p>
+                <div>
+                    <p>第一个p标签</p>
+                    <p>第二个p标签</p>
+                    <p>第三个p标签</p>
+                    <p>第四个p标签</p>
+                    <p>第五个p标签</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <header>E:nth-last-of-type(n)</header>
+        <!--匹配同类型中的倒数第n个同级兄弟元素E-->
+        <div class="wrap-box">
+            <span>1001</span>
+            <span>1002</span>
+            <span>1003</span>
+            <span>1004</span>
+            <span>1005</span>
+        </div>
+    </section>
+</div>
+</body>
+</html>

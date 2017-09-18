@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li style="color: blue;">2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script>
+	//innerHTML---------------------取出元素内的内容
+		var htmlContent = document.getElementsByTagName("ul")[0].innerHTML;
+		console.log(htmlContent);
+	//innerText---------------------取出元素内的文本内容
+		var textContent = document.getElementsByTagName("ul")[0].innerText;
+		console.log(textContent);
+
+	//用js来控制元素的css样式  js里面的样式会覆盖原css中的样式
+	var elementStyle = document.getElementsByTagName("li")[1].style;
+	elementStyle.color = "red";
+	elementStyle.fontSize = "25px";
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽</title>
+	<style>
+		.container {
+			width: 500px;
+			height: 500px;
+			padding: 0 50px;
+			border:1px solid black;
+			position: absolute;
+		}
+		.pull {
+			height: 60px;
+			width: 400px;
+			background: skyblue;
+			line-height: 60px;
+			text-align: center;
+			font-size: 20px;
+			cursor: move;
+			border-width: 0 1px 1px 1px;
+			border-style: solid;
+			border-color: black;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="pull">拖动区域</div>
+	</div>
+	<script>
+		//中心位置拖动--------------------------------------------------------------------
+		//获取元素
+		// var container = document.getElementsByClassName("container")[0];
+		// var pull = document.getElementsByClassName("pull")[0];
+		// pull.onmousedown = function() {
+		// 	document.onmousemove = function(event) {
+		// 		//取出事件的xY   并赋值给css样式
+		// 		container.style.left = event.pageX - pull.offsetLeft - pull.offsetWidth/2 + "px";
+		// 		container.style.top = event.pageY - pull.offsetTop - pull.offsetHeight/2  + "px";
+		// 	}
+		// }
+		// document.onmouseup = function() {
+		// 	// document.onmousemove = null;   //事件解绑的方法（两种）
+		// 	document.onmousemove = function() {
+		// 		return false;
+		// 	}
+		// }
+
+
+
+
+
+		//-----------------------------------------------任意位置拖动------------------
+		// var container = document.getElementsByClassName("container")[0];
+		// var pull = document.getElementsByClassName("pull")[0];
+		// pull.onmousedown = function(event) {
+		// 	var xPosition = event.pageX-container.offsetLeft-pull.offsetLeft;
+		// 	var yPosition = event.pageY-container.offsetTop-pull.offsetTop;
+		// 	document.onmousemove = function(event) {
+		// 		//取出事件的xY   并赋值给css样式
+		// 		console.log(event.pageX - pull.offsetLeft -(event.pageX-container.offsetLeft-pull.offsetLeft));
+		// 		container.style.left = event.pageX - pull.offsetLeft - xPosition + "px";
+		// 		container.style.top = event.pageY - pull.offsetTop - yPosition  + "px";
+		// 	}
+		// }
+		// document.onmouseup = function() {
+		// 	// document.onmousemove = null;   //事件解绑的方法（两种）
+		// 	document.onmousemove = function() {
+		// 		return false;
+		// 	}
+		// }
+		// 
+		// 
+		// 
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+回顾清除浮动
+目的：为了让父元素有高度的大小值
+解决方式：
+    第一种：直接给父元素设置高度。 简单直接暴力，但是如果父元素高度是动态的，那么该方式就不可以用了。
+    第二种：clearBox，别名隔墙法。
+            使用方法：在父元素的内部或外部设置一个div标签.clearBox{clear:both} 。 过时
+    第三种：设置父元素 overflow属性不为visible。会触发bfc模式，可能会造成其它不可预测的bug。父元素边界外的都不可以显示。慎用！
+    第四种：使用伪元素的方式，：after、：before
+            使用方法：
+            .clearfix：after{
+                              content:"", 这是伪元素添加的内容
+                               display:block,
+                               clear:both, 清除浮动
+                               height：0，
+                               visibility:hidden 不显示出来
+                             }
+            .clearfix{
+               *zoom:1;为了兼容IE6、7
+            }
+            使用方法：
+            .clearfix:before, .clearfix:after {
+                content: "";
+                display: table;
+            }
+            .clearfix:after {
+                clear: both;
+            }
+            .clearfix {
+                *zoom: 1; /*IE/7/6*/
+            }
+
+    区别伪类与伪元素：
+        伪类：:link :visited  :hover :active  love hate 注意：我们在使用时一定要遵守lvha原则
+                :focus :first-child :last-child等等
+        伪元素：:after  :before  :first-line :first-letter
+
+        伪类：用于给某一个元素修改css属性，可以看成是给该元素添加了一个类选择器样式
+        伪元素：用于给某个元素添加内容及css属性样式，可以看成是在该元素内又加了一个元素

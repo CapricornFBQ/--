@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" manifest="cache.manifest">
+<!--manifest缓存配置文件-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>哈哈哈哈哈哈哈111</p>
+    <p class="zhuangtai">嘿嘿1</p>
+    <img src="toy.png" alt="">
+    <script src="script.js"></script>
+
+    <!--# version 1.0.2 版本号 不更改的话网站内容还是之前版本下载下来的文件  不会刷新 如果刷新需要更改版本号-->
+    <!--CACHE:是需要下载的文件-->
+</body>
+<script>
+    var zhuangtai = document.querySelector('.zhuangtai');
+//    navigator存储了网页设备信息
+if (navigator.onLine){
+    zhuangtai.innerText = '在线';
+}else {
+    zhuangtai.innerText = '离线';
+}
+</script>
+</html>

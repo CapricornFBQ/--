@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM操作</title>
+</head>
+<body>
+	<p id="a1">这是P标签1</p>
+	<p class="p1">这是P标签2</p>
+	<p class="p2">这是P标签3</p>
+	<p>这是P标签4</p>	
+	<a href="#" class="p1">这是a标签</a>
+
+	
+	<script>
+
+		// 获得单个的对象 query 查询 selector选择器
+		// #id值 .class类名 标签名
+		// document.querySelector("#a1").style = "color:red";
+		 // document.querySelector("p").style = "color:skyblue";
+		 // document.querySelector(".p1").style = "color:orange";
+		 
+		
+
+
+		// 获得多个对象（数组）
+		var array = document.querySelectorAll("p.p1");
+		// console.log(array);
+		for(var i=0;i<array.length;i++){
+			array[i].style = "color:red";
+		}	
+
+
+
+
+	</script>
+
+</body>
+</html>

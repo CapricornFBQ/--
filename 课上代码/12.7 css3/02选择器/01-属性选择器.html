@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器 - 属性</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: '微软雅黑';
+            background-color: #F7F7F7;
+        }
+
+        .wrapper {
+            width: 1024px;
+            margin: 0 auto;
+        }
+
+        .wrapper > section {
+            min-height: 300px;
+            margin-bottom: 30px;
+            box-shadow: 1px 1px 4px #DDD;
+            background-color: #FFF;
+        }
+
+        .wrapper > header {
+            text-align: center;
+            line-height: 1;
+            padding: 20px;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .wrapper section > header {
+            line-height: 1;
+            padding: 10px;
+            font-size: 22px;
+            color: #333;
+            background-color: #EEE;
+        }
+
+        .wrapper .wrap-box {
+            padding: 20px;
+        }
+        /*以上为骨架结构*/
+
+        /* 所有具有"lang"属性的 span 元素的字体加粗 */
+        .attr1 span[lang] {font-weight:bold;}
+
+        /* 所有具有"lang"属性,且值为"pt"的 span 元素的字体为绿色 */
+        .attr2 span[lang="pt"] {color:green;}
+
+        /* 所有具有"lang"属性,且值为"en-us"的 span 元素的字体为蓝色*/
+        .attr3 span[lang~="en-us"] {color: blue;}
+
+        /* 任意具有"lang"属性,且值带有"zh"字符串的 span 元素的字体为红色, 它会匹配简体中文(zh-CN)以及繁体中文(zh-TW) */
+        .attr4 span[lang|="zh"] {color: red;}
+
+        /* 所有内部链接背景都为金色 */
+        .attr5 a[href^="#"] {background-color:gold}
+
+        /* 所有以".cn"结尾的链接字体都为红色 */
+        .attr6 a[href$=".cn"] {color: red;}
+
+        /* 所有带有"example"的链接背景都为灰色 */
+        .attr7 a[href*="example"] {background-color: #CCCCCC;}
+
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>CSS3-属性选择器</header>
+    <section>
+        <header>简介</header>
+        <div class="wrap-box">
+            <!--属性选择器通过已经存在的属性名或属性值匹配元素-->
+        </div>
+    </section>
+    <section class="attr1">
+        <header>E[attr]</header>
+        <!--选择具有attr属性的E元素-->
+        <div class="wrap-box">
+
+            <!--所有具有"lang"属性的 span 元素的字体加粗-->
+            <div class="hello-example">
+                <a href="http://example.com">English:</a>
+                <span lang="en-us en-gb en-au en-nz">Hello World!</span>
+            </div>
+            <div class="hello-example">
+                <a href="#portuguese">Portuguese:</a>
+                <span lang="pt">Olá Mundo!</span>
+            </div>
+            <div class="hello-example">
+                <a href="http://example.cn">Chinese (Simplified):</a>
+                <span lang="zh-CN">世界您好！</span>
+            </div>
+            <div class="hello-example">
+                <a href="http://example.cn">Chinese (Traditional):</a>
+                <span lang="zh-TW">世界您好！</span>
+            </div>
+
+        </div>
+    </section>
+    <section class="attr2">
+        <header>E[attr=value]</header>
+        <!--表示带有以 attr 命名的，且值为"value"的属性的元素-->
+        <div class="wrap-box">
+
+            <!--所有具有"lang"属性,且值为"pt"的 span 元素的字体为绿色-->
+            <div class="hello-example">
+                <a href="http://example.com">English:</a>
+                <span lang="en-us en-gb en-au en-nz">Hello World!</span>
+            </div>
+            <div class="hello-example">
+                <a href="#portuguese">Portuguese:</a>
+                <span lang="pt">Olá Mundo!</span>
+            </div>
+            <div class="hello-example">
+                <a href="http://example.cn">Chinese (Simplified):</a>
+                <span lang="zh-CN">世界您好！</span>
+            </div>
+            <div class="hello-example">
+                <a href="http://example.cn">Chinese (Traditional):</a>
+                <span lang="zh-TW">世界您好！</span>
+            </div>
+
+        </div>
+    </section>
+    <section class="attr3">
+        <header>E[attr~=value]</header>
+        <!--表示带有以 attr 命名的属性的元素，并且该属性是一个以空格作为分隔的值列表，其中至少一个值为"value"-->
+        <div class="wrap-box">
+            <!--所有具有"lang"属性,且值为"en-us"的 span 元素的字体为蓝色-->
+            <div class="hello-example">
+                <a href="http://example.com">English:</a>
+                <span lang="en-us en-gb en-au en-nz">Hello World!</span>
+            </div>
+            <div class="hello-example">
+                <a href="#portuguese">Portuguese:</a>
+                <span lang="pt">Olá Mundo!</span>
+            </div>
+            <div class="hello-example">
+                <a href="http://example.cn">Chinese (Simplified):</a>
+                <span lang="zh-CN">世界您好！</span>
+            </div>
+            <div class="hello-example">
+                <a href="http://example.cn">Chinese (Traditional):</a>
+                <span lang="zh-TW">世界您好！</span>
+            </div>
+
+        </div>
+    </section>
+    <section class="attr4">
+        <header>E[attr|=value]</header>
+        <!--表示带有以 attr 命名的属性的元素，并且该属性是一个以空格作为分隔的值列表，其中至少一个值为"value"或者至少一个值以"value-"-->
+        <div class="wrap-box">
+            <!--任意具有"lang"属性,且值带有"zh"字符串的 span 元素的字体为红色, 它会匹配简体中文(zh-CN)以及繁体中文(zh-TW)-->
+            <div class="hello-example">
+                <a href="http://example.com">English:</a>
+                <span lang="en-us en-gb en-au en-nz">Hello World!</span>
+            </div>
+            <div class="hello-example">
+                <a href="#portuguese">Portuguese:</a>
+                <span lang="pt">Olá Mundo!</span>
+            </div>
+            <div class="hello-example">
+                <a href="http://example.cn">Chinese (Simplified):</a>
+                <span lang="zh-CN">世界您好！</span>
+            </div>
+            <div class="hello-example">
+                <a href="http://example.cn">Chinese (Traditional):</a>
+                <span lang="zh-TW">世界您好！</span>
+            </div>
+
+        </div>
+    </section>
+    <section class="attr5">
+        <header>E[attr^=val]</header>
+
+        <!--表示带有以 attr 命名的，且值是以"value"开头的属性的元素-->
+        <div class="wrap-box">
+            <!--所有内部链接背景都为金色-->
+            <div class="hello-example">
+                <a href="http://example.com">English:</a>
+                <span lang="en-us en-gb en-au en-nz">Hello World!</span>
+            </div>
+            <div class="hello-example">
+                <a href="#portuguese">Portuguese:</a>
+                <span lang="pt">Olá Mundo!</span>
+            </div>
+            <div class="hello-example">
+                <a href="http://example.cn">Chinese (Simplified):</a>
+                <span lang="zh-CN">世界您好！</span>
+            </div>
+            <div class="hello-example">
+                <a href="http://example.cn">Chinese (Traditional):</a>
+                <span lang="zh-TW">世界您好！</span>
+            </div>
+
+        </div>
+    </section>
+    <section class="attr6">
+        <header>E[attr$=val]</header>
+        <!--表示带有以 attr 命名的，且值是以"value"结尾的属性的元素-->
+        <div class="wrap-box">
+            <!--所有以".cn"结尾的链接字体都为红色-->
+            <div class="hello-example">
+                <a href="http://example.com">English:</a>
+                <span lang="en-us en-gb en-au en-nz">Hello World!</span>
+            </div>
+            <div class="hello-example">
+                <a href="#portuguese">Portuguese:</a>
+                <span lang="pt">Olá Mundo!</span>
+            </div>
+            <div class="hello-example">
+                <a href="http://example.cn">Chinese (Simplified):</a>
+                <span lang="zh-CN">世界您好！</span>
+            </div>
+            <div class="hello-example">
+                <a href="http://example.cn">Chinese (Traditional):</a>
+                <span lang="zh-TW">世界您好！</span>
+            </div>
+
+        </div>
+    </section>
+    <section class="attr7">
+        <header>E[attr*=value]</header>
+        <!--表示带有以 attr 命名的，且值包含有"value"的属性的元素-->
+        <div class="wrap-box">
+
+            <!--所有带有"example"的链接背景都为灰色-->
+            <div class="hello-example">
+                <a href="http://example.com">English:</a>
+                <span lang="en-us en-gb en-au en-nz">Hello World!</span>
+            </div>
+            <div class="hello-example">
+                <a href="#portuguese">Portuguese:</a>
+                <span lang="pt">Olá Mundo!</span>
+            </div>
+            <div class="hello-example">
+                <a href="http://example.cn">Chinese (Simplified):</a>
+                <span lang="zh-CN">世界您好！</span>
+            </div>
+            <div class="hello-example">
+                <a href="http://example.cn">Chinese (Traditional):</a>
+                <span lang="zh-TW">世界您好！</span>
+            </div>
+
+        </div>
+    </section>
+</div>
+</body>
+</html>

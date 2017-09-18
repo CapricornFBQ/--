@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--zh-TW 繁体中文 标示网站文档语言-->
+<!--zh-CN 简体中文-->
+<head>
+    <meta charset="UTF-8">
+    <!--utf-8是万国语 包含所有的语言-->
+    <title>Title</title>
+    <style>
+        progress {
+            height: 200px
+        }
+        .my-progress {
+            height: 30px;
+            width: 300px;
+            /*如果要改默认样式 要先取消默认样式 */
+            -webkit-appearance: none;
+        }
+        /*选中背景元素*/
+        /*兼容火狐浏览器*/
+        .my-progress::-moz-progress-bar {
+            background-color: yellow;
+        }
+        /*拿到progress的-webkit-progress-bar位置*/
+        .my-progress::-webkit-progress-bar {
+            background-color: yellow;
+        }
+        .my-progress::-webkit-progress-value {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!--datalist需要数据的载体 input list属性指向数据源-->
+    <input type="text" list="input_list">
+    <!--datalist是数据源-->
+    <datalist id="input_list">
+        <option value="老王"></option>
+        <option value="老魏"></option>
+    </datalist>
+
+    <progress><div>
+
+    </div></progress>
+    <progress class="my-progress" value="40" max="100"></progress>
+    <!--optimum 这是最大值 value是当前值-->
+    <meter max="100" low="40" high="90" optimum="100" value="90"></meter>
+
+    <h3>解决css3各个浏览器兼容问题需要添加私有前缀</h3>
+    <ul>
+        <li>Firefox: -moz-
+        </li>
+        <li>Safari: -webkit-
+        </li>
+        <li>Opera: -o-
+        </li>
+        <li>IE: -ms-</li>
+    </ul>
+    网页 css js 存储在网络服务器上 http服务器
+    www.baidu.com 先去dns服务器查百度的IP地址 找到ip之后直接去 访问这个ip 这时候这些文件传到你电脑上 就能显示网页
+    sublimeserver 就是在本机中开启了一个http服务器 局域网都能访问sublime打开的项目
+
+
+</body>
+</html>

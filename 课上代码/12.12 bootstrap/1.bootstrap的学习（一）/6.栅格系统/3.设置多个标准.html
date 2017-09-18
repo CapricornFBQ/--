@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>布局容器-版心</title>
+
+    <!-- Bootstrap -->
+    <link href="lib/dist/css/bootstrap.css" rel="stylesheet">
+
+    <style>
+        .container{
+          background: red;
+          height: 2000px;
+         
+
+        }
+        div{
+          border: 1px solid black;
+        }
+
+    </style>
+
+  </head>
+  <body>
+      <!-- 知识点：想说明一件事,如果想让页面尽可能的多响应式排版，尽量将四个标准都写上
+      
+      难点：xs  sm  md  lg
+      第一种情况  只设置md,那么 lg也会和md现象一致。而xs,md没有响应式样子
+      第二种情况  只设sm，那么  sm\md\lg一个样子，xs没有样子
+      第三种情况  设置sm\md  那么 sm一个样子， md和lg一个样子，xs没有有样子
+      第四种情况  只设置xs ，那么xs\sm\md\lg全设置上了  （所以说xs特殊）
+
+       -->
+      <div class="continer">
+                
+          <!-- <div class="row">
+            <div class="col-sm-12 col-md-8">.col-sm-12 .col-md-8</div>
+            <div class="col-sm-6 col-md-4">.col-sm-6 .col-md-4</div>
+          </div>
+
+       
+          <div class="row">
+            <div class="col-sm-6 col-md-4">.col-sm-6 .col-md-4</div>
+            <div class="col-sm-6 col-md-4">.col-sm-6 .col-md-4</div>
+            <div class="col-sm-6 col-md-4">.col-sm-6 .col-md-4</div>
+          </div>
+
+          
+          <div class="row">
+            <div class="col-sm-6">.col-sm-6</div>
+            <div class="col-sm-6">.col-sm-6</div>
+          </div> -->
+
+          <div class="row">
+            <div class="col-xs-6">.col-sm-12 .col-md-8</div>
+            <div class="col-xs-6">.col-sm-6 .col-md-4</div>
+          </div>
+
+       
+          <div class="row">
+            <div class="col-xs-4">.col-sm-6 .col-md-4</div>
+            <div class="col-xs-4">.col-sm-6 .col-md-4</div>
+            <div class="col-xs-4">.col-sm-6 .col-md-4</div>
+          </div>
+
+         
+      </div>
+
+  
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数返回值和参数</title>
+</head>
+<body>
+	
+	<script>
+		
+		// 做一个两个数之和的加法，两个数是外部提供的“输入框”，返回结果弹出来
+
+        
+		var number1 =parseInt(prompt("请输入第一个数"));
+		var number2 =parseInt(prompt("请输入第二个数"));
+
+		function add(x,y) {
+			
+			var he = x+y;
+			//如果函数增加返回值，那么他的结果就能够抛出函数，被外界接收到
+			//返回值
+			return he;
+
+		}
+
+		var sum = add(number1,number2);
+		alert(sum);
+
+
+
+	</script>
+
+		<!-- function 关键字 max 函数名 （参数，参数）参数列表{
+	
+
+			//代码内容
+
+			return 返回值的关键字   返回值；
+
+
+
+		}
+
+
+
+
+		 -->
+
+
+</body>
+</html>

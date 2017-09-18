@@ -1,0 +1,57 @@
+DOM
+  get 获得
+  set 设置
+
+1.获得标签
+单个获得
+   documnent.getElementByID()
+
+
+   document.querySelector()	
+	
+
+
+数组获得
+   document.getElementsByClassName
+   document.getElementsByTagName
+   document.queryselectorAll
+
+
+2.替换标签
+  //1.找到被替换的对象
+
+  //2.闯将元素
+  document.createElement();
+
+  //3.找到父标签
+  parentNode.replace(替换的元素，被替换的元素);
+
+
+3.创建标签
+  document.createElement()
+
+
+4.删除/增加
+
+ 父标签.removeChild()
+ 父标签.appendChild()
+ 父标签.insertBefore(插入的元素，在哪个元素之前);
+
+
+
+函数的结构
+
+function 函数名（）{
+
+
+
+	return 返回值；
+}
+
+
+函数名（）；
+
+
+
+
+ 

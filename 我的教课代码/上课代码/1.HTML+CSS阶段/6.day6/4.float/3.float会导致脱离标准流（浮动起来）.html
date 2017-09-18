@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>float</title>
+	<style>
+	*{
+		margin: 0px;
+		padding:0px;
+	}
+	.box1{
+		width: 100px;
+		height: 100px;
+		background: red;
+		float:right;
+	
+	}
+	.box2{
+		width: 100px;
+		height: 100px;
+		background: green;
+	}
+
+	</style>
+</head>
+<body>
+
+
+	<!-- box1脱离标准流float起来，就不在受标准流的约束。那么标准流就把box2当做第一个元素了 -->
+
+	<div class="box1"></div>
+	<div class="box2"></div>
+
+	
+</body>
+</html>

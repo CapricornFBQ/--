@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--controls显示因音乐播放器的控制台 autoplay自动播放-->
+<audio id="player" src="olddriver.mp3" controls autoplay></audio>
+<button id="play">播放</button>
+<button id="pause">暂停</button>
+<script>
+    var player = document.getElementById('player');
+    document.getElementById('play').addEventListener('click',function () {
+        player.play();
+    })
+    document.getElementById('pause').addEventListener('click',function () {
+        player.pause();
+    })
+</script>
+</body>
+</html>

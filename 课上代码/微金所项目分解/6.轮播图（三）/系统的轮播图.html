@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>金融项目制作</title>
+
+    <link href="lib/dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- 别忘了导入 -->
+    <link rel="stylesheet" href="fonts/style.css">
+
+ 
+  </head>
+    <body>   
+       <!-- 现象：
+      Img设置轮播图片效果不好。我们用background来代替他
+      （1）去掉img。给div设置高度
+      （2）更改id和某点
+
+    
+
+    总结：
+    只使用小图或者大图来做轮播效果，无论是Img方法还是back方法都不能完全满足我们的需求
+    需求：640px以上的时候，不等比例缩小，height保持不变
+    小于640的时候要实现宽高等比例缩小
+
+    那么：我们想到了什么？
+    640px 一下 使用img加载小图
+    640px 以上 使用大图加载background-image
+
+     -->
+
+
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <!-- <div class="item active" style="background-image:url(img/slide_01_2000x410.jpg)">
+            </div>
+
+            <div class="item" style="background-image:url(img/slide_02_2000x410.jpg)">
+        
+            </div>
+
+            <div class="item" style="background-image:url(img/slide_03_2000x410.jpg)">
+            </div> -->
+
+
+            <!-- 让JS来决定用哪张图用什么方式显示 -->
+            <div class="item active" data-image-lg ="img/slide_01_2000x410.jpg" data-image-xs ="img/slide_01_640x340.jpg">  
+            </div>
+            <div class="item" data-image-lg ="img/slide_02_2000x410.jpg" data-image-xs ="img/slide_02_640x340.jpg">  
+            </div>
+            <div class="item" data-image-lg ="img/slide_03_2000x410.jpg" data-image-xs ="img/slide_03_640x340.jpg">  
+            </div>
+
+          
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+
+
+    <script src="lib/jquery/jquery-3.1.1.min.js" type="text/javascript" ></script>
+    <script src="lib/dist/js/bootstrap.min.js" type="text/javascript" ></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

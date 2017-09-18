@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQ的选择器</title>
+	<script src ="../jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<ul>
+		<li class = "green">1我们的兄弟很多</li>
+		<li id = "one">2我们的兄弟很多</li>
+		<li>3我们的兄弟很多</li>
+		<li>4我们的兄弟很多</li>
+		<li>5我们的兄弟很多</li>
+
+		<p>akja djahj ajhdja</p>
+	</ul>
+		<a href="" class="green">我要变成绿色</a>
+		<a href="">我不要</a>
+
+	<script>
+		// 选择器
+
+
+		$(document).ready(function () {
+			//1.标签选择器
+			// var arrays =document.querySelectorAll("li");
+			// for (var i =0;i<arrays.length;i++) {
+			// 	arrays[i].style.background ="red";
+			// }
+			//(1)$获得是一个JQ数组 （2）JQ里数组的方法自动隐式迭代（3）JQ数组和JS数组不一样
+			$("li").css("background","green");
+			var arrays = $("li");
+
+			//2.class选择器
+			// $(".green").css("background","green");
+
+			//3.id选择器
+			// $("#one").css("background","orange");
+
+			//4.*通配符
+			// $("*").css("font-size","30px");
+
+			// 5.交集选择器
+			// $("a.green").css("background","green");
+
+			//6.我想让 a标签和p标签变颜色
+			// $("a").css("background","yellow");
+			// $("p").css("background","yellow");
+
+			$("a,p").css("background","yellow");
+
+
+
+
+		});
+
+
+
+	</script>
+</body>
+</html>

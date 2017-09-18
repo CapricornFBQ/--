@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>后代选择器（二）</title>
+	
+	<style>
+		.red{
+			background-color: red;
+		}
+		
+		div .red{
+			font-size: 40px;
+		}
+
+
+	</style>
+
+</head>
+<body>
+	
+	<!-- 给div里的 类为red的标签设置字体大小为40px -->
+	<div>
+
+		<p class="red">我是P标签，变红</p>
+		<p>啊啊啊啊啊</p>
+
+	</div>
+
+	<p class="red">我是P标签，变红</p>
+
+</body>
+</html>

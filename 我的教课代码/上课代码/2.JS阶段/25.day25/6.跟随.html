@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>跟随</title>
+	<style>
+		img {
+			position: absolute;
+			transition:all 0.5s;
+		}
+	</style>
+</head>
+<body>
+	<img src="H5.png" alt="">
+	<script>
+		//跟随特效-----------------
+		document.onclick = function(event) {
+			var img = document.getElementsByTagName("img")[0];
+			img.style.left = event.clientX - img.offsetWidth/2 + "px";
+			img.style.top = event.clientY - img.offsetHeight/2 + "px";
+			// img.offsetWidth;
+			// img.offsetHeight;
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>节点的关系</title>
+</head>
+<body>
+	
+	<!-- 
+		节点的关系：
+		parentNode 父节点
+		childNode 子节点
+		firstChild 第一个子节点
+		lastChild 最后一个子节点
+		nextSibling  下一个兄弟节点
+		previousSibling 前一个兄弟节点
+
+
+
+	 -->
+
+	<!-- 目标一代码 -->
+
+	<div style="width:100px;height: 100px;background: red;"></div>
+	<br>
+	<div style="width:100px;height: 100px;background: red;"></div>
+	<br>
+	<div style="width:100px;height: 100px;background: red;"></div>
+
+	
+
+	<script>
+		
+	//目标一：获得所有的div标签，并且删除它们
+	//1.获得要删除的目标---数组
+	var divArray = document.querySelectorAll("div");
+	//2.获得数组中每一个div标签,让每一个div的父标签来删除它们自己
+	for(var i =0; i< divArray.length;i++){
+
+		divArray[i].parentNode.removeChild(divArray[i]);
+
+	
+
+	}
+
+
+
+
+	</script>
+
+
+
+
+
+</body>
+</html>

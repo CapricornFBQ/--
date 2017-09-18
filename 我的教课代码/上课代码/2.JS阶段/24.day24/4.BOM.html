@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BOM</title>
+</head>
+<body onresize = "reSize()">
+	<p></p>
+	<script>
+		//BOM----->Browser Object Model 浏览器对象模型 
+		//目前还没有正式的标准，但是所有的浏览器都实现了的相同的方法和属性，这些被称为BOM的方法和属性
+		//确定浏览器窗口的尺寸
+		//从9~新版的IE浏览器、Chrome、FireFox、Opera、Safari
+		//window.innerHeight------------窗口内部的高度（包括滚动条）
+		//window.innerWidth-------------窗口内部的宽度（包括滚动条）
+		//对于Internet Explorer 8.7.6.5
+		//document.documentElement.clientHeight
+		//document.documentElement.clientWidth
+		//或者
+		//document.body.clientHeight
+		//document.body.clientWidth
+		var width = window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;
+		var height = window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;
+		var p = document.getElementsByTagName("p")[0];
+		p.innerHTML = "浏览器的宽度为：" + width +"<br> 浏览器的高度为：" + height;
+		function reSize() {
+			var width = window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;
+			var height = window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;
+			var p = document.getElementsByTagName("p")[0];
+			p.innerHTML = "浏览器的宽度为：" + width +"<br> 浏览器的高度为：" + height;
+		}
+	</script>
+</body>
+</html>

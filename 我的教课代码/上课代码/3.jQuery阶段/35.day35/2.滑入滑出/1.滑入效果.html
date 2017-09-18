@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滑入</title>
+</head>
+<style>
+	div{
+		width: 100%;
+		height: 200px;
+		margin-top:15px;
+		background: orange; 
+	}
+</style>
+<body>
+	<div style="height: 40px;"></div>
+	<div></div>
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+	$(function() {
+		// $("div").first().click(function() {
+		// 	// $(this).next().slideUp();   //向上滑出   
+		// 	$(this).next().slideUp(2000);
+		// })
+		
+		// $("div").first().dblclick(function() {
+		// 	// $(this).next().slideDown();   //向下滑入   
+		// 	$(this).next().slideDown(2000);
+		// })
+
+
+		$("div").first().click(function() {
+			$(this).next().slideToggle();  //滑入滑出  切换
+		})
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea name="" id="text" cols="30" rows="10">
+
+</textarea>
+<input id="set" type="button" value="set">
+<input id="get" type="button" value="get">
+<p class="zhuangtai"></p>
+<!--localstorage 生命周期从网页加载完成直到清除缓存-->
+<!--sessionStorage 生命周期从网页加载完成直到网页关闭-->
+
+<!--manifest将离线需要的文件全部下载下来-->
+<!--webstorage 将离线需要的数据保存在浏览器内-->
+<script>
+var text = document.querySelector('#text');
+var set = document.querySelector('#set');
+var get = document.querySelector('#get');
+//set.addEventListener('click',function () {
+//判断当前浏览器是否支持localstorage
+//    if (window.localStorage) {
+//        localStorage['key1'] = text.value;
+//    }else {
+//        console.log('不支持');
+//    }
+//});
+//get.addEventListener('click',function () {
+//    if (window.localStorage) {
+//         text.value = localStorage['key1'];
+//    }else {
+//        console.log('不支持');
+//    }
+//});
+set.addEventListener('click',function () {
+    if (window.sessionStorage) {
+        sessionStorage['key1'] = text.value;
+    }else {
+        console.log('不支持');
+    }
+});
+get.addEventListener('click',function () {
+    if (window.sessionStorage) {
+        text.value = sessionStorage['key1'];
+    }else {
+        console.log('不支持');
+    }
+});
+
+
+var zhuangtai = document.querySelector('.zhuangtai');
+//    navigator存储了网页设备信息
+if (navigator.onLine){
+    zhuangtai.innerText = '在线';
+}else {
+    zhuangtai.innerText = '离线';
+}
+</script>
+</body>
+</html>

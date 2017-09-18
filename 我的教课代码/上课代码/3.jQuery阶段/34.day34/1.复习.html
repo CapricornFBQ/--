@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery 复习</title>
+</head>
+<body>
+<input type="text">
+	<!-- 
+		引入方式：1.本地引入下载的jQ文件  2.引入网上的静态资源
+		使用： 保证网页内容加载完毕，再执行我们的脚本代码 1.$(document).readey(function(){}) 2.$(function(){})
+		选择器：$(选择器) id class 标签 交集 并集 通配符 伪类 属性 表单
+
+		事件：  JS： onclick  ondblclick  onmouseover   onmouseleave  onkeydown  onkeyup   onsubmit  onchange  onfocus  onblur  onmousemove
+				jQ： click()  dblclick()  mouseenter()  mouseleave()  keydown()  keyup()   submit()  change()  focus()  blur()  mousemove()
+ 				css: hover
+				jQ:  hover(鼠标进入代码块，鼠标移出代码块)
+
+		内容：JS:   innerHTML(html)    innerText(文本)
+			  jQ:   html()  		   text()
+
+		属性： JS： setAttribute(属性名，属性值) 设置属性  getAttribute(属性名) 获取属性值
+			   jQ:  attr() 可以有两个参数为设置； 一个参数为获取
+
+		表单value：  JS:   value
+					 jQ:   val()
+
+		Dom添加：JS:  createElement() createTextNode() appendChild()
+				 jQ:  $(全写的标签).text()             append() 在后面添加   prepend()在前面添加  after() 在该对象的后面添加 before() 在该对象的前面添加
+
+		DOM删除：JS:  父标签.removeChild(子标签)
+				 jQ： $(该元素).remove();          .empty()
+		
+		CSS:     JS:  .style                                                          .className
+				 jQ:  .css(属性名，属性值)    .css({属性名：属性值，属性名，属性值})  addClass(class名)  removeClass(class名)  toggleClass(class名)
+
+		JS和jQ的转换： JS====>jQ  $(JS对象)
+					   jQ====>JS  1. 小标[]  2.get() 参数默认从0开始
+					   eq()取出jQ数组中的某个jQ对象
+		
+
+		标签关系： 直系父标签：parent()    所有的父标签 parents() 直到html        parentsUntil() 取到对应的标签
+				   直系子标签：children()  find(某个标签) 在所有的子元素里面查找  find("*") 返回所有的子标签
+				   所有兄弟标签：siblings()  下一个兄弟标签：next()  nextAll()  nextUntil()  
+				   							 上一个兄弟标签：prev()  prevAll()  prevUntil()  
+		
+
+	
+
+	 -->
+	 <div class="one" style="width: 100px;height: 100px;background: #ccc">
+		<div style="width: 50px;height: 50px;background: #444"></div>
+	 </div>
+	 <script src="../jquery-3.2.1.js"></script>
+	 <script>
+	 	$(function() {
+	 		// $(".one").mouseover(function() {
+	 		// 	console.log(1);
+	 		// })
+	 		$(".one").mouseenter(function() {
+	 			console.log(1);
+	 		})
+	 	})
+	 </script>
+</body>
+</html>

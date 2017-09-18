@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery显示和隐藏</title>
+	<style>
+		p{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<p>这是一段文字</p>
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			$("button").first().click(function(){
+				//让p标签显示出来====show方法
+				$("p").show();
+			})
+
+			$("button").last().click(function() {
+				//让p标签隐藏起来=====hide方法
+				$("p").hide();
+			})
+
+
+
+
+		})
+	</script>
+</body>
+</html>

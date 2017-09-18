@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>广告栏</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 762px;
+			height: 280px;
+			border: 1px solid #ccc;
+			margin: 100px auto;
+		}
+		ul li {
+			list-style: none;
+			margin-left: 10px;
+			margin-top: 10px;
+			float: left; 
+			position: relative;
+			overflow: hidden;
+		}
+		ul li p {
+			height: 20px;
+			width: 178px;
+			font-size: 14px;
+			line-height: 20px;
+			background: #ccc;
+			color: white;
+			position: absolute;
+			bottom: -20px;
+		}
+		ul li p span{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			background: url(images/bg.png) no-repeat;
+			background-position: 0px 0px; 
+			margin-left: 10px;
+			margin-top:0px;
+			float:left;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="images/01.jpg" alt=""><p><span></span>百度一下，你就知道</p></li>
+		<li><img src="images/02.jpg" alt=""><p><span></span>百度一下，你就知道</p></li>
+		<li><img src="images/03.jpg" alt=""><p><span></span>百度一下，你就知道</p></li>
+		<li><img src="images/04.jpg" alt=""><p><span></span>百度一下，你就知道</p></li>
+		<li><img src="images/05.jpg" alt=""><p><span></span>百度一下，你就知道</p></li>
+		<li><img src="images/06.jpg" alt=""><p><span></span>百度一下，你就知道</p></li>
+		<li><img src="images/07.jpg" alt=""><p><span></span>百度一下，你就知道</p></li>
+		<li><img src="images/08.jpg" alt=""><p><span></span>百度一下，你就知道</p></li>
+	</ul>
+	<!-- 
+		width:(178+10)*4 + 10 = 762
+		height:(125+10)*2 + 10 = 280
+	 -->
+	<script src="../../jquery-3.2.1.js"></script>
+	<script>
+	$(function() {
+
+		$("span").each(function(index) {
+			var position = "0px" + " -" + index*25 +"px";
+			console.log(position)
+			$(this).css("background-position",position)  //设置背景图的位置
+		})
+
+		// $("li").mouseenter(function() {
+		// 	$(this).children().eq(1).stop().animate({
+		// 		"bottom":"0px"
+		// 	},300);
+		// })
+		// $("li").mouseleave(function() {
+		// 		$(this).children().eq(1).stop().animate({
+		// 		"bottom":"-20px"
+		// 	},300);
+		// })
+		$("li").hover(function() {
+			$(this).children().eq(1).stop().animate({
+				"bottom":"0px"
+			},300);
+		},function() {
+				$(this).children().eq(1).stop().animate({
+				"bottom":"-20px"
+			},300);
+		})
+	})
+	</script>
+</body>
+</html>

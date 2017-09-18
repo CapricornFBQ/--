@@ -1,0 +1,38 @@
+//引导模式---------关键字“when”
+//
+@media:mobile;
+//when来判断是否等于
+.mixin(@a)when(@media = mobile) {
+	border-width: @a;
+	border-color: red;
+	border-style: solid;
+}
+
+.mixin(@a)when(@media = desktop) {
+	border-width:@a;
+	border-color:blue;
+	border-style: solid;
+}
+
+div {
+	.mixin(50px);
+}
+//用when来判断是否成立
+.max(@a, @b) when(@a > @b) {
+	width: @a;
+	height: @b;
+}
+
+.max(@a, @b) when (@a <@b) {
+	width: @b;
+	height: @a;
+}
+
+
+div {
+	.max(500px, 250px);
+}
+
+div {
+	.max(20px, 1000px);
+}

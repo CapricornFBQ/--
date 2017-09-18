@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Date</title>
+</head>
+<body>
+	<script>
+		//Date对象
+		var timer = new Date();   //用new实例化一个Date对象
+		console.log(timer);
+		console.log(Date.prototype);// prototype 指向Date原型对象
+		//1.获取年份  .getFullYear()
+		//2.获取月份  .getMonth()  默认从0开始的
+		console.log(timer.getMonth())
+		//3.获取日期  .getDate()
+		//4.获取星期  .getDay()
+		//5.获取小时  .getHours()
+		//6.获取分钟  .getMinutes()
+		//7.获取秒钟  .getSeconds()
+		
+		//今天星期几用“星期X”的格式显示出来
+		var array = new Array(7);
+		array[0]="星期日";
+		array[1]="星期一";
+		array[2]="星期二";
+		array[3]="星期三";
+		array[4]="星期四";
+		array[5]="星期五";
+		array[6]="星期六";
+		document.write("今天是"+array[timer.getDay()]);
+	</script>
+	
+</body>
+</html>

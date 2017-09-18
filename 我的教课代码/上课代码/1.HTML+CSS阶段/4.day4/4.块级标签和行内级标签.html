@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>块级标签和行内级标签、行级块级标签</title>
+	<style>
+		*{
+			margin: 0px;
+			padding:0px;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<!-- 我们可以所有的标签分为三种：block(块级)\inline(行级)\inline-block（行级块级） -->
+	<!-- blcok标签：div\p\h\br\hr
+		 居中的方式：margin: 0px auto
+		 特点：霸占一行，不能与其他任何元素并列。
+		       能够设置宽和高。这是一个完整的盒子模型
+		       如果不设置宽度，那么宽度将默认变为父亲的100%。
+	 -->
+	 <!-- inline标签：a\span -->
+	 <!-- 居中方式:给他们的父标签设置text-align:center
+		 特点：不独占一行，能够和其他元素并列
+		 	   不能设置宽和高,content的大小由里面内容决定.上下marign是不好使的.（！！！！！！不完整的盒子模型）
+
+	  -->
+	
+	<!-- inline-block: img\input -->
+	<!-- 居中方式：给他们的父标签设置text-align:center
+		特点：不独占一行
+		      能够设置宽高。是完整的盒子
+	 -->
+
+	 <!-- 标签之间的转换 -->
+	 <!-- inline 变成 inline-block -->
+	 <!-- <a href="#" style="background-color: red;display: inline-block;height: 100px;margin-top:20px;">我是不完整的盒子</a>adajdh -->
+
+	 <!-- block 变成 inline-block -->
+	 <div style="height: 100px;width: 100px;background-color: red;display: inline-block;"></div>
+	 <div style="height: 100px;width: 100px;background-color: red;display: inline-block;"></div>
+	
+		
+
+
+</body>
+</html>

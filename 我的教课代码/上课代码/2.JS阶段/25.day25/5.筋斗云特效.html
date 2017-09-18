@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>筋斗云特效</title>
+	<style>
+		.container {
+			padding: 0;
+			width: 600px;
+			height: 60px;
+			margin: 50px;
+			border:1px solid black;
+			position: relative;
+		}
+		.cloud {
+			width:100px;
+			height: 60px;
+			background: skyblue;
+			position: absolute; 
+			transition: all 0.5s;
+		}
+		ul {
+			margin: 0;
+			padding: 0;
+			top:0;
+			left: 0;
+			width: 600px;
+			height: 60px;
+			position: relative;		
+		}
+		ul>li {
+			cursor: pointer;;
+			text-align: center;
+			line-height: 60px;
+			margin: 0;
+			padding: 0;
+			width:100px;
+			height: 60px;
+			float: left;
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="cloud">
+		</div>
+		<ul>
+			<li>穿越火线</li>
+			<li>魔兽世界</li>
+			<li>英雄联盟</li>
+			<li>守望先锋</li>
+			<li>地下城与勇士</li>
+			<li>炉石传说</li>
+		</ul>
+	</div>
+	<script>
+		//取出控制元素和被控制的元素
+		var lis = document.getElementsByTagName("li");
+		var cloud = document.getElementsByClassName("cloud");
+		//循环绑定事件
+		var current = 0;
+		for (var i=0; i<lis.length; i++) {
+			lis[i].onmouseover = function() {
+				//把鼠标事件的offsetLeft赋值给cloud的样式
+				cloud[0].style.left = this.offsetLeft + "px";
+			}
+			lis[i].onmouseleave = function() {
+				cloud[0].style.left = current + "px";
+			}
+			lis[i].onclick = function() {
+				current = this.offsetLeft;
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<style>
+		.container{
+			width: 900px;
+			height: 400px;
+			background: black;
+			margin: 0 auto;
+			position: relative;
+		}
+		.container .allSpan{
+			position: absolute;
+			left: 50%;
+			bottom: 0px;
+			margin-left: -27px;
+			padding-bottom: 10px;
+		}
+		.container .allSpan>span{
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			background: #ccc;
+			border-radius: 50%;
+		}
+		
+		.item{
+			width: 900px;
+			height: 400px;
+			/*设置隐藏*/
+			display: none;
+		}
+		/*设置被选中的背景*/
+		.item.selected{
+			display: block;
+		}
+		/*设置被选中的标签*/
+		.container .allSpan>span.selected{
+			background: black;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- 增加四个界面 -->
+		<div class="item selected" style="background-color: red"></div>
+		<div class="item" style="background-color: blue"></div>
+		<div class="item" style="background-color: green"></div>
+		<div class="item" style="background-color: yellow"></div>
+		
+
+
+		<div class="allSpan">			
+			<span class="selected" data-num = "0"></span>
+			<span data-num = "1"></span>
+			<span data-num = "2"></span>
+			<span data-num = "3"></span>
+		</div>
+
+	</div>
+
+	<script>
+		// (1)找到所有span，设置onclick。当某一个span被点击的时候，设置它selected
+		var spans = document.querySelectorAll("span");
+		for(var i = 0; i < spans.length; i++){
+
+			spans[i].onclick = function(){
+				 //让所有的兄弟都没有selected
+				 for(var j = 0;j< spans.length;j++){
+				 	spans[j].className = "";
+				 } 
+
+				this.className = "selected";
+
+
+				// (1)获得span标签的data-num ,然后根据值来操控div数组里对应的元素
+				// 获得的是被点击的span标签的data-num 是个字符串
+				var index = this.getAttribute("data-num");
+				var number = Number(index);
+
+				// （3）让所有的都隐藏
+				
+				var arrays = document.querySelectorAll(".item");
+				for(var k=0;k<arrays.length;k++){
+					arrays[k].className = "item";
+
+				}
+
+				// (2)让被选中的显示，但是发现还要把其他的隐藏
+				arrays[number].className = "item selected";
+
+
+
+
+
+
+			}
+
+		}
+
+
+
+
+
+	</script>
+</body>
+</html>

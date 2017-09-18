@@ -1,0 +1,113 @@
+
+*{
+  margin: 0px;
+  padding: 0px;
+
+}
+
+/*设置body的背景颜色*/
+body{
+    background:url("../images/pattern.gif");
+   
+}
+/*清除浮动的方法*/
+.clear{
+   clear: both;
+}
+
+/*头部区域*/
+
+#top{
+  background-color: red;
+  height: 3px;
+}
+
+
+/*导航区域*/
+/*首先这些标题居中，可能是inlin-block*/
+
+#nav{
+  /*background: white;*/
+  height: 100px;
+  text-align: center;
+
+}
+#nav a{
+  display: inline-block;
+  color: white;
+  font-size: 30px;
+  width: 200px;
+  text-decoration: none;
+  padding: 10px 0px;
+  margin: 0px 10px;
+
+}
+
+#nav a.select{
+  background: white;
+  color: black;
+}
+
+#nav a:hover{
+  background: white;
+  color: black;
+}
+
+
+/*-------------项目制作-------------------*/
+
+
+#list{
+    /*height: 400px;*/
+    background-color: white;
+    text-align: center;
+}
+
+
+
+/*要像剧中显示也是inline-block*/
+#list .item{
+    /*图片的大小*/
+    width: 382px;
+    display: inline-block;
+    text-align: left;
+    margin: 20px;
+
+
+}
+
+#list .item p{
+    
+    color: #999;
+    margin: 5px 0px;
+}
+
+#list .item a{
+    display: inline-block;
+    background-color: #C0392B;
+    width: 130px;
+    height: 43px;
+    line-height: 43px;
+    text-align: center;
+    color: white;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+
+
+/*响应式设计*/
+@media screen and (max-width: 1120px){
+    #nav a{
+        font-size: 25px;
+        width: 150px;
+    }
+}
+
+
+@media screen and (max-width: 910px){
+    #nav a{
+        font-size: 22px;
+        width: 100px;
+    }
+}

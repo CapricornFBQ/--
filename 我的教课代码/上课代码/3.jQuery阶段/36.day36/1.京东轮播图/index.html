@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<style>
+		.container {
+			width: 670px;
+			height: 240px;
+			margin: 50px auto;
+			position: relative;
+			overflow: hidden;
+		}
+		.container .control_container{
+			position: absolute;
+			right: 5px;
+			bottom: 5px;
+		}
+		.container .control_container .control {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			margin-left:10px;
+			border-radius:50%;
+			background: #ccc;3
+			line-height: 20px;
+			text-align:center;
+			cursor: pointer;
+		}
+		.container .control_container .control.selected{
+			background: pink;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="picture">
+			<div><img src="images/1.jpg" alt=""></div>
+			<div><img src="images/2.jpg" alt=""></div>
+			<div><img src="images/3.jpg" alt=""></div>
+			<div><img src="images/4.jpg" alt=""></div>
+			<div><img src="images/5.jpg" alt=""></div>
+			<div><img src="images/6.jpg" alt=""></div>
+		</div>
+		<div class="control_container">
+			<div class="control selected">1</div>
+			<div class="control">2</div>
+			<div class="control">3</div>
+			<div class="control">4</div>
+			<div class="control">5</div>
+			<div class="control">6</div>
+		</div>
+	</div>
+
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+	$(function() {
+		$(".control").mouseenter(function() {
+			$(this).addClass("selected").siblings().removeClass("selected");
+			$(".picture").children().eq($(this).index()).fadeIn("slow").siblings().fadeOut("slow");
+		})
+	})
+	</script>
+</body>
+</html>

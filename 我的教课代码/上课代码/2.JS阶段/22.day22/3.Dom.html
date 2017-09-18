@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+	<style>
+		p {
+			color: red;
+		}
+		li {
+			background: #ccc;
+		}
+	</style>
+</head>
+<body>
+
+	<div>
+		<ul>
+			<li id="one">1</li>    <!--allLi[1]-->
+			<li class="two">2</li>
+			<li class="two">3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	
+	</div>
+
+
+
+
+
+	<script>
+	//	DOM====>Document Object Model(文档对象模型)
+	//DOM模型的结构：文档节点--->元素节点、文本节点、属性节点、注释节点
+	//选中id元素
+	document.getElementById("one");
+	//选中class元素
+	document.getElementsByClassName("two");
+	//选中标签
+	document.getElementsByTagName("li");
+
+	//节点关系
+	
+	// parentNode 父节点
+	// childNodes  子节点
+	// firstChild  第一个子节点
+	// lastChild  最后一个子节点
+	// nextSibling 下一个兄弟节点
+	// previousSibling 前一个兄弟节点
+
+	// children 子节点
+
+
+//innerHTML  节点内容
+// document.write(document.getElementById("one").innerHTML);
+
+// document.write(document.getElementById("one").parentNode.innerHTML);
+ // document.write (
+	// 	`<li id="one">1</li>
+	// 	<li class="two">2</li>
+	// 	<li class="two">3</li>
+	// 	<li>4</li>
+	// 	<li>5</li>`
+	// )
+
+//父元素.appendChild(子元素)   添加子节点------------------------------------------------
+
+//document.createElement(标签名)  创建一个元素节点
+
+// var p = document.createElement("p");  
+
+// document.getElementById("one").appendChild(p);
+// document.getElementById("one").appendChild(document.createElement("p"));
+
+//document.createTextNode(文本内容)  创建文本节点
+
+// var p = document.createElement("p");
+// var text = document.createTextNode("巧银");
+// p.appendChild(text);
+
+// document.getElementsByTagName('li')[4].appendChild(p);
+
+ 
+//removeChild(需要删除的元素)  删除节点-------------------------------------------------
+// var elements = document.getElementById("one").parentNode.children;
+// console.log(elements);
+// var firstLi = document.getElementById("one");
+// var parentUl = document.getElementById("one").parentNode;
+// parentUl.removeChild(firstLi);
+
+// var allLi = document.getElementsByTagName("li");
+// console.log(allLi[1]);
+// parentUl.removeChild(allLi[1]);
+// var length = allLi.length;  //
+
+
+// for (var i=0; i<length; i++) {     //i=0   i<5----> i=1    i<4-----> i=2    i<3; --->i=3    i<2
+// 	console.log(allLi[0]);
+// 	parentUl.removeChild(allLi[0]);
+// 	// parentUl.removeChild(allLi[1]);
+// }
+
+//replaceChild 替换子节点------------------------------------------------------------------
+
+// var thridLi = document.getElementsByClassName("two")[1].firstChild;// 获取待被替换的文本节点
+// console.log(thridLi);
+// var newText = document.createTextNode("three");		//创建新的文本节点
+// thridLi.parentNode.replaceChild(newText, thridLi);    // 父节点.replaceChild(新内容节点，等待被替换的内容节点)
+
+// var a = document.getElementsByTagName("ul")[0].children;
+// console.log(a)
+// var a = document.getElementsByTagName("ul")[0].childNodes;
+// console.log(a)
+
+
+
+	</script>
+</body>
+</html>

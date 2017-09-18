@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- 支持中文编码的字符集有两种：
+	第一种 utf-8编码-国际编码
+	第二种 gbk编码 一般使用gb2312编码 -->
+	<title>轮播图</title>
+	<style type="text/css">
+		#big{
+			position: relative; /*设置相对定位，目的是为pageCon做参照物*/
+			width: 730px;
+			height: 454px;
+			margin: 100px auto;
+		}
+		#img{
+			width: 730px;
+			height: 454px;
+		}
+		#img ul li{
+			list-style: none;
+			display: none; /*隐藏该元素 不仅仅是看不到，而且不占用页面空间*/
+		}
+		#img ul li.show{
+			display: block;
+		}
+		#pageCon{
+			position: absolute; /*设置绝对定位 参照物应该是big*/
+			left: 0;
+			bottom: 5px;
+			width: 100%;
+			text-align: center; /*设置行内块元素li居中*/
+		}
+		#pageCon ul li{
+			list-style: none;
+			/*float: left;*/
+			display: inline-block; /*设置为行内快元素，那么li将不再独占行，会在一行内显示 注意：display属性默认为block*/
+
+			width: 18px;
+			height: 18px;
+			border-radius:50%; /*设置圆角半径*/
+			background: black;
+			color: white;
+			text-align: center; /*设置字体居中显示 align:对齐方式*/
+			cursor: pointer; /*设置鼠标放在该元素上的样式*/
+		}
+		#pageCon ul li.select{
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="big">
+		<div id="img">
+			<ul>
+				<li class="show"><img src="images/1.jpg"></li>
+				<li><img src="images/2.jpg"></li>
+				<li><img src="images/3.jpg"></li>
+				<li><img src="images/4.jpg"></li>
+				<li><img src="images/5.jpg"></li>
+				<li><img src="images/6.jpg"></li>
+			</ul>
+		</div>
+		<div id="pageCon">
+			<ul>
+				<li class="select">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script><!--  引用jquery -->
+	<!-- 使用js做行为动画、图片轮流播放 -->
+	<script type="text/javascript">
+		// 拿到li 声明变量 current获取所有li对象
+		var currentli = $("#img ul li");
+		// 定义个li下标变量 初始值为0
+		var index = 0; 
+
+		$("#pageCon ul li").hover(function(){
+			//首先获取当前鼠标触摸在了那个li上
+			index = $(this).index();
+			play();
+		});
+
+		function play(){
+			/*
+				eq:拿到下标为index的li标签
+				addClass:给当前的元素添加样式
+				siblings：获取到其他所有的li标签
+				removeClass：移除类样式
+				*/
+			$("#pageCon ul li").eq(index).addClass("select").siblings().removeClass("select");
+			currentli.eq(index).addClass("show").siblings().removeClass("show");
+		}
+
+		function autoPlay(){
+			// setInterval：时间定时器
+			// 第一个参数：执行的操作
+			// 第二个参数：设置的时间间隔
+			setInterval(function(){
+				index++; /*等价于：index = index+1*/
+
+				//添加一个判断如果index大于5 则重新赋值为0
+				if (index>5) {index=0;}				
+				play();
+			},2000);
+		}
+	
+		autoPlay();
+	</script>
+</body>
+</html>

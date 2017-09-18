@@ -1,0 +1,16 @@
+JS基本事件
+
+单击 on clickk
+双击 on dbl click
+鼠标进入 on mouse over
+鼠标离开 on mouse leave
+鼠标移动 on mouse move
+
+表单事件
+
+输入  on input
+获得焦点 on focus
+失去 焦点 on blur
+搜索 on search
+文本被选择  on select
+文本改变 on change 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<script src ="../jquery-3.1.1.min.js"></script>
+	<style>
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+	</style>
+
+
+</head>
+<body>
+	<div style="width: 200px;height: 200px;background:red;position: relative;"></div>
+	
+	<script>
+		$(document).ready(function () {
+			
+		
+
+			$("div").click(function(){
+				$(this).animate({
+					//相当于 x = x+200 ，x指的原来left偏移量
+					left:"+=200px",
+
+
+				},2000);
+
+			});
+
+			
+
+		});
+
+
+	</script>
+
+
+
+</body>
+</html>

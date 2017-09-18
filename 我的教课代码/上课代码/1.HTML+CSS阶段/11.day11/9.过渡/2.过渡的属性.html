@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过渡的用法</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+
+			/*过渡的两个最重要的属性：过渡属性 过渡时间 */
+			/*property 属性*/
+			/*transition-property: width;*/
+			/*duration 持续*/
+			/*transition-duration: 5s;*/
+
+			/*复合型写法*/
+			/*transition: width 5s;*/
+			/*transition: width 5s,background 2s;*/
+			transition: all 5s; 
+
+			/*----------------------------------------------*/
+			/*过渡的其他属性  线性和延迟*/
+			/*线性匀速，默认为非匀速*/
+			transition-timing-function: linear;
+			/*延迟时间*/
+			transition-delay: 2s;
+
+
+			
+		}
+		div:hover{
+			
+			width: 800px;
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<!-- 什么时候会用到过渡，一般是属性变化使用过渡,让属性有缓慢的过渡 -->
+
+	<div></div>
+	
+</body>
+</html>

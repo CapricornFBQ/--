@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>后台数据获得</title>
+</head>
+<body>
+	<input type="text"><button>按钮</button>
+	<hr>
+	<div class="sk">
+		<h3>当前天气状况</h3>
+		<p>当前温度：<span class="sk-temp"></span></p>
+		<p>当前风向：<span class="sk-wind_direction"></span></p>
+		<p>当前风力：<span class="sk-wind_strength"></span></p>
+		<p>当前湿度：<span class="sk-humidity"></span></p>
+		<p>更新时间：<span class="sk-time"></span></p>
+
+		<hr>
+	</div>
+
+
+
+	<script >
+		//(1)
+		document.querySelector("button").onclick=function () {
+			//(2)
+			var city = document.querySelector("input").value;
+
+            //(3)
+			var xhr = new XMLHttpRequest();
+			//(6)
+			xhr.onreadystatechange = function(){
+				if (xhr.readyState == 4) {
+
+					// alert(xhr.responseText);
+					var obj = eval("("+xhr.responseText+")");
+					//----------------给sk模块添加数据------------
+					//1.获得obj里面的sk数据
+					var sk = obj.result.sk;
+					//2.给相应标签设置内容
+					// document.querySelector(".sk-temp").innerHTML = sk['temp'];
+					// document.querySelector(".sk-wind_direction").innerHTML = sk['wind_direction'];
+					// document.querySelector(".sk-wind_strength").innerHTML = sk['wind_strength'];
+					// document.querySelector(".sk-humidity").innerHTML = sk['humidity'];
+					// document.querySelector(".sk-time").innerHTML = sk['time'];
+
+					for(var key in sk){
+						// console.log(key);//-----TEMP     .SK-TEMP
+						var string = ".sk-"+key;
+						document.querySelector(string).innerHTML = sk[key];
+					}
+
+
+
+				}
+			}
+
+			//(4)
+			xhr.open("post","tianqi.php",true);
+			xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+			//(5)
+			var string = "city="+city;
+			xhr.send(string);
+
+
+		}
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>float带来的父亲标签高度坍塌现象</title>
+	<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			/*头部部分*/
+			.header{
+				background: red;
+			}
+			.header .navbar{
+				width: 100px;
+				height: 100px;
+				background: orange;
+				float: right;
+			}
+
+			/*content*/
+			.content{
+				height: 500px;
+				background: green;
+			}
+
+			/*float的元素不占父标签里的高度，所以无法撑开父标签，会导致有些情况出现父标签高度坍塌现象*/
+	</style>
+
+
+</head>
+<body>
+	
+	<div class="header">
+		<!--导航栏  -->
+		<div class="navbar">
+             <a href="#">首页</a>
+             <a href="#">关于我们</a>
+             <a href="#">联系我们</a>
+
+		</div>
+	</div>
+	<div class="content"></div>
+
+
+</body>
+</html>

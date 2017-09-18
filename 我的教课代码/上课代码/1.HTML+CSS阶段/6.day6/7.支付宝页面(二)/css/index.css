@@ -1,0 +1,67 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+/*1.top部分的代码*/
+.top{
+	height: 700px;
+	background: url(../img/bg1.jpg);
+	background-position: center -100px;
+	
+	/*用于关闭.section1泄露的marign-top*/
+	overflow: hidden;
+
+}
+
+.top .section1{
+	height: 30px;
+	/*background: red;*/
+	margin-top:20px;
+}
+
+.section1 .navbar{
+	height: 30px;
+	/*width: 900px;*/
+	width: 80%;
+	/*background: orange;*/
+	margin: 0px auto;
+	
+}
+/*logo标志*/
+.navbar .logo{
+	background: url(https://img.alicdn.com/tps/TB17ghmIFXXXXXAXFXXXXXXXXXX.png);
+	background-size: 100% 100%;
+	width: 70px;
+	height: 25px;
+	float: left;
+
+
+}
+/*登录a链接*/
+.navbar .login{
+	float: right;
+	height: 30px;
+	color: #bfbfbf;
+	font-size: 12px;
+}
+
+.navbar .login a{
+	color: #fff;
+	margin-left: 5px;
+	text-decoration: none;
+}
+
+/*2.section2代码部分*/
+.top .section2{
+	height: 200px;
+	/*background: red;*/
+	margin-top:100px;
+}
+.section2 .bigLogo{
+	width: 700px;
+	height: 200px;
+	background: url(../img/bigLogo.png);
+	background-repeat: no-repeat;
+	margin: 0px auto;
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>京东小目录</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+
+		}
+		ul{
+			width: 200px;
+			height: 210px;
+			margin-right: 50px;
+			position: absolute;
+			top:200px;
+			right: 200px; 
+			cursor: pointer;
+			transition:all 1s;
+		}
+		li {
+			width: 49px;
+			height: 69px;
+			list-style: none;
+			float: left;
+			border-top:1px solid #e7e7e7;
+			border-left:1px solid #e7e7e7;
+			text-align: center;
+			font-size: 12px;
+			line-height: 120px;
+			cursor: pointer;
+		}
+		.ul_title_top {
+			transition: all 0.5s;
+		}
+		.ul_title_top_selected {
+			margin-top:-70px;
+		}
+		.ul_title {
+			width: 49px;
+			height: 25px;
+			font-size:14px;
+			text-align: center;
+			line-height: 25px;
+			float: left;
+			border-top:2px solid transparent;
+			border-left:1px solid #e7e7e7;
+			cursor: pointer;
+		}
+		.ul_title:hover {
+			border-top:2px solid red;
+		}
+		.ul_title_container {
+			overflow: hidden;
+			border-top:1px solid #e7e7e7;
+			width: 200px;
+			height: 0px;
+			margin-right: 50px;
+			position: absolute;
+			bottom: 0;
+			cursor: pointer;
+			transition-delay: 0.3s; 
+			transition:all 0.5s;
+			background: white;
+		}
+		.times {
+			float: right;
+			font-size:22px;
+			margin-top:-5px; 
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="ul_title_top">话费</li>
+		<li class="ul_title_top">机票</li>
+		<li class="ul_title_top">酒店</li>
+		<li class="ul_title_top">游戏</li>
+		<li class="ul_content">企业购</li>
+		<li class="ul_content">加油卡</li>
+		<li class="ul_content">嗲影票</li>
+		<li class="ul_content">火车票</li>
+		<li class="ul_content">众筹</li>
+		<li class="ul_content">理财</li>
+		<li class="ul_content">礼品卡</li>
+		<li class="ul_content">白条</li>
+		<div class="ul_title_container">
+			<div class="ul_title">话费</div>
+			<div class="ul_title">机票</div>
+			<div class="ul_title">酒店</div>
+			<div class="ul_title">游戏</div>
+			<div class="times">&times;</div>
+		</div>
+	</ul>
+
+	<script>
+		var liList = document.querySelectorAll(".ul_title_top");
+		var divContainer = document.querySelector(".ul_title_container");
+		var times = document.querySelector(".times")
+		eventHappen();
+		function eventHappen() {
+			for(var i=0; i<liList.length; i++) {    //事件绑定
+				liList[i].onmouseover= function() {
+					divContainer.style.height = "210px";
+				}
+				liList[i].onmouseleave= function() {
+					eventHappen()     //重新进行绑定
+				}			
+			}
+		}
+		times.onclick=function() {
+			divContainer.style.height = "0px";
+			liList[3].onmouseover=null;     //事件解绑
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		// var ul_container = document.querySelector("ul");
+		// var div_container = document.querySelector(".ul_title_container");
+		// var times = document.querySelector(".times");
+		// var ul_title_top = document.querySelectorAll(".ul_title_top");
+		// var ul_content = document.querySelectorAll(".ul_content");
+
+		// for(var i=0; i<ul_title_top.length; i++) {
+		// 	ul_title_top[i].onmouseover = function() {
+		// 		timer = setInterval(function() {
+		// 			ul_container.style.display="none";
+		// 			div_container.style = "display:block;margin-top:0px";
+		// 		},500)
+		// 	}
+		// 	ul_title_top[i].onmouseleave = function() {
+		// 		clearInterval(timer);
+		// 	}
+		// 	ul_title_top[i].onclick = function() {
+		// 		clearInterval(timer);
+		// 	}
+		// }
+		// times.onclick = function() {
+		// 	clearInterval(timer);
+		// 	div_container.style = "display:none;margin-top:210px";
+		// 	ul_container.style.display = "block";
+		// }
+	</script>
+</body>
+</html>

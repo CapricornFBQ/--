@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪元素与伪类的区别</title>
+    <style> 
+        /*p:first-child{*/
+            /*color: red;*/
+        /*}*/
+        /*p:first-letter{*/
+            /*color: red;*/
+        /*}*/
+        li{
+            list-style: none;
+        }
+
+
+        /*ul>li:first-child*/
+        /*{*/
+            /*color: red;*/
+            /*font-size: 20px;*/
+        /*}*/
+        .first{
+            color:red;
+            font-size: 20px;
+        }
+
+        /*p::first-letter{*/
+            /*color: red;*/
+        /*}*/
+        p span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <span>f</span>irst
+    </p>
+    <ul class="one">
+        <li class="first">这是第1个</li>
+        <li>这是第2个</li>
+        <li>这是第3个</li>
+        <li>这是第4个</li>
+        <li>这是第5个</li>
+    </ul>
+</body>
+</html>

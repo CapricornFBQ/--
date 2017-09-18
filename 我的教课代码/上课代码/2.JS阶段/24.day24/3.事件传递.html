@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件传递</title>
+	<style>
+		#big {
+			width: 500px;
+			height: 500px;
+			background: #ddd;
+		}
+		#small {
+			width: 300px;
+			height: 300px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="big">
+		<div id="small">xiao</div>
+		<a href="http://www.baidu.com">百度一下</a>
+	</div>
+	<script>
+		var bigDiv = document.getElementById("big");
+		var smallDiv = document.getElementById("small");
+		bigDiv.addEventListener("click", function() {
+			console.log("这是大的div")
+		});
+		// smallDiv.addEventListener("click", function() {
+		// 	console.log("这是小的div")
+		// })
+		//事件传递---------从目标元素向父元素传递(默认)
+		smallDiv.addEventListener("click", function(e) {
+			console.log("这是小的div")
+			//阻止事件传递----
+			e.stopPropagation();
+		})
+
+		var a = document.getElementsByTagName("a")[0];
+		// a.addEventListener("click", function(e) {
+		// 	//阻止默认事件
+		// 	// e.preventDefault();
+		// 	e.returnValue = false;  //阻止默认事件，和事件绑定中的return false 对应的
+		// 	//阻止输出“这是大div”
+		// 	e.stopPropagation();
+		// })
+		// a.onclick = function() {
+		// 	return false;  //阻止默认事件，只对事件绑定有作用，无法作用于事件监听
+		// }
+		a.onclick = null; //通过赋值为null，来覆盖前面的事件（无法阻止a标签的默认事件）
+		// IE浏览器8及以前的版本存在兼容性问题------------------
+	</script>
+</body>
+</html>

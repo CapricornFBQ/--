@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加元素</title>
+	<style>
+		.green{
+			background-color: green;
+		}	
+
+		.red{
+			background-color: red;
+		}
+
+	</style>
+	<script src ="../jquery-3.1.1.min.js"></script>
+
+
+
+</head>
+<body>
+	<div style="width: 300px;height: 200px;border: 1px solid black">
+		
+	</div>
+	<script>
+
+	$(document).ready(function () {
+			//(1)addClass（）
+			// $("div").addClass("green");
+
+			//(2)删除一个类 removeClass()
+			// $("div").removeClass("green").addClass("red");
+
+			//(3)设置样式 style 
+			//X.style.background
+			// $("div").css("background-color","skyblue");
+
+
+			//(4)切换类操作 toggleClass()
+			//当点击div，判断现在有无green这个类，如果有则删除，如果没有则添加
+			$("div").click(function(){
+
+
+				$(this).toggleClass("green");
+
+
+			});
+
+
+			//（5）
+			//$("p").css("background-color","yellow");
+			//$("p").css({"background-color":"yellow","font-size":"200%"});
+			
+
+	});
+
+
+		
+
+
+	</script>
+
+
+</body>
+</html>

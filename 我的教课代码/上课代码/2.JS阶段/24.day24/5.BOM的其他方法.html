@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BOM的其他方法</title>
+</head>
+<body>
+	<script>
+		//关闭当前窗口
+		// document.onclick = function() {window.close();}
+		//打开新窗口
+		// document.onclick = function() {
+		// 	window.open();
+		// }
+		// 控制打开窗口的内容
+		// document.onclick = function() {
+		// 	window.open("http://www.baidu.com")
+		// }
+		// 控制打开新窗口的位置
+		// document.onclick = function() {
+		// 	window.open("http://www.baidu.com", "_self")
+		// }
+		// document.onclick = function() {
+		// 	window.open("http://www.baidu.com", "_blank")
+		// }
+		// 控制窗口的大小
+		document.onclick = function() {
+			window.resizeTo("900px", "900px") //width  height
+		}
+	</script>
+</body>
+</html>

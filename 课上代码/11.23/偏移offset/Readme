@@ -1,0 +1,26 @@
+获取元素的宽高：
+    select.offsetWidth
+    select.offsetHeight
+    使用以上两种方式可以直接获取元素的宽高，返回结果为数字类型。
+    以上方式获取的为盒子宽高：width+padding+border
+    select.style.width
+    使用style也可以获取宽高，但是它只能获取行内样式的宽高。返回结果为字符串类型
+
+获取左侧偏移距离
+    select.offsetLeft:返回距离上级盒子（带有定位的且是最靠近该元素的）左侧的大小
+                        如果说找不到带有定位的上级盒子那么将以body作为左侧计算
+    select.offsetTop类似于offsetLeft
+    offsetLeft、offsetTop都是只读属性：只能得到数据但是不能设置数据。
+    如果想要设置偏移那么使用style.left属性，需要注意设置偏移属性的元素必须设置position属性为：absolute、fixed
+
+offsetParent：返回该对像的上级盒子（带有定位的） 不一定仅仅是上一辈
+
+ console.log(event.clientX);
+ console.log(event.clientY);
+ 以可视区域为参照计算距离边框的大小
+ console.log(event.screenX);
+ console.log(event.screenY);
+ 以屏幕作为参照计算距离边框的大小
+ console.log(event.pageX);
+ console.log(event.pageY);
+ 以当前文档（document）作为参照计算距离边框的大小

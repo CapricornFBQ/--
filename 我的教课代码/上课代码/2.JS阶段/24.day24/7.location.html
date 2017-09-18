@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>location</title>
+</head>
+<body>
+	<script>
+		//当前的url地址
+		document.write(window.location + "<br>");
+		//url 包含 ---------  http://www.baidu.com
+		//.protocol   返回当前页面的使用的web协议（http或 https）
+		//.hostname   返回当前url的域名
+		//.pathname   返回当前url的路径和文件名
+		//.port       返回当前web主机的端口（80）
+		document.write("pathname:" + window.location.pathname + "<br>");
+		document.write("protocol:" + window.location.protocol + "<br>");
+		document.write("hostname:" + window.location.hostname + "<br>");
+		document.write("port:" + window.location.port + "<br>");
+	</script>
+</body>
+</html>

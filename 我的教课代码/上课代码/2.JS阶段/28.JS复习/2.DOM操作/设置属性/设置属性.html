@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性的设置</title>
+	<style>
+
+		.hidden{
+			display: none;
+		}
+
+
+	</style>
+
+</head>
+<body>
+	
+	<div data-number = "1"></div>
+	
+
+	<script>
+		// 样式设置style
+		// 内容的设置 innerText innerHTML
+		// 属性和自定义属性 setAttribute  id/class/
+		// 设置类 className
+	
+		var div =document.querySelector("div");
+		div.style = "width:100px;height:100px;background-color:red;";
+
+		div.innerHTML = "<a href='http://www.baidu.com'>百度一下</a>";
+
+		// 获得自定义属性 setAttribut  getAttribute
+		console.log(div.getAttribute("data-number"));
+		div.setAttribute("data-number",10);
+		console.log(div.getAttribute("data-number"));
+
+
+		// 添加类
+		div.className = "hidden";
+
+	</script>
+
+</body>
+</html>

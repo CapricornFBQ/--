@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象</title>
+</head>
+<body>
+	<script>
+		//面相对象   对象两个基本特性：1，属性 2，方法  
+		//对象一次创建，后期进行调用。   函数是一种对象，Function对象
+		
+		
+		//1.直接创建一个对象，以map字典的形式
+		// var object1 = {"name":"shengda","sex":"man","age":18,"study":function(){alert("hhh")}}
+
+		// //查询属性：
+		// console.log(object1["age"]);
+		// console.log(object1.age);  //对象.键  取出对应的属性值
+		// //调用方法：
+		// object1.study();
+
+
+		//2.用new创建一个对象
+		var object1 = new Object();
+		object1.name = "shengda";
+		object1.eat = function() {
+			alert("吃饭")
+		}
+		//查询属性
+		console.log(object1.name);
+		//调用方法
+		object1.eat();
+	</script>
+</body>
+</html>

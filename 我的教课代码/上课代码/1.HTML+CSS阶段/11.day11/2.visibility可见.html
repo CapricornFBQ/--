@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>visivility可见</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+
+		.box1{
+			width: 100px;
+			height: 100px;
+			background: red;
+			/*可见的 visibility:hidden不可见的 会隐藏标签，但是隐藏以后会保留原来的位置*/
+			visibility: hidden;
+		}
+		a:hover .box1{
+			/*应用于对visibility的显示*/
+			visibility: visible;
+		}
+
+	</style>
+
+</head>
+<body>
+	
+	
+	<a href="#">ssss
+		<div class="box1"></div>
+	</a>
+	
+
+</body>
+</html>

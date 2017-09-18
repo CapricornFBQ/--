@@ -1,0 +1,44 @@
+
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+/*背景部分*/
+body{
+	background: url(../images/bg.jpg);
+}
+
+.cd1{
+	width: 250px;
+	height: 250px;
+	background: url(../images/changpian1.png);
+	background-size: 100% 100%;
+
+	/*body定位*/
+	position: absolute;
+	top:160px;
+	left: -100px;
+}
+@keyframes animation1{
+	from{
+		transform: scale(0.75) translate(500px,500px);
+	}
+	to{
+
+		transform: scale(0.75) translate(0px,0px);
+	}
+}
+
+.xinfeng{
+	width: 573px;
+	height: 408px;
+	background: url(../images/xin.png);
+	transform: scale(0.75) translate(500px,500px);
+	position: absolute;
+	bottom: 0px;
+	right: -116px;
+	animation:animation1 3s;
+	animation-fill-mode: forwards;
+}

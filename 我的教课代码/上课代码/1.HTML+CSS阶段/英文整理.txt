@@ -1,0 +1,57 @@
+src:（1）用于连接img文件资源的
+alt:(1)img图片加载失败提示内容
+title:标题(1)作为标签，可以给网页设置标题  （2）img,a作为属性，可以设置鼠标悬停提示
+meta:meta表示“元”,也叫“元配置”(1)给网页设置文字库（charset）、关键字（keywords）、描述(description)
+width:宽
+height:高
+target:(1)设置a标签打开新的网页的时候，打开的方式。target = "_self"在本网页打开  target="_blank"在空白网页中打开
+href：（1）a标签链接网站的属性
+table:表格 （1）是表格标签,里面放tr标签（table row行），tr里面放td(列)\th（标题列）
+style:风格/样式（1）给标签设置样式
+text-aling:文本对齐方式
+background:背景（1）设置图片背景或颜色背景
+background-color: 背景颜色 （1）只能设置背景颜色
+color：颜色（1）设置文字的颜色
+font-size:字体大小
+font-weight:字体粗细 
+
+form:表单（1）所有的需要提交的表单元素都要放到form标签里
+
+Username:用户名/账号
+PassWord:密码
+
+placeholder：占位符文本（1）在input输入框未输入之前，进行提示
+value:数值（1）作为Input元素当前的数值
+file:文件（1）可以作为input的种类之一
+date:日期（1）可以作为input的种类之一
+data:数据
+dota:魔兽世界的一张地图，类似于lol
+radio:单选框（1）可以作为input的种类之一
+checkbox:多选框 （1）可以作为input的种类之一
+checked:check选择 checked选中
+
+select：选择（1）选择下拉菜单
+option:选项（1）下拉菜单中的一项
+
+
+submit：提交
+reset:重置
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

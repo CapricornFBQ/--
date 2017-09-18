@@ -1,0 +1,307 @@
+/*专门写关于网页的样式*/
+/*header部分的代码*/
+.header{
+	height: 58px;
+	background-color: #191d3a;
+}
+.header .logo{
+	float: left;
+}
+
+.header .bw-container{
+	height: 58px;
+	line-height: 58px;
+}
+
+.header .bw-container > a{
+
+	float: left;
+	border-left: 1px solid #252947;
+    border-right: 1px solid #252947;
+    /*background: orange;*/
+    width: 85px;
+    height: 58px;
+    text-align: center;
+    text-decoration: none;
+    font-family:  "Microsoft YaHei", "simhei";
+    font-size: 14px;
+    font-weight: 200;
+    color: #818496	
+}
+.header .bw-container > a:hover{
+	color: #e2e4ed;
+
+}
+.header .bw-container > a.selected{
+    background-color: #252947;
+    color: #e2e4ed;
+}
+.header .bw-container > a.join{
+	width: 100px;
+	margin-top:12px;
+	margin-left: 10px;
+	border: 0px;
+}
+
+.language-cut{
+	float: right;
+	font-size: 14px;
+    font-weight: 200;
+    font-family:  "Microsoft YaHei", "simhei";
+
+}
+.language-cut a{
+	text-decoration: none;
+	color: #818496;
+
+}
+.language-cut a:hover{
+	color: #38b774;
+}
+
+.language-cut a.selected{
+	color: #38b774;
+}
+
+/*section1 轮播大图部分*/
+.section1{
+	height: 460px;
+	/*background: orange;*/
+	background: url(../img/banner.jpg);
+	background-position: center top;
+}
+
+/*.section2*/
+.section2{
+	/*height: 250px;*/
+	/*background: red;*/
+}
+
+.section2 .bw-container{
+	/*height: 150px;*/
+	/*background: orange;*/
+	padding-top: 50px;
+}
+.section2 .bw-container a{
+	/*display: inline-block;*/
+	float: left;
+	text-align: center;
+	text-decoration: none;
+	
+	color: #444866;
+
+}
+.section2 .bw-container a img{
+	width: 218px;
+	height: 130px;
+}
+.section2 .bw-container  h5{
+	font-size: 14px;
+	/*color: #444866;*/
+}
+.section2 .bw-container a  p{
+	color:  #38b774;
+	font-size: 12px;
+}
+.section2 .bw-container > a:hover{
+	background: #38b774;
+}
+
+.section2 .bw-container > a:hover p{
+	color: #fff;
+}
+.section2 .bw-container > a:hover h5{
+	color: #fff;
+}
+
+.section2 .bw-container a+a{
+	margin-left: 42px;
+}
+
+
+/*section3 分割线*/
+
+.section3{
+	
+	/*background: red;*/
+
+}
+
+.section3 .bw-container{
+	height: 30px;
+	/*background: orange;*/
+	border-top: 1px solid #dbe1e7;
+	position: relative;
+}
+/*这是用来放置小圆点的盒子*/
+.section3 .bw-container .box{
+	width: 60px;
+	height: 16px;
+	/*background: blue;*/
+	/*实现绝对于父标签定位，并且位置为居中*/
+	position: absolute;
+	left: 50%;
+	margin-left: -15px;
+	top:-8px;
+	text-align: center;
+	background: #fff;
+}
+.section3 .bw-container .box a{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background: #38b774;
+	position: relative;
+	top: -3px;
+	border-radius: 50%;
+}
+
+
+/*section4 */
+/*因为我们给版心设置了高度，所以不受子标签浮动的影响。
+可以看成第一种清楚浮动的方法，父标签加高法*/
+.section4{
+	/*height: 700px;*/
+	background:url(../img/indexmainbg.jpg);
+	padding-bottom: 60px;
+}
+.section4 .bw-container{
+	/*height: 310px;*/
+	/*background: orange;*/
+
+}
+.section4 .bw-container .new{
+	width: 500px;
+	height: 310px;
+	background: url(../img/bynewsbg.jpg);
+	float: left;
+	position: relative;
+}
+
+.section4 .bw-container .new dl {
+	width: 460px;
+	position: absolute;
+	top: 110px;
+	left: 20px;
+
+}
+.section4 .bw-container .new dl dd{
+	border-bottom: 1px solid #dbe1e7;
+	height: 49px;
+	line-height: 50px;
+
+}
+.section4 .bw-container .new dl dd a{
+	font-size:14px;
+	color: #444866;
+	text-decoration: none;
+
+}
+.section4 .bw-container .new dl dd span{
+	font-size: 10px;
+	color: #afbecf;
+	float: right;
+
+}
+
+
+
+
+
+
+
+
+
+.section4 .bw-container .recruit{
+	width: 500px;
+	height: 310px;
+	/*background: skyblue;*/
+	background: url(../img/byhrbg3.jpg);
+	float: right;
+	position: relative;
+	
+}
+.section4 .bw-container .recruit h1{
+	color: #fff;
+	/*设置给自己设置absolute绝对定位*/
+	position: absolute;
+	top: 32px;
+	left: 64px;
+
+}
+.section4 .bw-container .recruit dl{
+
+	width: 305px;
+	color: #fff;
+	
+	/*绝对定位*/
+	position: absolute;
+	top:107px ;
+	left: 17px;
+
+
+}
+.section4 .bw-container .recruit dl dt{
+	font-size: 14px;
+	font-weight: bold;
+
+}
+
+.section4 .bw-container .recruit dl dd{
+	height: 29px;
+	border-bottom: 1px solid #6fdea3;
+	padding:5px 0px;
+}
+
+
+
+
+/*footer部分*/
+.footer{
+
+	background-color: #191d3a;
+}
+
+.footer .bw-container{
+	height: 200px;
+	overflow: hidden;
+}
+
+.footer .bw-container p{
+
+	margin-top:30px;
+	color: #6c6e7e;
+	font-size: 12px;
+
+}
+.footer .bw-container p.p1 a{
+
+	text-decoration: none;
+	color: #6c6e7e;
+	font-size: 12px;
+	padding:0px 10px;
+
+}
+.footer .bw-container p.p1 a+a{
+	border-left: 1px solid  #6c6e7e;
+}
+
+.footer .bw-container p.p2,p.p3{
+	padding-left: 10px;
+}
+
+/*固定定位模块，返回顶部*/
+.backTop{
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	background: #dbe1e7;
+	color: #fff;
+	
+	/*固定定位*/
+	position: fixed;
+	bottom: 100px;
+	right: 20px;
+
+	padding: 5px 15px;
+}

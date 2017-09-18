@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<script src="../jquery-3.2.1.js"></script>
+	<script src="../jquery-ui.min.js"></script>
+	<script> 
+	//jQuery实现动画 animate(样式，时间，动画完成后的执行内容)
+	$(function() {
+		$("div").click(function() {
+			$("div").animate({
+				width:"1000px",
+				backgroundColor:"blue"
+			},2000)
+		})
+	})
+	</script>
+</body>
+</html>

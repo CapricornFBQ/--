@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS事件</title>
+</head>
+<body>
+	<div style="width: 200px;height: 200px;background: skyblue;">
+	
+	</div>
+
+	<script>
+		//双击事件
+		//1.找到div
+		var div =document.querySelector("div");
+		//双 double  --> 双击  dbl click
+		div.ondblclick = function () {
+			//调用JS的函数---日期函数
+
+			this.innerText = Date();
+		}
+
+		//鼠标被按下 on mouse 鼠标 down 下
+		div.onmousedown = function(){
+			this.style.background ="red";
+		}
+
+		//鼠标松开 on mouse up 鼠标松开
+		div.onmouseup =function(){
+			this.style.background ="skyblue";
+		}
+
+	</script>
+
+
+</body>
+</html>

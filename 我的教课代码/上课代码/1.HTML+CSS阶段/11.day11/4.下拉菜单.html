@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉菜单</title>
+	<link rel="stylesheet" href="basic.css">
+	<style>
+		.dropdown{
+			/*background: red;*/
+			display: inline-block;
+			position: relative;
+		}
+
+		.bw-btn-green{
+			width: 200px;
+		}
+
+		.dropdown-panel{
+			position: absolute;
+			height: 200px;
+			width: 238px;
+			background: orange;
+			display: none;
+		}
+
+		.dropdown:hover .dropdown-panel{
+			display: block;
+		}
+
+	</style>
+</head>
+<body>
+		
+	<!-- 封装下拉菜单的方法 -->
+	<!-- （1）创建一个dropdown下拉 -->
+	<!--  (2)增加一个按钮 -->
+	<!-- (3)给dropdown 里添加一个dropdown-panel下拉面板 -->
+	<!-- (4)当鼠标移动到dropdown上，让dropdown-panel显示 -->
+	<div class="dropdown">
+		<div class="bw-btn-green">下拉菜单</div>
+		
+		<div class="dropdown-panel"></div>
+	</div>
+
+	<p>adkajdkajdjahdajhdadkj</p>
+
+
+
+</body>
+</html>

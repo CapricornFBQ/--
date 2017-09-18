@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>文本换行</title>
+    <style>
+        .test p {
+            width: 200px;
+            border: 1px solid #000;
+        }
+
+        .normal p {
+            word-wrap: normal;
+            /*默认处理方式*/
+        }
+
+        .pre p {
+            white-space: pre;
+            /*不合并文字间的空白距离，当文字超出边界时不换行*/
+        }
+
+        .pre-wrap p {
+            white-space: pre-wrap;
+            /*不合并文字间的空白距离，当文字碰到边界时发生换行*/
+        }
+
+        .pre-line p {
+            white-space: pre-line;
+            /*保持文本的换行（代码中的换行符），不保留文字间的空白距离，当文字碰到边界时发生换行*/
+        }
+
+        .nowrap p {
+            white-space: nowrap;
+            /*强制在同一行内显示所有文本*/
+        }
+    </style>
+</head>
+<body>
+<ul class="test">
+    <li class="normal">
+        <strong>normal：</strong>
+        <p>    轻轻地 我走了     走了走了走了走了走了走了走了走了走了
+            正如我轻轻地来</p>
+    </li>
+    <li class="pre">
+        <strong>pre：不合并文字间的空白距离，当文字超出边界时不换行</strong>
+        <p>      轻轻地我走了      走了走了走了走了走了走了走了走了走了
+            正如我轻轻地来</p>
+    </li>
+    <li class="pre-wrap">
+        <strong>pre-wrap：不合并文字间的空白距离，当文字碰到边界时发生换行</strong>
+        <p>    轻轻地 我走了     走了走了走了走了走了走了走了走了走了
+            正如我轻轻地来</p>
+    </li>
+    <li class="pre-line">
+        <strong>pre-line 保持文本的换行（代码中的换行符），不保留文字间的空白距离，当文字碰到边界时发生换行</strong>
+        <p>    轻轻地 我走了     走了走了走了走了走了走了走了走了走了
+
+
+            正如我轻轻地来</p>
+    </li>
+    <li class="nowrap">
+        <strong>nowrap：强制在同一行内显示所有文本 有空白折叠现象</strong>
+        <p>    轻轻地    我走了     走了走了走了走了走了走了走
+            了走了走了
+            正如我轻轻地来</p>
+    </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery ---css</title>
+	<style>
+		.green{
+			color: green;
+			background: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<p>这是一段文本</p>
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			//jQuery设置css
+			// $("p").css("color","red");
+			//同时设置多个样式
+			// $("p").css("color","blue");
+			// $("p").css("background","green");
+			// $("p").css({"color":"red","background":"green"})
+
+			//addClass()添加类
+			// $("p").click(function() {
+			// 	$(this).addClass("green");  
+			// })
+
+
+			//removeClass()删除类
+			// $("p").dblclick(function() {
+			// 	$(this).removeClass("green");  
+			// })
+
+			//切换类   点击一次添加类，再点击删除类
+			$("p").click(function() {
+				$(this).toggleClass("green");
+			})
+
+
+		})
+	</script>
+</body>
+</html>

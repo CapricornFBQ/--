@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>五子棋</title>
+	<style>
+		.wrapper {
+			width: 616px;
+			height: 616px;
+			margin: 10px auto;
+			background: orange;
+			border: 1px solid black;
+			position: relative;
+		}
+		.grid {
+			width: 42px;
+			height: 42px;
+			border: 1px solid black;
+			float:left;
+		}
+		img {
+			width: 44px;
+			height: 44px;
+			position: absolute;
+		}
+		.wtitle {
+			width: 616px;
+			margin: 5px auto;
+			height: 44px;
+			line-height: 44px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wtitle"><span>当前落子方：</span><img id="hint" src="images/q.png" alt=""></div>
+	<!-- 棋盘格子宽度为44px  横竖可以放15个棋子，一行一共需要14个div即可 -->
+	<div class="wrapper">
+
+	</div>
+	<script>
+		//思路： 先做个棋盘---> 放棋子 ----> 黑白棋子轮换 -----> 添加规则
+		//第一步：  做一个棋盘-------------------------------------------------
+		for(var j=0; j<14; j++) {
+			for(var i=0; i<14; i++) {
+				//1.获取大的棋盘
+				var wrapper = document.querySelector(".wrapper");
+				//2.创建小的div
+				var newDiv = document.createElement("div");
+				//3.把新div放入棋盘
+				newDiv.className = "grid";
+				wrapper.appendChild(newDiv);
+			}
+		}
+
+
+		//第二部： 落子------------------------------------------------------
+		//用鼠标点击棋盘，让棋子（图片）落子点击的位置
+		//（给一个元素绑定事件）1.获取待绑定事件的元素/获取棋盘
+		var wrapper = document.querySelector(".wrapper");
+		wrapper.onclick = function() {
+			//1.先有棋子（图片） 
+			    //①创建img标签
+			    var newImg = document.createElement("img");
+	//第三步： 每次落子 转换棋子颜色=================================================  
+	//用判断分支结构来实现颜色转换--------------用提示的颜色作为判断条件
+			    //1.获取hint元素
+			    var hint = document.querySelector("#hint");
+			    //2.获取hint元素的src属性
+			    var hintSrc = hint.getAttribute("src");
+			    //3.用src属性来进行判断
+			    if (hintSrc == "images/w.png") {   //判断条件和执行内容相反，来实现换色
+				    //②设置img标签的src属性
+				    newImg.setAttribute("src","images/w.png")
+				    hint.setAttribute("src","images/q.png")
+			    } else {
+				    //②设置img标签的src属性
+				    newImg.setAttribute("src","images/q.png")
+				    hint.setAttribute("src","images/w.png")
+			    }
+
+
+
+			    //获取鼠标点击位置--->得出棋子相对于棋盘的位置---->设定棋子的css样式
+			    //中间量-----------棋盘相对于文档的位置
+			    //求出鼠标相对于棋盘的位置，赋值给图片的css样式
+			    Left = event.pageX - wrapper.offsetLeft;
+			    Top = event.pageY - wrapper.offsetTop;
+
+			  //   var x = Left%44;
+			  //   if(x > 22) {
+			  //   	Left = Left - x + 44;
+			  //   }else {                                  用函数进行封装==================
+			  //   	Left = Left - x;
+			  //   }
+
+			  //   var y = Top%44;
+			 	// if(y > 22) {
+			  //   	Top = Top - y + 44;
+			  //   }else {
+			  //   	Top = Top - y;
+			  //   }
+			    Left = getData(Left);
+			    Top = getData(Top);
+
+
+
+				newImg.style.left = Left - 22 + "px"
+				newImg.style.top = Top - 22 + "px"
+			    //把棋子放入棋盘之中
+				wrapper.appendChild(newImg);
+		}
+
+		function getData(pos) {           //坐标修饰--------------------------
+			    var x = pos%44;			//对格子宽度取余，用以判断div中的位置
+			    if(x > 22) {
+			    	pos = pos - x + 44;
+			    }else {                                
+			    	pos = pos - x;
+			    }
+			    return pos;
+		}
+
+		//换棋子颜色-----功能①每点击一次更换落下的棋子颜色（同时更换棋盘中棋子和提示棋子的颜色） ②添加落子方提示
+		//1.提示的颜色和落子的颜色都要换色   2.提示的颜色和棋盘中棋子的颜色是不同的（一次点击事件里面）
+	</script>
+</body>
+</html>

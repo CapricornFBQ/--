@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>渐入渐出</title>
+	<style>
+		div{
+			margin: 10px;
+			width: 60px;
+			height: 60px;
+			background: orange;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button>显示</button>
+	<div style="background:black"></div>
+	<div style="background:green"></div>
+	<div style="background:blue"></div>
+	<div style="background:red"></div>
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+	$(function() {
+		$("button").click(function() {
+			//fade渐入
+			$("div").eq(0).fadeIn("fast");  //快速
+			$("div").eq(1).fadeIn();    //普通
+			$("div").eq(2).fadeIn("slow"); //慢速
+			$("div").eq(3).fadeIn(5000);   //自定义时间
+		})
+	})
+	</script>
+</body>
+</html>

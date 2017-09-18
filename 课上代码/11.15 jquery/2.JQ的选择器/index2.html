@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择器二</title>
+	<script src ="../jquery-3.1.1.min.js">
+		
+	</script>
+</head>
+<body>
+
+	<p>0我是p</p>
+	<div>
+		<p>1我是p</p>
+		<p>2我是p</p>
+		<p>3我是p</p>
+
+		<a href="#" target="_blank">我是一个a标签</a>
+		<a href="http://www">sada a </a>
+
+	</div>
+
+		<input type="text">
+		<input type="password">
+		<input type="button">
+	
+	<script>
+		// -----------------------------------------------------
+		// div的visibility可以控制div的显示和隐藏，但是隐藏后页面显示空白 
+		// style="visibility: none;"  
+  
+		// document.getElementById("typediv1").style.visibility="hidden";//隐藏  
+	  	// document.getElementById("typediv1").style.visibility="visible";//显示
+	  	
+
+	  	// 通过设置display属性可以使div隐藏后释放占用的页面空间如下 
+	  	// style="display: none;"  
+		// document.getElementById("typediv1").style.display="none";//隐藏  
+  		// document.getElementById("typediv1").style.display="";//显示  
+
+
+		// -----------------------------------------------------
+
+
+
+
+
+
+	   //1.获得一个p标签
+	   // document.querySelector("p").hidden = "true“;
+	   // var arrays = document.querySelectorAll("p");
+	   // arrays[0].hidden = "yes";
+
+	   // $("p:first").hide();
+
+	   //2.获得 div中的p 标签，设置隐藏
+	   // $("div p").hide();
+
+	   //3.div里的第一个p，如果他是第一个元素
+	   // $("div p:first").hide();
+	   
+	   //9. nth-child第一个p标签
+	   // $("div p:first-child").hide();
+
+	   //4.最后一个p标签
+	   // $("p:last").hide();
+
+	   //5.获得带有某个属性的标签
+	   // $("[target]").css("background","red");
+
+	   //6.获的带有某个有值属性额标签
+	   // $("[href='http://www']").css("background","skyblue");
+
+	   //7.找到带有属性，但是属性值不是http://www的标签
+	   // $("a[href !='http://www']").css("background","skyblue");
+
+	   //8.找到type值为什么的标签
+	   // $("[type ='password']").css("background","red");
+	   // $(":password").css("background","green");
+	   
+	   //9.选取偶数位置的
+	   //$("p.even");
+	   //$("P.odd");
+
+	   
+
+
+		
+
+	</script>
+</body>
+</html>	

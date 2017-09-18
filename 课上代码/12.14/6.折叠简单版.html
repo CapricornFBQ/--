@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>滚动监听</title>
+
+    <link href="lib/dist/css/bootstrap.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- (1)创建一个button
+        （2）创建一个div面板
+        （3）给button增加事件 折叠事件
+     -->
+
+    <button class="btn btn-info btn-lg" data-toggle="collapse" data-target="#demo">按钮</button>
+    <!-- 小bug a标签通过href=#来控制折叠对象
+         button或者其他可以用 data-target(绑定对象)
+
+    -->
+
+    <!-- weishi -->
+    <!-- 这样已经完成了 -->
+    <!-- <div id="demo" class="in">
+      我就是面板。爱咋咋，爱的空间按回电话艾克好看后代卡号那块立方卡<br>
+      ajka akd hakdhna ldkaljaa.ansc,cfav,cmam,va,vcma,mmd,am,dm,am,a 
+      adakd akjahfjka jkafh
+    </div> -->
+
+    <!-- bootstrap里面 多加了一个class .collapse -->
+    <div id="demo" class="collapse in">
+      我就是面板。爱咋咋，爱的空间按回电话艾克好看后代卡号那块立方卡<br>
+      ajka akd hakdhna ldkaljaa.ansc,cfav,cmam,va,vcma,mmd,am,dm,am,a 
+      adakd akjahfjka jkafh
+    </div>
+       
+     
+
+   
+    
+   
+
+   
+
+    <script src="lib/jquery/jquery-3.1.1.min.js" type="text/javascript" ></script>
+    <script src="lib/dist/js/bootstrap.min.js" type="text/javascript" ></script>
+  </body>
+</html>

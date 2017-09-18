@@ -1,0 +1,55 @@
+
+
+*{
+	padding: 0px;
+	margin:0px;
+}
+
+
+/*178*125*/
+
+.wrapper{
+	/*178*4 712*/
+	width: 762px;
+	/*125*2 280*/
+	height: 280px;
+	border: 1px solid #ccc;
+	margin:100px auto;
+}
+.wrapper ul{
+	width: 762px;
+	height: 280px;
+	list-style: none;
+	/*overflow: hidden;*/
+}
+.wrapper ul li{
+	width: 178px;
+	height: 125px;
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+	overflow: hidden;
+	position: relative;
+}
+.wrapper ul li p{
+	width: 178px;
+	height: 25px;
+	background: #777;
+	color: white;
+	text-align: center;
+	line-height: 25px;
+	font-size: 14px;
+	position: absolute;
+	bottom: -25px;
+	
+}
+span{
+	/*display: inline-block;*/
+	float: left;
+	width: 20px;
+	height: 25px;
+	background: url(images/bg.png) no-repeat;
+	margin-left: 10px;
+	background-position: 0px 0px;
+
+}

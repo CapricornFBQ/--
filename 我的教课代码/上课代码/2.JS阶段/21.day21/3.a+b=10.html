@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>a+b=10</title>
+</head>
+<body>
+		
+		<!-- a+b =10 -->
+		<!-- 1 1
+			 1	2
+			 1  3
+			 1  4
+			 1  5
+			 1  6
+			 1  7
+			 1  8
+			 1  9 ....
+
+			 2  1
+			 2  2
+			 2  3
+			 2  4
+			 2  5
+			 2  6
+			 2  7
+			 2  8 ...
+			 2  9
+
+			 ....
+		 -->
+		 
+		 <script>
+		 	// <!-- 1.实现 b 的 1-9的打印 -->
+		 	// for (var b = 1; b < 10; b++) {
+		 	// 		console.log(b);
+		 	// 	}	
+
+		 	// 2.让b实现1-9打印9次，后来发现i=1的时候，b1-9
+		 	for(var a = 1;a<10;a++){
+		 		for (var b = 1; b < 10; b++) {
+
+		 			if(a+b == 10){
+		 				 console.log("a:"+a+";"+"b:"+b);
+		 			}
+
+		 			// console.log("a:"+a+";"+"b:"+b);
+		 		}	
+
+		 	}
+
+
+		 </script>
+</body>
+</html>

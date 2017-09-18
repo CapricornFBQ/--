@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQ和JS对象的转换</title>
+	<style>
+			
+
+	</style>
+	<script src ="../../jquery-3.1.1.min.js"></script>
+	<style>
+		
+		
+	</style>
+
+</head>
+<body>
+	
+
+	<div class="div1" style="height: 300px;">
+		
+		<p>我是p标签</p>
+		<p class="p2">我是p标签</p>
+		<a href="#">hshaj </a>
+		<div>
+			<p>adjadj</p>
+
+		</div>
+
+	</div>
+
+	<script>
+
+	$(document).ready(function () {
+
+		//子标签
+		// children 查找直系子节点 find查找的是所有子节点,不带没用的，全是element
+
+		// var length =$("div").children().length;  
+		// alert(length);
+
+
+		//获得所有直系的p标签
+		var length =$(".div1").children("p").length;  
+		// alert(length);
+
+
+
+		//find，查找所有的子节点（）,包括子节点的子节点
+		var length1 =$(".div1").find("p").length;
+		// alert(length1);
+
+		//查找.div1里所有的子标签
+		var length2 =$(".div1").find("*").length;
+		alert(length2);
+
+
+	});
+
+
+		
+
+
+	</script>
+
+
+</body>
+</html>

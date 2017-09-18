@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>关键帧动画</title>
+	<style>
+
+		/*使用动画的步骤*/
+		/*1.注册动画 @keyframes是动画注册的关键字  + 动画的名字 */
+		@keyframes animation1{
+			/*form 开始的时候 to结束的时候*/
+			from{
+
+				background: red;
+				
+				}to{
+				background: black;
+			}
+
+
+
+		} 
+
+
+		div{
+			background: red;
+			width: 100px;
+			height: 100px;
+			/*2.设置要执行的动画 要执行的动画名字+时间*/
+			animation: animation1 5s;
+
+		}
+		p{
+			background: red;
+			width: 200px;
+			height: 200px;
+
+			animation:animation1 5s;
+		}
+		
+
+
+
+	</style>
+</head>
+<body>
+	
+	<div></div>
+	<p></p>
+
+</body>
+</html>

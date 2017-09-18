@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function fun() {
+        var a = 10;
+        var b = 30;
+        function bibao() {
+            console.log(a+b);
+            var c = 10;
+        }
+//        bibao();
+        return bibao; //闭包的核心  return:代表当前函数结束退出并且带有返回值
+        //return函数下面的代码都不会再执行
+//        function bibao2() {
+//            console.log(a+b);
+//        }
+//        return bibao2;
+    }
+    //fun（）的返回值为闭包函数， 使用变量a来接收闭包函数。
+    var a = fun();//等价于 var a = function bibao() {console.log(a+b);}
+    console.log(a);//打印出来的是函数体 function bibao() {console.log(a+b);}
+    a(); //等价于执行闭包函数
+
+//    console.log(a);
+
+</script>
+</body>
+</html>

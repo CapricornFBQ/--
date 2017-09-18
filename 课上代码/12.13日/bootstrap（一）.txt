@@ -1,0 +1,50 @@
+知识流：
+
+1.bootstrap是一个前端框架
+2.基本模板，viewport视口可以解决移动端设备网页自适应问题
+3.版心（.container）  流式版心（.container-fluid）宽度100%（游览器的宽度）
+4.栅格系统 （一行分成12分，每一列都可以在行中占据相应的分数，根据屏幕的大小，改变占据的分数）
+   .col-xs 手机   .col-sm 平板  .col-md 电脑屏幕  .col-lg 超大屏幕
+
+  《div class=“contanier”》
+	<row>
+		列
+		列
+		
+	</row>
+
+   《/div》
+
+5. offset 相当于偏移 好像是给列增加了left-marign
+6.push 是往后面移动多少单位，不会影响其他列
+
+
+//-----------------表单--------------------
+
+（1）.form-group 能够给带lable、表单控件提供更好的布局，paddding
+（2）.form-control能让input\select\textarea能widtt 100%
+
+//-----------------表格--------------------------
+（1）颜色设置用 .danger .warning
+（2）响应式表格
+	div  class = "table-resposive"
+		table
+
+//----------------文字对齐------------
+.text-center
+.text-left
+
+//---------------浮动-----------
+.pull-left  左浮动
+.pull-right 右浮动
+
+//----------隐藏显示----------------
+.hidden
+.hidden-md
+
+.visible
+.visible-md-inline-block 在md情况下以行级块级标签形式显示
+
+
+
+

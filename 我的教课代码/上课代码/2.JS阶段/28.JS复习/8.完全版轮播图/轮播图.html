@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<style>
+		.container{
+			width: 1226px;
+			height: 460px;
+			background: black;
+			margin: 0 auto;
+			position: relative;
+		}
+		.container .allSpan{
+			position: absolute;
+			left: 50%;
+			bottom: 0px;
+			margin-left: -27px;
+			padding-bottom: 10px;
+		}
+		.container .allSpan>span{
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			background: #ccc;
+			border-radius: 50%;
+		}
+		
+		.item{
+			width: 1226px;
+			height: 460px;
+			/*设置隐藏*/
+			display: none;
+		}
+		/*设置被选中的背景*/
+		.item.selected{
+			display: block;
+		}
+		/*设置被选中的标签*/
+		.container .allSpan>span.selected{
+			background: black;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- 增加四个界面 -->
+		<div class="item selected" style="background:url(1.jpg);background-position: top center ; "></div>
+		<div class="item" style="background:url(2.jpg);background-position: top center ; "></div>
+		<div class="item" style="background:url(3.jpg);background-position: top center ; "></div>
+		<div class="item" style="background:url(4.jpg);background-position: top center ; "></div>
+		
+
+
+		<div class="allSpan">			
+			<span class="selected" data-num = "0"></span>
+			<span data-num = "1"></span>
+			<span data-num = "2"></span>
+			<span data-num = "3"></span>
+		</div>
+
+	</div>
+
+	<script>
+
+		// 疯转一个函数：开启自动模式
+		function auto(){
+			// 自动：查询当前的span.selected，然后设置下一个，切换页面
+			//（1）设置定时器
+			var timer = setInterval(function(){
+				// (2)获得当前span.selected
+				var span = document.querySelector("span.selected");
+				// (3)设置span标签的下一个兄弟为selected，如果没有下一个找到大哥
+				if(span.nextElementSibling == null){
+					// 把另外的全部变成不是selected
+					var spans = document.querySelectorAll("span");
+					for(var i=0;i<spans.length;i++){
+						spans[i].className = "";
+					}
+					span.parentNode.firstElementChild.className = "selected";
+
+					// 获得最新的span标签里的num值
+					var number = Number(span.parentNode.firstElementChild.getAttribute("data-num"));
+					// 把所有的大图隐藏。找到对应的大图，显示
+					var items = document.querySelectorAll(".item");
+					for(var j = 0;j< items.length; j++){
+						items[j].className = "item";
+
+					}
+					items[number].className = "item selected";
+					
+
+				}else{
+
+					// 把另外的全部变成不是selected
+					var spans = document.querySelectorAll("span");
+					for(var i=0;i<spans.length;i++){
+						spans[i].className = "";
+					}
+					span.nextElementSibling.className = "selected";
+
+					// 获得最新的span标签的num值
+					var number = Number(span.nextElementSibling.getAttribute("data-num"));
+					var items = document.querySelectorAll(".item");
+					for(var k=0;k<items.length;k++){
+						items[k].className = "item";
+
+					}
+
+					items[number].className = "item selected";
+
+
+
+				}
+
+
+
+			},2000);
+
+			return timer;
+		}
+
+		//-----------------------------真的代码区域------------------------------------------------
+
+		var timer = auto();
+	
+
+
+		//手动
+	    //本质：是手动切换了span标签，设置selected，导致了页面的转换 
+		var spans = document.querySelectorAll("span");
+		for(var i = 0; i < spans.length; i++){
+			spans[i].onclick = function(){
+				for(var j = 0;j< spans.length;j++){
+				 	spans[j].className = "";
+				} 
+				this.className = "selected";
+				var index = this.getAttribute("data-num");
+				var number = Number(index);
+				var arrays = document.querySelectorAll(".item");
+				for(var k=0;k<arrays.length;k++){
+					arrays[k].className = "item";
+				}
+				arrays[number].className = "item selected";
+
+
+				// 完美优化：关掉之前的定时器  重新开启定时器
+				clearInterval(timer);
+				timer = auto();
+
+			}
+
+
+		}
+
+		
+
+
+	</script>
+</body>
+</html>

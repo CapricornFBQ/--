@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery显示和隐藏</title>
+	<style>
+		p{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button>显示/隐藏</button>
+	<p>这是一段文字</p>
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			//如果p显示，点击按钮让他隐藏； 如果p隐藏，点击按钮可以让他显示
+			$("button").click(function() {
+				//控制显示和隐藏。根据display情况
+				$("p").toggle();
+			})
+		})
+	</script>
+</body>
+</html>

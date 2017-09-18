@@ -1,0 +1,25 @@
+body{
+	text-align: center;
+}
+
+.big-1{
+	width: 90%;
+	background-color: #fffaa1;
+	height: 300px;
+	margin: 0px auto;
+}
+
+
+.small-1,.small-2{
+	width: 90%;
+	height: 100px;
+	background-color: red;
+	display: inline-block;
+}
+.small-3,.small-4,.small-5,.small-6{
+	width: 45%;
+	height: 100px;
+	background-color: red;
+	display: inline-block;
+
+}

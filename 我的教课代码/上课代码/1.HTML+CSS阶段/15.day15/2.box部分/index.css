@@ -1,0 +1,33 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.section{
+	width: 1226px;
+	/*height: 800px;*/
+	overflow: hidden;
+	/*background:skyblue;*/
+	margin: 0px auto;
+}
+
+.section .section-left{
+	/*float: left;*/
+	/*background: red;*/
+	float: left;
+}
+.section .section-right{
+	/*background: orange;*/
+	/*height: 614px;*/
+	width: 992px;
+	overflow: hidden;
+	float: right;
+}
+.section .section-right .item{
+	width: 234px;
+	height: 300px;
+	background: black;
+	float: left;
+	margin-left: 14px;
+	margin-bottom: 14px;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>相对定位</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid black;
+		}
+
+		div.div1{
+			background: red;
+		}
+		div.div2{
+			background: skyblue;
+
+			/*定位的关键字: 相对定位的关键字 relative*/
+			position: relative;
+			/*left: 300px;*/
+			top:-100px;
+			
+
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class ="div1"></div>
+
+
+	<!-- 相对定位的关键字是relative,是相对于标准流中的自己进行的定位 -->
+	<div class ="div2"></div>
+
+	<div style="background: pink;"></div>
+
+	<!-- 总结一下
+	（1）相对于自己在标准流中的位置的定位，参照系是原位置
+	（2）相对定位以后原位置保留，后面或者旁边的单位不会向上填充
+
+
+
+	 -->
+	
+</body>
+</html>

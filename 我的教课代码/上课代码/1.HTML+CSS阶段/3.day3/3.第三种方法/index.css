@@ -1,0 +1,7 @@
+
+/*这是外部的CSS文件，可以一个文件供给多个页面使用*/
+
+div{
+	color: pink;
+	font-size: 100px;
+}

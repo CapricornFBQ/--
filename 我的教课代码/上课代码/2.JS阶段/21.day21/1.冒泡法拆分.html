@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>冒泡法拆分</title>
+</head>
+<body>
+	<!-- 题目：实现一个数组的排序 -->
+
+	
+	<script>
+		// 1.创建一个数组
+		var array = [6,5,7,1,4,3,10];
+		// 2.实现冒泡排序
+		// (1)实现两个数的交换
+		// var number1 = array[0];
+		// var number2 = array[1];
+		// if(number1>number2){
+		// 	var tep = 0;
+		// 	tep = number1;
+		// 	number1 = number2;
+		// 	number2 = tep;
+
+		// }
+		// 5 6 7 1 4 3 10
+		// (2)进行一次比较的循环
+		// for(var i =0;i<array.length-1;i++){
+
+		// 	var number1 = array[i];
+		// 	var number2 = array[i+1];
+		// 	if(number1>number2){
+		// 		var tep = 0;
+		// 		tep = number1;
+		// 		number1 = number2;
+		// 		number2 = tep;
+
+		// 	}
+		// }
+		// (3)有几个元素让循环几次，实现多次排序
+		
+		// for(var j = 0;j< array.length;j++){
+		// 	for(var i =0;i<array.length-1;i++){
+
+		// 		// var number1 = array[i];
+		// 		// var number2 = array[i+1];
+		// 		if(array[i]>array[i+1]){
+		// 			var tep = 0;
+		// 			tep = array[i];
+		// 			array[i] = array[i+1];
+		// 			array[i+1] = tep;
+
+		// 		}
+		// 	}
+		// }
+		// console.log(array);
+
+		// (4)代码优化，最大的数不需要参与比较了
+		// i < 6 i< 5 i< 4 i<3 i<2 i<1 
+		// 做一个实现 6 -1的打印
+		// 6 5 4  3 2 1 0
+		// for(var j = array.length-1;j>=0;j--){
+		// 	// 和上边最外边的写法一致
+		// }
+		
+		for(var j = array.length-1;j>=0;j--){
+			for(var i =0;i<j;i++){
+
+				// var number1 = array[i];
+				// var number2 = array[i+1];
+				if(array[i]>array[i+1]){
+					var tep = 0;
+					tep = array[i];
+					array[i] = array[i+1];
+					array[i+1] = tep;
+
+				}
+			}
+
+		}
+		console.log(array);
+
+
+	</script>
+</body>
+</html>

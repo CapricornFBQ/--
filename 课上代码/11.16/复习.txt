@@ -1,0 +1,69 @@
+1.JQ复习
+文件就绪
+$(documnet).ready(function(){})
+
+2.JQ选择器
+和CSS选择器基本一致 
+$(selector).action();
+
+2.JQ事件
+鼠标 click(); dblclick();   mouseenter(); mouseleave(); hover(); 
+键盘 keydown(); keyup();
+表单 submit(); change(); focus(); blur();
+
+
+3.如何设置内容，属性和CSS
+//文本内容
+text();
+//html
+html();
+//属性
+attr();
+//CSS
+css();    css({"back":"red","color":"orange"});
+
+
+4.DOM操作
+（1）创建新的标签
+var p = "<p>ahajkfhakjf hka</p>";
+X.append(p);
+
+JS
+var p  = document.createElement("p");
+X.append(p);
+
+(2)增加
+append();
+prepend();
+after();
+before();
+
+(3)删除
+remove(); 不需要找父标签
+empty();
+
+5.JQ和JS转换
+（1）JQ数组中村放的是JS对象吧  
+$(X)[0] == JS对象
+（2）JS装化成JQ
+$(JS) == JQ
+
+6.标签的关系
+(1)父标签 
+  parent();直系父标签
+  parents();
+  parentUntil();
+(2)子标签
+  children();直系
+  find();  
+(3)兄弟节点
+siblings();
+next();
+nextAll();
+
+prev();
+prevAll();
+prevUntil();  
+
+
+

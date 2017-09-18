@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery选择器</title>
+</head>
+<body>
+	<ul>
+		<li>这是第一个li</li>
+		<li id="two">这是第二个li</li>
+		<li class="three">这是第三个li</li>
+		<li>这是第四个li</li>
+		<li>这是第五个li</li>
+
+
+		<p>这是p标签</p>
+	</ul>
+	<a href="http://www">我是</a>
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			//原生js写
+			var liList = document.querySelectorAll("li");
+			// for (var i=0; i<liList.length; i++) {
+			// 	liList[i].style.color= "red";
+			// }
+			console.log(liList);
+			//1.jq获取元素也是一个数组 2.jq数组的方法自动隐式迭代 3. js数组和jQ数组是不一样的
+			$("li").css("color","red");
+			console.log($("li"));
+
+			//jQ中的选择器    
+			//jQ元素选择器
+			$("p").css("color","red");
+			//id 选择器
+			$("#two").css("background","pink");
+			//class选择器
+			$(".three").css("background","skyblue")
+			//交集选择器
+			$("li.three").css("background","orange")
+			//并集选择器
+			$("li,p").css("color","blue");
+			//通配符
+			$("*").css("font-size","30px");
+
+		})
+	</script>
+</body>
+</html>

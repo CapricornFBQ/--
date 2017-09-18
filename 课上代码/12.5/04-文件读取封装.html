@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<input type="file" name="" id="fileinput" multiple>
+<button id="duqu">读取文件</button>
+<div id="div"></div>
+<div>当前阅读进度:<span></span></div>
+<script>
+    var fileinput = document.querySelector('#fileinput');
+    var duqu = document.querySelector('#duqu');
+    duqu.addEventListener('click',function () {
+       for (var i = 0;i < fileinput.files.length;i++){
+           var file = fileinput.files[i];
+           readFile(file,document.querySelector('#div'));
+       }
+    });
+//    需要把阅读的文件传进来file element是把读取到的内容放入的容器
+    function readFile(file,element) {
+//        新建阅读器
+        var reader = new FileReader();
+//        根据文件类型选择阅读方式
+        switch (file.type){
+            case 'text/plain':
+            case 'text/txt':
+            case 'text/html':
+                reader.readAsText(file);
+            break;
+            case 'image/jpg':
+            case 'image/png':
+            case 'image/gif':
+            case 'image/bmp':
+                reader.readAsDataURL(file);
+                break;
+        }
+//        当文件阅读结束后执行的方法
+        reader.addEventListener('load',function () {
+//            如果说让读取的文件显示的话 还是需要通过文件的类型创建不同的标签
+            switch (file.type){
+                case 'text/plain':
+                case 'text/txt':
+                case 'text/html':
+                    var p = document.createElement('p');
+                    p.innerText = reader.result;
+//                    文件读取的结果
+//                    console.log(reader.result);
+                    element.appendChild(p);
+                    break;
+                case 'image/jpg':
+                case 'image/png':
+                case 'image/gif':
+                case 'image/bmp':
+                    var img = document.createElement('img');
+                    img.src = reader.result;
+//                    console.log(reader.result);
+                    element.appendChild(img);
+                    break;
+            }
+        });
+//            阅读过程中的方法
+        reader.addEventListener('progress',function (e) {
+            //            total  数据总量
+            var total = e.total;
+//            loaded 当前已读取的数据量
+            var loaded = e.loaded;
+            console.log(loaded / total);
+        });
+    }
+</script>
+</body>
+</html>

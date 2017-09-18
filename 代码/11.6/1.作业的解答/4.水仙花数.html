@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>水仙花数</title>
+</head>
+<body>
+	<script>
+		// 什么样的数是水仙花数？？
+		// a^3+b^3+c^3 = abc
+
+		// 分析：
+		// （1）abc是一个三位数   100-999
+		//  (2) 找出水仙花数
+
+
+		//步骤一：循环100-999的数，代表abc现在的值
+		// var number =100;
+		// while(number<=999){
+
+		// 	number++;
+		// }
+
+		//步骤二：知道一个三位数，求出每一位上的数字.
+		// var number = 987;
+		// var a = parseInt(987/100);
+		// var b = parseInt(987%100/10);
+		// var c = 987%10;
+
+		//步骤三，知道a\b\c三个值，如何判断他们的立方和等于abc.那么就找到当前的数为水仙花
+		// var number = 100;
+		// var a = parseInt(987/100);
+		// var b = parseInt(987%100/10);
+		// var c = 987%10;
+
+		// var sum = Math.pow(a,3)+Math.pow(b,3)+Math.pow(c,3);
+		// if (sum == number) {
+
+
+		// 	console.log(number);
+		// }
+
+		// 步骤四,拼接起来
+
+		var number =100;
+		while(number<=999){
+
+
+			// var number = 100;
+			var a = parseInt(number/100);
+			var b = parseInt(number%100/10);
+			var c = number%10;
+
+			var sum = Math.pow(a,3)+Math.pow(b,3)+Math.pow(c,3);
+			if (sum == number) {
+
+
+				console.log(number);
+			}
+
+
+
+
+			number++;
+		}
+
+
+	</script>
+</body>
+</html>

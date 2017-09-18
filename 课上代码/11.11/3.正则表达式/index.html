@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>登录界面首页</title>
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+<!--最外部-->
+    <div id="content">
+        <!--面板-->
+        <div class="pannel">
+           <div class="group">
+               <label>账号</label>
+               <input placeholder="请输入账号" class ="username">
+           </div>
+           <div class="group">
+               <label>密码</label>
+               <input placeholder="请输入密码" type="password">
+           </div>
+           <div class="login">
+               <button>登录</button>
+           </div>
+        </div>
+        <!--注册-->
+        <div class="reg">
+             <button>创建新账号?</button>
+        </div>
+    </div>
+    <!-- 正则表达式，可以用来判断字符串的格式是否正确，用来过滤字符串的 -->
+    <!-- 
+        /abc/  字符串必须含有 abc 
+        /^abc/ 必须是abc开头 
+        /abc$/ 必须abc结尾的
+        /abc/i 忽略大小写
+        /ab[x-z]/ 必须含有ab  [x-z]是 任意的字符  abx aby abz   允许1位
+        /ab\d/  ab后必须加数字                                  允许1位 0-9
+        /ab\d{3}/  必须有ab加3个数字
+        /ab\d{2,3}c/ 必须是 ab 两个数字或三个数字  c
+        /^[0-9 x-z]/ 以0-9 或者 x-z开头的
+        /^[0-9]{3}/  以0-9 里的3个数开头
+
+
+
+
+        
+        
+
+     -->
+
+
+    <script>
+        
+    //1.获得username
+    var username = document.querySelector(".username");
+    username.onblur = function() {
+      // if (this.value == "") {
+      //   alert("请输入用户名");
+      // }
+
+      // var zhengze1 = /weiwei/;
+      // var zhengze1 =/^123/;
+      // var zhengze1 =/163.com$/;
+      // var zhengze1 = /weiwei/i;
+      // var zhengze1 = /ab[x-z]/;
+      // var zhengze1 = /ab\d/;
+      // var zhengze1 =/ab\d$/;
+      // var zhengze1 = /ab\d{3}/;
+      // var zhengze1 = /ab\d{2,3}c/;
+      // var zhengze1 = /^[0-9 x-z]/;
+      // var zhengze1 = /^[0-9]{3}/;
+
+      //电话号码
+      var zhengze1 = /\d{11}/;
+
+
+
+
+
+
+
+
+      //获得当前的value值
+      var value = this.value;
+
+      //测试当前value是否符合正则表达式要求
+     console.log( zhengze1.test(value) );
+
+
+
+
+    }
+
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

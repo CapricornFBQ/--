@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>唯一的网页使用link做媒体查询</title>
+	<style>
+		
+		body{
+			background-color: blue;
+		}
+	</style>
+
+	<!-- <link rel="stylesheet" href="green.css"> -->
+
+	<!-- 分解法：1200 900 600
+		是否小于1200
+			max-width 1200
+		手否小于900
+            max-width 900
+		是否小于600
+			max-width 600
+	 -->
+	 <link rel="stylesheet" media="screen and (max-width:1200px)" href="red.css">
+	 <link rel="stylesheet" media="screen and (max-width:900px)" href="yellow.css">
+	 <link rel="stylesheet" media="screen and (max-width:600px)" href="green.css">
+
+</head>
+<body>
+
+
+
+	
+</body>
+</html>

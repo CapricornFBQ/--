@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原则第一条：叠加原则</title>
+	<style>
+		
+		
+		/*1,0,0*/
+		#a2{
+			background-color: orange;
+		}
+
+		/*0,1,0*/
+		/*.a1{
+			background-color: red;
+		}*/
+
+		/*0,1,1*/
+		p.a1{
+			background-color: skyblue;
+		}
+	
+		/*body 0,0,1  p 0,0,1   0,0,2*/
+		/*body p{
+
+		}*/
+
+
+	</style>
+</head>
+<body>
+	<!-- 叠加原则：选择器属性不重复，则执行叠加原则 -->
+	<p  id="a2" class="a1"> 我是p标签</p>
+
+	<!-- 计算权重的方法 -->
+
+	<!--标签选择器  0,0,1 -->
+	<!--class选择器 0,1,0 -->
+	<!--id选择器    1,0,0-->
+
+
+</body>
+</html>

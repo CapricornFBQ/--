@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字符串方法</title>
+</head>
+<body>
+	<script>
+		var string = "今天是星期三 天气很好";
+		//取出字符串中的一个字符
+		document.write(string.charAt(4) + "<br>");
+		//字符串长度
+		document.write(string.length + "<br>");
+		//检索某一字符在字符串中的位置
+		document.write(string.indexOf("天") + "<br>");
+		document.write(string.lastIndexOf("天") + "<br>"); //从后面开始检索的第一个天
+
+		//字符串拼接
+		var string2 = "有太阳..."
+		document.write(string.concat(string2) + "<br>");
+		//取出某个字符
+		document.write(string.slice(2,7) + "<br>"); //起始位置到终止位置之前
+		document.write(string.substr(2,6) + "<br>")//起始位置及向后的字符个数
+		//大小写转换-----------
+		var string3 = "Today is wednesday"
+		document.write(string3.toUpperCase() + "<br>");
+		document.write(string3.toLowerCase() + "<br>")
+		//字符串数组转换
+		document.write(string.split("天") + "<br>");
+		//替换字符串-----
+		document.write(string.replace("天", "地")+ "<br>")
+
+
+
+
+		var a = 1;
+		var a = "1";
+	</script>
+</body>
+</html>

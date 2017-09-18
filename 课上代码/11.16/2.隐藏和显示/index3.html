@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过滤</title>
+	<script src ="../jquery-3.1.1.min.js" ></script>
+</head>
+<body>
+	<div style="height:50px;text-align: center;background: #aaa;line-height: 50px;">点我点我</div>
+	<div class ="div1" style="height: 400px;background: orange;"></div>
+	
+	<script>
+
+	$(document).ready(function () {
+		$("div:first").mouseenter(function(){
+
+			$(".div1").toggle();
+		});
+	});
+	
+	</script>
+
+
+</body>
+</html>

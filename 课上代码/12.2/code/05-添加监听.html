@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #da {
+            width: 400px;
+            height: 400px;
+            background-color: blue;
+        }
+        #xiao {
+            width: 400px;
+            height: 50px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="da"></div>
+    <div id="xiao"></div>
+    <script>
+        var da =  document.getElementById('da');
+        var xiao = document.getElementById('xiao');
+//        xiao.onclick = function () {
+//            da.style.backgroundColor = 'yellow';
+//
+//        };
+//        这样写会把之前的方法覆盖掉
+//        xiao.onclick = function () {
+//            da.style.width = '800px';
+//
+//        };
+//        给元素添加事件
+        xiao.addEventListener('click',function () {
+            da.style.backgroundColor = 'yellow';
+        });
+        xiao.addEventListener('click',function () {
+            da.style.width = '800px';
+        });
+
+    </script>
+</body>
+</html>

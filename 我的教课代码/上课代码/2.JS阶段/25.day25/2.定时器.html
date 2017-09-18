@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时器</title>
+</head>
+<body>
+	<div></div>
+	<script>
+		//定时器： setInterval(执行代码，间隔时间)
+		var i = 5;
+		var timer = setInterval(function() {
+			document.getElementsByTagName("div")[0].innerText = i;
+			i--;
+			if (i <0) {
+				//停止计时器
+				clearInterval(timer);
+				document.getElementsByTagName("div")[0].innerText = "";
+			}
+		},1000);
+	
+		
+	</script>
+</body>
+</html>

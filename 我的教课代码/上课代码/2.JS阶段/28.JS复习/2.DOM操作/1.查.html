@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM操作</title>
+</head>
+<body>
+	<p id="a1">这是P标签1</p>
+	<p class="p1">这是P标签2</p>
+	<p class="p1">这是P标签3</p>
+	<p>这是P标签4</p>	
+	<a href="#">这是a标签</a>
+
+	
+	<script>
+
+		// 查：获得DOM对象 get 获得  element 元素标签 BY通过
+		document.getElementById("a1").style = "color:red;";
+
+		// （2）通过className 获得的是复数(数组)
+		// document.getElementsByClassName("p1")[0].style = "font-size:30px";
+		
+		var array = document.getElementsByClassName("p1");
+		for(var i = 0;i<array.length;i++){
+			array[i].style = "font-size:30px";
+		}
+
+		// （3）通过tagName 标签名 得到的也是（数组）
+		var array2 = document.getElementsByTagName("p");
+		for(var j=0;j<array2.length;j++){
+			array2[j].style = "font-weight:bold";
+		}
+
+
+	</script>
+
+</body>
+</html>

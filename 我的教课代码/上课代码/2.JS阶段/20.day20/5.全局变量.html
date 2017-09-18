@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全局变量</title>
+</head>
+<body>
+	<script>
+	//全局变量：所有的脚本和函数都可以访问的变量
+		var a = 10;
+		function number() {
+			a = 20;
+		}
+		number();
+		console.log(a);
+
+		function string() {
+			console.log(a);
+		}
+
+		string();
+
+	</script>
+</body>
+</html>

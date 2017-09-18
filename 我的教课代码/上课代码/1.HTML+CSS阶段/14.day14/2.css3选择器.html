@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css伪类</title>
+	<style>
+	/*伪类选择器*/
+		/*.children>li:first-child {
+			color: red;
+		}*/
+		/*.children>li:last-child {
+			color: red;
+		}*/
+		/*.children>li:nth-child(3) {
+			color: red;
+		}*/
+		/*.children>li:nth-child(2n-1) {
+			color: red;
+		}*/
+		/*.children>li:nth-child(2n) {
+			color: red;
+		}*/
+	/*伪对象选择器*/
+		/*.clearfix::after {
+			content: "";
+			display: block;
+			height: 0;
+			visibility: hidden;
+			clear: both;
+		}
+		.clearfix {
+			zoom:1;
+		}*/
+	/*afer伪类*/
+		/*.children>li:last-child::after {
+			content: "师傅";
+		}*/
+	/*before伪类*/
+		/*.children>li:nth-child(4)::before {
+			content: "好看";
+		}*/
+	/*属性选择器*/
+		/*input[type="submit"] {
+			color: blue;
+		}*/
+		div {
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+		/*div[title="a"] {
+			color: blue;
+		}*/
+		/*波浪符：属性值等于该字符串或者包含该字符串同时包含空格*/
+		/*div[title~="a"] {
+			color: blue;
+		}*/
+		/*属性值以该字符串开头*/
+		/*div[title^="a"] {
+			color: blue;
+		}*/
+		/*属性值以该字符串结尾*/
+		/*div[title$="a"] {
+			color: blue;
+		}*/
+		/*属性值中包含该字符串*/
+		/*div[title*="b"] {
+			color: blue;
+		}*/
+		/*div[title|="a"] {
+			color: blue;
+		}*/
+		/*~！！！！！！！！！！！！！！！管道符：等于该字符串 或者（1.以该字符串开头 2.在”-“的前面 3. 有小横杠）*/
+		/*div[title|="text"] {
+			color: blue;
+		}*/
+
+		div[title~="text"] { 
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<!-- a:link
+	a:hover
+	a:active
+	a:visited -->
+	<!-- :first-child
+	:last-child
+	:nth-child() -->
+	<!-- <ul class="children">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul> -->
+	<!-- <input type="text">
+	<input type="submit"> -->
+	<div title="a-text">1</div>
+	<div title="b-text">2</div>
+	<div title="c-text">3</div>
+	<div title="d-text">4</div>
+	<div title="e-text">5</div>
+	<div title="ae-text">6</div>
+	<div title="a">7</div>
+	<div title="a text">8</div>
+	<div title="text">9</div>
+	<div title="text-a">10</div>
+	<div title="a text-a">11</div>
+	<div title="a text">12</div>
+</body>
+</html>

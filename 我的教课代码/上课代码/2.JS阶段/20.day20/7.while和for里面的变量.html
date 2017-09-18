@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>循环结构中的变量</title>
+</head>
+<body>
+	<script>
+	    var i = 1;
+	    while (i <= 10) {
+	    	var a = 100;
+	    	i++;
+	    }
+
+	    console.log(a); //while 循环中定义的变量是全局变量----
+
+	    for (var i=0; i<=10; i++) {
+	    	var b =50;
+	    }
+
+	    console.log(b); //for循环中定义的变量也是全局变量------
+
+//函数中定义的变量是局部变量=---------------
+
+	</script>
+</body>
+</html>

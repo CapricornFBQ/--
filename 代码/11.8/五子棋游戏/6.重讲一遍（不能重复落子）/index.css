@@ -1,0 +1,34 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+/*棋盘设置样式*/
+
+.wrapper{
+	/*14*14个格子   44*44 大小*/
+	width: 616px;
+	height:616px;
+	margin:50px auto;
+	background: red;
+	/*棋子绝对与棋盘定位，所以棋盘设置相对定位*/
+	position: relative;
+
+}
+
+.gezi{
+   width: 42px;
+   height: 42px;
+   border: 1px solid black;
+   float: left;
+
+
+}
+
+img{
+
+	width: 44px;
+	height: 44px;
+
+	position: absolute;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>批量创建对象</title>
+</head>
+<body>
+	<script>
+	    //批量创建多个对象
+	    //-------------------------------工厂模式-----------
+	    function createPerson(name, age) {
+		    var o = new Object();
+		   	o.name = name;
+		   	o.age = age;
+		   	o.eat = function() {
+		   		alert("吃饭");
+		   	}
+		   	return o;//使用return返回创建的对象
+	    }
+
+	    var person = createPerson("chao", 17);
+
+	    // console.log(person.name);
+	    // person.eat();
+
+	    //--------------------------------构造函数--------------
+	    //抽象对象的方法
+	    function Person(name, age, job) {
+	    	this.name = name;
+	    	this.age = age;
+	    	this.job = job;
+	    	this.eat = function() {
+	    		alert("吃饭");
+	    	}
+	    }
+	    //构造函数和普通函数的区别：
+	    //1.在构造函数中使用this，指向当前对象；
+	    //2.构造函数使用时，用new进行实例化
+	    //3.构造函数中不使用return
+	    //4.构造函数函数名第一个字母要大写（建议，和普通函数进行区分）
+
+	    //把对象进行实例化----------------
+	    var person1 = new Person("shuo", 18, "student");
+
+	    var person2 = new Person("hailei", 18, "student");
+
+	    console.log(person1.name);
+	    // person1.eat();
+
+	    //-------------------------------函数共享，构造函数---------
+	    function Dag(name) {
+	    	this.name = name;
+	    	this.say = dagSay;
+	    }
+
+	    //方法拿出来
+	    function dagSay() {
+	    	alert("旺旺")
+	    }
+
+	    var dag1 = new Dag("bbei");
+	    dag1.say();
+	</script>
+</body>
+</html>

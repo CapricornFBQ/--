@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内置数组对象</title>
+</head>
+<body>
+	<script>
+		//数组在js里面是一个对象---------------------------------------
+		// var arrays = [元素1，元素2，元素3];
+		var array = new Array();  //创建一个空数组对象
+		console.log(array);
+		var array1 = new Array(3);  //小括号里面的参数可以用来定义数组对象的长度
+		console.log(array1);
+		array[0] = 1;
+		array[1] = 1;
+		array[2] = 1;
+		array[3] = 1;
+		array[4] = 1;
+		array[5] = 1;
+		array[6] = 1;
+		console.log(array);
+		console.log(Array.prototype); 
+		Array.prototype.say = function() {   //1，数组可以通过prototype属性指向原型对象 2，数组可以继承原型对象中的各种方法
+			alert("hha");
+		}
+		array.say();
+		console.log(Array.constructor);
+		//.length  //数组长度属性
+		//.shift()  删除第一个元素，同时取出第一个元素   ======改变原数组
+		//.unshift() 在数组的前面添加新元素
+		//.pop()  删除最后一个元素，同时取出最后一个元素   ======改变原数组
+		//.push()  从数组后面添加一个新元素
+		//.slice(起点位置，终点位置)  取出若干元素
+		//.splice(起点位置，个数，替换的内容)   替换数组中的元素
+		//.join()   数组转化为字符串
+		//.split()   把字符串转化为数组
+		//
+		console.log(Array);
+	</script>
+</body>
+</html>

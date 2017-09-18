@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS事件</title>
+</head>
+<body>
+	<div style="width: 200px;height: 200px;background: skyblue;transition: all 3s;">
+	
+	</div>
+
+	<script>
+	
+		//1.找到div
+		var div =document.querySelector("div");
+		
+		//鼠标移入 on mouse over
+		// div.onmouseover =function () {
+		// 	// this.style.height = "400px";
+		// 	this.style.width ="500px";
+		// }
+
+		//2.鼠标移出
+		// div.onmouseleave =function(){
+		// 	this.style.width ="200px";
+		// }
+
+
+		//3.鼠标移动
+
+		div.onmousemove =function(){
+			console.log("鼠标移动了");
+		}
+
+	</script>
+
+
+</body>
+</html>

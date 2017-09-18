@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>相对定位relative</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			background: red;
+			
+			
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+
+			position: relative;
+			/*left: 80px;*/
+			top:40px;
+			/*right: 80px;*/
+			bottom: 40px;
+
+			/*top和bottom不能同时使用 不然以top为主
+			  left和right不能同时使用 不然以left为主
+			*/
+			
+			
+		}
+		.box3{
+			width: 100px;
+			height: 100px;
+			background: green;
+			
+			
+		}
+
+	</style>
+</head>
+<body>
+
+
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<!-- 相对定位的特点：
+		（1）相对于标准流中的位置进行定位调试
+		（2）相对定位不脱标，原来的位置会保留，形影分离
+	 -->
+	
+	<!-- 相对定位的用处： -->
+	<!-- （1）标签位置的微调 -->
+	<!-- （2）做绝对定位的参照，口诀子绝父相（讲绝对定位的时候再讲) -->
+
+
+	
+</body>
+</html>

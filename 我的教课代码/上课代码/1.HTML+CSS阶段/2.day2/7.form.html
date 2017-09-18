@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Form表单</title>
+</head>
+<body>
+	<!--表单元素  -->
+
+	<!-- 1.所有的表单元素都要放到表单标签（form）里 -->
+	<!-- action:提交后台的方向 method:提交的方式，get提交post提交。get是不安全的，post是安全的-->
+	<form action="" method="">
+		
+		<!-- input标签 
+			属性type:Input输入框的类型  必选
+				placeholder:input输入之前的提示内容 
+				value:input里面的内容
+
+		-->
+		<!-- 文本输入框 -->
+		<p>
+			UserName:<input type="text" placeholder="请输入密码" value="326914673" name="UserName">	
+		</p>
+		<!-- 密码输入框 -->
+		<p>
+			PassWord:<input type="password" value="weiwei" name="password">
+		</p>
+		
+		<!-- 文件输入框 -->
+		<p>
+			<input type="file">
+		</p>
+	
+		<!-- 颜色输入框 -->
+		<p>
+			<input type="color">
+		</p>
+
+		<!-- 日期输入框 -->
+		<p>
+			<input type="date">
+		</p>
+
+		<!-- 前方高能，请注意！！！！！！！！！！！！！！！！！！！！！！！！！ -->
+		<!-- 单选框 type="radio“-->
+		<p>
+			<!-- radio单选框 name一样的为同组
+					         checked为设置默认选项 
+					         value 是radio必填的一项，代表该选项的值-->
+			<!-- Man:<input type="radio" name="sex" checked="checked"> -->
+
+			Man:<input type="radio" name="sex" checked value="nan">
+
+			Woman:<input type="radio" name="sex" value="nv">
+
+			Gay:<input type="radio" name="sex" value="tongzhi">
+
+		</p>
+
+
+		<p>
+			<!-- checkbox 多选框 name一样的为同一组
+			                      checked为默认选项，多选框可以设置多个默认选项
+			                      value 是checkbox必填的一项,代表值-->
+			美食<input type="checkbox" name="like" checked  value="meishi">
+			美女<input type="checkbox" name="like"  value="meinv">
+			美酒<input type="checkbox" name="like"  value="meijiu">
+			美美哒<input type="checkbox" name="like" checked value="memeda">
+
+		</p>
+
+		<!-- select:选择框，选择菜单，select里面要填option选项 -->
+		<p>
+			<select>
+				<option value="jinan">济南</option>
+				<option value="qingdao">青岛</option>
+				<option value="zaozhuang">枣庄</option>	
+
+			</select>
+
+		</p>
+
+		<p>
+			
+			<!-- 提交按钮：type="submit"是提交 -->
+			<input type="submit">
+			
+			<!-- 重置按钮 -->
+			<input type="reset">
+
+
+
+		</p>
+
+	</form>
+
+
+
+
+</body>
+</html>

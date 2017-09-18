@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: #2AB561;
+        }
+
+        .section .shield {
+            width: 408px;
+            height: 482px;
+            margin: -241px 0 0 -550px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            font-size: 0;
+        }
+
+        .section .intro {
+            width: 635px;
+            height: 309px;
+            margin: -160px 0 0 -70px;
+            background: url(images/p2.png) no-repeat;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+
+        .section span {
+            display: block;
+            background: url(images/shield.png) no-repeat;
+            position: absolute;
+        }
+
+        .section span:nth-child(1) {
+            width: 111px;
+            height: 121px;
+            background-position: -10px -34px;
+            top: 28px;
+            transform: translate(460%, -128%) rotate(80deg);
+        }
+
+        .section span:nth-child(2) {
+            width: 176px;
+            height: 149px;
+            background-position: -123px -6px;
+            left: 113px;
+            transform: translate(65%, 279%) rotate(145deg);
+        }
+
+        .section span:nth-child(3) {
+            width: 117px;
+            height: 121px;
+            background-position: -301px -34px;
+            left: 291px;
+            top: 28px;
+            transform: translate(400%, 380%) rotate(70deg);
+        }
+
+        .section span:nth-child(4) {
+            width: 106px;
+            height: 176px;
+            background-position: -15px -157px;
+            top: 151px;
+            left: 5px;
+            transform: translate(500%, 29%) rotate(110deg);
+        }
+
+        .section span:nth-child(5) {
+            width: 176px;
+            height: 176px;
+            background-position: -123px -157px;
+            top: 151px;
+            left: 113px;
+            transform: translate(472%, 73%) rotate(60deg);
+        }
+
+        .section span:nth-child(6) {
+            width: 111px;
+            height: 176px;
+            background-position: -301px -157px;
+            top: 151px;
+            left: 291px;
+            transform: translate(195%, 136%) rotate(90deg);
+        }
+
+        .section span:nth-child(7) {
+            width: 80px;
+            height: 100px;
+            background-position: -41px -335px;
+            top: 329px;
+            left: 31px;
+            transform: translate(-31%, -106%) rotate(282deg);
+        }
+
+        .section span:nth-child(8) {
+            width: 176px;
+            height: 153px;
+            background-position: -123px -335px;
+            top: 329px;
+            left: 113px;
+            transform: translate(47%, -157%) rotate(80deg);
+        }
+
+        span:nth-child(9) {
+            width: 83px;
+            height: 102px;
+            background-position: -301px -335px;
+            top: 329px;
+            left: 291px;
+            transform: translate(-320%, -410%) rotate(120deg);
+        }
+
+        /*第二屏动画*/
+        .current.section span {
+            transform: translate(0, 0) rotate(0);
+            transition: all 2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<!-- 第二屏 -->
+<section class="section">
+    <!-- 盾牌 -->
+    <div class="shield">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <!-- 介绍 -->
+    <div class="intro"></div>
+    <script>
+        window.addEventListener('click', function () {
+            console.log('执行');
+            var spans = document.querySelectorAll('span');
+            var section = document.querySelector('.section');
+            var exist = section.classList.contains('current');
+            section.classList.toggle('current',!exist);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+/*虽然bootstrap给设置了body的默认字体，但是我们还是自己给设置一下*/
+*{
+
+	margin: 0px;
+	padding: 0px;
+}
+
+
+body{
+	font-family:  "Helvetica Neue", Helvetica,
+	 Microsoft Yahei, Hiragino Sans GB, 
+	 WenQuanYi Micro Hei, sans-serif;
+
+
+}
+/* ------header部分包括：top nav */
+#header{
+	height: 120px;
+	/* background: red; */
+}
+
+#header > .topbar{
+	height: 40px;
+	border-bottom: 1px solid #c0c0c0;
+	line-height: 40px;
+
+	font-size: 12px;
+	color:#888;
+
+}
+#header a{
+	color:#888;
+	font-size: 12px;
+}
+
+/* 设置此类边框的固定用法 */
+/* 给父标签里的div的下一个兄弟div设置属性 */
+#header > .topbar > .container > .row > div + div{
+
+	border-left: 1px solid #c0c0c0 ;
+
+}
+
+
+/* -------------------自己封装的red按钮--------------- */
+
+
+#header .btn-red {
+  color: #fff;
+  background-color: red;
+  border-color: #d43f3a;
+}
+
+/* 所有的btn-red都是红色的 */
+.btn-red {
+  color: #fff;
+  background-color: red;
+  border-color: #DB3B43;
+}
+
+
+.btn-red:hover,
+.btn-red:focus,
+.btn-red.focus,
+.btn-red:active,
+.btn-red.active,
+.open > .dropdown-toggle.btn-red {
+  color: #fff;
+  background-color: #c9302c;
+  border-color: #ac2925;
+}   
+.btn-red:active,
+.btn-red.active,
+.open > .dropdown-toggle.btn-red {
+  background-image: none;
+}
+.btn-red.disabled,
+.btn-red[disabled],
+fieldset[disabled] .btn-red,
+.btn-red.disabled:hover,
+.btn-red[disabled]:hover,
+fieldset[disabled] .btn-red:hover,
+.btn-red.disabled:focus,
+.btn-red[disabled]:focus,
+fieldset[disabled] .btn-red:focus,
+.btn-red.disabled.focus,
+.btn-red[disabled].focus,
+fieldset[disabled] .btn-red.focus,
+.btn-red.disabled:active,
+.btn-red[disabled]:active,
+fieldset[disabled] .btn-red:active,
+.btn-red.disabled.active,
+.btn-red[disabled].active,
+fieldset[disabled] .btn-red.active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.btn-red .badge {
+  color: #d9534f;
+  background-color: #fff;
+}
+
+/* -----------topbar 二维码定位------------- */
+
+#header > .topbar >.container >.row .mobile-link{
+	position: relative;
+}
+#header > .topbar >.container >.row  .mobile-link img{
+
+	position: absolute;
+	top: 15px;
+	left: -18px;
+	display: none;
+	
+
+}
+
+#header > .topbar >.container >.row .mobile-link:hover >img{
+	display: block;
+
+}

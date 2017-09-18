@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<!-- JQ 的核心框架不支持 动画改变颜色（渐变颜色） -->
+	<script src ="../jquery-3.1.1.min.js"></script>
+	<script src ="../jquery-ui.min.js"></script>
+	
+	<style>
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+	</style>
+
+
+</head>
+<body>
+	<div style="width: 200px;height: 200px;background:red;position: relative;"></div>
+	
+	<script>
+		$(document).ready(function () {
+			
+			//1.获得动画对象
+
+			// $(selector).animate({属性},时间,callback动画结束后执行的函数);
+			//属性：只需要写改变的内容
+			//callback是动画执行完以后 会自动调用的函数
+
+			$("div").click(function(){
+
+				//默认情况下,HTML的标签的位置是固定的，要想用动画来改变位置，必须设置position
+				$("div").animate({
+
+					// opacity:".5",
+					// width:"500px",
+					// height:"500px",
+					left:"1000px",
+					backgroundColor:"blue",
+				
+
+
+				},2000);
+
+
+			});
+
+			
+
+		});
+
+
+	</script>
+
+
+
+</body>
+</html>

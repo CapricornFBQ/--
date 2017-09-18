@@ -1,0 +1,64 @@
+*{
+	margin:0px;
+	padding: 0px;
+
+}
+
+.tab{
+	width: 1000px;
+	/*height:500px;*/
+	margin:200px auto;
+	/*background: red; */
+
+}
+
+/*header*/
+.header{
+	width: 320px;
+	height: 36px;
+	border: 1px solid #ddd;
+	border-bottom: 0px;
+	list-style: none;
+
+}
+
+.header li{
+	
+	float: left;
+	width: 80px;
+	height: 32px;
+	text-align: center;
+	line-height: 32px;
+	
+	border-top:4px solid #fff;
+	position: relative;
+
+}
+
+.header li.selected{
+	border-top:4px solid red;
+}
+
+.header li span{
+
+	position:absolute;
+	right: -3px;
+	color: #ddd;
+}
+
+
+/**/
+.content{
+	width:998px;
+	height:475px;
+	
+	border: 1px solid #ddd;
+	overflow: hidden;
+
+}
+
+.img{
+	width: 998px;
+	height:475px;
+
+}

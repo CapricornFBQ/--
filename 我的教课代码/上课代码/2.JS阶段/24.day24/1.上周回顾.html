@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>上周回顾</title>
+</head>
+<body>
+	<script>
+		//判断分支
+		if(判断条件）{
+			执行语句
+		} else if (判断条件）{
+			执行语句
+		}  else {
+			执行语句
+		}
+
+		switch（判断变量） {
+			case 变量值：执行语句; break;
+		}
+
+		//循环
+		while（判断条件）{
+			执行语句
+		}
+
+		do {
+			执行语句
+		} while （判断条件）
+
+		for (定义循环变量，判断条件，变量变化) {
+			执行语句
+		}
+
+		//函数
+		function 函数名（参数列表） {
+			执行代码块
+		}
+
+		//局部变量：在函数内部定义的变量
+		//全局变量：在整个脚本中都可以直接访问的变量
+		//数组---------------------------------------------------
+		//var a = [元素,元素]
+		//属性：  .length
+		//a[0] = 值；
+		//.push(参数) 从末尾添加元素
+		//.unshift(参数)   从开始添加元素
+		//.pop()   删除最后一个元素，同时取出
+		//.shift()  删除第一个元素，同时取出
+		//.slice(起始位置，终止位置)  取出中间的元素
+		//.splice(起始位置，元素个数，添加的元素)   替换元素
+		//.join()  拼接为字符串 
+		//.split(分割符)  以参数作为分隔符，把字符串分割为数组
+		//字符串-----------------------------------------------------
+		//var b = "字符"；
+		//属性： .length
+		//.charAt（数字）   -- character 
+		//.concat()   拼接两个字符串
+		//.slice(起始位置，终止位置)  取出中间的字符
+		//.substr(起始位置，字符个数)  取出中间的字符
+		//.toUpperCase() 转化为大写字符
+		//.toLowerCase() 转化为小写字符
+		//.split(参数)
+		//.replace(待被替换的内容，新内容)
+		//.indexOf(查询字符)   返回字符位置
+		//.lastIndexOf(查询字符)  返回字符的位置（从后向前查询）  查询不到返回-1；
+		//map 键值对对象-----------------------------------------------
+		//var c = {键：值，键：值，键：值，键：值，键：值，键：值}
+		//c[键]   c.键
+		//for （key in c） {
+		//	执行代码
+		//}
+		//Date----------------------------------------------------------
+		//var a = new Date();
+		//.getFullYear()
+		//.getMonth() + 1;
+		//.getDate();
+		//.getDay();
+		//.getHours();
+		//.getMinutes();
+		//.getSeconds();
+		//DOM对象-------------------------------------------------------
+		//文档节点---元素节点---文本节点-----属性节点----注释节点
+		//parentNode  父节点
+		//childNodes  子节点
+		//firstChild   第一个子节点
+		//lastChild   最后一个子节点
+		//nextSibling  下一个兄弟节点
+		//previousSibling   前一个兄弟节点
+		//children   子节点 （不返回文本节点）
+		//document.getElementById()
+		//.getElementsByClassName()----返回数组
+		//.getElementsByTagName() -----返回数组
+		//.createElement()  创建元素节点
+		//.createTextNode()   创建文本节点
+		//.appendChild()   添加子节点
+		//.removeChild()   删除子节点
+		//.getAttribute()  获取属性节点
+		//.setAttribute(属性名，属性值)  设置属性
+		//.innerHTML()  内部的html文本
+		//.innerText()   内部的text文本（不含标签）
+		//事件----------------------------------------------------------
+		//鼠标单击事件： .onclick
+		//双击   ：    ondblclick
+		//鼠标按下：  onmousedown
+		//鼠标松开：  onmouseup
+		//鼠标移入：  onmouseover
+		//鼠标移出：  onmouseleave
+		//鼠标移动：  onmousemove
+		//键盘事件---------------
+		//键盘按下：  onkeydown
+		//键盘松开：  onkeyup
+	</script>
+</body>
+</html>

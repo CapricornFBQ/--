@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>string</title>
+</head>
+<body>
+	<script>
+		//字符串对象
+		var str = new String("hehhe");  //用new创建一个字符串对象
+		console.log(str);
+		console.log(str.valueOf());   //用valueOf取出字符串值
+		var str1 = String("hhheh");   //用String来定义字符串
+		console.log(str1);
+		var str2 = "hhhhhheehhee";   //直接用双引号来定义字符串
+		console.log(String.prototype);
+		var aString = "今天是星期三， 天气还好！"
+		console.log(aString.length);   //.length 返回字符个数
+		console.log(aString.charAt(0));
+		console.log(aString[0]);    //取出某位置的字符
+
+		console.log(aString.indexOf("天"));   //检索字符位置    从左向右
+		console.log(aString.lastIndexOf("天"));
+		var bString = "下雨";
+		console.log(aString.concat(bString));  //拼接字符串
+		console.log(aString.slice(1,9));   //取出若干字符
+		console.log(aString.substr(4,5));  //取出若干字符
+		console.log(aString);
+		var cString = "aaasDDSGFDSGgfsgfsg"
+		var a = cString.toUpperCase()
+		console.log(a)
+		console.log(cString.toUpperCase());   //大写转换
+		console.log(cString);  
+		console.log(cString.toLowerCase());   //小写转换
+		console.log(aString.split("天"))
+	</script>
+</body>
+</html>

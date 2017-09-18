@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>优先级原则</title>
+	<style>
+		/*标签选择器*/
+		/*0,0,1*/
+		a{
+			color: red;
+		}
+		/*class选择器
+		 0,1,0
+		*/
+		.a1{
+			color: green;
+		}
+		/*id 选择器
+		1,0,0
+		*/
+		#a2{
+			color: blue;
+		}
+		
+		/*后代选择器
+		1,0,1
+		*/
+		p #a2{
+			color:orange;
+		}
+
+		/*优先级权重
+		标签选择器权重：
+		*/
+
+		/*开发过程的约法三章
+			1.外部链接
+			2.Id 不随便用,多用div
+			3.选择器写完整，命名要规范（不允许纯数字，尽量简明知意）
+			4.多使用基本类
+		*/
+		
+		.bg-green{
+			background: green;
+		}
+
+		.bg-red{
+			background: red;
+		}
+		.ft-40{
+			font-size: 40px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 这是HTML文件的注释 -->
+	<p>
+		<a href=""  id ="a2" class="a1">我是郑爽</a>
+
+	</p>
+	<!-- 怎样写完整 -->
+	<ul class ="ul1">
+		<li><a href=""></a></li>
+		<li><a href="" class="class1"></a></li>
+
+	</ul>
+	<div class ="header">
+		<ul class ="header-nav">
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+
+		</ul>
+		<img src="" alt="" class="header-pho">
+
+	</div>
+
+	<!-- 基本类的好处 -->
+	<p class ="bg-green">sss</p>
+	<p class="bg-red ft-40">sss</p>
+	<h3 class="bg-green ft-40">sss</h3>
+	<div class="bg-red ft-40">sssss</div>
+	
+
+</body>
+</html>

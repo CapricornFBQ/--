@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+
+	<style>
+		#container {
+			border-radius: 5px;
+			position: relative;
+			width: 960px;
+			height: 450px;
+			background: green;
+			margin: 50px auto;
+		}
+		#control {
+			position: absolute;
+			left:50%;
+			margin-left:-25px;
+			bottom: 15px;
+		}
+		span {
+			display: inline-block;
+			border-radius: 50%;
+			width: 10px;
+			height: 10px;
+			background: #ccc;
+		}
+		.selected {
+			background: black;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="control">
+			<span bcolor="orange" class="selected"></span>
+			<span bcolor="red"></span>
+			<span bcolor="blue"></span>
+			<span bcolor="yellow"></span>
+			<span bcolor="pink"></span>
+		</div>
+	</div>
+	<script>
+		//获取操作元素和控制元素
+		var container = document.getElementById("container");
+		var spans = document.getElementsByTagName("span");
+		for (var i=0; i<spans.length; i++) {
+			spans[i].onclick = function() {
+				//对container的背景色进行赋值
+				container.style.background = this.getAttribute("bcolor");
+				for (var j=0; j<spans.length; j++) {
+					spans[j].setAttribute("class", "")
+				}
+				this.setAttribute("class", "selected");
+			}
+		}
+
+	</script>
+</body>
+</html>

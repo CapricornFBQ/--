@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过滤</title>
+	<script src ="../jquery-3.1.1.min.js" ></script>
+</head>
+<body>
+	
+	<ul>
+		
+		<li class="a">我们兄弟五个节点1</li>
+		<li class="a">我们兄弟五个节点2</li>
+		<li class="green a">我们兄弟五个节点3</li>
+		<li class="">我们兄弟五个节点4</li>
+		<li class="a">我们兄弟五个节点5</li>
+
+
+	</ul>
+
+	<script>
+		$(document).ready(function () {
+		
+			//first
+			$("li").first().css("background","red");
+			//last
+			$("li").last().css("background","green");
+
+			//按照索引下标
+			// $("li")[1] 这种方法导致JQ->JS
+			//EQ索引从0开始
+			$("li").eq(1).css("background","pink");
+
+			//条件过滤 filter 符合条件的
+			$("li").filter(".green").css("background","green");
+
+			//not()
+			$("li").not(".a").css("background","orange");
+
+
+		});	
+	</script>
+
+
+</body>
+</html>

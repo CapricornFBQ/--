@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# version 1.0.5
+
+CACHE:
+    index.html
+    style.css
+    script.js
+    toy.png
+NETWORK:
+    *

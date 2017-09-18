@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变量的种类和类型</title>
+</head>
+<body>
+	
+
+	<script>
+	var a = "123456";
+	console.log(typeof a);
+
+	// -----将其他类型转化为Number（int/float）类型----------
+	// Number(需要转换的变量);
+	var b  = Number(a);
+	console.log(b);
+	console.log(typeof b);
+
+	// c是bool值得变量
+	var c = true;
+	console.log(typeof c);
+	var d = Number(c);
+	console.log(typeof d);
+
+	// -------将其他类型的变量转换为int类型----
+	var e = parseInt("12.5");
+	console.log(e);
+
+	// ------将其他类型的变量转换为float类型
+	var f =parseFloat("11");
+	console.log(f);
+
+
+	// -------将其他类型转化为字符串----------------------
+	var j = 1552508869;
+	console.log(typeof j);
+	var h = String(j);
+	console.log(typeof h);
+
+
+
+	</script>
+</body>
+</html>

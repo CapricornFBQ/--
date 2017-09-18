@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQ和JS对象的转换</title>
+	<style>
+			
+
+	</style>
+	<script src ="../jquery-3.1.1.min.js"></script>
+	<style>
+		
+		p{
+			width: 200px;
+			height: 200px;
+			background: red;
+		}
+	</style>
+
+</head>
+<body>
+	<div style="width: 300px;height: 200px;border: 1px solid black">
+		<a href="#">a标签一</a>
+		<a href="#">a标签二</a>		
+	</div>
+	<script>
+
+	$(document).ready(function () {
+			
+		//因为只有JS对象才能调用JS的方法，只有JQ对象才能调用JQ的方法
+
+
+		//例如
+		// var div = document.querySelector("div");
+		// div.innerText ="这是div";
+		//JS对象无法调用JQ的方法
+		// div.text("这是div");
+
+
+		//将所有的a变为字体红色
+		// var arrays1 = document.querySelectorAll("a");
+		var arrays2 = $("a");
+		//JS的数组无法迭代，只能自己循环设置
+		// arrays1.style.color = "red"; 
+
+		// arrays2.css("color","red");
+
+
+
+		//问题是：能不能让JS的对象转化为JQ对象呢   :JQ数组元素是JS对象
+		//可以得，例如arrays1 是JS   $(JS)->JQ
+		// $(arrays1).css("color","red");
+
+		//反过头来JQ对象能变成JS嘛
+		//arrays2是一个JQ数组。
+		// arrays2[0].css("font-size","30px");
+		// arrays2[0].style.color = "orange";
+
+		 // $("a")[1].style.color = "orange";
+		 // $("a")[0].css("color","orange");
+
+
+
+		 //创建一个标签
+		 var p = document.createElement("p");
+		 //转换成JQ
+		 // $(p).css({"width":"200px","height":"200px","background":"red"});
+
+		
+		//JS对象不能调用JQ方法，JQ对象不能调用JS方法
+
+		$("div").append($(p).text("hahha"));
+
+
+	});
+
+
+		
+
+
+	</script>
+
+
+</body>
+</html>

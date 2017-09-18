@@ -1,0 +1,4 @@
+1.animate动画
+2.transform：translate 平移 scale放大  rotate 旋转
+3.position:relative相对定位 abouslate 绝对定位
+4.background-size

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		
+		@keyframes animation1{
+			from{transform: rotate(0deg);}
+			to{transform: rotate(360deg);}
+		} 
+
+		.box1{
+			width: 100px;
+			height: 100px;
+			background: orange;
+			/*旋转  deg角度*/
+			transform-origin: 0 0;
+			/*transform: rotate(45deg);*/
+			position: absolute;
+			left: 50%;
+			margin-left: -50px;
+			top:200px;
+			animation: animation1  10s;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<div class="box1"></div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>键盘事件</title>
+	<style>
+	</style>
+</head>
+<body>
+	<input type="text">
+	<script>
+	//	键盘被按下的事件------onkeydown
+	document.getElementsByTagName("input")[0].onkeydown = function() {
+		this.style.background = "green";
+	}
+	//  键盘松开事件----------onkeyup
+	document.getElementsByTagName("input")[0].onkeyup = function() {
+			var content = this.value;
+			var textContent = document.createTextNode(content);
+			var bodyNode = document.getElementsByTagName("body")[0];
+			bodyNode.appendChild(textContent);
+	}
+	</script>
+</body>
+</html>

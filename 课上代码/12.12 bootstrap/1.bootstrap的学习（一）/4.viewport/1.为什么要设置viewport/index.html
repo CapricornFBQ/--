@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <!-- 1.设置 字符的编码格式-->
+    <meta charset="utf-8">
+    <!-- 2.让IE游览器渲染试图，按照edge游览器的方法 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 3.这是vieport 视口 -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- meta:vp -->
+  
+     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+     <!-- width=device-width 让网页的尺寸等于手机的尺寸
+          user-scalable = no; 禁止缩放（不推荐所有页面使用，具体看情况）
+          initial-scale = 1;使CSS里面的标签 按照设置的尺寸1:1显示在手机上
+
+      -->
+
+
+    <title>项目的结构</title>
+
+    <!-- Bootstrap -->
+    <link href="lib/dist/css/bootstrap.css" rel="stylesheet">
+
+  </head>
+  <body>
+      
+    <button>这是默认样式：HTML</button>
+
+    <!-- bootstrap提供的样式 -->
+    <button class="btn">bootstrap btn</button>
+
+    <button class="btn btn-default">bootstrap btn</button>
+    <button class="btn btn-danger">bootstrap btn</button>
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+
+    <button type="button" class="btn btn-warning btn-lg">Warning</button>
+    <button type="button" class="btn btn-warning btn-xs">Warning</button>
+   
+    <script src="lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="lib/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

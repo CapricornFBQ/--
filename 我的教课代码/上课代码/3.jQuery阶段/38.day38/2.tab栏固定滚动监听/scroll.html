@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滚动事件复习</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.top,.nav {
+			width: 1423px;
+			margin: 0 auto;
+			position: relative;
+			left:0;
+		}
+	/*	.nav{
+			transition: all 0.5s;
+		}*/
+		.nav.selected {
+			position: fixed;
+			top: 0;
+		}
+		.main {
+			width: 1001px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="top">
+		<img src="images/top.png" alt="">
+	</div>
+	<div class="nav">
+		<img src="images/nav.png" alt="">
+	</div>
+	<div class="main">
+		<img src="images/main.png" alt="">
+	</div>
+
+
+	<script src="../../jquery-3.2.1.js"></script>
+	<script>
+	$(function() {
+		$(document).scroll(function() {
+			var top = $(document).scrollTop();  //获取文档滚动高度
+			var height = $(".top").height();    //获取上面元素的高度
+			if(top>height){
+				$(".nav").addClass("selected");//添加类 
+				var left = ($(window).width() - $(".nav").width())/2 + "px";  //设置居中
+				$(".nav").css("left",left);
+			}else{
+				$(".nav").removeClass("selected");  //让css恢复默认的样式
+				$(".nav").css("left","0px");
+			}
+			
+		})
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>后台数据获得</title>
+</head>
+<body>
+	<input type="text"><button>按钮</button>
+
+	<script >
+		//(1)
+		document.querySelector("button").onclick=function () {
+			//(2)
+			var city = document.querySelector("input").value;
+
+            //(3)
+			var xhr = new XMLHttpRequest();
+			//(6)
+			xhr.onreadystatechange = function(){
+				if (xhr.readyState == 4) {
+
+					// alert(xhr.responseText);
+					var obj = eval("("+xhr.responseText+")");
+					console.log(obj);
+				}
+			}
+
+			//(4)
+			xhr.open("post","tianqi.php",true);
+			xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+			//(5)
+			var string = "city="+city;
+			xhr.send(string);
+
+
+		}
+
+
+	</script>
+</body>
+</html>

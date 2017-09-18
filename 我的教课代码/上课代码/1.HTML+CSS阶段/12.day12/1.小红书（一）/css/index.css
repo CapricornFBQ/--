@@ -1,0 +1,97 @@
+body{
+	background: #efefef;
+}
+
+/*header部分*/
+
+.header{
+	height: 120px;
+	border-bottom: 3px solid #ff2741;
+	background: #fff;
+}
+
+.header .bw-container-big{
+	/*background: orange;*/
+	height: 120px;
+}
+
+.header .bw-container-big .header-logo{
+	height: 91px;
+	width: 180px;
+	/*background: yellow;*/
+	padding-top: 29px;
+	float: left;
+
+}
+.header .bw-container-big .header-logo img{
+	width: 124px;
+	height: 62px;
+
+}
+
+.header .bw-container-big .header-navBar{
+	height: 120px;
+	/*width: 400px;*/
+	/*background: skyblue;*/
+	float: left;
+
+}
+.header .bw-container-big .header-navBar a{
+	float: left;
+	/*background: red;*/
+	width: 125px;
+	height: 120px;
+	line-height: 120px;
+	text-align: center;
+	font-size: 18px;
+    color: #818181;
+    font-weight: 100;
+    text-decoration:none;
+
+  /*  border-left: 1px solid #818181;*/
+}
+.header .bw-container-big .header-navBar span{
+	float: left;
+	height: 120px;
+	line-height: 120px;
+	color: #818181;
+}
+.header .bw-container-big .header-navBar a.selected{
+	color: #ff2741;
+}
+
+.header .bw-container-big .header-btnClass{
+	/*background: orange;*/
+	width: 200px;
+	height: 120px;
+	float: right;
+	line-height: 120px;
+	/*让button居中*/
+	text-align: center;
+}
+
+/*稍微修改下框架*/
+.header .bw-container-big .header-btnClass .bw-btn-red{
+	padding:6px 16px
+}
+
+.header .bw-container-big .header-btnClass .erweima{
+	position: relative;
+	top:10px;
+}
+.header .bw-container-big .header-btnClass .erweima:hover .bigerweima{
+
+	/*display: inline-block;*/
+	width: 148px;
+	height: 148px;
+}
+.header .bw-container-big .header-btnClass .erweima .bigerweima{
+	position: absolute;
+	top:-15px;
+	left: 0px;
+	width: 0px;
+	height: 0px;
+
+	transition: all 0.2s; 
+	/*display: none;*/
+}

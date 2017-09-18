@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="list" data-daxiao="200 200">
+<li class="libiaoqian"></li>
+<li class="libiaoqian"></li>
+<li class="libiaoqian"></li>
+</ul>
+<script>
+//    先拿到数据源
+//    遍历数据源 把内容提取出来
+//    创建新标签 把数据写入新标签
+//    再把数据写入网页中
+
+    //数组有序存放数据 arrray[0]
+//    var array = ["张三","李四"];
+    //字典 {key:value} dict{2016}
+//    var dict = {2016:555};
+//    var data1 = {
+//        学号：个人信息，
+//        学号：个人信息，
+//        学号：个人信息
+//    };
+//     学生信息 数据源
+//    var zhangsan = {'name': '张三', 'age': 18};
+    var data = {
+        101: {'name': '张三', 'age': 18},
+        102: {'name':'李四','age' : 19},
+        103: {'name':'王五','age' : 20}
+    };
+    console.log(data[01]);
+//    获取ul列表
+    var list = document.getElementById('list');
+//    遍历数据源
+    for (var key in data){
+//        获取每一项数据
+        var item = data[key];
+        console.log(item);
+//        创建显示数据的标签
+        var li = document.createElement('li');
+//        将数据写入显示的标签
+        li.innerHTML = item.name;
+//        以为从下面取不到数据 可以将当前数据存储在data-属性里 随着数据越来越多 不可能将所有的数据放在data属性里面 这时候将关键性数据放入
+//        li.setAttribute('data-name',item.name);
+//        li.setAttribute('data-age',item.age);
+        li.setAttribute('data-id',key);
+        list.appendChild(li);
+        li.addEventListener('click',function () {
+//            取不到 取到的是循环的最后一个
+//            console.log(item.name);
+//            this是当前点击对象 他有一个dataset属性 这个属性存放当前标签的data属性去掉data-之后的值
+            console.log(this.dataset);
+//            console.log(this.dataset['id']);
+            var xinxi = data[this.dataset['id']];
+//            console.log('当前信息'+xinxi.name);
+        });
+    }
+
+    console.log(list.dataset);
+
+
+//    当网页超链接多了之后 将分组标签写data属性 指向分组列表每一项的超链接数据源
+//    var data = {
+//        小米note2：小米note2的超链接，
+//        小米note：小米note的超链接，
+//        小米5：小米5的超链接，
+//        小米5s：小米5s的超链接，
+//    }
+//    data-links
+</script>
+</body>
+</html>

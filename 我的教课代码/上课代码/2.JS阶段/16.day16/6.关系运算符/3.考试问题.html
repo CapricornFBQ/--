@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>考试问题判断</title>
+</head>
+<body>
+	
+	
+
+
+	<script>
+		 //1.判断是否符合18-70岁标准，如果符合则返回报名成功，否则返回年龄不符合
+		 // （1）获得输入的年龄
+		 var string = prompt("请输入年龄："); 
+         var number = Number(string);
+         console.log(number);
+
+         // (2)构建判断条件  18<= number <= 70 --->(18<=number)&&(number<=70)
+
+         (18<= number)&&(number <=70)?alert("符合"):alert("不符合");
+
+
+	</script>
+</body>
+</html>

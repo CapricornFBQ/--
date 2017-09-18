@@ -1,0 +1,216 @@
+body{
+	background: #efefef;
+}
+
+/*header部分*/
+
+.header{
+	height: 120px;
+	border-bottom: 3px solid #ff2741;
+	background: #fff;
+	
+	width: 100%;
+	position: fixed;
+
+	
+}
+
+.header .bw-container-big{
+	/*background: orange;*/
+	height: 120px;
+}
+
+.header .bw-container-big .header-logo{
+	height: 91px;
+	width: 180px;
+	/*background: yellow;*/
+	padding-top: 29px;
+	float: left;
+
+}
+.header .bw-container-big .header-logo img{
+	width: 124px;
+	height: 62px;
+
+}
+
+.header .bw-container-big .header-navBar{
+	height: 120px;
+	/*width: 400px;*/
+	/*background: skyblue;*/
+	float: left;
+
+}
+.header .bw-container-big .header-navBar a{
+	float: left;
+	/*background: red;*/
+	width: 125px;
+	height: 120px;
+	line-height: 120px;
+	text-align: center;
+	font-size: 18px;
+    color: #818181;
+    font-weight: 100;
+    text-decoration:none;
+
+  /*  border-left: 1px solid #818181;*/
+}
+.header .bw-container-big .header-navBar span{
+	float: left;
+	height: 120px;
+	line-height: 120px;
+	color: #818181;
+}
+.header .bw-container-big .header-navBar a.selected{
+	color: #ff2741;
+}
+
+.header .bw-container-big .header-btnClass{
+	/*background: orange;*/
+	width: 200px;
+	height: 120px;
+	float: right;
+	line-height: 120px;
+	/*让button居中*/
+	text-align: center;
+}
+
+/*稍微修改下框架*/
+.header .bw-container-big .header-btnClass .bw-btn-red{
+	padding:6px 16px
+}
+
+.header .bw-container-big .header-btnClass .erweima{
+	position: relative;
+	top:10px;
+}
+.header .bw-container-big .header-btnClass .erweima:hover .bigerweima{
+
+	/*display: inline-block;*/
+	width: 148px;
+	height: 148px;
+}
+.header .bw-container-big .header-btnClass .erweima .bigerweima{
+	position: absolute;
+	top:-15px;
+	left: 0px;
+	width: 0px;
+	height: 0px;
+
+	transition: all 0.2s; 
+	/*display: none;*/
+}
+
+/*section1*/
+.section1{
+	height: 400px;
+	/*background: red;*/
+	background: #fff;
+	/*这个padding是为了解决顶部的塌方*/
+	padding-top:123px;;
+}
+.section1 .bw-container-big{
+	height: 400px;
+	background: url(../img/banner.jpg);
+}
+/*section2*/
+.section2{
+	height: 75px;
+	/*background: yellow;*/
+}
+
+.section2 .bw-container-big{
+	height: 30px;
+	/*background: orange;*/
+	padding-top: 45px;
+	border-bottom: 1px solid #a0a0a0;
+}
+
+.section2 .bw-container-big span.title1{
+	color: #3c3c3c;
+    font-size: 17px;
+    float: left;
+}
+
+
+.section2 .bw-container-big span.title2{
+	color: #a0a0a0;
+	float: right;
+}
+
+/*section3部分*/
+.section3{
+	/*height: 800px;*/
+	/*background: orange;*/
+}
+
+.section3 .bw-container-big{
+	/*height: 800px;*/
+	/*background: red;*/
+}
+.section3 .bw-container-big .imgRow{
+	/*height:273px;*/
+	/*background: blue;*/
+	margin-top: 40px; 
+}
+
+.section3 .bw-container-big .imgRow .bw-imgVeranda{
+	border: 0px;
+	float: left;
+}
+.section3 .bw-container-big .imgRow .bw-imgVeranda .bw-imgDes{
+	background: #fff;
+}
+.section3 .bw-container-big .imgRow .bw-imgVeranda .bw-imgDiv{
+	background: #fff;
+}
+.section3 .bw-container-big .imgRow .bw-imgVeranda .bw-imgDiv img{
+	/*img宽度设置为100%,是为父标签的100%，然后高等比例放大*/
+	width: 100%;
+}
+/*给加边框间距*/
+.section3 .bw-container-big .imgRow .bw-imgVeranda+.bw-imgVeranda{
+	margin-left: 40px;
+}
+
+/*footer部分代码*/
+.footer{
+	height: 250px;
+	/*background: orange;*/
+	margin-top:120px;
+	border-top: 1px solid #a0a0a0;
+}
+
+.footer .navBar{
+	/*background: skyblue;*/
+	/*height: 100px;*/
+	text-align: center;
+	padding-top: 40px;
+	margin-bottom: 30px;
+}
+
+.footer .navBar a{
+	color: #A0A0A0;
+	text-decoration: none;
+	font-weight: 100;
+	display: inline-block;
+	width: 110px;
+	/*background: red;*/
+	border-left:1px solid #a0a0a0;
+}
+.footer .navBar a.last{
+	border-right:1px solid #a0a0a0;
+}
+.footer p{
+	text-align: center;
+	color: #9f9f9f;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/*backTop部分*/
+.backTop{
+	position: fixed;
+	right: 0px;
+	bottom: 100px;;
+}

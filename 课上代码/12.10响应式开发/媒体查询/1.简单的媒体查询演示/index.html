@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简单的媒体查询</title>
+
+	<style>
+		div{
+			width: 400px;
+			/* width: 60%; */
+			height: 400px;
+			background: red;
+			margin: 0px auto;
+		}
+
+	/* 媒体查询的核心是：
+		1.当屏幕改变到一定的大小，网页中的某些模块的属性发生改变
+
+	 */
+		@media screen and (max-width:300px) {
+			body{
+
+				background-color: skyblue;
+			}
+
+			div{
+				width: 150px;
+				height: 150px;
+			}
+
+		}
+
+	</style>
+</head>
+<body>
+
+	<div></div>
+	
+</body>
+</html>

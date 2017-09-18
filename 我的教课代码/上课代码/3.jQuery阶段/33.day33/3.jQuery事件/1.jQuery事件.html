@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery 事件</title>
+</head>
+<body>
+<!-- 
+	JS:         onclick   ondblclick  onmouseover   onmouseleave   onmousemove 
+	jQuery:     click     dblclick    mouseenter    mouseleave 
+	
+	css:    hover
+	jQuery: hover  
+	
+	JS:        onkeydown  onkeyup
+	jQuery:    keydown    keyup
+
+	JS:      onsubmit onchange  onfocus onblur 
+	jQuery:  submit   change    focus   blur
+
+
+
+ -->
+ 	<p>这是个p标签</p>
+ 	<input type="text">
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			$("p").click(function() {
+				this.style.color = "red";
+			})
+
+
+			$("p").dblclick(function() {
+				$("p").css("color","blue");
+			})
+
+			$(":text").change(function() {
+				this.style.background = "blue";
+			})
+
+			$(":text").focus(function() {
+				this.style.background = "red";
+			})
+
+			$(":text").blur(function() {
+				this.style.background = "green";
+			})
+
+
+			$("p").hover(function() {
+				this.style.color="orange";
+			},function() {
+				this.style.color="pink";
+			})
+
+
+		})
+	</script>
+</body>
+</html>

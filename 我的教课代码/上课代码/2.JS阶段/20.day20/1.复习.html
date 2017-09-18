@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组复习</title>
+</head>
+<body>
+	<script>
+		var arrays = ["tom",25,"man",180,75];
+		//在最后添加一个元素----
+		arrays.push("木木");
+		console.log(arrays);
+		//在数组的开始添加一个元素-----
+		arrays.unshift("第一个");
+		console.log(arrays);
+		//取出数组第一个元素，同时原数组的第一个元素被删除----
+		var a = arrays.shift();
+		console.log(a);
+		console.log(arrays);
+		//取出数组的最后一个元素，同时原数组的最后一个元素被删除----
+		var b = arrays.pop();
+		console.log(b);
+		console.log(arrays);
+		//数组拼接为字符串------------
+		var c = arrays.join();  //没有参数的话，默认以逗号隔开
+		console.log(c);
+		var d = arrays.join("-"); //有参数的话，就以该参数作为分隔符，隔开---
+		console.log(d);
+		//把一个字符串变为数组--------------
+		var string = "贝沃，H5，js，css，html";
+		var e = string.split("，"); //以参数作为分隔符进行元素拆分--
+		console.log(e);
+		var f = string.split(); //没有参数的话，会成为一个元素的数组
+		console.log(f);
+		//在数组中取出元素，但不改变原数组-------------
+		var g = arrays.slice(2) //第一个参数为起始位置，同时包含这个起始的元素
+		console.log(g);
+		var h = arrays.slice(2,4);//第二个参数为终止位置，不包含这个终止的元素
+		console.log(h);
+
+		//数组中的元素进行替换，或者删除--------------
+		var i = arrays.splice(2,2, "嘻嘻","哈哈","嘿嘿"); //如果不添加薪元素，就可以实现删除功能----- 如果有新元素作为参数，就可以实现替换功能------
+		console.log(i);
+		console.log(arrays);
+
+
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>五子棋</title>
+	<style>
+		.wrapper {
+			width: 616px;
+			height: 616px;
+			margin: 50px auto;
+			background: orange;
+			border: 1px solid black;
+		}
+		.grid {
+			width: 42px;
+			height: 42px;
+			border: 1px solid black;
+			float:left;
+		}
+	</style>
+</head>
+<body>
+	<!-- 棋盘格子宽度为44px  横竖可以放15个棋子，一行一共需要14个div即可 -->
+	<div class="wrapper">
+
+	</div>
+	<script>
+		//思路： 先做个棋盘---> 放棋子 ----> 黑白棋子轮换 -----> 添加规则
+		for(var j=0; j<14; j++) {
+			for(var i=0; i<14; i++) {
+				//1.获取大的棋盘
+				var wrapper = document.querySelector(".wrapper");
+				//2.创建小的div
+				var newDiv = document.createElement("div");
+				//3.把新div放入棋盘
+				newDiv.className = "grid";
+				wrapper.appendChild(newDiv);
+			}
+		}
+
+
+
+
+
+
+	</script>
+</body>
+</html>

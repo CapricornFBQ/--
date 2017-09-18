@@ -1,0 +1,21 @@
+
+/*header部分*/
+.header{
+	background: black;
+	height: 100px;
+
+}
+
+.header .container{
+	width: 1000px;
+	height: 100px;
+	background: red;
+	margin: 0px auto;
+}
+
+.header .container .logo{
+	width: 200px;
+	height: 100px;
+	background: orange;
+	line-height: 100px;
+}

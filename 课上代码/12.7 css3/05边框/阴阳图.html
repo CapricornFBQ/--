@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .yinyang {
+            margin: 100px;
+            width: 180px;
+            height: 90px;
+            border-bottom-width: 90px;
+            border-style: solid;
+            border-bottom-color: green;
+            background-color: red;
+            border-radius: 90px;
+            border-left-width: 0px;
+            border-right-width: 0px;
+            border-top-width: 0px;
+            position: relative;
+            /*width: 180px;*/
+            /*height: 0;*/
+            /*border-style: solid;*/
+            /*border-left-width: 0px;*/
+            /*border-right-width: 0px;*/
+            /*border-top-width: 90px;*/
+            /*border-bottom-width: 90px;*/
+            /*!*border-left-width: 90px;*!*/
+            /*border-top-color: red;*/
+            /*border-bottom-color: green;*/
+            /*!*border-left-color: blue;*!*/
+            /*border-radius: 90px;*/
+        }
+        .yinyang::after,.yinyang::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 30px solid black;
+            border-radius: 45px;
+        }
+        .yinyang::before{
+            top: 45px;
+            left: 0;
+            background-color: red;
+            border-color: green;
+        }
+        .yinyang::after {
+            top: 45px;
+            right: 0;
+            background-color: green;
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="yinyang">
+
+    </div>
+</body>
+</html>

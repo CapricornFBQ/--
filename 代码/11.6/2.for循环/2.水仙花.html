@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>水仙花</title>
+</head>
+<body>
+	
+	<script>
+		
+		// 步骤一：写出求abc得a\b\c，并且判断a^3+b^3+c^3 = abc;
+		// var number = 987;
+		// var a = parseInt(number/100);
+		// var b = parseInt(number%100/10);
+		// var c = number%10;
+		// var sum  = Math.pow(a,3)+Math.pow(b,3)+Math.pow(c,3);
+		// if (sum == number) {
+
+		// 	console.log(number);
+		// }
+
+		//2.循环
+		// var number =100;
+		// while(number<=999){
+
+
+		// 	number++;
+		// }
+
+		// for(var number=100;number<=999;number++){
+
+
+		// }
+
+		//3.拼起来
+
+		 for(var number=100;number<=999;number++){
+
+		 	var a = parseInt(number/100);
+			var b = parseInt(number%100/10);
+			var c = number%10;
+			var sum  = Math.pow(a,3)+Math.pow(b,3)+Math.pow(c,3);
+			if (sum == number) {
+
+				console.log(number);
+			}
+
+		}
+
+
+
+	</script>
+
+</body>
+</html>

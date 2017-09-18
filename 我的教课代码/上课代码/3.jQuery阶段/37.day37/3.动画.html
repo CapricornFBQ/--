@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画2</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: black;
+			position: absolute;
+			top:70px;
+			left:0;
+		}
+	</style>
+</head>
+<body>
+	<button>开始</button><button>停止</button>
+	<div></div>
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+	$(function() {
+		$("button").first().click(function() {
+			$("div").animate({"left":"500px","opacity":0.5},2000);   //动画依次执行
+			$("div").animate({"top":"500px","opacity":1},2000);
+			$("div").animate({width:"600px",height:"600px",left:"0px",top:"70px"},3000);
+			$("div").animate({width:"100px",height:"100px"},3000);
+		})
+		$("button").last().click(function() {
+			// $("div").stop();       //停止当前动画
+			// stop(是否停止所有动画，是否完成当前动画)；
+			// $("div").stop(true);   //停止所有动画
+			// $("div").stop(true,true);  //停止所有动画，并完成当前动画
+			// $("div").stop(false,false);  //和默认的效果相同
+			$("div").stop(false,true);  //不停止所有动画，但完成当前动画
+		}) 
+	})
+	</script>
+</body>
+</html>

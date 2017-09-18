@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>京东商城</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		#one,#two,#three {
+			margin-left: 100px; 
+			width: 400px;
+			height: 1500px;
+			margin-top:  15px;
+		}
+		#one {
+			background-color: #ccc;
+		}
+		#two {
+			background: #999;
+			}
+		#three {
+			background: #aaa;
+		}
+		ul {
+			position: fixed;
+			top:100px;
+			left:10px;
+		}
+		li {
+			list-style: none;
+			height: 50px;
+			width: 50px;
+			background-color: #ccc;
+			border: 1px solid black; 
+			text-align: center;
+			line-height: 50px;
+			cursor:pointer;
+		}
+		.liSelected {
+			background: red;
+		}
+		a {
+			text-decoration:none;
+		}
+	</style>
+</head>
+<body>
+<!-- 	<ul>
+		<li num=0 class="liSelected">
+			<a href="#one">one</a>
+		</li>
+		<li num=1><a href="#two">two</a></li>
+		<li num=2><a href="#three">three</a></li>
+	</ul> -->
+	<ul>
+		<li num=0 class="liSelected">
+			<a>one</a>
+		</li>
+		<li num=1><a>two</a></li>
+		<li num=2><a>three</a></li>
+	</ul>
+	<div id="one">one</div>
+	<div id="two">two</div>
+	<div id="three">three</div>
+	<script>
+		//scrollTo(x,y)
+
+		// document.querySelector("ul").onclick= function() {
+		// 	window.scrollTo(0,1515);
+		// }
+		
+		var liList = document.querySelectorAll("li");
+		var divList = document.querySelectorAll("div");
+		for(var i=0; i<liList.length; i++) {
+			liList[i].onclick =function() {
+				var timer;
+				if(timer) {
+					clearInterval(timer);
+				}
+				for(var i=0; i<liList.length; i++) {
+					liList[i].className = "";
+				}
+				this.className = "liSelected";
+				var controlNumber = this.getAttribute("num");
+				var y = 1515*controlNumber;            //网页最终需要达到的位置
+				var scrollY = document.body.scrollTop;   //网页现在的位置
+
+				if(y<=scrollY) {								//判断来确定滚动的方向和数值
+					timer = setInterval(function() {			//用计时器来实现过渡效果
+						scrollY=scrollY -10;
+						window.scrollTo(0,scrollY);
+						if(scrollY<=y) {
+							clearInterval(timer);
+						}
+						
+					},1)
+
+				} else{
+					timer = setInterval(function() {
+						scrollY= scrollY +10;
+						window.scrollTo(0,scrollY);
+						if(scrollY>=y) {
+							clearInterval(timer);
+						}
+						
+					},1)
+
+				}
+			}
+		}
+
+
+		document.body.onscroll=function() {          //绑定滚动事件监听
+			var scrollTop = document.body.scrollTop;     //获取滚动距离
+			var controlNumber = Math.floor(scrollTop/1515);    //对滚动距离进行处理
+			console.log(controlNumber)
+			for(var i=0; i<liList.length; i++) {
+				liList[i].className = "";
+			}
+			liList[controlNumber].className = "liSelected";
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// var liList = document.querySelectorAll("li");
+	// var divList = document.querySelectorAll("div");
+	// var timer;
+	// for (var i=0; i<liList.length; i++) {
+	// 	liList[i].onclick = function() {
+	// 		if(timer) {
+	// 			clearInterval(timer);
+	// 		}
+	// 		for (var i=0; i<liList.length; i++) {
+	// 			liList[i].className="";
+	// 		}
+	// 		this.className = "liSelected";
+	// 		var controlNumber = this.getAttribute("num");
+	// 		var scrollTop=document.querySelector('body').scrollTop;
+	// 		var scrollY = 1515*controlNumber;
+	// 		var y = scrollTop
+	// 		timer = setInterval(function() {
+	// 			if(y<=scrollY) {
+	// 				y = y+10;
+	// 				window.scrollTo(0,y);
+	// 				if (y>=scrollY) {
+	// 					clearInterval(timer);
+	// 				}
+	// 			}else {
+	// 				y = y-10;
+	// 				window.scrollTo(0,y);
+	// 				if (y<=scrollY) {
+	// 					clearInterval(timer);
+	// 				}
+	// 			}
+	// 		},1)
+	// 	}
+	// }
+	// for (var i=0; i<liList.length; i++) {
+	// 	liList[i].onclick = function() {
+	// 		for (var i=0; i<liList.length; i++) {
+	// 			liList[i].className="";
+	// 		}
+	// 		this.className = "liSelected";
+
+	// 		var controlNumber = this.getAttribute("num");   //scrollTo(x,y)
+	// 		window.scrollTo(0,1515 * controlNumber);
+	// 	}
+	// }
+	// document.body.onscroll=function() {
+	// 	var height = document.body.scrollTop;
+	// 	for (var i=0; i<liList.length; i++) {
+	// 		liList[i].className="";
+	// 	}
+	// 	console.log(parseInt(height/1515))
+	// 	liList[parseInt(height/1515)].className = "liSelected";
+	// }
+</script>
+</body>
+</html>

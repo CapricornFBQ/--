@@ -1,0 +1,13 @@
+div {
+  border-width: 50px;
+  border-color: red;
+  border-style: solid;
+}
+div {
+  width: 500px;
+  height: 250px;
+}
+div {
+  width: 1000px;
+  height: 20px;
+}

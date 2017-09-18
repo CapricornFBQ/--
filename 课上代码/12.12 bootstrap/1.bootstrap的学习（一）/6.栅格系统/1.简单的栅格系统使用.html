@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>布局容器-版心</title>
+
+    <!-- Bootstrap -->
+    <link href="lib/dist/css/bootstrap.css" rel="stylesheet">
+
+    <style>
+        .container{
+          background: red;
+          height: 2000px;
+         
+
+        }
+        div{
+          border: 1px solid black;
+        }
+
+    </style>
+
+  </head>
+  <body>
+    <!-- 栅格系统：是bootstrap提供的响应式布局方式
+      栅格系统的核心
+      div.container
+          row(被划分为12个大小单位)
+              列  列  列
+          row
+
+          row
+
+
+     -->
+    
+
+    <div class="container">
+        
+        <div class = "row">
+            <div class ="col-md-12 col-lg-4">col-lg-4</div>
+            <div class ="col-md-12 col-lg-4">col-lg-4</div>
+            <div class ="col-md-12 col-lg-4">col-lg-4</div>
+
+
+        </div>
+
+        <div class = "row">
+            <div class ="col-sm-6 col-md-6 col-lg-2">col-lg-2</div>
+            <div class ="col-sm-1 col-md-6 col-lg-2">col-lg-2</div>
+            <div class ="col-sm-1 col-md-6 col-lg-2">col-lg-2</div>
+            <div class ="col-sm-1 col-md-6 col-lg-2">col-lg-2</div>
+            <div class ="col-sm-1 col-md-6 col-lg-2">col-lg-2</div>
+            <div class ="col-sm-1 col-md-6 col-lg-2">col-lg-2</div>
+
+
+        </div>
+
+      
+
+    </div>
+
+  </body>
+</html>

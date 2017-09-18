@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>某东tab</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.tab {
+			width: 1002px;
+			margin: 100px auto;
+		}
+		.header {
+			height: 28px;
+			width: 320px;
+			border: 1px #ccc solid;
+			border-bottom: 0px; 
+		}
+		.header li {
+			height: 25px;
+			width: 80px;
+			float: left;
+			list-style: none;
+			border-top:3px transparent solid; 
+			line-height: 25px;
+			text-align: center;
+		}
+		.header li span {
+			float: right;
+		}
+		.header li.selected {
+			border-top:3px red solid; 
+		}
+		.container {
+			width: 1002px;
+			height: 477px;
+			border: 1px #ccc solid;
+			overflow: hidden;
+		}
+		img {
+			width: 1000px;
+			height: 475px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class ="tab">
+
+		 <ul class ="header">
+		 	<li class="selected">国际大牌<span>|</span></li>
+		 	<li>国际名品<span>|</span></li>
+		 	<li>清洁用品<span>|</span></li>
+		 	<li>男士精品</li>
+
+		 </ul>
+		<div class="container">
+			<div>
+				<img src="imgs/1.jpg" alt="">
+			</div>
+			<div><img src="imgs/2.jpg" alt=""></div>
+			<div><img src="imgs/3.jpg" alt=""></div>
+			<div><img src="imgs/4.jpg" alt=""></div>
+		</div>
+
+	</div>
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+	$(function() {
+		$("li").mouseenter(function() {
+			//实现tab栏操作
+			$(this).siblings().removeClass("selected"); //移除类
+			$(this).addClass("selected");               //添加类
+			//实现图片显示操作
+			var num = $(this).index();                  //取出数值
+			$(".container").children().eq(num).show().siblings().hide();  //对应的div进行显示隐藏操作
+		})
+	})
+	</script>
+</body>
+</html>

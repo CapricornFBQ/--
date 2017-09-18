@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>思考题小练习</title>
+
+	<style>
+	/*1.标签选择器*/
+	p{
+		color: red;
+	}
+	/*2.class选择器*/
+	.father{
+		height: 200px;
+		background-color: skyblue;
+	}
+	/*3.后代选择器*/
+	.father a{
+		color: green;
+		font-weight: bold;
+	}
+	
+
+	.father p a{
+		font-size: 25px;
+	}
+
+	</style>
+</head>
+<body>
+	
+	<!-- (1)给所有的p标签设置color为红色 -->
+	<!-- (2)给.father标签设置高度为200px;和背景颜色-->
+	<!--（3给.father标签里的a标签设置color为green，字号加粗 -->
+	<!--（4）给.father标签里的P标签下的a标签设置字体大小为 25px -->
+
+	<p>我是P标签</p>
+
+	<div class="father">
+		<p>我是p标签</p>
+		<a href="#">我是a标签</a>
+		<div>
+			<p>我是p标签</p>
+			<p><a href="#">我是最后一个问题</a></p>
+		</div>	
+
+	</div>
+
+	<p>我是P标签</p>
+	<a href="#">我是a标签</a>
+
+	
+	
+
+
+
+
+
+
+
+
+	
+</body>
+</html>

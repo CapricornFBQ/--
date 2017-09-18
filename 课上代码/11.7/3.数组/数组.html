@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组</title>
+</head>
+<body>
+	
+	<script>
+		//数组
+		//变量：是存放数据的结构。
+		//数组：是存放一组数据的连续内存结构。不同的数据可以通过下标来访问找到
+        // 这是一个个人数组： 名字、年龄、性别、身高
+		var arrays = ["tom",25,"man",180];
+
+		//数组的长度
+		var length = arrays.length;
+		console.log(length);//长度为4
+
+		//打印出数组中每一个单元的数据（通过下标）,数组中元素的下标是从0开始的
+		console.log(arrays[0]);//----tom
+		console.log(arrays[1]);//---25
+		console.log(arrays[2]);//----man
+		console.log(arrays[3]);//---180
+		//数组的遍历
+		for(var i =0;i<arrays.length;i++){
+
+				console.log(arrays[i]);
+		}
+
+		//一次性输出数组所有的元素
+		console.log(arrays);
+
+		//更改数组中下标为3的元素的值180--120
+		arrays[3] = 120;
+		console.log(arrays);
+
+		//访问数组中不存在的下标元素  arrays[4],不会报错，会显示undefine没定义
+		console.log(arrays[4]);
+
+		//可以直接给不存在的下标赋值，增加数组的长度	
+		arrays[4] = "帅";
+		console.log(arrays);
+
+		//-----------------增加和删除数组中的元素，通过不low的方式---------------
+		//往数组（栈）里增加一个数据
+		arrays.push("篮球");
+		console.log(arrays[5]);
+		//删除数组（栈）一个最后的数据
+		var string =  arrays.pop();
+		console.log	(string);
+		console.log	(arrays	);//篮球不见了
+
+
+		//逆转栈口
+		//增加元素,shift是转移和去掉的意思
+		arrays.unshift("中国国籍");
+		console.log(arrays);
+
+		//删除，从第一个删除
+		arrays.shift();
+		arrays.shift();
+		console.log(arrays);
+
+
+
+
+	</script>
+</body>
+</html>

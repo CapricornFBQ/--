@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>交换两杯水的问题</title>
+</head>
+<body>
+	
+	<script>
+
+		// a 10牛奶
+		// b 20果汁
+		
+		//---------------------------------------
+		var a = 10;
+		var b = 20;
+		var c;
+		// c为空  把a的值拷贝一份，存到了c里面 c就变成了10
+		c = a;
+		//将b里面的值拷贝替换a里面的10，更新为20
+		a = b;
+		// 将c里面的10拷贝给b，然后b更新为10
+		b = c;
+
+		console.log(a);
+		console.log(b);
+		
+
+
+
+	</script>
+</body>
+</html>

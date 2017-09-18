@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>设置和获得节点的属性</title>
+
+	<style>
+		#blue{
+			background: skyblue;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<div class = "div1"></div>
+	<a href="">百度一下</a>
+
+
+	<script>
+		//--------------------设置节点的属性-----------------
+		//1.找到节点
+		var div1 = document.querySelector(".div1");
+		//2.设置属性和样式
+		//属性：className IDName   href  src  样式：CSS background color width height
+		//设置样式---要用字符串设置
+		// div1.style.backgroundColor = "red";
+		// div1.style.backgroundColor = "#999";
+		div1.style.width="200px";
+		div1.style.height ="200px";
+
+		//2.设置属性,Attribute属性
+		div1.setAttribute("id","blue");
+		//练习，给a标签设置连接到baidu
+		//1.找到这个a标签,设置属性
+		document.querySelector("a").setAttribute("href","http://www.baidu.com");
+		document.querySelector("a").setAttribute("target","_blank");
+
+
+		//-------------获得样式和获得属性--------------------------
+		//1.获得样式 
+		var height = div1.style.height;
+		alert(height);
+
+		if (div1.style.height == "100px") {
+
+			//这也是一种获得
+
+		}
+
+		//2.获得属性
+		//找到a标签
+		var a  = document.querySelector("a");
+		var href = a.getAttribute("href");
+		console.log(href);
+
+
+	</script>
+
+</body>
+</html>

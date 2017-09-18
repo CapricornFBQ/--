@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p::before {
+            content: '我是p标签内部最前面的内容';
+            color: red;
+        }
+        p::after {
+            content: '我是p标签内部最后面的内容';
+            color: aquamarine;
+        }
+        p::selection {
+            background: #000;
+            color: #f00;
+        }
+        input::-webkit-input-placeholder {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<p>你选中这段文字后，看看它们的文本颜色和背景色，就能明白::selection的作用。</p>
+<input type="text" placeholder="我是提示文字">
+<progress></progress>
+</body>
+</html>

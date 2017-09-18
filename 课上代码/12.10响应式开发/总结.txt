@@ -1,0 +1,36 @@
+1.媒体查询？
+响应式布局的方法之一，使我们的网页适配于各种设备。
+
+
+2.媒体查询的写法和格式？
+
+
+（1）CSS3
+        //浏览器 大小
+	@media screen and (min-width:1200px){}
+
+
+   
+
+（2）外部link
+       <link rel="stylesheet" media="screen and (min-width:1200px)"  href="">
+
+
+3.使用分割法分析和解决问题
+  （1）确认分成几种样式 （1200px 900px 600px）
+   (2) 选择max-width 还是min-width
+  （3）例如：
+           小于1200px
+
+		max-width
+	   小于900px
+		max-width
+
+           小于600px
+		max-width
+
+
+4.实现了响应式的小项目
+
+
+5.响应式媒体查询的宠物网代码实现 

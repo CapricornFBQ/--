@@ -1,0 +1,45 @@
+//匹配有点类似于js里面的判断语句，满足条件才能匹配
+//
+.Triangle {
+	width: 0;
+	height: 0;
+	border-width: 10px;
+	border-color:transparent transparent black transparent;
+	border-style: solid;
+}
+
+.Triangle (@w, @c){
+	width: 0;
+	height: 0;
+	border-width: @w;
+	border-color:transparent transparent @c transparent;
+	border-style: solid;
+}
+div {
+	.Triangle(50px, red)
+}
+
+//匹配模式，第一个参数用于匹配
+.triangle (bottom, @w, @c) {
+	border-color:@c transparent transparent transparent;
+}
+.triangle (left, @w, @c) {
+	border-color:transparent @c transparent transparent;
+}
+.triangle (top, @w, @c) {
+	border-color:transparent transparent @c transparent;
+}
+.triangle (right, @w, @c) {
+	border-color:transparent transparent transparent @c;
+}
+//@_ 可以匹配所有的关键字  书写公共部分
+.triangle(@_, @w, @c) {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width:@w;
+}
+//通过匹配模式来控制需要的三角的方向大小和颜色
+div {
+	.triangle(bottom, 100px, pink); 
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数的排序</title>
+</head>
+<body>
+	<!-- 题目：实现一个数组的排序 -->
+
+	
+	<script>
+		// 1.封装函数
+		function paixu(newArray) {
+			for(var j = newArray.length-1;j>=0;j--){
+				for(var i =0;i<j;i++){
+
+					if(newArray[i]>newArray[i+1]){
+						var tep = 0;
+						tep = newArray[i];
+						newArray[i] = newArray[i+1];
+						newArray[i+1] = tep;
+
+					}
+				}
+
+			}
+			console.log(newArray);
+		}
+		
+		// ---------------------------------------------------------------
+		var array = [6,5,7,1,4,3,10];
+		paixu(array);
+		
+		
+		
+
+		var array2 = [4,2,1,3,8];
+		paixu(array2);
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>遍历</title>
+	<script src ="../jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	
+	<ul>
+		<li>我是</li>
+		<li>微微</li>
+		<li>哈哈哈</li>
+		<li>一笑很倾城</li>
+		<li>哈哈哈</li>
+
+	</ul>
+
+	<script>
+		$(document).ready(function () {
+			//弹出每一个li的文本
+
+			// //1.获得li数组
+			// var arrays =$("ul li");
+
+
+			// //2.遍历li
+			// for(var i=0;i<arrays.length;i++){
+
+			// }
+
+
+			//each(执行的内容)  遍历每一个对象，然后执行function
+			$("ul li").each(function(index){
+
+				alert($(this).text()+index);
+
+
+
+			});
+
+			//如何获得当前对象在li标签的index值呢
+
+			// $(li).shadha(function(){
+
+			// 	$(this).index();
+			// })
+
+
+
+
+
+		});
+
+
+	</script>
+
+
+
+</body>
+</html>

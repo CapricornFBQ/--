@@ -1,0 +1,16 @@
+
+概要
+概览里的大概意思
+（1）每一个插件（带有js功能的组件），想使用bootstrap插件，一个是要去写他的html，第二个是使用CSS去修饰它，再引入相应的js文件。
+
+bootstrap框架里的轮播图，他有自己的js文件。
+JavaScript 插件可以单个引入（使用 Bootstrap 提供的单个 *.js 文件），或者一次性全部引入（使用 bootstrap.js 或压缩版的 bootstrap.min.js）。
+
+（2）data属性
+data-toggle：值得是什么事件触发 
+data-target:绑定其效果的对象
+
+（3）导入bootstrap.min.js 之前 要导入jquery.js
+
+过度效果
+.fade 过度类

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>其它选择器</title>
+	<style>
+		*{
+			color: red;
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			background: pink;
+		
+			height:500px;
+		}
+		div>p{
+			text-decoration: underline;
+		}
+
+		div ul li p:first-child{
+			font-size: 30px;
+		}
+		div ul li p:last-child{
+			font-size: 30px;
+		}
+		a:hover{
+			color: green;
+			cursor: pointer;
+		}
+	
+		a{
+			text-decoration: none;
+		}
+		a:link{
+			text-decoration: none;
+			font-size: 30px;
+		}
+		a:visited{
+			color:black;
+		}
+		a:active{
+			color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<p>你好p先生</p>
+		<ul>
+			<li>
+				<p>你好p小姐</p>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<p>这是第1个p</p>
+				<p>这是第2个p</p>
+				<p>这是第3个p</p>
+				<p>这是第4个p</p>
+				<p>这是第5个p</p>
+				<p>这是第6个p</p>
+				<p>这是第7个p</p>
+				<p>这是第8个p</p>
+				<p>这是第9个p</p>
+				<p>这是第10个p</p>
+			</li>
+		</ul>
+
+		<p><a href="http://www.baidu.com">我要去百度</a></p>
+		<p><a href="http://www.taobao.com">我要去购物</a></p>
+	</div>
+	<!-- <h1>我们都很帅</h1>
+	<p>我们都很美</p> -->
+	<a href="http://www.sina.com">我要去新浪</a>
+</body>
+</html>

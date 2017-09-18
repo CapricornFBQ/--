@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>水平居中</title>
+	<style>
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+		.father{
+			width: 200px;
+			/*height: 200px;*/
+			height: 150px;
+			background: red;
+			padding-top: 50px;
+		}
+		.child{
+			width: 100px;
+			height: 100px;
+			background: orange;
+			
+
+		}
+		/*可以用padding来代替magin描述与父标签的位置关系。
+			margin部分用padding代替，然后减少父标签相应的高度
+		*/
+
+	</style>
+</head>
+<body>
+	
+	<div class ="father">
+		<div class ="child"></div>
+	</div>
+
+</body>
+</html>

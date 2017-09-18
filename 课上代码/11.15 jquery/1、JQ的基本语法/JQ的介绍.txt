@@ -1,0 +1,11 @@
+1.JQ的解释
+JQ就是一个JS的库。提供了很多的函数，这些函数都是封装的js代码块，极大简化了javaScript的学习量，很容易上手。
+
+
+2.如何下载安装JQ
+（1）无需下载。直接将url进行连接
+script src="http://wwwlmanakjfakjfnklaflka" 加载速度慢
+（2）本地下载后安装
+打开jquery.com download
+production 产品级文件下载 应用于实际网站的，被混淆和压缩的代码
+development  dom项目级，用于测试和开发的（未被压缩精简的代码可读）

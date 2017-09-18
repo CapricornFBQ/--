@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX学习</title>
+</head>
+<body>
+	
+	<button>按钮</button>
+
+	<script>
+		document.querySelector('button').onclick=function () {
+			
+			var xhr = new XMLHttpRequest();
+
+			xhr.onreadystatechange=function(){
+				if (xhr.readyState==4) {
+
+					alert(xhr.responseText);
+				}
+			}
+
+
+			xhr.open('post','server.php',true);
+			// post要改的地方
+			//(1)改get为post
+			//（2）设置Http请求头
+			xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+			//(3)在send里面添加请求的参数
+			xhr.send('city=qingdao');
+
+		}
+
+
+	</script>
+
+
+</body>
+</html>

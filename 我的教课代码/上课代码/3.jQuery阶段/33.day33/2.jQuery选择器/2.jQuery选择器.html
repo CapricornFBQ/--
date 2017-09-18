@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery</title>
+</head>
+<body>
+	<ul>
+		<li>这是第一个li</li>
+		<li id="two">这是第二个li</li>
+		<li class="three">这是第三个li</li>
+		<li>这是第四个li</li>
+		<li>这是第五个li</li>
+
+
+		<p>这是p标签</p>
+	</ul>
+	<ul>
+		<li>这是第六个li</li>
+		<li>这是第七个li</li>
+	</ul>
+	<a href="http://www">我是第一个a标签</a><br>
+	<a href="" target="_blank">我是第二个a标签</a>
+
+	<input type="text">
+	<input type="button">
+	<input type="password">
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			//opacity  0--->1 不透明
+
+			//visibility是否可见
+			document.getElementsByClassName("three")[0].style.visibility = "hidden";  //隐藏同时保留位置
+			document.getElementsByClassName("three")[0].style.visibility = "visible";  //显示
+
+			//display 是否显示
+			document.getElementsByClassName("three")[0].style.display = "none";   //隐藏元素同时释放空间
+			document.getElementsByClassName("three")[0].style.display = "";     //显示
+
+			//其他的隐藏方法
+			document.getElementsByClassName("three")[0].hidden = "true";   //自带的hidden属性
+			document.getElementsByClassName("three")[0].hidden = "";   
+
+			//后代选择器
+			// $("ul li").hide();
+			//	hide方法
+			// $("p").hide();
+			//第一个子元素  伪类
+			// $("ul li:first-child").hide();
+			//第一个元素   伪类
+			// $("ul li:first").hide();
+
+			//最后一个元素  
+			// $("ul li:last").hide()
+			//最后一个子元素
+			// $("ul li:last-child").hide()
+
+			//属性选择器
+			// $("a[target]").hide();
+			// $("a[href='http://www']").hide();
+			// $("a[href !='http://www']").hide();
+
+
+			//表单选择器
+			// $("[type='text']").hide();  //属性选择器
+			// $(":text").hide();
+			// $(":password").hide();
+
+			//选取单双数位置
+			$("li:even").hide();	 //偶数		
+			$("li:odd").hide();    //奇数
+  
+
+
+
+
+		})
+	</script>
+</body>
+</html>

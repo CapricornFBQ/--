@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>增删改查</title>
+	<style>
+		div{
+			/*width: 100px;*/
+			height: 100px;
+			border: 1px solid black;
+			background: red;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class ="button" style="background: orange"></div>
+
+	<script>
+	
+	  	//删除节点
+	  	//1.找到要删除的标签
+	  	// var button =document.querySelector(".button");
+	  	//2.找到他的父标签（body）
+	  	// var body = document.querySelector("body");
+	  	//3.让父标签删除它
+	  	// body.removeChild(button);
+
+	  	//明天写的方法：在不知道他的父标签情况下
+	  	//1.找到要删除的标签
+	  	var button =document.querySelector(".button");
+	  	//2.使用关系关键字来找父标签
+	  	button.parentNode.removeChild(button);
+
+
+	</script>
+</body>
+</html>

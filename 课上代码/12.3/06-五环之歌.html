@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        aside {
+            width: 20%;
+            height: 100%;
+            background-color: lightgrey;
+            float: left;
+        }
+
+        aside > ul > li {
+            font-size: 20px;
+        }
+
+        article {
+            width: 80%;
+            height: 100%;
+            font-size: 30px;
+            float: left;
+            background-color: yellow;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+<aside>
+    <ul id="list"></ul>
+</aside>
+<article id="content"></article>
+<script src="data.js"></script>
+<script>
+//    第一步！！！！
+    //    先获取页面中要填内容的标签
+    var list = document.querySelector('#list');
+    var content = document.querySelector('#content');
+    //    通过循环获取数据
+    for (var title in data) {
+//        创建li标签
+        var li = document.createElement('li');
+//        给li标签写入内容
+        li.innerHTML = '☆' + title;
+//        因为下面会用到点击时的歌名 添加data属性
+        li.setAttribute('data-name', title);
+        list.appendChild(li);
+        li.addEventListener('click', function () {
+//            歌曲名称
+//            this.dataset['name']
+//            通过上面设置的data属性获取歌词
+            var geci = data[this.dataset['name']];
+//            console.log(geci);
+            content.innerHTML = geci;
+//            content.innerHTML = '我今天\n真高兴';
+//            console.log('我今天\n真高兴');
+
+
+//            第二步！！！！
+//            当我点击歌名的时候记录浏览历史
+            if (window.history && window.history.pushState) {
+//               state 状态 title基本上没有浏览器支持 url记录访问历史的地址
+                history.pushState(this.dataset['name'], '当前没有浏览器支持', '?=' + this.dataset['name']);
+            } else {
+                console.log('不支持');
+            }
+            console.log(window.location.search);
+        });
+    }
+    //        浏览器在前进或者后退的时候回调用这个方法
+    // 当我们在伪造的访问历史中前进或后退时会执行一个popstate事件
+    window.addEventListener('popstate', function (e) {
+//            e中保存了当前事件的信息 这里会取到前进或者后退的历史信息
+        console.log('点击回退');
+        console.log(e);
+        content.innerHTML = data[e.state];
+    });
+
+
+//    第三步！！！！
+    //    当我把网站发给别人访问 还是显示默认状态 网址内已经存储了当前的歌名 可以在当前网址中取出歌名
+    //    window.location 包含网页当前地址信息
+    //    将网站劫持到另外一个网站
+    //    window.location = "https://www.baidu.com";
+    console.log(window.location);
+    //    这里是url编码
+    //    window.location.search ?t=%E4%BA%94%E7%8E%AF%E4%B9%8B%E6%AD%8C
+    console.log(window.location.search);
+
+    //    第一次请求过来 获取地址栏中的t参数
+    var search = window.location.search; // ?t=E4%BA%94%E7%8E%AF%E4%B9%8B%E6%AD%8C
+    console.log(search);
+    // 如果地址栏中的地址有中文，会以URL编码方式呈现
+    // decodeURI 可以转换到之前中文
+    var title = search.split('=')[1]; // ['?t','E4%BA%94%E7%8E%AF%E4%B9%8B%E6%AD%8C']
+    if (title) {
+        // 有值 decodeURI作用就是从URL编码转换到之前的状态
+//        console.log(decodeURI(title));
+//        将search参数转换成中文 把歌词界面设置为对应内容
+        content.innerHTML = data[decodeURI(title)];
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+// 两个例子
+原生的js   DOM对象
+//获取节点元素
+document.getElementById()
+document.getElementsByClassName() --->返回数组
+document.getElementsByTagName() --->返回数组
+document.querySelector()
+document.querySelectorAll() --->返回数组
+
+//元素的节点关系
+childNodes 子节点
+parentNode 父节点
+nextSibiling 下一个兄弟节点
+previousSlibiling 上一个兄弟节点
+firstChild
+lastChild
+children
+
+
+//创建节点
+createElement()
+createTextNode()
+appendChild()
+removeChild()
+replaceChild(新的子节点，旧的子节点)
+setAttribute(属性，属性值)
+getAttribute()
+
+innerHTML()
+innerText()
+
+
+//js事件
+onclick
+ondblclick   //双击
+onmousedown
+onmouseup
+onmouseover
+onmouseleave
+onmousemove
+onkeydown
+onkeyup
+
+
+//文档滚动相关
+document.body.onscroll
+document.body.scrollTop
+window.scrollTo(x,y)
+
+
+//offset
+offsetWidth  //带有边框的宽度
+offsetHeight
+offsetTop   // 距离上一层定位元素的垂直距离
+offsetLeft
+
+
+//鼠标事件属性
+screenX
+screenY  //距屏幕左上角的距离
+
+clientX
+clientY  //距窗口左上角的距离
+
+pageX
+pageY   //距离文档左上角的距离
+
+
+//js改变css
+
+style=“属性：属性值；属性：属性值”；
+style.属性 = 属性值；
+
+//定时器
+
+setInterval(代码块，时间间隔） //定时器，隔一段时间执行一次，反复执行
+clearInterval()
+
+setTimeout（代码块，时间间隔） //计时器，多少时间之后仅执行一次
+clearTimeout()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

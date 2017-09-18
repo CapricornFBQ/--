@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery添加</title>
+</head>
+<body>
+	<div></div>
+
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			//appendchild-------- 原生JS的方法
+			//创建内容
+			var a = document.createElement("a");
+			a.href = "http://www.baidu.com";
+			a.innerText = "百度一下";
+			//获取待添加内容的标签
+			var htDic = document.querySelector("div");
+			//TIANJIA
+			htDic.appendChild(a);
+
+			//用jQuery添加内容----------------
+			//创建内容
+			var txt1 = "<p>我是一个文本</p>"    //创建一个字符串文本
+			var txt2 = $("<p></p>").text("我是一个文本")   //用jQuery创建带有内容的标签
+			var txt3 = document.createElement("p");   //原生JS创建的对象
+			txt3.innerText = "我是一个文本" 
+			//放入DOM中
+			$("body").append(txt1,txt2,txt3);   //append方法向DOM中追加元素
+
+			var string = "哈哈"
+			//在后面向父元素追加内容 --------------->append
+			$("div").append(string);
+			//在前面向父元素追加内容 --------------->prepend
+			$("div").prepend(string);
+			//向div的后面追加内容 --------------->after
+			$("div").after(string);
+			//向div的前面追加内容 --------------->before
+			$("div").before(string);
+
+
+		})
+	</script>
+</body>
+</html>

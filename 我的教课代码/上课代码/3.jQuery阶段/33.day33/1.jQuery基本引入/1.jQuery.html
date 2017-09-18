@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+</head>
+<body>
+	<p>这是一个p标签</p>
+	<!-- 加载本地的jQuery文件 -->
+	<script src="jquery-3.2.1.js"></script>  
+	<!-- 加载网络上的静态资源 -->
+	<!-- <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
+	<script>
+		//jQ本质上就是js的封装好的库
+		//使用 可以下载一个本地库本地加载，还可以使用网上资源
+		//本地加载必须先加载jQ，然后在加载自己的代码
+		//以前的基本移入方式
+		// $(document).ready(
+		// 	function() {
+		// 		$("p").text("新的p");
+		// 	}
+		// )
+
+		//新的引入方式
+		$(function() {
+			$("p").text("新的p");
+		
+
+			//jquery 语句的格式
+			//$(selector).action()    selector--->选择器   action()---->调用的方法
+			//
+			//原生的js
+			// document.querySelector("p").style.color = "red";
+			//jq写
+			$("p").css("color","red");
+		})
+
+	</script>
+</body>
+</html>

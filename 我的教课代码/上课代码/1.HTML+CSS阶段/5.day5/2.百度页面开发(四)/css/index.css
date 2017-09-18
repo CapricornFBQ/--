@@ -1,0 +1,86 @@
+*{
+	margin: 0px;
+	padding:0px;
+}
+
+/*----------header部分---------------*/
+.header{
+	height: 100px;
+
+	/*background-color: red;*/
+
+	text-align: right;
+	
+	padding-top:20px;
+
+}
+
+.header a{
+	font-size: 13px;
+	font-weight: 700;
+	color: #333;
+	margin-left: 20px;
+}
+
+.header a.xi{
+	font-weight:200;
+}
+
+.header a.more{
+	font-weight:200;
+	background: #38f;
+	color: #fff;
+	padding: 3px;
+
+	/*取消a标签的下划线*/
+	text-decoration: none;
+	margin-right: 20px;
+}
+
+/*---------center部分-----------------*/
+.center{
+	height: 400px;
+	/*background-color: red;*/
+	text-align: center;
+}
+
+.search{
+	height: 28px;
+	width: 500px;
+}
+
+.center a{
+	background-color: #3385ff;
+	padding:6px 20px 5px 20px;
+	color: #fff;
+	text-decoration: none;
+	position: relative;
+	left: -4px;
+	top:3px;
+}
+/*下午会学，当a标签被触碰的时候*/
+.center a:hover{
+	background-color:#2d78f4;
+}
+
+/*----footer部分------------------*/
+.footer{
+	height: 200px;
+	/*background-color: red;*/
+	text-align: center;
+}
+.footer .title{
+	font-weight: 700;
+	color: #666;
+	font-size: 12px;
+}
+
+.footer a{
+	color: #999;
+	font-size: 14px;
+}
+
+.footer p{
+	color: #999;
+	font-size: 14px;
+}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>五子棋</title>
+	<style>
+		.wrapper {
+			width: 616px;
+			height: 616px;
+			margin: 10px auto;
+			background: orange;
+			border: 1px solid black;
+			position: relative;
+		}
+		.grid {
+			width: 42px;
+			height: 42px;
+			border: 1px solid black;
+			float:left;
+		}
+		img {
+			width: 44px;
+			height: 44px;
+			position: absolute;
+		}
+		.wtitle {
+			width: 616px;
+			margin: 5px auto;
+			height: 44px;
+			line-height: 44px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wtitle"><span>当前落子方：</span><img id="hint" src="images/q.png" alt=""></div>
+	<!-- 棋盘格子宽度为44px  横竖可以放15个棋子，一行一共需要14个div即可 -->
+	<div class="wrapper">
+
+	</div>
+	<script>
+		//思路： 先做个棋盘---> 放棋子 ----> 黑白棋子轮换 -----> 添加规则
+		//
+		//
+		//
+		//第四步： 添加防止重复落子的功能的数组部分========================================
+		//把棋盘抽象为一个二维数组=-=-----------
+		var pieceDataArray = [];
+		for (var j=0; j<15; j++) {
+			var pieceData = [];
+			for (var i=0; i<15; i++) {
+				pieceData[i] = 0;    //创建一个小的数组，并进行初始化：元素都为0
+	 		}
+	 		pieceDataArray.push(pieceData);
+		}
+		console.log(pieceDataArray);
+		console.log(pieceDataArray[2][2]);
+		//
+		//
+		//第一步：  做一个棋盘-------------------------------------------------
+		for(var j=0; j<14; j++) {
+			for(var i=0; i<14; i++) {
+				//1.获取大的棋盘
+				var wrapper = document.querySelector(".wrapper");
+				//2.创建小的div
+				var newDiv = document.createElement("div");
+				//3.把新div放入棋盘
+				newDiv.className = "grid";
+				wrapper.appendChild(newDiv);
+			}
+		}
+
+
+		//第二部： 落子------------------------------------------------------
+		//用鼠标点击棋盘，让棋子（图片）落子点击的位置
+		//（给一个元素绑定事件）1.获取待绑定事件的元素/获取棋盘
+		var wrapper = document.querySelector(".wrapper");
+		wrapper.onclick = function() {
+			//1.先有棋子（图片） 
+			    //①创建img标签
+			    var newImg = document.createElement("img");
+			    //1.获取hint元素
+			    var hint = document.querySelector("#hint");
+			    //2.获取hint元素的src属性
+			    var hintSrc = hint.getAttribute("src");
+
+
+
+
+			    //获取鼠标点击位置--->得出棋子相对于棋盘的位置---->设定棋子的css样式
+			    //中间量-----------棋盘相对于文档的位置
+			    //求出鼠标相对于棋盘的位置，赋值给图片的css样式
+			    Left = event.pageX - wrapper.offsetLeft;
+			    Top = event.pageY - wrapper.offsetTop;
+
+			    Left = getData(Left);
+			    Top = getData(Top);
+
+
+
+			    // 第四步：防止重复落子的判断部分=======================================
+			    //通过对该次点击的位置进行判断，有没有棋子
+			   	var x = Left/44;
+			   	var y = Top/44;   //把位置转化为二维数组中的坐标
+			   	if(pieceDataArray[x][y] != 0) {
+			   		alert("请不要重复落子！");
+			   		return;
+			   	}else if(hint.getAttribute("src") == "images/q.png") {
+			   		pieceDataArray[x][y] = 1;  //如果该位置此次放的为黑色棋子，那么存储为1；
+			   	}else {
+			   		pieceDataArray[x][y] = 2;   //如果可以下棋子，同时不是黑色棋子，（那么就是白色 棋子），存储为2；
+			   	}
+
+
+
+
+
+	//第三步： 每次落子 转换棋子颜色================================================= 
+	//用判断分支结构来实现颜色转换--------------用提示的颜色作为判断条件
+
+			    //3.用src属性来进行判断
+			    if (hintSrc == "images/w.png") {   //判断条件和执行内容相反，来实现换色
+				    //②设置img标签的src属性
+				    newImg.setAttribute("src","images/w.png")
+				    hint.setAttribute("src","images/q.png")
+			    } else {
+				    //②设置img标签的src属性
+				    newImg.setAttribute("src","images/q.png")
+				    hint.setAttribute("src","images/w.png")
+			    }
+
+				newImg.style.left = Left - 22 + "px"
+				newImg.style.top = Top - 22 + "px"
+			    //把棋子放入棋盘之中
+				wrapper.appendChild(newImg);
+
+
+
+			   	//调用定义的规则函数==========================
+				shuai(x,y);
+				chao(x,y);
+				lei(x,y);
+				shuo(x,y);
+		}
+
+		function getData(pos) {           //坐标修饰--------------------------
+			    var x = pos%44;			//对格子宽度取余，用以判断div中的位置
+			    if(x > 22) {
+			    	pos = pos - x + 44;
+			    }else {                                
+			    	pos = pos - x;
+			    }
+			    return pos;
+		}
+
+		//换棋子颜色-----功能①每点击一次更换落下的棋子颜色（同时更换棋盘中棋子和提示棋子的颜色） ②添加落子方提示
+		//1.提示的颜色和落子的颜色都要换色   2.提示的颜色和棋盘中棋子的颜色是不同的（一次点击事件里面）
+		//
+		//
+		//
+		//
+		//
+		//
+		//把判断规格的功能封装为函数======================================================竖直方向===============
+		function shuai(posX,posY) {
+			//判断输赢：1.向上检索五个 向下检索四个 2.是否为同色 3.是否同色相连    检测符合条件的总数
+		   	var pieceCount = 0;
+		   	var i = 1;
+		   	var pieceColor = pieceDataArray[posX][posY];
+		   	console.log("shuai:" + pieceColor);
+		   	var num = posY
+		   	while (i <=5 ) {
+		   		if(pieceDataArray[posX][num] == pieceColor) {
+		   			pieceCount++;
+		   		}else {
+		   			break;
+		   		}
+		   		num--;
+		   		i++;
+		   	}
+		   	j = 1;
+		   	num = posY + 1;
+		   	while (j <5) {
+		   		if (pieceDataArray[posX][num] == pieceColor) {
+		   			pieceCount++;
+		   		} else {
+		   			break;
+		   		}
+		   		num++;
+		   		j++;
+		   	}
+		   	if (pieceCount >=5 && pieceColor==1) {
+		   		alert("黑棋胜出！")
+		   	}else if (pieceCount >=5 && pieceColor == 2){
+		   		alert("白棋胜出！")
+		   	}
+		}
+		//把判断规格的功能封装为函数======================================================水平方向===============
+		function chao(posX,posY) {
+			//判断输赢：1.向上检索五个 向下检索四个 2.是否为同色 3.是否同色相连    检测符合条件的总数
+		   	var pieceCount = 0;
+		   	var i = 1;
+		   	var pieceColor = pieceDataArray[posX][posY];
+		   	console.log("chao:" + pieceColor);
+		   	var num = posX
+		   	while (i <=5 && num >= 0 && num<=14) {
+		   		if(pieceDataArray[num][posY] == pieceColor) {
+		   			pieceCount++;
+		   		}else {
+		   			break;
+		   		}
+		   		num--;
+		   		i++;
+		   	}
+		   	j = 1;
+		   	num = posX + 1;
+		   	while (j <5 && num >= 0 && num<=14) {
+		   		if (pieceDataArray[num][posY] == pieceColor) {
+		   			pieceCount++;
+		   		} else {
+		   			break;
+		   		}
+		   		num++;
+		   		j++;
+		   	}
+		   	if (pieceCount >=5 && pieceColor==1) {
+		   		alert("黑棋胜出！")
+		   	}else if (pieceCount >=5 && pieceColor == 2){
+		   		alert("白棋胜出！")
+		   	}
+		}
+		//把判断规格的功能封装为函数======================================================135°斜方向===============
+		function lei(posX,posY){
+			//判断输赢：1.向上检索五个 向下检索四个 2.是否为同色 3.是否同色相连    检测符合条件的总数
+		   	var pieceCount = 0;
+		   	var i = 1;
+		   	var pieceColor = pieceDataArray[posX][posY];
+		   	var numX = posX;
+		   	var numY = posY;
+		   	while (i<=5 && numX>=0 && numX <=14) {
+		   		if(pieceDataArray[numX][numY] == pieceColor) {
+		   			pieceCount++;
+		   		} else {
+		   			break;
+		   		}
+		   		numX--;
+		   		numY--;
+		   		i++;
+		   	}
+		   	console.log("i:" + i)
+		   	i = 1;
+		   	numX = posX + 1;
+		   	numY = posY + 1;
+		   	while (i<5 && numX>=0 && numX <=14) {
+		   		if (pieceDataArray[numX][numY] == pieceColor) {
+		   			pieceCount++;
+		   		} else {
+		   			break;
+		   		}
+		   		numX++;
+		   		numY++;
+		   		i++;
+		   	}
+		   	if(pieceCount >=5 && pieceColor ==1) {
+		   		alert("黑棋胜出！")
+		   	} else if(pieceCount >=5 && pieceColor ==2) {
+		   		alert("白棋胜出！")
+		   	}
+		}
+		//把判断规格的功能封装为函数======================================================45°斜方向===============
+		function shuo(posX,posY){
+			//判断输赢：1.向上检索五个 向下检索四个 2.是否为同色 3.是否同色相连    检测符合条件的总数
+		   	var pieceCount = 0;
+		   	var i = 1;
+		   	var pieceColor = pieceDataArray[posX][posY];
+		   	var numX = posX;
+		   	var numY = posY;
+		   	while (i<=5 && numX>=0 && numX <=14) {
+		   		if(pieceDataArray[numX][numY] == pieceColor) {
+		   			pieceCount++;
+		   		} else {
+		   			break;
+		   		}
+		   		numX++;
+		   		numY--;
+		   		i++;
+		   	}
+		   	console.log("i:" + i)
+		   	i = 1;
+		   	numX = posX - 1;
+		   	numY = posY + 1;
+		   	while (i<5 && numX>=0 && numX <=14) {
+		   		if (pieceDataArray[numX][numY] == pieceColor) {
+		   			pieceCount++;
+		   		} else {
+		   			break;
+		   		}
+		   		numX--;
+		   		numY++;
+		   		i++;
+		   	}
+		   	if(pieceCount >=5 && pieceColor ==1) {
+		   		alert("黑棋胜出！")
+		   	} else if(pieceCount >=5 && pieceColor ==2) {
+		   		alert("白棋胜出！")
+		   	}
+		}
+
+
+
+	</script>
+</body>
+</html>

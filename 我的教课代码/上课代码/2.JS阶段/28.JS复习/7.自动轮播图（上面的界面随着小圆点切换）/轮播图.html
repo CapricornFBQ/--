@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<style>
+		.container{
+			width: 900px;
+			height: 400px;
+			background: black;
+			margin: 0 auto;
+			position: relative;
+		}
+		.container .allSpan{
+			position: absolute;
+			left: 50%;
+			bottom: 0px;
+			margin-left: -27px;
+			padding-bottom: 10px;
+		}
+		.container .allSpan>span{
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			background: #ccc;
+			border-radius: 50%;
+		}
+		
+		.item{
+			width: 900px;
+			height: 400px;
+			/*设置隐藏*/
+			display: none;
+		}
+		/*设置被选中的背景*/
+		.item.selected{
+			display: block;
+		}
+		/*设置被选中的标签*/
+		.container .allSpan>span.selected{
+			background: black;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- 增加四个界面 -->
+		<div class="item selected" style="background-color: red"></div>
+		<div class="item" style="background-color: blue"></div>
+		<div class="item" style="background-color: green"></div>
+		<div class="item" style="background-color: yellow"></div>
+		
+
+
+		<div class="allSpan">			
+			<span class="selected" data-num = "0"></span>
+			<span data-num = "1"></span>
+			<span data-num = "2"></span>
+			<span data-num = "3"></span>
+		</div>
+
+	</div>
+
+	<!-- 改变界面，获得现在最新所对应的小圆点的界面。然后把所有界面隐藏，再然后显示该页面 -->
+
+	<script>
+		// 先做 下面的小按钮的切换。这里面每过2秒切换一次（定时器）
+		// （1）设置一个定时器每2秒钟调用一次
+		setInterval(function(){
+			// (2)找到当前的selected的标签
+			var span = document.querySelector("span.selected");
+			// (3)拿掉它的类
+			span.className = "";
+			// // (4)找到这个span标签的下一个兄弟标签,给这个标签设置className
+			// span.nextElementSibling.className = "selected";
+			
+			// (4)升级版第四部，因为最后一个span没有下一个兄弟
+			// console.log(span.nextElementSibling);
+			if (span.nextElementSibling == null) {
+
+				// 没有给第一个.找大哥，可以从自己出发找父标签的第一个子标签
+				span.parentNode.firstElementChild.className = "selected";
+				// ---------------新内容--------------------------
+				var itmes = document.querySelectorAll(".item");
+				for(var i = 0; i < itmes.length; i++){
+					// remove 删除一个类 
+					// itmes[i].remove("selected");
+					itmes[i].className = "item";
+				}
+
+				// 获得现在选中的标签对象
+				var index = span.parentNode.firstElementChild.getAttribute("data-num");
+				var indexNum = Number(index);
+				itmes[indexNum].className = "item selected";
+
+
+
+
+			}else{
+				span.nextElementSibling.className = "selected";
+				// ---------------新内容--------------------------
+				var itmes = document.querySelectorAll(".item");
+				console.log(itmes);
+				for(var i = 0; i < itmes.length; i++){
+					// remove 删除一个类 
+					// itmes[i].remove("selected");
+					itmes[i].className = "item";
+				}
+
+				var index = span.nextElementSibling.getAttribute("data-num");
+				var indexNum = Number(index);
+				// console.log(itmes[indexNum]);
+				itmes[indexNum].className = "item selected";
+
+
+
+			}
+
+
+		},2000);
+
+
+
+	</script>
+</body>
+</html>

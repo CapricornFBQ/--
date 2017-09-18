@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>侧滑轮播图</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			width: 670px;
+			height: 280px;
+			margin: 50px auto;
+			border-radius: 6px;
+			position: relative;
+			overflow: hidden;
+		}
+		li {
+			list-style: none;
+			position: absolute;
+			transition: all 0.5s;
+		}
+		.littleControl {
+			color: white;
+			text-align: center;
+			line-height: 20px;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background: rgba(0,0,0,0.2);
+			margin-left: 15px;
+			display: inline-block;
+			cursor: pointer;
+		}
+		.control {
+			height: 20px;
+			width: 160px;
+			position: absolute;
+			bottom:5px;
+			right: 10px;
+		}
+		.selected {
+			background: orange;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="images/a1.jpg" alt=""></li>
+		<li><img src="images/a2.jpg" alt=""></li>
+		<li><img src="images/a3.jpg" alt=""></li>
+		<li><img src="images/a4.jpg" alt=""></li>
+		<div class="control">
+			<div class="littleControl" num=0>1</div>
+			<div class="littleControl" num=1>2</div>
+			<div class="littleControl" num=2>3</div>
+			<div class="littleControl" num=3>4</div>
+		</div>
+	</ul>
+	<script>
+		//侧滑轮播图的思路：参考筋斗云特效   把四张图片放在一行里面，每次点击另对应的图片进入显示的框里面，其他可以自己确定相对于该图片的位置
+		//1，给控制器绑定事件
+		var controlList = document.querySelectorAll(".littleControl");
+		var pictureList = document.querySelectorAll("li");
+
+
+
+		//需要对所有的图片位置进行初始化-----显示第一章图片
+		for(var i=0; i<pictureList.length; i++) {
+			pictureList[i].style.left = 1000 * i + "px";
+		}
+		//对控制器的样式进行初始化
+		controlList[0].className = "littleControl selected";
+		console.log(pictureList);
+		for(var i=0; i<controlList.length; i++) {
+			controlList[i].onclick = function() {
+				controlNumber = this.getAttribute("num");
+				pictureList[controlNumber].style.left = "0px" ;
+
+				//清除所有的控制器的样式
+				for (var i=0; i<controlList.length; i++) {
+					controlList[i].className = "littleControl";
+				}
+				//设置对应的控制器的样式
+				controlList[controlNumber].className = "littleControl selected";
+				var i = controlNumber;
+				//把对应点击图片左边的图片位置进行定义
+				while( i>=0 ) {
+					pictureList[i].style.left = -1000 * (controlNumber - i) + "px";
+					i--;
+				}
+				//把对应点击图片右边的图片位置进行定义
+				i = controlNumber;
+				while(i < 4) {
+					pictureList[i].style.left = 1000 * (i - controlNumber) + "px";
+					i++;
+				}
+			}
+		}
+
+
+		//添加自动控制器
+		//初始化当前活跃的图片数值
+		var controlNumber = 1;
+		var timer = setInterval(function() {
+
+				
+				pictureList[controlNumber].style.left = "0px" ;
+
+				//清除所有的控制器的样式
+				for (var i=0; i<controlList.length; i++) {
+					controlList[i].className = "littleControl";
+				}
+				//设置对应的控制器的样式
+				controlList[controlNumber].className = "littleControl selected";
+				var i = controlNumber;
+				//把对应点击图片左边的图片位置进行定义
+				while( i>=0 ) {
+					pictureList[i].style.left = -1000 * (controlNumber - i) + "px";
+					i--;
+				}
+				//把对应点击图片右边的图片位置进行定义
+				i = controlNumber;
+				while(i < 4) {
+					pictureList[i].style.left = 1000 * (i - controlNumber) + "px";
+					i++;
+				}
+				controlNumber++;
+				if (controlNumber>3) {
+					controlNumber = 0;
+				}
+				var time = new Date();
+				console.log(time.getSeconds());
+		},2000)   //先执行等待2s然后再执行代码块
+
+	</script>
+</body>
+</html>

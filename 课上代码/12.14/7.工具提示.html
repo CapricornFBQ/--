@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>滚动监听</title>
+
+    <link href="lib/dist/css/bootstrap.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- 光靠代码没用了 -->
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="hahaha" style="margin-top: 20px;">上</button>
+
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">左</button>
+
+    
+
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
+
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="我的工具框">Tooltip on right</button>
+       
+    
+    <!-- HTML to write -->
+   
+
+    <script src="lib/jquery/jquery-3.1.1.min.js" type="text/javascript" ></script>
+    <script src="lib/dist/js/bootstrap.min.js" type="text/javascript" ></script>
+
+    <!-- 必须自己添加jq代码 -->
+    <script>
+      
+        // $('#example').tooltip();
+        // 获得所有的data-toggle的对象，给他们设置一个事件 tooltip
+        $("[data-toggle ='tooltip']").tooltip();
+
+
+    </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQ插件</title>
+</head>
+<body>
+	<p>这是一段文字</p>
+	<!-- 
+		jQuery本质上就是封装的对象，选择器 还有一些常用的方法都是封装在这个对象里面的
+		jQuery插件是什么？ 咱自己定义一个方法，封装到jQuery对象中
+		jQuery插件使用？   调用的时候和jQuery自带的方法调用类似
+
+
+		可以用jQuery.fn来定义，其原理同jQuery.prototype
+		1.如何定义一个插件 
+		2.如何给插件添加参数
+		3.如何使插件可以连续调用
+	 -->
+	 <script src="jquery-3.2.1.js"></script>
+	 <script src="my插件.js"></script>
+	 <script>
+	 $(function() {
+	 	$("p").changeStyle("blue").css("font-size","30px");
+
+	 })
+	 </script>
+</body>
+</html>

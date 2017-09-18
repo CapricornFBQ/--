@@ -1,0 +1,9 @@
+1.addEventListener  事件监听来防止，后面的事件覆盖前面的事件
+2.stopPropagation   阻止事件传递   事件监听的两种阻止默认事件的方法：1.returnValue = false 阻止默认事件  2. .preventDefault()
+3.事件绑定阻止默认事件 return false  
+4.BOM  window.innerWidth 窗口的宽度  .innerHeight 窗口的高度   IE： document.documentElement.clientWidth 窗口宽度 document.body.clientWidth
+5.window.close() 关闭窗口  window.open("url","_blank") 默认从新窗口打开， 从当前窗口打开用_self
+6.screen.availHeight 可用的屏幕高度 screen.availWidth 可用的屏幕宽度
+7.window.location.protocol  传输协议 .hostname域名  .pathname 路径和文件名  .port 端口 
+8.navigator
+9.确认框 .confirm()  返回布尔值

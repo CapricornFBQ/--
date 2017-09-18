@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <style>
+        #one{
+            width: 100px;
+            height: 100px;
+            margin: 100px;
+            margin-top: 2000px;
+            background: yellow;
+        }
+        #flyimg{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="one">
+        hahahah
+    </div>
+    <img id="flyimg" src="H5.png" alt="">
+    <script>
+        var one = document.getElementById("one");
+        one.onclick = function (event) {
+            console.log(event.clientX);
+            console.log(event.clientY);
+            console.log(event.screenX);
+            console.log(event.screenY);
+            console.log(event.pageX);
+            console.log(event.pageY);
+        }
+        var clientx = 0,
+            clienty = 0;
+        var flyimg = document.getElementById("flyimg");
+        document.onclick = function (event) {
+            clientx = event.clientX - flyimg.offsetWidth/2;
+            clienty = event.clientY - flyimg.offsetHeight/2;
+//            flyimg.style.left = (clientx - flyimg.offsetWidth/2) + "px";
+//            flyimg.style.top = (clienty - flyimg.offsetHeight/2) + "px";
+        }
+        var leaderx=0,
+            leadery=0;
+        setInterval(function () {
+            //缓动动画  缓动公式：leaderx =leaderx + (clientx-leaderx)/10
+           leaderx =leaderx + (clientx-leaderx)/10;
+            leadery =leadery + (clienty-leadery)/10;
+           flyimg.style.top = leadery + "px";
+           flyimg.style.left = leaderx + "px";
+        },10);
+    </script>
+</body>
+</html>

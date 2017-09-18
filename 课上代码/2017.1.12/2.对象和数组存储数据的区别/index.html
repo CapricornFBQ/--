@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		// 创建一个班级的学生信息档案
+		//---------------数组的方式------------------------
+
+		var aiwei = ["aiwei",18,"woman"];
+		var chunrun = ["chunrun",22,"man"];
+		var xin = ["xin",30,"man"];
+
+		var class65 = [aiwei,chunrun,xin];
+
+		console.log(class65);
+		// 调出65期学好为1号学生的档案
+		// console.log(class65[0]);
+		var array = class65[0];
+		var string = array[0];
+
+		console.log(class65[0][0]);
+
+		// ------------------------引入对象以后---------------
+		function Person(name,age,sex) {
+			this.name = name;
+			this.age = age;
+			this.sex = sex;
+		}
+
+		var kc = new Person("kc",18,"woman");
+		var zhengshuang = new Person("zhengshuang",19,"man");
+		var weiwei = new Person("weiwei",29,"man");
+
+		var new65 = [kc,zhengshuang,weiwei];
+		console.log(new65); 
+		//2号学生的名字和性别
+		console.log(new65[1].sex);
+
+
+	</script>
+</body>
+</html>

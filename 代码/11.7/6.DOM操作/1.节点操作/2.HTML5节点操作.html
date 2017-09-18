@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5节点操作</title>
+</head>
+<body>
+	<!-- <div style="width: 100px;height: 100px;"></div>
+	<div style="width: 100px;height: 100px;"></div>
+	<div style="width: 100px;height: 100px;"></div> -->
+    
+    <a  id = "id1" href="" class = "div1">ss</a>
+	<div id = "id1" class= "div1" style="width: 100px;height: 100px;"></div>
+	<div class= "div1" style="width: 100px;height: 100px;"></div>
+	<div class= "div1" style="width: 100px;height: 100px;"></div>
+	<script>
+
+	//HTML5的新接口来获得标签
+
+	//1.查询单个的标签
+	//DOC关键字  query查询  selector选择
+
+	//查询到的是符合标准中的第一个 标签
+	// var div = document.querySelector("div");
+	// div.style.background ="orange";
+
+	//className
+	 // var div = document.querySelector(".div1");
+	 // div.style.background = "red";
+
+	 //id
+	 // document.querySelector("#id1").style.background="green";
+
+
+
+	 //2.多标签获得方法
+	 //标签选择器
+	 // var divs =  document.querySelectorAll("div");
+	 // for (var i = 0; i < divs.length; i++) {
+	 // 	divs[i].style.background = "red";
+	 // }
+
+	 //class
+	 	var divs = document.querySelectorAll(".div1");
+	 	for (var i = 0; i < divs.length; i++) {
+	 		divs[i].style.background = "yellow";
+	 	}
+
+	 	
+	</script>
+</body>
+
+
+	<!-- 
+		传统三写法：
+		id： document.getElementByID("id") ----->单个标签
+
+		class : document.getElementsByClassName("class")-----》数组
+
+		tagName: document.getElementsByTagName("标签名")-----》数组
+
+
+
+		HTML5写法
+		获得单个标签
+		document.querySeletor(""); .class #id 标签  获得的是单个的，如果有多个，则获得符合标准的第一个
+
+
+		document.querySeletorAll(""); .CLASS 标签 ------->数组
+
+
+
+
+
+
+
+	 -->
+</html>
+

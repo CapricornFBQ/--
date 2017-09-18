@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM练习</title>
+	<style>
+		div {
+			width: 100px;
+			height: 100px;
+			background: orange;
+			margin: 1px auto; 
+		}
+
+	</style>
+</head>
+<body>
+	<button id="button">添加一个div</button>
+	<script>
+		//.onclick   点击事件
+		function Click() {
+			//创建一个新的元素节点
+			var newDiv = document.createElement("div");
+			//取出body元素节点
+			var body  = document.getElementsByTagName("body");
+			//把新元素节点放入body节点中
+			body[0].appendChild(newDiv);
+		}
+		//选中button节点，添加点击事件，调用封装函数
+		document.getElementById("button").onclick = Click;
+	</script>
+</body>
+</html>

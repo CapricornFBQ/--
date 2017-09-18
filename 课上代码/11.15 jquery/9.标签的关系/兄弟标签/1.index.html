@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQ和JS对象的转换</title>
+	<style>
+			
+
+	</style>
+	<script src ="../../jquery-3.1.1.min.js"></script>
+	<style>
+		
+		
+	</style>
+
+</head>
+<body>
+	
+
+	<div class="div1" style="height: 300px;">
+		
+		<p>我是p标签</p>
+		<p class="p2">我是p标签</p>
+		<a href="#">hshaj </a>
+		<div>
+			<p>adjadj</p>
+
+		</div>
+
+	</div>
+
+	<script>
+
+	$(document).ready(function () {
+
+		//siblings();兄弟节点   sibilings(P) 兄弟节点同时为p
+		// $(".p2").siblings("p").css("background","red");
+
+		//next();
+		// $(".p2").next().css({"color":"red","background":"orange"});
+
+
+		//nextAll(); 
+		// $(".p2").nextAll().css("background","skyblue");
+
+
+		//nextUntil();  直到但不包括
+		// $(".p2").nextUntil("div").hide();
+
+
+		//与next相反的 prev  上一个兄弟节点  prev()  prevAll()   prevUntil()
+		//append   prepend
+		$(".p2").prev().hide();
+
+
+
+		
+
+
+
+
+	});
+
+
+		
+
+
+	</script>
+
+
+</body>
+</html>

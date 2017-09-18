@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>window Navigator</title>
+</head>
+<body>
+	<div id="example"></div>
+	<script>
+		var string = ""
+		//查询浏览器的代号 navigator.appCodeName
+		var codeName = "<p>浏览器代号：" + navigator.appCodeName +"</p>";
+		var appName = "<p>浏览器名称：" + navigator.appName +"</p>";
+		var appVersion = "<p>浏览器版本：" + navigator.appVersion +"</p>";   //-webkit-    -moz-    -o-
+		var cookies = "<p>浏览器启用cookies：" + navigator.cookieEnabled +"</p>";
+		var platform = "<p>浏览器硬件平台：" + navigator.platform +"</p>";
+		var userAgent = "<p>浏览器用户代理：" + navigator.userAgent +"</p>";
+		var systemLanguage = "<p>浏览器代理语言：" + navigator.systemLanguage +"</p>";
+
+
+
+
+		string = codeName + appName + appVersion + cookies + platform + userAgent + systemLanguage;
+		document.getElementById("example").innerHTML = string;
+	</script>
+</body> 
+</html>

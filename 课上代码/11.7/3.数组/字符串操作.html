@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //根据下标获取字符，以及根据字符获取下标
+    var text = "qwerqwer";
+    console.log(text.charAt(1));
+    console.log(text.indexOf("w"));
+    console.log(text.lastIndexOf("w"));
+
+//    字符串拼接
+    var text1 = "123";
+    var text2 = "456";
+    console.log(text1.concat(text2));
+
+//    截取字符串第一种方式slice（start，end）
+    var text3 = "qwerrtyyui";
+    console.log(text3.slice(1));
+    console.log(text3.slice(1,5));
+//    第二种方式 substr（start，length）
+    console.log(text3.substr(1,6));
+
+    console.log(text3.slice(6,3));
+    console.log(text3.substr(6,3));
+
+//    大小写转换
+    var text4 = "asdf";
+    console.log(text4.toUpperCase());
+    console.log(text4.toLowerCase());
+
+//    字符串与数组的相互转换
+    var text5 = "qwer,asdf,zxcv";
+    console.log(text5.split(",",2));
+    var arr = [455,3362,148];
+    console.log(arr.join("-"));
+
+    var json1 = {
+                    name:"xiaoming",
+                    age:17,
+                    sex:"女",
+                    family:{
+                        father:"laowang",
+                        mother:"daming"
+                    },
+                    vlist:[
+                            {
+                                name:"xiaohong",
+                                age:18
+                            },
+                            {
+                                name:"xiaohua",
+                                age:100
+                            }
+                            ]
+                }
+    console.log(json1.age);
+    console.log(json1.name);
+    console.log(json1.family);
+//    console.log(json1.arr[0]);
+    var arr1 = json1.vlist;
+    //外层循环遍历所有的小字典
+    for(var i=0;i<arr1.length;i++)
+    {
+        //内层循环遍历小字典中所有的key-value值
+        for(var key in arr1[i])
+        {
+            console.log(key);
+            console.log("hahaha"+arr1[i][key]);
+        }
+    }
+    var videojson = {
+        "aQipuId": 202861101,
+        "bossType": "0",
+        "vlist": [
+            {
+                "tvQipuId": 385274600,
+                "timeLength": 1500,
+                "publishTime": 1438650931000,
+                "exclusive": 1,
+                "vt": "我是路飞！ 将要成为海贼王的男人",
+                "pds": "1",
+                "vpic": "http://pic9.qiyipic.com/image/20150803/96/f9/v_109343020_m_601.jpg",
+                "type": "1",
+                "payMark": 0,
+                "qiyiProduced": 0,
+                "vn": "航海王 第1集",
+                "plcdown": {
+                    "17": 0,
+                    "15": 0
+                },
+                "id": 385274600,
+                "pd": 1,
+                "shortTitle": "航海王 第1集",
+                "mdown": 0,
+                "purType": 0,
+                "vurl": "http://www.iqiyi.com/v_19rrok4nt0.html",
+                "vid": "e59fa071d268247291f7737c72ea37f8"
+            },
+            {
+                "tvQipuId": 385275700,
+                "timeLength": 1500,
+                "publishTime": 1438678286000,
+                "exclusive": 1,
+                "vt": "大剑客现身！海贼猎人罗罗诺亚·卓洛",
+                "pds": "2",
+                "vpic": "http://pic8.qiyipic.com/image/20150804/5f/27/v_109343021_m_601_m2.jpg",
+                "type": "1",
+                "payMark": 0,
+                "qiyiProduced": 0,
+                "vn": "航海王 第2集",
+                "plcdown": {
+                    "17": 0,
+                    "15": 0
+                },
+                "id": 385275700,
+                "pd": 2,
+                "shortTitle": "航海王 第2集",
+                "mdown": 0,
+                "purType": 0,
+                "vurl": "http://www.iqiyi.com/v_19rrok4ms8.html",
+                "vid": "c183093e2c60e7a34eb6758c3f997a1e"
+            },
+            {
+                "tvQipuId": 385276600,
+                "timeLength": 1500,
+                "publishTime": 1438678307000,
+                "exclusive": 1,
+                "vt": "蒙卡 vs 路飞！神秘的美少女是谁?",
+                "pds": "3",
+                "vpic": "http://pic3.qiyipic.com/image/20150803/d9/3b/v_109343022_m_601.jpg",
+                "type": "1",
+                "payMark": 0,
+                "qiyiProduced": 0,
+                "vn": "航海王 第3集",
+                "plcdown": {
+                    "17": 0,
+                    "15": 0
+                },
+                "id": 385276600,
+                "pd": 3,
+                "shortTitle": "航海王 第3集",
+                "mdown": 0,
+                "purType": 0,
+                "vurl": "http://www.iqiyi.com/v_19rrok4pg4.html",
+                "vid": "44118df2c8e8bb181348388cb06b0034"
+            },
+            {
+                "tvQipuId": 385281800,
+                "timeLength": 1500,
+                "publishTime": 1438678341000,
+                "exclusive": 1,
+                "vt": "路飞的过去！红发香克斯登场",
+                "pds": "4",
+                "vpic": "http://pic4.qiyipic.com/image/20150803/91/03/v_109343023_m_601.jpg",
+                "type": "1",
+                "payMark": 0,
+                "qiyiProduced": 0,
+                "vn": "航海王 第4集",
+                "plcdown": {
+                    "17": 0,
+                    "15": 0
+                },
+                "id": 385281800,
+                "pd": 4,
+                "shortTitle": "航海王 第4集",
+                "mdown": 0,
+                "purType": 0,
+                "vurl": "http://www.iqiyi.com/v_19rrok4ew4.html",
+                "vid": "651921e50fb59b8c26935907bad0f6ae"
+            },
+            {
+                "tvQipuId": 385282700,
+                "timeLength": 1500,
+                "publishTime": 1438678363000,
+                "exclusive": 1,
+                "vt": "恐怖！神秘的力量 海贼小丑巴基船长",
+                "pds": "5",
+                "vpic": "http://pic0.qiyipic.com/image/20150803/b7/aa/v_109343025_m_601.jpg",
+                "type": "1",
+                "payMark": 0,
+                "qiyiProduced": 0,
+                "vn": "航海王 第5集",
+                "plcdown": {
+                    "17": 0,
+                    "15": 0
+                },
+                "id": 385282700,
+                "pd": 5,
+                "shortTitle": "航海王 第5集",
+                "mdown": 0,
+                "purType": 0,
+                "vurl": "http://www.iqiyi.com/v_19rrok4hk0.html",
+                "vid": "256020ba20f0ab22568d156668d7dc27"
+            }
+        ],
+        "aid": 202861101,
+        "allNum": 765,
+        "cid": 4,
+        "qiyiProduced": 0,
+        "pgt": 11,
+        "ic": 765,
+        "pg": "1",
+        "pt": 765,
+        "pm": 0,
+        "pn": 75,
+        "pp": 75,
+        "isBossMixer": 0,
+        "ps": ""
+    }
+    //获取到数组
+    var vlist = videojson.vlist;
+    //遍历数组
+    for(var i=0;i<vlist.length;i++)
+    {
+        //遍历小json获取到json中所有的value值
+        for(var a in vlist[i])
+        {
+            //通过key值获取value值  这里vlist[i]：当前的小json。  [a]：这是给小json，key值获取value值
+            console.log(vlist[i][a]);
+        }
+    }
+
+//    json数据与字符串之间的转换
+       var videojsonstr = JSON.stringify(videojson);
+        console.log(videojsonstr);
+        var json = JSON.parse(videojsonstr);
+        console.log(json);
+</script>
+
+</html>

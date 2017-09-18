@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内容的设置</title>
+	<script src ="../jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<!-- JS 
+	innerText        text();
+	innerHTML	     html();
+	value            val()
+	setAttribute
+	getAttribute
+
+
+	 -->
+	<div style="width: 200px;height: 200px;border: 1px solid black;">
+		
+		<input type="text">
+	</div>
+
+
+	<!-- script -->
+	<script>
+		$(document).ready(function () {
+			// 文本内容
+			var string = "<a href='#'>我是一个连接</a>";
+			// $("div").text(string);
+			//html
+			// $("div").html(string);
+
+			//设置表单元素的value
+			// document.querySelector("input").value = "我是value";
+			$("input").val("我是val");
+
+			//设置属性 input type = color
+			$(":text").attr("type","color");
+
+			//同样的，获得他的属性
+			// var value = $(":color")[0].attr("type");
+			// console.log(value);
+			var color = $("input")[0];
+			console.log(color);
+			//错误：没能得到属性。。。
+			var type = color.getAttr("type");
+			console.log(type);
+
+		});
+
+
+
+
+	</script>
+</body>
+</html>

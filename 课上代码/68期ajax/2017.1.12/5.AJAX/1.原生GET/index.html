@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX学习</title>
+</head>
+<body>
+	
+	<button>按钮</button>
+
+	<script>
+		//1.给button添加一个点击事件
+		document.querySelector("button").onclick=function () {
+			//2.JS事件调用AJAX技术
+			//（1）创建一个XMLHttpRequest对象,用这个对象请求数据，就是AJAX的核心
+			var xhr = new XMLHttpRequest();
+
+			// （4）我们要设置一个xhr对象状态的监听方法，当xhr的状态为4的时候，说明服务器发送数据回来了
+			xhr.onreadystatechange =function(){
+
+				if(xhr.readyState==4){
+					//responseText是服务器返回的数据
+					alert(xhr.responseText);
+				}
+
+			}
+
+			//（2）调用xhr的open方法。这个方法用于启动一个请求，用来准备发送
+			//open()方法里面必须用到的两个参数
+			//a,指定请求的方式 get\post 
+			//b,提交的方向
+			//c，同步请求还是异步请求，默认true,异步请求
+			xhr.open('get','server.php?name=weiwei',true);
+
+			//(3)send，发送请求:get请求的内容写在 server.php 后面,而post请求内容写在xhr.send()里
+			xhr.send(null);
+
+
+
+
+		}
+
+
+	</script>
+
+
+</body>
+</html>

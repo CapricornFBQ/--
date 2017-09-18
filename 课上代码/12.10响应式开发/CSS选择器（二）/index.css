@@ -1,0 +1,25 @@
+
+
+/* nth-child(n)  查找父标签里第4个元素*/
+
+
+/* p:nth-child(4){
+  color: red;
+} */
+/* 
+p:nth-of-type(4){
+  color: green;
+} */
+
+
+div:nth-child(4){
+  color: red;
+}
+
+div:nth-of-type(4){
+  color: green;
+}
+
+.contanier > a{
+
+}

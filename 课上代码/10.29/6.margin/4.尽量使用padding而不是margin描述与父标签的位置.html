@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>水平居中</title>
+	<style>
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+		.father{
+			width: 200px;
+			height: 200px;
+			background: red;
+			
+		}
+		.child{
+			width: 100px;
+			height: 100px;
+			background: orange;
+			/*如果子标签用marign来描述和父标签的位置关系，可能出现magin外露
+
+			给父标签增加overflow:hidden可以解决;
+
+
+			*/
+			margin-top: 20px;
+
+		}
+
+	</style>
+</head>
+<body>
+	
+	<div class ="father">
+		<div class ="child"></div>
+	</div>
+
+</body>
+</html>

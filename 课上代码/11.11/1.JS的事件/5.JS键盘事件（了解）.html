@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS事件</title>
+</head>
+<body>
+	<input type="text" class = "input1">
+	<script>
+	//找到input
+	var input = document.querySelector(".input1");
+		
+
+	//当键盘被按下的时候
+	//1.on + key + down
+
+	input.onkeydown =function(){
+		this.style.background = "red";
+	}	
+
+	//2.键盘松开按钮以后
+	input.onkeyup =function(){
+
+		//获得input里的内容 value
+		var value = input.value;
+
+
+
+		console.log(value);
+	}
+
+
+	</script>
+
+
+</body>
+</html>

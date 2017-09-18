@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>筋斗云效果</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+       #nav{
+           width: 600px;
+           height: 80px;
+           margin: 100px;
+           position: relative;
+       }
+        #yun{
+            position: absolute;
+            top: 1px;
+            left: 0px;
+            width: 90px;
+            height: 80px;
+            background: skyblue;
+            transition: all 3s; 
+        }
+        ul{
+            border: 1px solid black;
+            height: 80px;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+        #nav li{
+            width: 90px;
+            height: 80px;
+            float: left;
+            color: red;
+            list-style: none;
+            line-height: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <div id="yun">
+        </div>
+        <ul>
+            <li>魔兽世界</li>
+            <li>穿越火线</li>
+            <li>英雄联盟</li>
+            <li>守望先锋</li>
+            <li>战地之王</li>
+            <li>老司机</li>
+        </ul>
+    </div>
+    <script>
+      var nav = document.getElementById("nav");
+      var lis = nav.children[1].children;
+      var yun = document.getElementById("yun");
+      var target=0,current=0;
+      for(var i=0; i<lis.length;i++)
+      {
+          //给所有的li标签添加鼠标滑过事件
+          lis[i].onmouseover = function () {
+              //获取当前li的左侧偏移量
+               target = this.offsetLeft;
+              console.log(target);
+              //设置给yun左侧的偏移量
+               yun.style.left = target+"px";
+          }
+          lis[i].onmouseout = function () {
+              yun.style.left = current+"px";
+          }
+          lis[i].onclick = function () {
+              current = this.offsetLeft;
+          }
+      }
+    </script>
+</body>
+</html>

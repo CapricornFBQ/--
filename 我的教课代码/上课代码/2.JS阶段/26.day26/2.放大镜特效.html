@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜特效</title>
+	<style>
+		.container {
+			margin: 50px;
+			padding: 0;
+		}
+		.small {
+			margin: 0;
+			padding: 0;
+			width: 350px;
+			height: 350px;
+			position: relative;
+			display: inline-block;
+			border:1px solid black;
+			overflow: hidden;
+		}
+		#small {
+			width: 100%;
+			height: 100%;
+		}
+
+		.big {
+			margin: 0;
+			padding: 0;
+			width: 450px;
+			height: 450px;
+			position: absolute;
+			display: inline-block;
+			margin-left: 15px;
+			overflow: hidden;
+			border:1px solid black;
+			display: none;
+		}
+		.mask {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background: rgba(255,255,0,0.3);
+			cursor: move;
+			display: none;
+		}
+		#big {
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="small">
+			<div class="mask"></div>
+			<img id="small" src="001.jpg" alt="">
+		</div>
+		<div class="big">
+			<img id="big" src="0001.png" alt="">
+		</div>
+	</div>
+
+	<script>
+		var small = document.getElementsByClassName("small")[0];
+		var mask = document.getElementsByClassName("mask")[0];
+		var big = document.getElementsByClassName("big")[0];
+		var bigPicture = document.getElementById("big");
+		small.onmouseover = function() {
+			mask.style.display = "block";
+			big.style.display = "inline-block";
+			small.onmousemove = function(event) {
+				//事件对于文档的距离减去 父元素相对于文档的距离
+				var maskLeft = event.pageX-small.offsetLeft - mask.offsetWidth/2;
+				var maskTop = event.pageY - small.offsetTop - mask.offsetHeight/2;
+				if(maskLeft <= 0) {
+					maskLeft = 0;
+				}
+				if(maskLeft >= small.offsetWidth-mask.offsetWidth) {
+					maskLeft = small.offsetWidth-mask.offsetWidth;
+				}
+				if(maskTop <= 0) {
+					maskTop = 0;
+				}
+				if(maskTop >= small.offsetHeight - mask.offsetHeight) {
+					maskTop = small.offsetHeight - mask.offsetHeight;
+				}
+				mask.style.left = maskLeft + "px";
+				mask.style.top = maskTop + "px";
+
+				bigPicture.style.left = -maskLeft*big.offsetWidth/small.offsetWidth + "px";
+				bigPicture.style.top = -maskTop*big.offsetWidth/small.offsetWidth + "px";
+			}
+		}
+		small.onmouseleave = function() {
+			mask.style.display = "none";
+			big.style.display = "none";
+		}
+	</script>
+</body>
+</html>

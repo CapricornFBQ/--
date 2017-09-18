@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加元素</title>
+	<script src ="../jquery-3.1.1.min.js">
+		
+
+		// 添加元素的四个方法
+		//append() ---->appendChild
+		//prepend()----->从头开始添加
+
+		//before()----》往标签前面添加
+		//after（）---》往标签后面添加
+
+
+
+	</script>
+</head>
+<body>
+	<div style="width: 300px;height: 200px;border: 1px solid black">是否是会计爱空间和卡文件而后</div>
+	<script>
+
+	$(document).ready(function () {
+
+
+
+
+	
+		//append 
+		// (1）创建一个标签然后用apped添加
+		// var a = document.createElement("a");//JS
+		// a.href = "#";
+		// a.innerText ="这是一个a标签";
+		// document.querySelector("div").appendChild(a);
+
+		//常用到的创建标签的方法
+		//-------------------------------------------
+	     var txt1="<p>文本。</p>";              // 使用 HTML 标签创建文本
+    	 var txt2=$("<p></p>").text("文本。");  // 使用 jQuery 创建文本
+    	 var txt3=document.createElement("p");
+    	 txt3.innerHTML="文本。";               // 使用 DOM 创建文本 text with DOM
+    	 $("body").append(txt1,txt2,txt3);        // 追加新元素
+		//-----------------------------------------
+		
+		
+		// $("div").append(string);
+		//prepend
+		// $("div").prepend(string);
+
+
+		//before 
+		// $("div").before(string);
+
+		//after
+		// $("div").after(string);
+
+
+
+	});
+
+
+		
+
+
+	</script>
+
+
+</body>
+</html>

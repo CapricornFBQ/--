@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过渡的用法</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+
+			/*transition: background 5s;*/
+			/*transition: width 10s;*/
+			transition: all 10s;
+			
+			/*设置过渡变化的速度变化,线性（匀速）*/
+			transition-timing-function: linear;
+		}
+		div:hover{
+			background: orange;
+			width: 800px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 什么时候会用到过渡，一般是属性变化使用过渡,让属性有缓慢的过渡 -->
+
+	<div></div>
+	
+</body>
+</html>

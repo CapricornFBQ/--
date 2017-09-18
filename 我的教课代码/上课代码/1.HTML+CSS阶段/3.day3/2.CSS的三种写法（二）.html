@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS的三种写法（二）</title>
+	
+	<!-- 页内CSS：随着行内CSS的缺点日益放大，人们发明了页内CSS来设置标签的属性和样式 -->
+	<!-- 优点：可以利用选择器，将所有符合标准的标签，批量设置样式 -->
+	<style>
+		
+		/*标签选择器*/
+		div{
+			height: 100px;
+			background-color: skyblue;
+
+			/*所有的边框为 (1)边框的大小 （2）边框的类型 （3）边框的颜色 */
+			border: 2px solid black;
+		}
+
+	</style>
+
+</head>
+<body>
+	
+	<div ></div>
+	<div ></div>
+	<p>adada</p>
+	<div></div>
+
+</body>
+</html>

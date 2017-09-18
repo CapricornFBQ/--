@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS对象</title>
+</head>
+<body>
+	
+
+	<script>
+	//object（数据存储容器）---》JSON字符串（文本数据结构）----》AJAX（数据交换手段）--->PHP(后台) 
+
+
+		
+	// var array = ["kc","man","18"];
+	// console.log(array[2]);
+
+	//什么是对象？
+	//对象也是一个数据存储容器，可以想象成一个存储变量的容器
+
+	 //-------------对象的创建方式（一）--------------------- 
+	//1.创建一个对象
+	// 对象的数据在内存中是以  key = value的方式存储的  key键  value值
+	var student = {
+		name:"zhengshuang",
+		age:18,
+		sex:"woman",
+		tel:119
+
+	} 
+
+	
+	//获得对象属性的方法
+	//student['name']  student.name
+
+	// -----------对象创建方法（二）--------------------------
+	var baby = new Object();
+	baby.name = "zhaojing";
+	baby.age =1;
+	baby['sex']="man";
+	console.log(baby);
+
+	// var array = new Array();
+	// array[0] =1;
+	// array[1]=2;
+
+	// ----------自定义构造法创建对象-----------------------
+	//1.生产一个对象的模板（类）
+	function Car(nameString,colorSttring) {
+		//this.name相当于模板name属性
+		this.name = nameString;
+		this.color = colorSttring;
+		
+	}
+	//生产汽车
+	var car1 = new Car("audo","black");
+	console.log(car1);
+	var car2 =new Car();
+	console.log(car2);
+
+
+	</script>
+</body>
+</html>

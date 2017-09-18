@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件</title>
+</head>
+<body>
+<!--默认只能选择一个文件  如果多选加上multiple属性-->
+<input  type="file" name="" id="file" multiple>
+<button id="btn">读取文件信息</button>
+</body>
+<script>
+    var fileinput = document.querySelector('#file');
+    var btn = document.querySelector('#btn');
+    btn.addEventListener('click',function () {
+        for (var i = 0;i<fileinput.files.length;i++){
+            console.log(fileinput.files[i]);
+            console.log(fileinput.files[i].name);
+            console.log(fileinput.files[i].size);
+            console.log(fileinput.files[i].lastModifiedDate);
+            console.log(fileinput.files[i].type);
+        }
+    });
+    fileinput.addEventListener('click',function () {
+        console.log('点击');
+
+    });
+//    当inputfile 选中的文件和之前选中的文件不同时 自动进入这个方法
+    fileinput.addEventListener('change',function () {
+//        console.log('改变');
+        for (var i = 0;i<fileinput.files.length;i++) {
+            console.log(this.files[i]);
+            console.log(this.files[i].name);
+            console.log(this.files[i].size);
+            console.log(this.files[i].lastModifiedDate);
+            console.log(this.files[i].type);
+        }
+    });
+</script>
+</html>

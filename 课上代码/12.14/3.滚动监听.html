@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>滚动监听</title>
+
+    <link href="lib/dist/css/bootstrap.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- 1.给想要滑动的区块设置 data-spy="scroll" 
+         2.给设置data-spy=“scroll”的区块设置  相对定位 
+     -->
+
+    <!-- 系统提供的源代码 -->
+    <!-- <body data-spy="scroll" data-target=".navbar-example">
+      ...
+      <div class="navbar-example">
+        <ul class="nav nav-tabs" role="tablist">
+          ...
+        </ul>
+      </div>
+      ...
+    </body> -->
+
+    <!-- 韦氏 -->
+    <!-- （2）做一个简单的导航 -->
+    <div class="navbar-example">
+        <!-- 这是一个导航 -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#ios">ios</a></li>
+          <li role="presentation"><a href="#html">html</a></li>
+          <li role="presentation"><a href="#php">php</a></li>
+        </ul>
+
+
+    </div>
+
+    
+
+    <!-- （1）这是滑动监听空间 -->
+    <!-- 核心是：监听控件里的滑动到一个锚点，然后修改这个锚点的active -->
+    <div data-spy="scroll" data-target=".navbar-example" style="position: relative;height: 300px;overflow: auto;">
+      <!-- （3）设置id对象让与导航栏里的标签对应起来，导致标签可以定位行（锚点特性），滑动监听到某个位置，回设导航栏上的相对应a标签的active -->
+      <h3 id ="ios">IOS</h3>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <h3 id ="html">HTML</h3>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <h3 id ="php">PHP后台</h3>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      <p>sadaadada</p>
+      
+
+    </div>
+
+  
+
+   
+
+   
+
+    <script src="lib/jquery/jquery-3.1.1.min.js" type="text/javascript" ></script>
+    <script src="lib/dist/js/bootstrap.min.js" type="text/javascript" ></script>
+  </body>
+</html>

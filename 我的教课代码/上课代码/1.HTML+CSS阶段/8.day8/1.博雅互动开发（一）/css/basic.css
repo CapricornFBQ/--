@@ -1,0 +1,26 @@
+/*公共类：最基础的框架*/
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+/*终极内墙法*/
+.bw-clearfix:after{
+	display: block;
+	clear: both;
+	content: "";
+	visibility: hidden;
+	height: 0px;
+
+}
+.bw-clearfix{
+	zoom:1;
+}
+
+/*版心类 */
+.bw-container{
+	width: 1000px;
+	height: 58px;
+	/*background: red;*/
+	margin: 0px auto;
+}

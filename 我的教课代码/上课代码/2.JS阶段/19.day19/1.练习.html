@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习</title>
+</head>
+<body>
+	<script>
+
+//水仙花数 ： 三位数abc， a^3 + b^3 + c^3 = abc; 求所有的abc
+
+// for (var a=1; a<=9; a++) {
+// 	for (var b=0; b<=9; b++) {
+// 		for (var c=0; c<=9; c++) {
+// 			if(Math.pow(a,3)+Math.pow(b,3)+Math.pow(c,3) == a*100+b*10+c) {
+// 				document.write(a+","+b+","+c+"<br>")
+// 			}
+// 		}
+// 	}
+// }
+
+//abc+cba=1333 ,求a,b,c
+
+for (var a=1; a<=9; a++) {
+	for(var b=0; b<=9; b++) {
+		for (var c=1; c<=9; c++) {
+			if ((100*a+10*b+c)+(c*100+b*10+a) == 1333) {
+				document.write(a+","+b+","+c+"<br>")
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

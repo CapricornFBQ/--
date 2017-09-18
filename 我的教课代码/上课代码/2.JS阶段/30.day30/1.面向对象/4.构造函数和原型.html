@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>构造函数和原型</title>
+</head>
+<body>
+	<script>
+		//通过封装对象和原型，具体对象决定属性，公用的方法放在原型中
+		function Person(name, age) {
+			this.name = name;
+			this.age = age;
+		}
+		Person.prototype = {
+			getName:function() {
+				return this.name;
+			},
+			sayHello:function() {
+				alert("sayHello");
+			}
+		}
+
+		var person1 = new Person("shuai",18);
+		console.log(person1.getName());
+		person1.sayHello();
+	</script>
+</body>
+</html>

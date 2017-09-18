@@ -1,0 +1,63 @@
+/*专门写关于网页的样式*/
+/*header部分的代码*/
+.header{
+	height: 58px;
+	background-color: #191d3a;
+}
+.header .logo{
+	float: left;
+}
+
+.header .bw-container{
+	line-height: 58px;
+}
+
+.header .bw-container > a{
+
+	float: left;
+	border-left: 1px solid #252947;
+    border-right: 1px solid #252947;
+    /*background: orange;*/
+    width: 85px;
+    height: 58px;
+    text-align: center;
+    text-decoration: none;
+    font-family:  "Microsoft YaHei", "simhei";
+    font-size: 14px;
+    font-weight: 200;
+    color: #818496;
+}
+.header .bw-container > a:hover{
+	color: #e2e4ed;
+
+}
+.header .bw-container > a.selected{
+    background-color: #252947;
+    color: #e2e4ed;
+}
+.header .bw-container > a.join{
+	width: 100px;
+	margin-top:12px;
+	margin-left: 10px;
+	border: 0px;
+}
+
+.language-cut{
+	float: right;
+	font-size: 14px;
+    font-weight: 200;
+    font-family:  "Microsoft YaHei", "simhei";
+
+}
+.language-cut a{
+	text-decoration: none;
+	color: #818496;
+
+}
+.language-cut a:hover{
+	color: #38b774;
+}
+
+.language-cut a.selected{
+	color: #38b774;
+}

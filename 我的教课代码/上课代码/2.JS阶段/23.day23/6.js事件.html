@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js事件</title>
+	<style>
+		div {
+			width: 300px;
+			height: 300px;
+			background: #ddd;
+		}
+	</style>
+</head>
+<body>
+
+<div></div>
+	<script>
+//	单击事件  .onclick
+//	双击事件  .ondblclick
+document.getElementsByTagName("div")[0].ondblclick = function() {
+	this.innerText = new Date();
+}
+//  鼠标按下事件  .onmousedown 
+document.getElementsByTagName("div")[0].onmousedown = function() {
+	this.style.background = "red";
+}
+//   鼠标松开事件  .onmouseup 
+document.getElementsByTagName("div")[0].onmouseup = function() {
+	this.style.background = "yellow";
+}
+
+//   鼠标移入事件   .onmouseover
+document.getElementsByTagName("div")[0].onmouseover = function() {
+	this.style.width = "400px";
+}
+
+//   鼠标移除事件    .onmouseleave
+document.getElementsByTagName("div")[0].onmouseleave = function() {
+	this.style.width = "300px";
+}
+
+//	  鼠标移动事件   .onmousemove
+document.getElementsByTagName("div")[0].onmousemove = function() {
+	var textContent = document.createTextNode("不要动了");
+	var bodyNode = document.getElementsByTagName("body")[0];
+	bodyNode.appendChild(textContent);
+}
+
+	</script>
+</body>
+</html>

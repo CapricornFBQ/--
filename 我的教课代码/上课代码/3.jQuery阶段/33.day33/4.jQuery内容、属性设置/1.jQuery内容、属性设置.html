@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery内容、属性</title>
+</head>
+<body>
+	<div></div>
+	<input type="text" value="用户名">
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			//在div里面添加内容      js的思路创建一个内容----->获取待添加的元素----->appendchild
+			//innerHTML   获取元素节点---->内容赋值      ===============>html（）
+			//innerText   获取元素节点---->内容赋值      ===============>text（）
+			//1.创建内容
+			var string = "<a href='http://www.baidu.com'>我是一个链接</a>"
+			//2.获取元素   内容赋值
+			//直接调用text（）方法  设置文本内容
+			$("div").text(string);    
+			//html()方法
+			$("div").html(string);
+
+			//js setAttribute（）和 getAttribute()  ------>  attr(属性名，属性值)和attr(属性名)
+
+			$("a").attr("href","http://sougou.com");
+			var href = $("a").attr("href");
+			console.log(href);
+
+			//更改表单的value
+			document.querySelector("input").value = "密码";
+			$("input").val("新的")
+
+
+
+
+		})
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>float带来的父亲标签高度坍塌现象</title>
+	<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			/*头部部分*/
+			.header{
+				background: red;
+
+				
+			}
+			.header .navbar{
+				width: 100px;
+				height: 100px;
+				background: orange;
+				float: right;
+			}
+
+			/*content*/
+			.content{
+				height: 500px;
+				background: green;
+
+
+				/*clear是清除 both 是左浮动、有浮动一起清除。清除别人的浮动对我的影响*/
+				/*请注意，这种方法是前面有float元素，保证本身不受浮动元素的影响*/
+				clear:both;
+				
+				/*优点：没有加高，后边的标签也不会往前面去*/
+				/*缺点：float元素的父标签仍然高度坍塌,而且这加clear:both的标签垂直marign不好使了*/
+				margin: 100px 100px;
+
+			}
+
+
+
+			
+
+	</style>
+
+
+</head>
+<body>
+	
+	<div class="header">
+		<!--导航栏  -->
+		<div class="navbar">
+             <a href="#">首页</a>
+             <a href="#">关于我们</a>
+             <a href="#">联系我们</a>
+
+		</div>
+	</div>
+	<div class="content"></div>
+
+
+</body>
+</html>

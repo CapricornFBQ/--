@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>渐出</title>
+	<style>
+		div{
+			width: 70px;
+			height: 70px;
+			background: black;
+		}
+	</style>
+</head>
+<body>
+	<button>渐出</button>
+	<div></div>
+	<div style="background: red"></div>
+	<div style="background: blue"></div>
+	<div style="background: green"></div>
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			$("button").click(function() {
+				$("div").eq(3).fadeOut("fast");
+				$("div").eq(2).fadeOut();
+				$("div").eq(1).fadeOut("slow");
+				$("div").eq(0).fadeOut(5000);
+			})
+		})
+	</script>
+</body>
+</html>

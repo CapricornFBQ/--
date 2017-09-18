@@ -1,0 +1,28 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+/*1.top部分的代码*/
+.top{
+	height: 700px;
+	background: url(../img/bg1.jpg);
+	background-position: center -100px;
+	
+	/*用于关闭.section1泄露的marign-top*/
+	overflow: hidden;
+
+}
+
+.top .section1{
+	height: 30px;
+	/*background: red;*/
+	margin-top:20px;
+}
+
+.section1 .navbar{
+	height: 30px;
+	width: 900px;
+	background: orange;
+	margin: 0px auto;
+}

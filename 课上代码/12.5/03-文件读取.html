@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="file" name="" id="fileinput">
+<button id="duqu">读取文件</button>
+</body>
+    <script>
+
+        var fileinput = document.querySelector('#fileinput');
+        var duqu = document.querySelector('#duqu');
+        duqu.addEventListener('click',function () {
+//            让文件读取对象 读取文件
+            var file = fileinput.files[0];
+            console.log(fileinput.files[0].type);
+//            text/html text/plain text/css text/js 文本
+//            image/jpg image/png image/gif image/jpeg image/bmp
+            if (fileinput.files[0].type == 'text/plain'){
+                reader.readAsText(file);
+            }else {
+                reader.readAsDataURL(file);
+            }
+
+
+        });
+//        input file 是选择文件的操作 读取文件需要用FileReader
+//        读取文件需要阅读器 新建阅读器
+        var reader = new FileReader();
+//        文件开始读取调用的方法
+        reader.addEventListener('loadstart',function () {
+            console.log('开始读取');
+        });
+        //        文件读取过程中调用的方法
+        reader.addEventListener('progress',function (e) {
+            console.log('读取过程中');
+//            console.log(e.total);
+//            total  数据总量
+            var total = e.total;
+//            loaded 当前已读取的数据量
+            var loaded = e.loaded;
+            console.log(loaded / total);
+        });
+//        读取结束后执行的方法  比如邮件附件只能在文件读取结束后发送
+        reader.addEventListener('load',function () {
+            console.log('读取结束');
+            console.log(this);
+
+            if (fileinput.files[0].type == 'text/plain'){
+                var p = document.createElement('p');
+                p.innerText = this.result;
+                document.querySelector('body').appendChild(p);
+            }else {
+                var img = document.createElement('img');
+                img.src = this.result;
+                document.querySelector('body').appendChild(img);
+            }
+
+
+        });
+
+    </script>
+</html>

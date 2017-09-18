@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>关键帧动画的复习</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+
+		@keyframes animation1 {
+			0%{
+				background: url(banner_a.jpg);
+				background-size: 100% 100%;}
+			30%{
+				background: url(banner_d.png);
+				background-size: 100% 100%;
+			}
+			50%{
+				background: url(banner_d.png);
+				background-size: 100% 100%;
+			}
+			80%{
+				background: url(banner_a.jpg);
+				background-size: 100% 100%;
+			}
+			100%{
+				background: url(banner_a.jpg);
+				background-size: 100% 100%;
+			}
+		}
+
+		.banner{
+			width: 1200px;
+			height: 400px;
+			margin: 0px auto;
+			border: 1px solid black;
+			background: url(banner_a.jpg);
+			background-size: 100% 100%;
+			animation: animation1 6s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+		
+
+	</style>
+</head>
+<body>
+	
+
+	<div class="banner">
+
+	</div>
+
+
+
+</body>
+</html>

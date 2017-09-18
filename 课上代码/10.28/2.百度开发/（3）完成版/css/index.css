@@ -1,0 +1,70 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+/*---------------第一种写法：a标签对齐法------*/
+/*header部分*/
+#header{
+	/*background: red;*/
+	height: 140px;
+	text-align: right;
+}
+/*可以统一设置大多数A标签*/
+#header a{
+	/*因为a是不完整盒子*/
+	display: inline-block;
+	margin-top: 20px;
+
+	font-weight: bold;
+	color: #333;
+	margin-right: 10px;
+	font-size: 13px;
+
+}
+
+#header a.none-bold{
+	font-weight: normal;
+}
+/*basic.css里的公共类，一般设置不冲突的属性*/
+#header a.product{
+	background: #38f;
+	color: white;
+	font-weight: normal;
+	text-decoration: none;
+	padding:5px;
+
+}
+
+/*-----conent内容-------*/
+#content{
+	/*background: yellow;*/
+	text-align: center;
+}
+
+#content .content-logo{
+	width: 270px;
+	height: 129px;
+	margin-bottom: 25px;
+
+}
+#content input{
+	width: 500px;
+	height: 30px;
+}
+
+.content-submit{
+	display: inline-block;
+	background: #3385ff;
+	/*padding:20px 10px;*/
+	font-size: 14px;
+	padding-top: 8px;
+	padding-bottom: 9px;
+	padding-left: 20px;
+	padding-right:20px;
+	color: white;
+	text-decoration: none;
+	border: 1px solid #2d78f4;
+
+
+}
+

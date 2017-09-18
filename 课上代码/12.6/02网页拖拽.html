@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 1200px;
+            height: 400px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 400px;
+            font-size: 30px;
+            color: #ccc;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">拖点东西进来</div>
+<p>我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字</p>
+<img src="toy.png" alt="">
+<script>
+    var box = document.querySelector('.box');
+//    拖拽刚进来的方法
+    box.addEventListener('dragenter',function () {
+        console.log('刚刚进来');
+    });
+    box.addEventListener('dragleave',function () {
+        console.log('离开');
+    });
+//   因为我们需要在drop里进行操作 如果想要获取drop事件 需要在dragover里面阻止默认事件
+    box.addEventListener('dragover',function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        console.log('在上面');
+    });
+//    拖拽放下的方法
+    box.addEventListener('drop',function (e) {
+        console.log('放下');
+//        console.log(e.dataTransfer.getData());
+//        文字
+//        console.log(e.dataTransfer.getData('text/plain'));
+        console.log(e.dataTransfer.getData('text/uri-list'));
+        if (e.dataTransfer.files.length) {
+//            文件拖入的时候
+            for (var i = 0;i < e.dataTransfer.files.length;i++){
+
+            }
+
+        }else {
+//            非文件拖入的时候 拖入的类型 和读取文件的类型是不同的
+//            当拖入文字时候 getData('text/uri-list') 是没有值的 getData('text/plain')这个值就是拖入的文字
+//            当拖入图片的时候 getData('text/uri-list') getData('text/plain') 都是图片的url
+//            console.log('uri-list' + e.dataTransfer.getData('text/uri-list'));
+//            console.log('text/plain' + e.dataTransfer.getData('text/plain'));
+            var img = e.dataTransfer.getData('text/uri-list');
+            if (img){
+//                图片
+                    console.log('图片');
+                    var image = document.createElement('img');
+                    image.src = img;
+                    box.appendChild(image);
+            }else {
+//                文字
+                console.log('文字');
+                box.innerText = e.dataTransfer.getData('text/plain');
+            }
+        }
+//        从drop内阻止默认事件 是为了防止文件被谷歌浏览器打开
+        e.stopPropagation();
+        e.preventDefault();
+    });
+</script>
+</body>
+</html>

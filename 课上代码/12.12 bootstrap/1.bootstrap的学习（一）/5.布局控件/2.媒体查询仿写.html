@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>布局容器-版心</title>
+
+    <!-- Bootstrap -->
+    <!-- <link href="lib/dist/css/bootstrap.css" rel="stylesheet"> -->
+
+    <style>
+        *{
+          margin: 0px;
+          padding: 0px;
+        }
+
+        .container{
+          background: red;
+          height: 2000px;
+          margin: 0px auto;
+         
+
+        }
+        
+        @media screen and (min-width:768px) {
+            .container{
+              width: 750px;
+              background: skyblue;
+         
+
+            }
+          
+        }
+
+        /* 992-1200px */
+
+        @media screen and (min-width:992px) {
+            .container{
+              width: 970px;
+              background: orange;
+         
+
+            }
+          
+        }
+
+        /* 大于1200 px */
+        @media screen and (min-width:1200px) {
+
+            .container{
+              width: 1170px;
+              background: green;
+         
+
+            }
+          
+        }
+
+
+
+    </style>
+
+  </head>
+  <body>
+
+    <!-- 把屏幕分为4个档次，每一个档次container显示不同的宽度 -->
+
+    <div class="container">
+      
+
+    </div>
+
+  </body>
+</html>

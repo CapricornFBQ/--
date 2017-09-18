@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>冒泡算法</title>
+</head>
+<body>
+	<script>
+		//有小到大进行排序， 然后输出新的数组--------------------
+		var arrays = [29,9,23,38,52,58,4,75,81,15,10,52,48,34,22,97,96,39,85,61]   //用到for if 数组的下标
+
+
+		// console.log(arrays[19]);
+		// console.log(arrays[20]);
+
+		// console.log(arrays[19] > arrays[20]);
+		for (var j=0; j<arrays.length; j++) {		//每一次大的循环，可以把小循环中的最大值依次排列
+			for (var i=0; i<arrays.length-j; i++) {   //每一个小的循环都可以确定一个最大的数到后边
+				if (arrays[i] > arrays[i+1]) {
+					var max = arrays[i];
+					arrays[i] = arrays[i+1];
+					arrays[i+1] = max;
+				}
+			}
+		}
+		document.write(arrays);
+
+
+
+
+
+
+
+	</script>
+</body>
+
+
+
+</html>

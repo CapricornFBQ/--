@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组</title>
+</head>
+<body>
+	<script>
+		//数组
+		//变量：存放数据的结构
+		//数组：存放一组数据的结构....
+		var arrays = ["tom",25,"man",180,75];
+		//数组长度
+		var length = arrays.length;
+		document.write(length + "<br>");  //5
+		//数组的查询
+		var arrays0 = arrays[0]
+		document.write(arrays0 + "<br>"); //tom
+		document.write(arrays[1] + "<br>"); //25
+		//数组具体元素的更改
+		arrays[1] = 30;
+		document.write(arrays + "<br>") //tom,30,man,180,75
+		//遍历数组值------------------
+		for (var i=0; i<arrays.length; i++) {
+			document.write(arrays[i] + "-") //tom-30-man-180-75-
+		}
+		document.write("<br>")
+		//数组添加元素-------
+		arrays.push("student");
+		document.write(arrays + "<br>"); 
+		//tom,30,man,180,75,student
+		
+		//去除数组的最后一个元素，返回最后一个元素-----
+		var string = arrays.pop();
+		document.write(string + "<br>");  //student
+		document.write(arrays + "<br>"); //tom,30,man,180,75
+		
+		//在数组的前面删除元素，同时返回第一个元素------
+		document.write(arrays.shift() + "<br>");//tom
+		document.write(arrays + "<br>");//30,man,180,75
+
+		//在数组的前面添加第一个元素-----
+		arrays.unshift("木木");
+		document.write(arrays + "<br>"); //木木,30,man,180,75
+
+		//数组转化为字符串------- 不更改原数组-----
+		var string_1 = arrays.join();
+		document.write("string_1:" + string_1 + "<br>");
+		//string_1:木木,30,man,180,75
+		document.write(typeof(string_1) + "<br>"); //string
+		document.write(arrays + "<br>"); //木木,30,man,180,75
+		console.log(arrays);
+		document.write(typeof(arrays) + "<br>"); //object
+		var string_2 = arrays.join("-");
+		document.write("string_2:" + string_2 + "<br>"); 
+		//string_2:木木-30-man-180-75
+
+		//字符串转化为数组----------------------
+		var arrays2 = string_1.split()
+		document.write(arrays2 + "<br>");//木木,30,man,180,75
+		console.log(arrays2);
+		var arrays3 = string_1.split(",")
+		document.write(arrays3 + "<br>"); //木木,30,man,180,75
+		console.log(arrays3);
+		var arrays4 = string_2.split("-")
+		document.write(arrays4 + "<br>");  //木木,30,man,180,75
+		console.log(arrays4);
+
+		//数组的截取------- 不改变原数组
+		document.write(arrays.slice(2)+ "<br>");  //man,180,75
+		document.write(arrays.slice(2,4)+ "<br>"); //man,180
+		console.log(arrays.slice(2,4)); //man,180
+		document.write(arrays+ "<br>"); //木木,30,man,180,75
+
+		//数组替换-----------------
+		// var string_3 = arrays.splice(2);
+		// document.write(string_3+ "<br>");
+		// document.write(arrays);
+
+		var string_4 = arrays.splice(2,2, "嘻嘻","哈哈","呵呵");
+		document.write(string_4+ "<br>");  //man,180
+		console.log(string_4);  //man,180
+		document.write(arrays);  //木木,30,嘻嘻,哈哈,呵呵,75
+
+
+
+
+
+		//
+		//
+		//
+		//
+		//
+	</script>
+</body>
+</html>

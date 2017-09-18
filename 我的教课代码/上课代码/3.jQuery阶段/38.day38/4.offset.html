@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>offset</title>
+	<style>
+		div{
+			margin: 100px;
+			width: 100px;
+			height: 100px;
+			background: black;
+		}
+	</style>
+
+</head>
+<body>
+	<!-- 
+	//offset对象 取出元素位置的数值
+	.offset()
+	 -->
+	 <button>改变</button>
+	 <div></div>
+	<script src="../../jquery-3.2.1.js"></script>
+	<script>
+	$(function() {
+		var obj = $("div").offset();  //offset取出元素位置值
+		console.log(obj)
+		console.log(obj.left)
+		$("button").click(function() {
+			$("div").offset({"top":200,"left":200});  //offset设置元素位置
+		})
+	})
+	</script>
+</body>
+</html>

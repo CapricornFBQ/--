@@ -1,0 +1,143 @@
+<!-- doctype:声明当前的文本类型 目的是为了告诉我们的浏览器当前页面符合w3c标准
+	如果不写该属性 那么将不符合w3c标准即在每个浏览器中可能显示不同的样式内容
+-->
+<!DOCTYPE html>
+<html> <!-- 根目录节点标签，表明该文本为HTML -->
+<head> <!-- 当前页面的头部 用来规定一些信息 用户看不到，非可视化标签-->
+	<title>多边形导航</title><!--  页面标题 -->
+
+	<!-- 给body添加背景图，就是设置css属性 -->
+		<style type="text/css">
+
+		/*
+		选择器：
+		标签选择器
+		类选择器
+		id选择器
+		* 通用选择器
+		*/
+		/*div{
+				
+			}*/
+			/*.div1{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+			.div2{
+				width: 200px;
+				height: 200px;
+				background: yellow;
+			}
+			#div3{
+				width: 300px;
+				height: 300px;
+				background: blue;
+			}*/
+			*{
+				margin: 0; /*外边距设置为0*/
+				padding: 0; /*内边距设置为0*/
+			}
+			body{
+				/*使用相对路径找到图片的位置*/
+				background: url("../images/bodyBg.jpg");
+			}
+			#main{
+				width: 980px;
+				height: 700px;
+
+				/*padding: 50px 50px 50px 50px;*/
+				/*margin: 50px 50px 50px 50px;*/
+				/*background-color: red;*/
+				margin: 100px auto; /* 外边距 使div水平居中，第一个值是制定上下外边距，第二个值非常重要设置为auto那么左右将自动居中*/
+			}
+			#main ul li{/*后代选择器*/
+				position: relative;/* 设置相对定位，目的是为了让伪元素以它作为参照物*/
+				list-style: none; /*清楚列表样式，就是前面的点*/
+				width: 180px;
+				height: 105px;
+				background: rgba(0,0,0,0.7); /*rgb：就是三原色，red、green、blue， a：alpa 设置透明度*/
+
+				margin: 30px 5px;
+				float: left; /*浮动，就是要上天*/
+			}
+			#main ul li.six{
+				margin-left: 100px; /*单独设置左侧外边距*/
+			}
+			#main ul li:after{ /*li的伪元素*/
+				position: absolute; /*设置绝对定位，会以所有的父元素中靠他最近的第一个设置了绝对或相对定位的元素作为参照物*/
+
+				content: "";	/*内容属性必须存在*/
+				width: 180px;
+				height: 105px;
+				background: rgba(0,0,0,0.7);
+
+				left: 0;
+				top: 0;
+				transform: rotate(60deg); /*css3 中的新属性 旋转*/
+			}
+			#main ul li:before{ /*li的伪元素*/
+				position: absolute; /*设置绝对定位，会以所有的父元素中靠他最近的第一个设置了绝对或相对定位的元素作为参照物*/
+
+				content: "";	
+				width: 180px;
+				height: 105px;
+				background: rgba(0,0,0,0.7);
+
+				left: 0;
+				top: 0;
+				transform: rotate(120deg); /*css3 中的新属性 旋转*/
+			}
+			#main ul li img{
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+
+				z-index: 2; /*设置层级关系，数字越大越靠后*/
+				transition: 1s;
+			}
+			#main ul li:hover img{
+				transform: scale(1.5) rotate(360deg);
+
+			}
+		</style>
+</head>
+<body> <!-- 内容，页面显示体，要进行给用户显示的标签写在该标签内 -->
+		<!-- 网页三要素：
+		html：负责页面的语义描述
+		css：负责页面的样式
+		js：负责页面的行为 -->
+
+		<!-- div class="div1"></div>
+		<div class="div2"></div>
+		<div id="div3">hehe</div>
+		<div id="div3">haha</div>
+		<p id="div3"></p> -->
+
+		<div id="main">
+		<!-- ul标签为无序列表 -->
+			<ul>
+				<!-- li为列表中的项元素 -->
+				<li> <img src="../images/1.png"></li>
+				<li><img src="../images/2.png"></li>
+				<li><img src="../images/3.png"></li>
+				<li><img src="../images/4.png"></li>
+				<li><img src="../images/5.png"></li>
+				<li class="six"><img src="../images/6.png"></li>
+				<li><img src="../images/7.png"></li>
+				<li><img src="../images/8.png"></li>
+				<li><img src="../images/9.png"></li>
+				<li><img src="../images/10.png"></li>
+				<li><img src="../images/11.png"></li>
+				<li><img src="../images/12.png"></li>
+				<li><img src="../images/13.png"></li>
+				<li><img src="../images/14.png"></li>
+
+			</ul>
+
+		</div>
+</body>
+</html>

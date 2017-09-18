@@ -1,0 +1,4 @@
+body::before {
+    content: '我是css显示的';
+    font-size: 40px;
+}

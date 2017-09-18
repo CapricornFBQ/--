@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>box-sizing</title>
+	<style>
+		.a {
+			width: 300px;
+			height: 300px;
+			padding: 100px;
+			margin: 100px;
+			border: 10px solid green;
+			display: inline-block;
+			background-color: red;
+		}
+		.b {
+			width: 300px;
+			height: 300px;
+			padding: 100px;
+			margin: 100px;
+			border: 10px solid blue;
+			display: inline-block;
+			background-color: orange;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="a">1</div>
+	<div class="b">2</div>
+</body>
+</html>

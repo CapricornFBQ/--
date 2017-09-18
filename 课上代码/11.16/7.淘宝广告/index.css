@@ -1,0 +1,48 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+
+.content{
+	  width: 300px;
+	  /*270 +1*9*/
+      height: 279px;
+      margin: 100px auto 0;
+      border: 1px solid pink;
+      overflow: hidden;
+
+}
+.left,.center,.right{
+	float: left;
+}
+.left li a,.right li a{
+	display: block;
+    width: 48px;
+    /*30*9 + 18 = 270 +18 =288 */
+    height: 30px;  
+    border-bottom: 1px solid pink;
+    line-height: 30px;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+}
+
+.left li , .right li{
+    background: url(images/lili.jpg) repeat-x;
+ }
+ .left li a:hover,.right li a:hover{
+    background-image: url(images/abg.gif);
+}
+.center{
+	border-left: 1px solid pink;
+    border-right: 1px solid pink;
+}
+/*.center li{
+	display: none;
+}*/

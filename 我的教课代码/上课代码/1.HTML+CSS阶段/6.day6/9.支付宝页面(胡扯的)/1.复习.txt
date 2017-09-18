@@ -1,0 +1,3 @@
+1.字体（font） font-size大小   font-family   font-weight  color  text-align  line-height
+2.background-color 三种设置颜色的方法  (1)rgb(255,255,255)  （2）十六进制 #ff3=#ffff33 (3)颜色
+3.background-image  背景图片  background-position是背景定位  background-size 背景大小尺寸拉伸  background-att固定背景

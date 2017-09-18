@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery</title>
+</head>
+<body>
+	<div>dddd</div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			//试着中js对象调用jQ方法
+			var divElement = document.querySelector("div");
+
+			// divElement.text("内容");  //原生JS的对象无法使用jQuery方法-------->如何转化
+			
+			// $(divElement).text("新内容")    //用$()来封装JS对象，以转化为jQ对象
+
+			//试着用jQ对象调用js方法
+			var theChild = $("<p></p>").text("防蚊子");
+			var theChild1 = $("<p></p>").text("防蚊子");
+			// $("div").appendChild(theChild);   //jQ对象无法使用JS的方法-------->如何转化
+			console.log(divElement);
+			console.log($("div")[4]);
+			// $("div")[4].appendChild(theChild[0]);   //转化的方法：1.可以用下标转换[]
+
+			// $("div").get(0).appendChild(theChild1[0]);  //2.可以用get（）来转换
+
+			$("div").eq(0).append(theChild);   //eq()获取第几个jQ对象
+			$("div").eq(4).append(theChild);
+
+			console.log($("div").eq(0));
+
+		})
+	</script>
+</body>
+</html>

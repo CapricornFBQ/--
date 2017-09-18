@@ -1,0 +1,49 @@
+基本数据类型：字符串、数字、数组、boolean、json
+
+字符串操作：
+   1.返回某个字符的位置 -- indexOf（char） 。  var text = “qwer”；var text2 = “qwdfer”;
+                           lastIndexOf(char) 该方法是如果字符有重复出现则返回后面的字符
+
+   2.根据下标返回对应的字符 -- charAt（number）
+
+   3.链接字符串 -- concat（） var text = “qwer”；var text2 = “qwdfer”; text.concat(text2);
+
+   4.截取字符串（第一种方式） -- slice（） var text2 = “qwdfer”； slice（截取字符串的开始的位置（必选），截取字符串结束的位置（可选））；
+                    slice(1,5); 第一个参数“1”，代表从下标1开始即“w”，第二个参数“5”，代表当前字符串的截取到下标5的位置结束，但是不包下标5的字符。
+    5.截取字符串 （第二种方式） -- substr（开始的位置（必选），截取字符选取的个数（可选））
+
+    6.大写转换 -- toUpperCase
+        小写转换 -- toLowerCase
+
+   7.字符串转化为数组 -- split（分隔符（必选），限制分隔后的数组中元素个数（可选））
+
+   8.数组转化为字符串 -- join（分隔符），数组中元素拼接在一起时，中间加有分隔符。
+
+重要的数据类型：JSON
+    json的格式化形式 {key:value,key1:value1}  其中key一般为字符串对象，value值可以为任意对象。
+    json的遍历方式
+        for（var key in json）
+        {
+            in后面的json是被遍历的对象，该对象将会一次把key值赋值给var key它
+            如果想要获取value则：json[key]
+        }
+    json与字符串之间的转换
+    将json对象转化为字符串
+     var videojsonstr = JSON.stringify(videojson);
+      console.log(videojsonstr);
+    将字符串转化为json对象
+     var json = JSON.parse(videojsonstr);
+     console.log(json);
+
+闭包： 可以访问使用一个函数内部的参数。
+ function fun() {
+        var a = 10;
+        var b = 30;
+        function bibao() {
+            console.log(a+b);
+        }
+        return bibao; //闭包的核心语句
+    }
+    var a = fun();
+        console.log(a);
+        a();

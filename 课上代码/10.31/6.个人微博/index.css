@@ -1,0 +1,91 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.clear{
+	clear: both;
+}
+
+/*head部分*/
+.head{
+	background: linear-gradient(to right,rgb(10,93,177),rgb(10,166,175));
+	height: 120px;
+	min-width: 1400px;
+
+
+}
+
+.head-title{
+	color: white;
+    font-size: 40px;
+    float: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    /*margin-top: 20px;*/
+
+}
+.head ul{
+	float: right;
+	list-style: none;
+}
+
+.head ul li{
+	float: left;
+	padding:15px 10px;
+	
+	
+}
+.head ul li a{
+	color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+/*content*/
+.content{
+	min-width: 1400px;
+	background: white;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.content .button{
+	width: 300px;
+    height: 300px;
+    display: inline-block;
+    border: 1px solid black;
+    margin: 20px;
+    /*float: left;*/
+}
+.content .button:hover{
+	box-shadow:4px 4px 2px gray;
+}
+
+.button img{
+	width: 250px;
+	height: 200px;
+
+}
+.button a{
+	text-decoration: none;
+}
+.button p{
+	padding-top:10px;
+}
+
+/**
+ * 
+ */
+.bottom{
+
+	min-width: 1400px;
+	height: 80px;
+	border-color: #7e7e7e;
+    background-color: #919191;
+    text-align: center;
+    line-height: 80px;
+}
+.bottom a{
+	margin: 0px 20px;
+	text-decoration:none;
+	color: white;
+}

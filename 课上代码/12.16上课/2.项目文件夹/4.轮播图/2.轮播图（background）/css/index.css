@@ -1,0 +1,276 @@
+/*虽然bootstrap给设置了body的默认字体，但是我们还是自己给设置一下*/
+*{
+
+	margin: 0px;
+	padding: 0px;
+}
+
+
+body{
+	font-family:  "Helvetica Neue", Helvetica,
+	 Microsoft Yahei, Hiragino Sans GB, 
+	 WenQuanYi Micro Hei, sans-serif;
+
+
+}
+/* ------header部分包括：top nav */
+#header{
+	height: 120px;
+	/* background: red; */
+}
+
+#header > .topbar{
+	height: 40px;
+	border-bottom: 1px solid #c0c0c0;
+	line-height: 40px;
+
+	font-size: 12px;
+	color:#888;
+
+}
+/* -----------------------这里的问题------------------------ */
+/* 优先级太高 */
+#header .topbar a{
+	color:#888;
+	font-size: 12px;
+}
+#header .topbar a.btn-red{
+  color:white;
+  font-size: 12px;
+}
+
+/* 设置此类边框的固定用法 */
+/* 给父标签里的div的下一个兄弟div设置属性 */
+#header > .topbar > .container > .row > div + div{
+
+	border-left: 1px solid #c0c0c0 ;
+
+}
+
+
+/* -------------------自己封装的red按钮--------------- */
+
+
+#header .btn-red {
+  color: #fff;
+  background-color: red;
+  border-color: #d43f3a;
+}
+
+/* 所有的btn-red都是红色的 */
+.btn-red {
+  color: #fff;
+  background-color: red;
+  border-color: #DB3B43;
+}
+
+
+.btn-red:hover,
+.btn-red:focus,
+.btn-red.focus,
+.btn-red:active,
+.btn-red.active,
+.open > .dropdown-toggle.btn-red {
+  color: #fff;
+  background-color: #c9302c;
+  border-color: #ac2925;
+}   
+.btn-red:active,
+.btn-red.active,
+.open > .dropdown-toggle.btn-red {
+  background-image: none;
+}
+.btn-red.disabled,
+.btn-red[disabled],
+fieldset[disabled] .btn-red,
+.btn-red.disabled:hover,
+.btn-red[disabled]:hover,
+fieldset[disabled] .btn-red:hover,
+.btn-red.disabled:focus,
+.btn-red[disabled]:focus,
+fieldset[disabled] .btn-red:focus,
+.btn-red.disabled.focus,
+.btn-red[disabled].focus,
+fieldset[disabled] .btn-red.focus,
+.btn-red.disabled:active,
+.btn-red[disabled]:active,
+fieldset[disabled] .btn-red:active,
+.btn-red.disabled.active,
+.btn-red[disabled].active,
+fieldset[disabled] .btn-red.active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.btn-red .badge {
+  color: #d9534f;
+  background-color: #fff;
+}
+
+/* -----------topbar 二维码定位------------- */
+
+#header > .topbar >.container >.row .mobile-link{
+	position: relative;
+}
+#header > .topbar >.container >.row  .mobile-link img{
+
+	position: absolute;
+	top: 15px;
+	left: -18px;
+  z-index: 1000;
+	display: none;
+	
+
+}
+
+#header > .topbar >.container >.row .mobile-link:hover >img{
+	display: block;
+
+}
+
+/* -----------------自定义封装class--------------- */
+/* 导航栏 */
+.navbar-weiwei {
+  background-color: white;
+  /* height: 80px; */
+  /* border-color: #e7e7e7; */
+}
+.navbar-weiwei .navbar-brand {
+  color: #777;
+  /*  让logo外面的div等于a标签的高度*/
+  height: 80px;
+
+
+}
+.navbar-weiwei .navbar-brand:hover,
+.navbar-weiwei .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+.navbar-weiwei .navbar-text {
+  color: #777;
+}
+.navbar-weiwei .navbar-nav > li > a {
+
+
+  color: #777;
+  font-size: 14px;
+
+  /* 80-2 = 78 ，78是padding+content的高度 ，pading 30,content是48px */
+  line-height: 48px;
+
+
+}
+.navbar-weiwei .navbar-nav > li > a:hover{
+    color: #333;
+    border-bottom: 2px solid red;
+    background-color: transparent;
+}
+.navbar-weiwei .navbar-nav > li > a:focus {
+  color: #333;
+  /* 增加的 */
+  /* border-bottom: 2px solid red; */
+  background-color: transparent;
+}
+.navbar-weiwei .navbar-nav > .active > a,
+.navbar-weiwei .navbar-nav > .active > a:hover,
+.navbar-weiwei .navbar-nav > .active > a:focus {
+  color: #555;
+  /* background-color: #e7e7e7; */
+   border-bottom: 2px solid red;
+}
+.navbar-weiwei .navbar-nav > .disabled > a,
+.navbar-weiwei .navbar-nav > .disabled > a:hover,
+.navbar-weiwei .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.navbar-weiwei .navbar-toggle {
+  border-color: #ddd;
+  /* heigth 44px 80-34 = 46  */
+  margin-top:23px; 
+  margin-bottom: 23px;
+}
+.navbar-weiwei .navbar-toggle:hover,
+.navbar-weiwei .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.navbar-weiwei .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.navbar-weiwei .navbar-collapse,
+.navbar-weiwei .navbar-form {
+  border-color: #e7e7e7;
+}
+.navbar-weiwei .navbar-nav > .open > a,
+.navbar-weiwei .navbar-nav > .open > a:hover,
+.navbar-weiwei .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+  .navbar-weiwei .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+  .navbar-weiwei .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-weiwei .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    background-color: transparent;
+  }
+  .navbar-weiwei .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-weiwei .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-weiwei .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+  }
+  .navbar-weiwei .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-weiwei .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-weiwei .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.navbar-weiwei .navbar-link {
+  color: #777;
+}
+.navbar-weiwei .navbar-link:hover {
+  color: #333;
+}
+.navbar-weiwei .btn-link {
+  color: #777;
+}
+.navbar-weiwei .btn-link:hover,
+.navbar-weiwei .btn-link:focus {
+  color: #333;
+}
+.navbar-weiwei .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-weiwei .btn-link:hover,
+.navbar-weiwei .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-weiwei .btn-link:focus {
+  color: #ccc;
+}
+
+/* 设置图片的大小 */
+#header .icon-logo{
+
+  font-size: 48px;
+  line-height: 50px;
+  color: red;
+
+
+}
+
+#header .icon-weijinsuo{
+
+  font-size:34px;
+  /* pading是30px */
+  line-height: 50px;
+
+}
+
+/* ----轮播图----- */
+#main-ad .carousel-inner .item{
+  height: 410px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+}

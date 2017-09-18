@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+
+	<script>
+		
+		// //1.模拟PHP已经把JSON类型的字符串传过来了
+		// var string = '{"student":[{"name":"weiwei"},{"name":"zhangyan"},{"name":"laochi"}],"teacher":"WJ"}'; 
+
+		// //2.拿到json类型的字符串，转化为JS可以使用的JS OBJECT
+		// //eval（）函数是JS自带的转换JSON字符串变为JS对象的方法，转化之前必须给 JSON字符串加一个（）以避免错误
+		// var obj = eval("("+string+")");
+		// // console.log(string);
+	 // //    console.log(obj);
+
+	 //    // 使用数据
+	 //    var students = obj['student'];
+	 //    // console.log(students);
+	 //    var stundet2 = students[1];
+	 //    // console.log(stundet2);
+	 //    var name = stundet2['name'];
+	 //    console.log(name);
+
+	 // --------------------------------------------------------
+	 //1.JSON字符串
+	 var string = '{"result": {"sk": {  "temp": "21", "wind_direction": "西风", "wind_strength": "2级",  "humidity": "4%",  "time": "14:25"  }}} ';
+
+	 //2.JSON字符串转化为对象
+	 var obj = eval("("+string+")");
+	 console.log(obj);
+
+	 //首先找到obj里的result
+	 var result = obj['result'];
+	 console.log(result);
+
+	 //再找result里面的sk
+	 var sk = result['sk'];
+	 console.log(sk);
+
+	 //再找sk里面的time
+	 console.log(sk['time']);
+
+
+	</script>
+</body>
+</html>

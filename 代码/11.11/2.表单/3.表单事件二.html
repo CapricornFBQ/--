@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单事件一</title>
+	
+	
+
+</head>
+<body>
+
+	<input type="text" value="二狗">
+
+		
+	<!-- 表单事件：表单元素的事件 -->
+	<script>
+     //输入oninput
+  	var input =	document.querySelector("input");
+  	// input.oninput =function () {
+  	// 	console.log(this.value);
+  	// }
+
+
+     //改变onchange
+     //不是只要输入就改变，需要输入（改变）完成，和敲回车后才出现
+     input.onchange =function(){
+
+     	console.log(this.value);
+     }
+
+	</script>
+	
+</body>
+</html>

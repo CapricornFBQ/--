@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>布局容器-版心</title>
+
+    <!-- Bootstrap -->
+    <link href="lib/dist/css/bootstrap.css" rel="stylesheet">
+
+    <style>
+        .container{
+          background: red;
+          height: 2000px;
+         
+
+        }
+        div{
+          border: 1px solid black;
+        }
+
+    </style>
+
+  </head>
+  <body>
+
+      <!-- 当我们设置md-在大于992px时候会响应式布局，但是小于这个标准后，
+      会回到原先的样子 -->
+      <div class="container">
+          <div class="row">
+          <!-- 超过992px，全都站一分 -->
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">.col-md-8</div>
+            <div class="col-md-4">.col-md-4</div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4">.col-md-4</div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">.col-md-6</div>
+            <div class="col-md-6">.col-md-6</div>
+          </div>
+
+
+
+      </div>
+
+  
+  </body>
+</html>

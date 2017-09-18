@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伪类</title>
+	<!-- 伪类：标签的在不同状态下的样子 -->
+	<!-- I LOVE I HATE   
+
+	 link:没被访问
+	 visited:访问过得
+	 hover:鼠标悬停，移动到
+	 active:正在选中的状态
+
+	  -->
+
+	  <style>
+	  	/*有伪类听伪类*/
+	  	a{
+	  		color: red;
+	  	}
+		
+		/*顺序不能乱，但是前面的可以省略*/
+	  	a:link{
+			color: yellow;
+	  	}
+	  	a:visited{
+			color:black;
+	  	}
+	  	a:hover{
+			color: green;
+	  	}
+	  	a:active{
+			color: pink;
+	  	}
+
+		div{
+			background: red;
+			width: 200px;
+			height: 200px;
+
+		}
+		
+		/*-----------------------别的标签也能够使用伪类----------*/
+		div:hover{
+			/*background: yellow;
+			width: 100px;
+			height: 100px;*/
+			border-radius: 20px;
+		}
+
+	
+		/*div:active{
+			background: orange;
+		}
+*/
+	  </style>
+
+</head>
+<body>
+	<a href="#">百度一下</a>
+
+	<div></div>
+	
+</body>
+</html>

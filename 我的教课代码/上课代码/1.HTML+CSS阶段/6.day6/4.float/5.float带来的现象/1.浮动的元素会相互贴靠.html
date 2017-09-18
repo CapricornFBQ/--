@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>float元素的相互贴靠</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+
+
+		}
+
+		.box1{
+
+			width: 200px;
+			height: 200px;
+			background: red;
+			float: left;
+		}
+		.box2{
+
+			width: 300px;
+			height: 100px;
+			background: green;
+			float: left;
+		}
+		.box3{
+
+			width: 50px;
+			height: 100px;
+			background: orange;
+			float: left;
+		}
+
+		/*float的元素会优先去贴前边他浮动元素的边，但是如果没有空间，会在寻找前一个float元素的边，最后会贴游览器的边*/
+
+	</style>
+</head>
+<body>
+	
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+
+
+</body>
+</html>

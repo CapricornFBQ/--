@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>节点操作</title>
+</head>
+<body>
+	<a href="">哈哈哈</a>
+	<a href="">哈哈哈</a>
+	<div class = "div1" style="width: 200px;height: 200px;"></div>
+	<div id = "div2" style="width: 200px;height: 200px;"></div>
+
+
+
+	<script>
+		// DOM操作又称为节点操作，是JS最重要的部分。而其中又以更删改查为重点
+        //--------------------开始-----------------------------
+        // 1.获得操作标签的方法（id选择器法）
+        //DOC节点操作的关键字 get得到 element元素、标签  by 通过 id id选择器
+        var div2 =  document.getElementById("div2");
+        div2.style.backgroundColor = "skyBlue";
+
+        //2.通过tagNames来获得标签  他们得到的是一个数组,所以不能够通过给数组直接设置属性
+        // tagName  标签名
+        var a = document.getElementsByTagName("a");
+        // a[0].style.color ="orange";
+        for(var i =0;i<a.length;i++){
+
+        	a[i].style.color = "orange";
+        }
+
+        //3.className 
+        var divs =  document.getElementsByClassName("div1");
+        for (var i = 0; i < divs.length; i++) {
+        	divs[i].style.backgroundColor = "red";
+
+        	// 给得到的标签设置点击事件
+            divs[i].onclick = function(){
+            	//this标签代指当前的自己
+            	this.style.backgroundColor = "orange";
+
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

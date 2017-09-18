@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .da {
+            width: 400px;
+            height: 400px;
+            background-color: red;
+        }
+        .xiao {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="da">
+    <div class="xiao">
+
+    </div>
+
+    <a href="">hah</a>
+</div>
+<script>
+    var dadiv = document.querySelector('.da');
+    var xiaodiv = document.querySelector('.xiao');
+    var a = document.querySelector('a');
+    dadiv.addEventListener('click',function () {
+        console.log('dada');
+    });
+    xiaodiv.addEventListener('click',function (e) {
+        console.log('xiaoxiao');
+//        阻止事件传递
+        e.stopPropagation();
+    });
+    a.addEventListener('click',function (e) {
+        console.log('link');
+//        阻止默认事件
+        e.preventDefault();
+//        不想打印dada
+        e.stopPropagation();
+    })
+
+</script>
+</body>
+</html>

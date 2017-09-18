@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滑动的侧边框广告</title>
+
+	
+	<style>
+		.main{
+			width: 960px;
+			margin:0px auto;
+
+		}
+	</style>
+	<script src ="../jquery-3.1.1.min.js"></script>
+</head>
+<body>
+		
+		<div class="top"><img src="images/top.png" alt=""></div>
+		<div class ="nav"><img src="images/nav.png" alt=""></div>
+		<div class ="main"><img src="images/main.png" alt=""></div>
+
+	<script>
+			$(document).ready(function() {
+				$(window).scroll(function(){
+
+
+					//1.计算当前document滑动的偏移量
+					var scrollTop = $(document).scrollTop();
+					//2.计算top图片的高度
+					//这个方法得到的是px
+					// var h = $(".top").css("height");
+					var h = $(".top").height();
+
+
+					console.log(h);
+					if (scrollTop>=h) {
+
+						$(".nav").css({
+							"position":"fixed",
+							"top":"0px"
+
+
+						});
+
+					}else{
+
+						$(".nav").css("position","static");
+					}
+
+
+
+				});
+
+
+
+			});
+
+	</script>
+
+</body>
+</html>

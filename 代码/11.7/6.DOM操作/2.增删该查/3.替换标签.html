@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>增删改查</title>
+	<style>
+		div{
+			/*width: 100px;*/
+			height: 100px;
+			border: 1px solid black;
+			background: red;
+		}
+
+        a{
+        	display: inline-block;
+        	height: 50px;
+        	width: 50px;
+        	background: green;
+        }
+	</style>
+</head>
+<body>
+	<div class ="button" style="background: orange"></div>
+
+	<script>
+	//----------------------替换----------------------------
+	//将div标签替换成a标签
+
+	//1.首先找到要被替换的对象
+	var button =document.querySelector(".button");
+	//2.创建一个替换的元素
+
+    var a = document.createElement("a");
+    //找到父标签调用子标签替换(替换的元素，被替换的元素)
+    button.parentNode.replaceChild(a,button);
+    // button.parentNode.appendChild(a);
+
+
+
+    //----------------插入-----------------------------
+
+      var a2 = document.createElement("a");
+      a2.style.background = "yellow";
+      //让a2插入到a之前的位置上
+      a.parentNode.insertBefore(a2,a);
+
+     
+      
+
+
+
+	  
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>下拉菜单</title>
+
+ 
+    <link href="lib/dist/css/bootstrap.css" rel="stylesheet">
+
+ 
+  </head>
+  <body>
+    
+      <!-- 导航 -->
+     <!-- Bootstrap 中的导航组件都依赖同一个 .nav 类，状态类也是共用的。改变修饰类可以改变样式。 -->
+
+    <!-- 标签页 -->
+     <ul class="nav nav-pills nav-justified"" role="tablist">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation" class="disabled"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+        
+          <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              Dropdown <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              ...
+            </ul>
+          </li>
+
+
+
+     </ul>
+
+      <!-- JS插件升级版 -->
+      <!-- <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
+        <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">Profile</a></li>
+        <li role="presentation"><a href="#messages" role="tab" data-toggle="tab">Messages</a></li>
+        <li role="presentation"><a href="#settings" role="tab" data-toggle="tab">Settings</a></li>
+      </ul> -->
+   
+
+    <script src="lib/jquery/jquery-3.1.1.min.js" type="text/javascript" ></script>
+    <script src="lib/dist/js/bootstrap.min.js" type="text/javascript" ></script>
+  </body>
+</html>

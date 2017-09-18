@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>float带来的父亲标签高度坍塌现象</title>
+	<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			/*头部部分*/
+			.header{
+				background: red;
+
+				
+			}
+			.header .navbar{
+				width: 100px;
+				height: 100px;
+				background: orange;
+				float: right;
+			}
+
+			/*content*/
+			.content{
+				height: 500px;
+				background: green;
+
+
+			}
+
+
+			.clear{
+				clear:both;
+			}
+			
+
+	</style>
+
+
+</head>
+<body>
+	
+	<div class="header">
+		<!--导航栏  -->
+		<div class="navbar">
+             <a href="#">首页</a>
+             <a href="#">关于我们</a>
+             <a href="#">联系我们</a>
+
+		</div>
+		<!-- 内墙法：在坍塌的父标签，最后加一个div设置clear:both。当父标签里元素float的时候，该div标签不受浮动的影响，会坚守原来的位置撑高父标签 -->
+		<!-- 这是最长用的方法解决float带来的影响 -->
+		<div class="clear"></div>
+	</div>
+	<div class="content"></div>
+
+
+</body>
+</html>

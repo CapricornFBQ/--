@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #big{
+            width: 400px;
+            height: 400px;
+            margin: 200px;
+            position: relative;
+            background-color: yellow;
+        }
+        #small{
+            float: left;
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="big">
+    <div id="small"></div>
+</div>
+<script>
+    var small = document.getElementById("small");
+    small.onmousemove = function (event) {
+        //距离当前文档的xy
+        var pagex = event.pageX;
+        var pagey = event.pageY;
+//        console.log(this.offsetLeft);
+//       console.log(this.offsetLeft + this.offsetParent.offsetLeft);
+       //while循环 将所有带有定位的父元素的offsetleft累加
+        //定义初始化第一个父元素
+       var parent = small.offsetParent;
+       var offsetleft = small.offsetLeft;
+       var offsettop = small.offsetTop;
+       while (parent){
+           offsetleft = offsetleft + parent.offsetLeft;
+           offsettop = offsettop + parent.offsetTop;
+           parent = parent.offsetParent;
+       }
+        this.innerHTML = event.offsetX+"px"+","+(pagey-offsettop)+"px";
+    }
+</script>
+</body>
+</html>

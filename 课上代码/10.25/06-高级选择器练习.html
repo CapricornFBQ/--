@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>高级选择器的练习</title>
+	<style>
+		p{
+
+		}	
+		/*.one .two .three .four p{
+			color: yellow;
+		}*/
+
+	/*	.one .four p{
+			color: blue;
+		}*/
+
+	/*	.one div .three p{
+			color: yellow;
+		}*/
+
+	/*	div div .four p{
+			color: green;
+		}*/
+
+	/*================这样写是错误的找不到这个标签元素==============*/
+	/*	div div .two .four p{
+			color: red;
+		}
+
+		.two div div div p{
+
+		}*/
+
+	div .three p,.six{
+		color: orange;
+	}
+
+	div .three p.five{
+		color: cyan;
+	}
+
+
+	</style>
+	
+</head>
+<body>
+	<div class="one">
+		<div class="two">
+			<div class="three">
+					<p class="five">多放了个p</p>
+				<div class="four">
+					<p >XX是个P</p>
+					<p>XX是个P</p>
+					<p>XX是个P</p>
+					<p>XX是个P</p>
+					<p>XX是个P</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<p>我爱贝沃</p>
+	<h1 class="six">我们都是男神女神</h1>
+	<h1>我们有花不完的钱</h1>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>删除</title>
+</head>
+<body>
+	
+	<div>
+		<p>sssssss</p>
+	</div>
+
+	<script>
+		// 把p标签替换成h1标签
+		// （1）找到p标签
+		// （2）创建一个h1标签
+		// （3）找到p标签的父标签，让他替换里面的元素
+		
+		var p = document.querySelector("p");
+
+		var h1 = document.createElement("h1");
+		// 直接往标签里插入文本
+		h1.innerText = "啊啊啊啊<a href= '#'>百度一下</a>";
+		// 往标签里插入的是html文本
+		h1.innerHTML = "啊啊啊<br><a href= '#'>百度一下</a>";
+
+		// relace 替换 (新元素,旧元素)
+		p.parentNode.replaceChild(h1,p);
+
+	</script>
+
+</body>
+</html>

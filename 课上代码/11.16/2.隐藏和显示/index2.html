@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过滤</title>
+	<script src ="../jquery-3.1.1.min.js" ></script>
+</head>
+<body>
+	
+	<p ">我是一个P标签</p>
+	<button >隐藏/显示</button>
+	
+	<script>
+		$(document).ready(function () {
+			$("button").click(function(){
+				//当toggle方法调用的时候，如果p为display:none的话就调用show(),反之，hide()
+				$("p").toggle();
+
+			});
+			
+
+		});	
+	</script>
+
+
+</body>
+</html>

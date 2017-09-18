@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象的使用</title>
+</head>
+<body>
+<script>
+    //声明一个新的对象  原始版
+//    var obj = new Object();
+    var obj = {};
+    obj.name = "jack";
+    obj.age = "18";
+    obj.huahua = function () {
+        console.log("俺会画画");
+    }
+    alert(obj.name);
+
+    var obj2 = {};
+    obj2.name = "rose";
+    obj2.age = 18;
+    obj2.sing = function () {
+        console.log("俺会唱歌");
+    }
+    obj2.sing();
+
+    //创建对象的 原始升级版
+    function Person(name,age) {
+        var obj = {};
+        obj.name = name;
+        obj.age = age;
+        obj.sing = function () {
+            console.log("俺会唱歌");
+        }
+        obj.huahua = function () {
+            console.log("俺会画画");
+        }
+        return obj;
+    }
+    var xm = Person("小明",18);
+    var xh = Person("校花",20);
+    console.log(xm.name);
+    xh.sing();
+
+    //使用构造函数 声明People类创建对象
+    function People(name,age) {
+        this.name = name;
+        this.age = age;
+        this.dance = function () {
+            console.log("俺会跳舞");
+        }
+    }
+    //实例化people对象
+    var jack = new People("jack",20);
+    var rose = new People("rose",20);
+    console.log(jack.name + rose.name);
+    //实例对象调用方法 ，但是这些方法不是共用的，也就是在内存中不止开辟了一个内存空间
+    rose.dance();
+    jack.dance();
+    console.log(rose.dance == jack.dance);
+
+    //原型  声明函数  使用该方式创建属性和方法是所有对象共用的，也就是在内存中只开辟了一个内存空间
+    People.prototype.play = function () {
+        console.log("我会玩");
+    }
+    jack.play();
+    rose.play();
+    console.log(rose.play == jack.play)
+
+</script>
+</body>
+</html>

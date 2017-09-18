@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>提交</title>
+</head>
+<body>
+	<button>按钮</button>
+	
+
+	<script type="text/javascript" src= "jquery-3.1.1.min.js">
+
+
+		
+
+	</script>
+	<script type="text/javascript">
+
+		
+		        $("button").click(function(){
+		        	// ------------------
+		        	// $.ajax({
+		         //        url:'index.php',
+		         //        type:'GET',
+		         //        async:false,
+		         //        data:{
+		         //                name:'kuohao',
+		         //                age:21
+		         //            },
+		         //        dataType:'text',
+		         //        success: function(msg){
+		         //            alert(msg);    
+		         //        }
+		         //    });
+
+		         // -----------------------
+		         $.ajax({
+		                url:'index.php',
+		                type:'POST',
+		                data:{
+		                        name:'kuohao',
+		                        age:21
+		                    },
+		                dataType:'text',
+		                success: function(msg){
+		                    alert(msg);    
+		                }
+		            });
+
+
+
+
+		        });
+
+
+
+	</script>
+
+</body>
+</html>

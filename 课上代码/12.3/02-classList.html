@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .da {
+            height: 400px;
+            width: 400px;
+            background-color: red;
+        }
+        .xiao,.xiao1,.xiao2 {
+            height: 200px;
+            width: 400px;
+            background-color: blue;
+        }
+        .xiao1 {
+            background-color: orange;
+        }
+        .ziti {
+            color: yellow;
+            font-size: 30px;
+        }
+        .touming {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="da">我是大div中的文字 classList可以通过增加或删除类名来控制元素显示效果</div>
+    <div class="xiao"></div>
+    <div class="xiao1"></div>
+    <div class="xiao2"></div>
+    <div class="xiao3 class1 class2 class3 class4 class5"></div>
+    <script>
+        var xiao = document.querySelector('.xiao');
+        var da = document.querySelector('.da');
+        var xiao1 = document.querySelector('.xiao1');
+        var xiao2 = document.querySelector('.xiao2');
+//        xiao.addEventListener('click',function () {
+        //            da.style.color = 'yellow';
+        //            da.style.fontSize = '30px';
+        //        });
+//        点击xiaodiv 给dadiv添加类
+        xiao.addEventListener('click',function () {
+            var exist = da.classList.contains('ziti');
+            da.classList.toggle('ziti',!exist);
+//            如果点击一次增加再点击一次删除 需要先判断是否含有ziti类
+//            if (da.classList.contains('ziti')){
+//                da.classList.remove('ziti');
+//            }else {
+//                da.classList.add('ziti');
+//            }
+
+//            console.log(da.classList);
+
+//            console.log(da.classList.contains('ziti'));
+//            da.classList.add('ziti');
+//            console.log(da.classList);
+//            console.log(da.classList.contains('ziti'));
+        });
+        xiao1.addEventListener('click',function () {
+            console.log(da.classList);
+            da.classList.remove('ziti');
+            console.log(da.classList);
+        });
+        xiao2.addEventListener('click',function () {
+//            toggle(class,true|false)
+//            当后面为true时添加前面的类名
+//            如果后面为false删除前面的类名
+//            contains判断当前是否含有touming类
+            var exist = xiao2.classList.contains('touming')
+            xiao2.classList.toggle('touming',!exist);
+//            xiao2.classList.add('touming');
+            console.log(xiao2.classList);
+        });
+        var xiao3 = document.querySelector('.xiao3');
+//        classList是一个数组 ["xiao3", "class1", "class2", "class3", "class4", "class5", value: "xiao3 class1 class2 class3 class4 class5"]
+        console.log(xiao3.classList);
+
+    </script>
+</body>
+</html>

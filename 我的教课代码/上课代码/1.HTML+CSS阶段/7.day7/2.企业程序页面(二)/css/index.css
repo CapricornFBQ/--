@@ -1,0 +1,59 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+/*1.header标签部分*/
+.header{
+	height: 120px;
+	min-width: 1200px;
+	/* 线性变色的方向  起始颜色  终止颜色*/
+	background: linear-gradient(to right,rgb(10,93,177),rgb(10,166,175));
+	overflow: hidden;
+}
+.header .header-title{
+	/*background: red;*/
+	font-size: 40px;
+	color: white;
+	margin-top:10px;
+	margin-left: 10px;
+	float: left;
+}
+
+.header ul{
+	float: right;
+	/*background: red;*/
+	/*清除列表前面的标识.1. **/
+	list-style: none;
+}
+.header ul li{
+	float: left;
+	margin: 10px 10px;
+}
+.header ul li a{
+	font-size: 20px;
+	color: white;
+	text-decoration: none;
+}
+
+/*content 内容部分*/
+.content{
+	/*height: 500px;*/
+	min-width: 1200px;
+	/*background: red;*/
+	text-align: center;
+}
+
+.content .content-box{
+	width: 300px;
+	height: 300px;
+	border: 1px solid black;
+	text-align: center;
+	display: inline-block;
+
+	margin: 15px;
+}
+.content .content-box:hover{
+	/*y轴上的阴影  x轴阴影*/
+	box-shadow: 4px 4px 2px gray;
+}

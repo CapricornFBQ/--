@@ -1,0 +1,76 @@
+// div {
+// 	width: 0;
+// 	height: 0;
+// 	padding:0;
+// 	border-width: 15px;
+// 	border-style: solid;
+// 	border-color: red transparent transparent transparent;
+// }
+.triangle (@w,@c){
+	width: 0;
+	height: 0;
+	padding:0;
+	border-width: @w;
+	border-style: solid;
+	border-color: @c transparent transparent transparent;
+}
+div {
+	.triangle(20px, red);
+}
+
+.triangle (bottom,@w,@c){   //通过参数进行匹配===========================！！！！！！！！！
+	border-width: @w;
+	border-color: @c transparent transparent transparent;
+}
+.triangle (left,@w,@c){
+	border-width: @w;
+	border-color: transparent @c transparent transparent;
+}
+.triangle (top,@w,@c){
+	border-width: @w;
+	border-color: transparent transparent @c transparent;
+}
+.triangle (right,@w,@c){
+	border-width: @w;
+	border-color: transparent transparent transparent @c;
+}
+.triangle(@_, @w, @c) {  //@_用于匹配所有的该类，不受判断条件的影响
+	width: 0;
+	height: 0;
+	padding:0;
+	border-style: solid;
+}
+
+
+
+div {
+	.triangle(top,20px,blue);
+}
+
+
+//用when关键字进行引导====================!!!!!!!!!!!!!!!!!!!!!!!
+// @media: mobile;   
+
+// .mixin (@a) when (@media = mobile) { ... }
+// .mixin (@a) when (@media = desktop) { ... }
+
+// .max (@a, @b) when (@a > @b) { width: @a }
+// .max (@a, @b) when (@a < @b) { width: @b }
+// 
+@media:mobile;
+.mixin(@a)when(@media = mobile) {
+	border-width: @a;
+	border-color: red;
+}
+.mixin(@a)when(@media = desktop) {
+	border-width: @a;
+	border-color: yellow;
+}
+div {
+	.mixin(50px)
+}
+
+.max (@a, @b) when (@a > @b) { width: @a ;height: @b}
+div {
+	.max(100px, 50px)
+}

@@ -1,0 +1,66 @@
+.clearfix {
+	zoom:1;
+	&:after {
+		content: "";
+		height: 0;
+		display: block;
+		clear:both;
+	}
+}
+
+
+.mian {
+	@ml:25px;
+	@mr:15px;
+	@mt:25px;
+	@fs:22px;
+	@fw:900;
+	@width:100%;
+	margin-left: @ml;
+	margin-right: @mr;
+	margin-top: @mt;
+	.originoo_banner_user>.text-left {
+			float: left;
+			.text-xl {
+				font-size: @fs;
+				font-family: 微软雅黑;
+				font-weight: @fw;
+
+			}
+			.text-sm {
+				font-size: @fs - 12;
+			}
+			.mt {
+				font-size: @fs - 8;
+				.mtll {
+					font-weight: @fw - 500;
+				}
+				.mt-5>.btn {
+					background-color: #258964;
+					color: white;
+					border: none;
+
+				}
+			}
+		}
+		.picturebox {
+			margin-left: -6px;
+			.tp {
+				float:left;
+				width: @width * 0.25;
+				overflow: hidden;
+				img {
+					padding-left: 6px;
+					width: @width;
+					height: auto;
+					overflow: hidden;
+				}
+			}
+		}
+
+
+
+
+
+
+}

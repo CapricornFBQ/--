@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型</title>
+</head>
+<body>
+	<script>
+		//------------------------------------原型----------------
+		//所有的js函数中都有一个prototype（原型）的属性，指向了它的原型对象
+		//一个函数对象的原型所包含的所有的属性和方法，都会被这个函数对象继承
+		//(1)构造原型
+		function Person() {
+			//空的构造函数
+		}
+		//用构造函数的原型进行定义
+		Person.prototype.name = "qiaoyin";
+		Person.prototype.age = 18;
+		Person.prototype.eat = function(){
+			alert("好吃")
+		}
+
+		var person1 = new Person();
+		// console.log(person1.name)
+		person1.job = "student";
+		person1.age = 20;    //自身的属性对覆盖原型中的属性
+		console.log(person1);
+		console.log(person1.age);
+		//从原型指向构造对象的属性-------constructor
+		console.log(Person.prototype.constructor)
+	</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+
+/*bootstrap给简单的设置了样式了*/
+/*我们来设置一下自己的字体*/
+body{
+	font-family: "Helvetica Neue",Helvetica,Microsoft Yahei,Hiragino Sans GB,
+	WenQuanYi Micro Hei,sans-serif;
+}
+
+#header{
+	height: 40px;
+	/*background-color: red;*/
+	border-bottom: 1px solid #c0c0c0;
+
+
+	
+}
+
+#header a{
+	font-size: 12px;
+	color: #888;
+}
+
+
+
+/*给小单元格设置边框*/
+
+#header > .container > .row > div{
+	height: 40px;
+	line-height: 40px;
+}
+
+
+#header > .container > .row > div+div{
+
+	border-left: 1px solid #c0c0c0;
+
+
+
+}
+
+/*因为颜色我不想要，所以我可以改类*/
+#header .btn-red {
+  color: #fff;
+  background-color: red;
+  border-color: red;
+}
+.btn-red:hover,
+.btn-red:focus,
+.btn-red.focus,
+.btn-red:active,
+.btn-red.active,
+.open > .dropdown-toggle.btn-red {
+  color: #fff;
+  background-color: #c9302c;
+  border-color: #ac2925;
+}
+.btn-red:active,
+.btn-red.active,
+.open > .dropdown-toggle.btn-red {
+  background-image: none;
+}
+.btn-red.disabled,
+.btn-red[disabled],
+fieldset[disabled] .btn-red,
+.btn-red.disabled:hover,
+.btn-red[disabled]:hover,
+fieldset[disabled] .btn-red:hover,
+.btn-red.disabled:focus,
+.btn-red[disabled]:focus,
+fieldset[disabled] .btn-red:focus,
+.btn-red.disabled.focus,
+.btn-red[disabled].focus,
+fieldset[disabled] .btn-red.focus,
+.btn-red.disabled:active,
+.btn-red[disabled]:active,
+fieldset[disabled] .btn-red:active,
+.btn-red.disabled.active,
+.btn-red[disabled].active,
+fieldset[disabled] .btn-red.active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.btn-red .badge {
+  color: #d9534f;
+  background-color: #fff;
+}
+/*-----*/
+
+#header > .container > .row > div>.mobile-link{
+	position: relative;
+}
+#header > .container > .row > div >.mobile-link  img{
+	position: absolute;
+	top:15px;
+	left: -10px;
+	display: none;
+	z-index: 1000;
+
+}
+
+#header > .container > .row > div > .mobile-link:hover img{
+	display: block;
+}

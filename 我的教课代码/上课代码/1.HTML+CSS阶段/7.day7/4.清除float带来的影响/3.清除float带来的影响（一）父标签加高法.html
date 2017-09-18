@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>float带来的父亲标签高度坍塌现象</title>
+	<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			/*头部部分*/
+			.header{
+				background: red;
+				
+
+				/*第一种方法清除float带来的影响，给父标签增加高度*/
+				 height: 100px;	
+
+			}
+			.header .navbar{
+				width: 100px;
+				height: 100px;
+				background: orange;
+				float: right;
+			}
+
+			/*content*/
+			.content{
+				height: 500px;
+				background: green;
+			}
+
+
+
+			/*清除float标签对父标签的影响方法一：给父标签增加高度*/
+			/*只要浮动元素在一个有足够高度的盒子中，那么这个标签的浮动就不会影响后面的模块。父标签也能关住这个标签，所以
+			就叫清除浮动带来的影响*/
+
+			/*优点：简单，一般用于固定大小的页面中使用*/
+			/*缺点：在正常的做网页的时候我们一般不给div标签设置高度，为的是让子标签撑高它的高度，所以这个方法不太通用*/
+
+	</style>
+
+
+</head>
+<body>
+	
+	<div class="header">
+		<!--导航栏  -->
+		<div class="navbar">
+             <a href="#">首页</a>
+             <a href="#">关于我们</a>
+             <a href="#">联系我们</a>
+
+		</div>
+	</div>
+	<div class="content"></div>
+
+
+</body>
+</html>

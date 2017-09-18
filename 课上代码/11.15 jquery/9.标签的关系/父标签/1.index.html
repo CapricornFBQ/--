@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQ和JS对象的转换</title>
+	<style>
+			
+
+	</style>
+	<script src ="../../jquery-3.1.1.min.js"></script>
+	<style>
+		
+		
+	</style>
+
+</head>
+<body>
+	
+
+	<div style="height: 300px;">
+		
+		<p>我是p标签</p>
+		<p class="p2">我是p标签</p>
+
+	</div>
+
+	<script>
+
+	$(document).ready(function () {
+
+		//parent()父节点，这也叫直系父标签
+		//parents() 往上一直查找 ，找到父亲再找父亲的父亲 值到 html
+
+			//找到p标签的父标签，然后设置成背景为红色
+			// $("p").parent().css("background","red").empty();
+
+			var array = $("p").parents();
+			console.log(array);
+		
+			//查找父标签，直到某个标签，直到body之前
+			var array1 = $("p").parentsUntil("body");
+			console.log(array1.length);
+
+
+
+	});
+
+
+		
+
+
+	</script>
+
+
+</body>
+</html>

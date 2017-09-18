@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>十六进制</title>
+	<style>
+		
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			margin-bottom: 20px;
+
+		}
+		/*世界上只存在10种人，一种懂2进制的，一种是不懂二进制的*/
+	</style>
+</head>
+<body>
+	<!-- 十进制     十六进制 
+			0			0
+			1			1
+			2    		2
+			3			3
+			4			4
+			5			5
+			6			6	
+			7  			7
+			8			8
+			9			9
+		   10			a
+		   11			b
+		   12			c
+		   13           d
+		   14           e
+		   15           f
+		   16           10
+		   17           11
+		   18           12
+		   19           13
+		   20           14
+		   21           15
+		   22           16
+		   23           17
+
+	-->
+	<!-- 十六进制的10 是十进制的多少呢？？？
+		10可以看成 1*16的一次方+0*16的0次方 ===16（最科学的算法）
+		也可以这么看  1个16 和 0个1（简单的看法）
+		十六进制的17是多少呢？
+		1个16+7个1 ===23
+
+		在十六进制的颜色中两位十六进制代表一个rgb里的位数
+		rgb(,,) === #FF AA BB
+		在十六进制颜色里面FF代表的数是最大的
+
+		白色  #FF FF FF ----》 # F F F
+		黑色  #000000   ----》 #0 0 0
+		#112233-----》#123
+		#122233---》#1223这是不可能简化的
+	 -->
+		<div style="background: #fff"></div>
+
+		<div style="background: #000"></div>
+		<!-- rgb 0 0 255 -->
+		<div style="background:#00f "></div>
+		<!-- 112244 -->
+		<div style="background:#124"></div>
+		
+		<!-- 灰色 :三个数值相等的时候是灰色，数值越大越接近白色的灰色-->
+		<div style="background:#666 "></div>
+		<div style="background:#aaa"></div>
+</body>
+</html>

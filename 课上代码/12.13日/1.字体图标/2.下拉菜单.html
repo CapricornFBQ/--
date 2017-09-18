@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>下拉菜单</title>
+
+ 
+    <link href="lib/dist/css/bootstrap.css" rel="stylesheet">
+
+ 
+  </head>
+  <body>
+  	 <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+          省份
+          <span class="caret"></span>
+        </button>
+        <!-- 在bootstrap里 使用role来解释说明一个对象 -->
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+          <li role="presentation " class="dropdown-header">齐鲁大地</li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="http://v3.bootcss.com">山东</a></li>
+          <li role="presentation" class="dropdown-header">政治中心</li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">北京</a></li>
+          
+          <!-- 分隔线 -->
+          <li role="presentation" class="divider"></li>
+
+          <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">江苏</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">甘肃</a></li>
+        </ul>
+    </div>
+
+    <script src="lib/jquery/jquery-3.1.1.min.js" type="text/javascript" ></script>
+    <script src="lib/dist/js/bootstrap.min.js" type="text/javascript" ></script>
+  </body>
+</html>

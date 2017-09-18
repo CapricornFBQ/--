@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>节点关系</title>
+</head>
+<body>
+
+	<div>
+		<!-- 这是子标签们 -->
+		<a href="#">aaa1</a>
+		<a href="#">aaa2</a>
+
+	</div>
+	
+
+	<script>
+
+		// element关系：
+		// （1）子标签元素 children
+		//  (2) 第一个子元素  firstElementChild
+		//  (3) 最后一个子元素 lastElementChild
+		//  (4) nextElementSibling  preiousElementSibling 上一个和下一个兄弟元素
+	
+		
+		// (1)获得一个div标签然后获得他的子节点
+	    var div = document.querySelector("div");
+	    console.log(div.children);
+
+	    // (2)获得第一个子元素
+	    console.log(div.firstElementChild);
+
+	    // (3)兄弟元素
+	    var a = document.querySelector("a");
+	    console.log(a.nextElementSibling);
+	    
+	   
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+1.JS的引用
+2.运算符、逻辑运算符、关系运算符
+3.函数（代码段）
+4.DOM操作（节点操作）
+更删改查
+（1）获得标签
+document.getElementByID();
+document.getElementsByClassName();
+document.getElementsByTagName();
+
+document.querySelector();
+document.querySelectorAll();
+
+(2)创建一个新的标签
+document.createElemenet();
+var element = "<p></p>";  innerHTML
+
+(3)添加(X指的是父标签)
+X.appendChild();
+
+(4)删除
+X.removeChild();
+
+(5)替换
+X.replaceChild(替换的,被替换的);
+
+5.节点之间的关系
+X.parentNode 父节点
+X.childNodes 子节点们
+X.sibling 
+X.nextSibling
+//下一个元素节点
+X.nextElementSibling
+
+//第一个元素子节点
+X.firstElementChild;
+X.lastElemenetChild;
+
+5.属性的设置和style的设置
+X.setAttribute();------->X.src  x.id
+X.getAttribute();------->
+
+设置属性
+X.style.background ="";
+
+
+6.JS的事件
+（1）鼠标事件
+onclick  ondblclick   onmouseover    onmouseleave  onmousemove
+ (2) 键盘事件
+onkeydown onkeyup
+ (3)表单事件
+onfocus onblur onchange oninput  onsubmit onreset
+
+
+7.正则
+var a = /^abc$/;
+a.test();
+
+8.定时器
+(1)开启一个定时器
+
+var timer = setInterval(function,2000);
+
+(2)清除一个定时器
+clearInterval(timer);
+
+

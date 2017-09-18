@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<style>
+		* {
+			margin:0;
+			padding: 0;
+		}
+		.container {
+			position: relative;
+			width: 960px;
+			height: 500px;
+			margin: 20px auto;
+			background: red;
+		}
+		.controler {
+			position: absolute;
+			bottom: 15px;
+			right: 0;
+		}
+		span {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background: #444;
+		}
+		span:hover {
+			background: black;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="controler">
+			<span num=""></span>
+			<span num=""></span>
+			<span num=""></span>
+		</div>
+	</div>
+	<script>
+	//orange----> red------>pink---->orange
+	// function Click() {
+	// 	var newStyle = document.getElementsByClassName("container")[0].style;
+	// 	newStyle.background = "orange";
+	// }
+	// document.getElementsByTagName("span")[0].onclick = Click;
+
+	// function Click1() {
+	// 	var newStyle = document.getElementsByClassName("container")[0].style;
+	// 	newStyle.background = "red";
+	// }
+	// document.getElementsByTagName("span")[1].onclick = Click1;
+
+
+	// function Click2() {
+	// 	var newStyle = document.getElementsByClassName("container")[0].style;
+	// 	newStyle.background = "pink";
+	// }
+	// document.getElementsByTagName("span")[2].onclick = Click2;
+
+
+	//把所有的颜色 放入数组里面
+	var colors = ["orange","red","pink"];
+	//找到需要操作的对象
+	var container = document.getElementsByClassName("container");
+	//得到事件的绑定对象
+	var allSpan = document.getElementsByTagName("span");
+	//通过循环进行事件绑定
+	for (var i=0; i<allSpan.length; i++) {
+		allSpan[i].setAttribute("num", i)
+		allSpan[i].onclick = function() {
+			console.log(i);
+			var Num = this.getAttribute("num");
+			var Numnum = Number(Num);
+			container[0].style.background = colors[Numnum];
+		}
+	}
+
+
+
+
+
+
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>

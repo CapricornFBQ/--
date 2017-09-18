@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*只想给div的儿子设置字体颜色，不限号影响div孙子*/
+		/*将div中直系的a标签设置字体颜色*/
+		div > a{
+			color: orange;
+		}
+
+
+	</style>
+
+</head>
+<body>
+	
+	<div>
+		<p>
+			<a href="#">div的孙子</a>
+		</p>
+		
+		<a href="#">div的儿子</a>
+
+	</div>
+
+
+</body>
+</html>

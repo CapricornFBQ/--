@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过滤</title>
+</head>
+<body>
+	<ul>
+		<li class="a">1</li>
+		<li class="a">2</li>
+		<li class="three a">3</li>
+		<li>4</li>
+		<li class="a">5</li>
+	</ul>
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			//选中第一个li元素
+			// $("ul li:first").action() //:first伪类
+			$("li").first().css("background","green");   //first方法
+
+			//选中队后一个li元素
+			$("li").last().css("background","red");    //last方法
+
+			//索引选出其中某一个jq对象
+			$("li").eq(1).css("background","pink");   //eq方法
+
+			//通过满足某个条件筛选
+			$("li").filter(".three").css("background","#ccc");  //filter方法
+
+		    //不满足条件的
+		    $("li").not(".a").css("background","orange");  //not方法
+
+
+		})
+	</script>
+</body>
+</html>

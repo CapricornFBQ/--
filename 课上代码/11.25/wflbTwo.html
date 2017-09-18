@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝轮播Two</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wflb{
+            width: 790px;
+            height: 340px;
+            margin: 0 auto;
+            /*background-color: red;*/
+            overflow: hidden;
+            padding-top: 150px;
+        }
+        ul{
+            width: 3160px;
+            height: 340px;
+        }
+        .wflb li{
+            list-style: none;
+            float: left;
+            width: 790px;
+            height: 340px;
+        }
+    </style>
+</head>
+<body>
+<div class="wflb">
+    <ul>
+        <li><img src="01.jpg" alt=""></li>
+        <li><img src="02.jpg" alt=""></li>
+        <li><img src="03.jpg" alt=""></li>
+        <li><img src="04.jpg" alt=""></li>
+    </ul>
+</div>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+    var index = 0;
+    var length = $(".wflb li").length;
+    function wfscroll() {
+//        if (index<length)
+//        {
+//            $(".wflb ul").animate({marginLeft:-790*index+"px"},1000,function () {
+//                if (index == length)
+//                {
+//                    $(".wflb ul").animate({marginLeft:"0px"},0);
+//                }
+//            });
+//            index++;
+//        }
+//        else {
+//            index = 1;
+//        }
+            $(".wflb ul").animate({marginLeft:"-790px"},2000,"linear",function () {
+                //第一步将已经滚动过去的li移除并且克隆放到ul的最后
+                $(".wflb ul li:first").remove().clone(true).appendTo(".wflb ul");
+                //第二步 第一步执行后将marginleft设置为0
+                $(".wflb ul").css("marginLeft","0");
+            });
+
+    }
+    setInterval(wfscroll,2000);
+</script>
+</body>
+</html>

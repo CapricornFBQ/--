@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Math</title>
+</head>
+<body>
+<p></p>
+<button>请您抽奖</button>
+<script>
+	//Math对象
+	var a = 4.499999
+	console.log(Math.round(a));   //Math.round() 四舍五入
+	console.log(Math.ceil(a));   //Math.ceil()  对数字进行入位
+	var b = 4.99999
+	console.log(Math.floor(b));   //Math.floor()  舍弃小数
+	console.log(Math.max(4,5));   //Math.max(a,b)  在a，b中去较大数
+	console.log(Math.min(4,5));   //Math.min(a,b)  在a，b中取出较小数
+	console.log(Math.random());   //Math.random()  在0到1中取一个随机小数
+
+
+	//抽奖小栗子=====
+	var array = ["谢谢参与","谢谢参与","谢谢参与","谢谢参与","谢谢参与","恭喜您已中奖，再来一瓶"];
+	document.querySelector("button").onclick = function() {
+		var time = Math.round(Math.random()*5);
+		console.log(time);
+		document.querySelector("p").innerText = array[time];
+	}
+
+</script>
+
+</body>
+</html>

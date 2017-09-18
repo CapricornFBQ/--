@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>关键帧动画的复习</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		/*1.注册动画*/
+		/*@keyframes animationOne{
+			from{
+				opacity: 1;
+			}
+			to{
+				opacity: 0;
+			}
+		} 
+		*/
+	
+		@keyframes animationOne{
+			0%{background: skyblue;}
+			20%{background: pink;}
+			40%{background: orange;}
+			60%{background: #ff1aaa;}
+			80%{background: orange;}
+			100%{background: green;}
+		} 
+		div{
+			width: 200px;
+			height: 200px;
+			background: red;
+
+			animation: animationOne 20s;
+			animation-fill-mode: forwards;
+		}
+
+	</style>
+</head>
+<body>
+	
+
+	<div>
+
+	</div>
+
+
+
+</body>
+</html>

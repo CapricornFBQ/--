@@ -1,0 +1,20 @@
+1.HTML基础
+  （1）HTML：超文本标记语言，用于描述网页的结构。 HTTP：超文本传输协议。
+  （2）网页骨干：head body html
+2.img标签
+  （1）常用的属性 src:加载资源路径 alt：加载失败提示  title:鼠标悬停提示 
+3.meta:元配置，写在head标签里面，用于设置网页的基本信息和属性
+   （1）设置文字字库  meta charset = "UTF-8" 还有 GB2312.
+    (2) 设置网页关键字 meta name ="keywords" content="美女，美食，海天盛筵"
+   （3）设置网页的描述 meta name ="Description" content="海南最网红的聚会"
+4.文本标签
+   （1）H标签：H1-H6 数字越大字号越小
+   （2）p标签：默认的网页字体大小。16px
+   （3）strong i/em small big sub sup
+5.a标签
+    (1)a标签属性<a href="链接方向，本地相对路径或者http://网页域名" target ="_SELF\_BLANK" title="鼠标悬停提示">
+   （2)a跳转锚点： 首先创建a标签  给某个标签设置id作为锚点  给a标签设置href="#id值"
+   （3）跳转到其他页面上的锚点
+6.列表标签 ul ol 
+   （1）ul无序列表:必须配合li标签使用
+   （2）ol有序列表

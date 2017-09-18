@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时器</title>
+</head>
+<body>
+	
+
+	<div>点击停止定时器</div>
+
+
+
+	
+	<!-- 定时器：就是按照一定的时间来调用一次一个函数 -->
+	<!-- 定时器的使用：创建一个定时器  停止计时器 -->
+
+	<script>
+
+		// 创建一个定时器setInterval(执行的函数，时间);
+		// 1.第一种写法
+		var timer = setInterval(function(){
+			// alert("hahhaha");
+			console.log("111111");
+		},500);
+
+		// 2.第二种写法
+		// function jishu(){
+  //         	console.log("111111");
+		// }
+		// setInterval(jishu,4000);
+
+
+		// ------------------------------------------------------
+		// （1）找到div
+		var div = document.querySelector("div");
+		// (2)给div设置点击事件
+		// (3)让定时器停止
+		div.onclick =function(){
+			clearInterval(timer);
+		}
+
+	</script>
+
+
+</body>
+</html>

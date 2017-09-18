@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝轮播</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wflb{
+            width: 790px;
+            height: 340px;
+            margin: 0 auto;
+            /*background-color: red;*/
+            overflow: hidden;
+            padding-top: 150px;
+            position: relative;
+        }
+        ul{
+            width: 3950px;
+            height: 340px;
+        }
+        .wflb li{
+            list-style: none;
+            float: left;
+            width: 790px;
+            height: 340px;
+        }
+    </style>
+</head>
+<body>
+<div class="wflb">
+    <ul>
+        <li><img src="img/01.jpg" alt=""></li>
+        <li><img src="img/02.jpg" alt=""></li>
+        <li><img src="img/03.jpg" alt=""></li>
+        <li><img src="img/04.jpg" alt=""></li>
+    </ul>
+</div>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+    $(function() {  
+        setInterval(function() {
+            //取出ul设定动画
+            $(".wflb ul").animate({"margin-left":"-790"},500, function() {
+                //把已经滚动过去的图片取出重新放到ul的后面
+                $(".wflb ul li:first").remove().clone().appendTo(".wflb ul");
+                //从新控制ul的位置
+                $(".wflb ul").css("margin-left","0px");
+            })
+        },2000);
+
+
+    })
+    </script>
+</body>
+</html>

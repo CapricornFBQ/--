@@ -1,0 +1,24 @@
+div {
+  width: 0;
+  height: 0;
+  padding: 0;
+  border-width: 20px;
+  border-style: solid;
+  border-color: #ff0000 transparent transparent transparent;
+}
+div {
+  border-width: 20px;
+  border-color: transparent transparent #0000ff transparent;
+  width: 0;
+  height: 0;
+  padding: 0;
+  border-style: solid;
+}
+div {
+  border-width: 50px;
+  border-color: red;
+}
+div {
+  width: 100px;
+  height: 50px;
+}

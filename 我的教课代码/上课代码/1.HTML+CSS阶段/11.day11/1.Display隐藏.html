@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>display:none隐藏</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+
+		.box1{
+			width: 100px;
+			height: 100px;
+			background: red;
+
+			/*block inline-block inline*/
+			/*display:none 属于隐藏，隐藏以后不占位置了*/
+			display: none;
+		}
+		a:hover .box1{
+			/*display:none隐藏，想要给他设置显示可以设置block'inline-block'inline*/
+			display: block;
+		}
+
+
+
+	</style>
+
+</head>
+<body>
+	<a href="#">鼠标移动上box1出现
+		<div class="box1"></div>
+	</a>
+	
+	
+
+</body>
+</html>

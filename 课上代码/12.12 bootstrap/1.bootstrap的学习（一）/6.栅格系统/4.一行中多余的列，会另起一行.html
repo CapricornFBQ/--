@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>布局容器-版心</title>
+
+    <!-- Bootstrap -->
+    <link href="lib/dist/css/bootstrap.css" rel="stylesheet">
+
+    <style>
+        .container{
+          background: red;
+          height: 2000px;
+         
+
+        }
+        div{
+          border: 1px solid black;
+        }
+
+    </style>
+
+  </head>
+  <body>
+      <div class="continer">
+        <!-- 当一个row里面的元素超过12分，会在row里面另起一行 -->
+        <!-- 放不满，会有空格部分 -->
+           <div class="row">
+              <div class="col-xs-9">.col-xs-9</div>
+              <!-- <div class="col-xs-4">.col-xs-4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</div>
+              <div class="col-xs-6">.col-xs-6<br>Subsequent columns continue along the new line.</div> -->
+            </div>
+
+
+
+      </div>
+
+     
+
+  
+  </body>
+</html>

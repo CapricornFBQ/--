@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+	*{
+		margin: 0px;
+		padding: 0px;
+	}	
+
+	</style>
+</head>
+<body>
+	<!-- 解决描述与父标签间距的方法 -->
+	
+	<!-- 一.marign+overflow -->
+	<!-- 使用marign 来描述与父标签的位置关系时，会发生margin外泄 -->
+	<!-- 解决办法：给father标签设置 overflow:hidden; -->
+	<!-- <div class="father" style="width: 300px;height: 200px;background-color: red;overflow: hidden;">
+		<div class="child" style="width: 50px;height: 50px;background-color: green;margin-top:30px;">
+
+		</div>
+	</div> -->
+
+	<!-- 二.padding减值法 -->
+	<!-- 可以用padding来代替marign描述与父标签的位置关系，但是要记住增加了多少padiing 就要减掉多少内容部分 -->
+	<div class="father" style="width: 300px;height: 170px;background-color: red;padding-top: 30px;">
+		<div class="child" style="width: 50px;height: 50px;background-color: green;">
+
+		</div>
+	</div>
+	
+</body>
+</html>

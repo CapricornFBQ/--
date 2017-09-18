@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习</title>
+</head>
+<body>
+	<div style="width: 100%; height: 30px; background: red;"></div>
+	<div style="width: 100%; height: 500px; background: green;"></div>
+	<script src="../jquery-3.2.1.js"></script>
+	<script>
+	$(function() {
+		$("div").first().mouseenter(function() {
+			//控制第二个div切换显示和隐藏
+			$(this).next().toggle();
+		})
+	})
+	</script>
+</body>
+</html>
