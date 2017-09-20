@@ -1,0 +1,11 @@
+div {
+  width: 200px;
+  height: 200px;
+}
+div {
+  border: 1px solid #000000;
+  box-shadow: 5px 10px 10px #000000;
+  -webkit-box-shadow: 5px 10px 10px #000000;
+  -moz-box-shadow: 5px 10px 10px #000000;
+  -o-box-shadow: 5px 10px 10px #000000;
+}

@@ -1,0 +1,25 @@
+div {
+  width: 500px;
+  height: 300px;
+  border: 1px solid black;
+}
+div .one {
+  width: 300px;
+  height: 100px;
+  background: #ccc;
+}
+div .two {
+  width: 400px;
+  height: 100px;
+  background-color: pink;
+}
+div .two p {
+  color: red;
+  font-size: 30px;
+}
+div .two p:hover {
+  color: blue;
+}
+div .two p:hover {
+  color: blue;
+}

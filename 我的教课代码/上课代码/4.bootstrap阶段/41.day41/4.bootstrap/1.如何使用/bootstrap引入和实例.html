@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bootstrap</title>
+	<!-- viewport是为了让移动端视图正常显示 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<script src="../jQ/jq.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	<style>
+		div{
+			border:1px solid red;
+		}
+	</style>
+</head>
+<body>
+		<!-- container类用于作为版心的容器，可以根据屏幕的宽度，进行自适应 -->
+		<!-- container-fluid 也可以自适应，但是占据屏幕宽度的百分之百-->
+	<div class="container">
+		<!-- row类用于定义一行里面的栅格 -->
+		<!-- 栅格分为: col-xs-  <768px   //col-sm- >=768  //col-md-  >=992px //col-lg- >=1200px-->
+		<div class="row">
+
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		</div>
+		<div class="row">
+
+		  <div class="col-md-8">
+		  <!-- 在栅格里面进行嵌套，1.添加div  div为row类，2.在这个div里面添加栅格 -->
+		  <div class="row">
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+		  </div>
+		  </div>
+		  <div class="col-md-4">.col-md-4</div>
+		</div>
+		<div class="row">
+		  <!-- <div class="col-md-3"></div> -->
+		  <!-- 左边或者中间空若干个栅格的宽度，使用offset-->
+		  <div class="col-md-3 col-md-offset-3">.col-md-3</div>
+		  <div class="col-md-3">.col-md-6</div>
+		  <div class="col-md-3">.col-md-3</div>
+		</div>
+		<div class="row">
+		  <div class="col-md-6">.col-md-6</div>
+		  <div class="col-md-6">.col-md-6</div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+div {
+	width: 200px;
+	height: 200px;
+}
+
+.bo(@w:1px, @s:solid, @c:black) {
+	border:@w @s @c;
+}
+.border-r ( @r:4px){
+	border-raidus: @r;
+}
+.box-s (@x:5px, @y:10px, @w:10px, @c:black) {
+	box-shadow: @x @y @w @c;
+	-webkit-box-shadow:  @x @y @w @c;
+	-moz-box-shadow:  @x @y @w @c;
+	-o-box-shadow:  @x @y @w @c;
+}
+//-webkit-   -moz-  -o-
+//@arguments 关键字 可以用来代表所有的参数
+.box-s (@x:5px, @y:10px, @w:10px, @c:black) {
+	box-shadow: @arguments;
+	-webkit-box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	-o-box-shadow:  @arguments;
+}
+div {
+	.bo;
+	.box-s;
+}

@@ -1,0 +1,30 @@
+//嵌套
+@w:500px;
+@h:300px;
+div {
+	width: @w;
+	height: @h;
+	border:1px solid black;
+	.one {
+		width: @w - 200;
+		height: @h - 200;
+		background:#ccc; 
+	}
+	//元素内的样式可以直接嵌套书写
+	.two {
+		width:@w - 100;
+		height: @h - 200;
+		background-color: pink;
+		p {
+			color: red;
+			font-size: 30px;
+			//伪类 可以用&作为当前对象的连接
+			&:hover {
+				color:blue;
+			}
+		}
+		p:hover {
+			color:blue;
+		}
+	}
+}

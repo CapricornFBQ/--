@@ -1,0 +1,26 @@
+//运算    对属性中变量和数值进行运算
+//
+@c:red;
+@d:blue;
+@f:20px;
+
+p {
+	//颜色的运算
+	// color: @c + 200;
+	font-size: @f + 30;
+}
+
+p {
+	//颜色加深20%
+	// color:darken(@c, 20%);
+	//颜色变浅20%
+	color:lighten(black, 80%);
+
+	//颜色透明化50%
+	// color:fadeOut(@c, 50%);
+	// color:fadeIn(@c, 50%);
+	
+	// 混合两个颜色
+	color:mix(@c, @d);
+
+}

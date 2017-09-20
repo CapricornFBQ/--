@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery复习</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			transition: all 3s;
+		}
+	</style>
+</head> 
+<body>
+	<!-- 
+		过滤：          JS:  []
+			            jQ:  .first() .last() .eq() .filter() .not()
+
+		显示和隐藏：    JS:  .style.display
+						jQ:  .show()   .hide()   .toggle()
+
+		淡入淡出：      JS:  .style.opacity  CSS: transition
+						jQ:  .fadeIn()   .fadeOut(时间)  .fadeToggle()  .fadeTo(时间，opacity)
+
+		滑入滑出：      CSS： 大小属性  hover
+						jQ：  .slidedown()  .slidup()    .slideToggle()
+
+
+		offset：        JS：  offsetLeft offsetTop
+						jQ:   offset().left  offset().top    offset({"left":值,"top":值})
+
+		滚动事件：      JS：  document.body.onscroll    .scrollTop
+						jQ:   .scroll()                 .scrollTop()
+
+		尺寸：          JS：  offsetWidth  offsetHeight   .style.width   .style.height
+						jQ:   .width()    .height()
+
+		窗口大小重置：  jQ： $(window).resize()
+
+		animate:        CSS:  @keyframes
+						jQ:   .animate({属性},时间,调用的内容)
+
+						&lt; <    &gt;>
+	 -->
+	
+	<button>消失&lt;&gt;</button>
+	<div></div>
+	<script>
+	document.querySelector("button").onclick = function() {
+		// document.querySelector("div").style.visibility = "hidden"; //transition 效果错误
+		// document.querySelector("div").style.opacity = 0;
+		document.querySelector("div").style.background = "transparent"
+	}
+	</script>
+</body>
+</html>

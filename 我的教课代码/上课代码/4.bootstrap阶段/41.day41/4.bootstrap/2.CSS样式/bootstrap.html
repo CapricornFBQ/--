@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bootstrap</title>
+	<!-- viewport是为了让移动端视图正常显示 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<script src="../jQ/jq.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<h1>H5很有意思</h1>
+		<h2>H5很有意思</h2>
+		<h3>H5很有意思</h3>
+		<h4>H5很有意思</h4>
+		<h5>H5很有意思</h5>
+		<h6>H5很有意思</h6>
+		<p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
+		<del>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</del>	
+		<ins>This line of text is meant to be treated as an addition to the document.</ins>
+		<h1>H5很有<small>意思</small></h1>
+		<p>rendered as<em>rendered as italicized text</em></p>
+		<div class="text-right">Left aligned text</div>
+		<p class="text-justify">Justified text.Justified text.Justified text.Justified texttttttttttttttttttttttt.Justified text.Justified text.Justified text.Justified text.Justified text.Justified text.Justified text.Justified text.Justified text.Justified text.Justified text.Justified text.Justified text.Justified text.Justified text.Justified text.Justified text.Justified text.Justified text.Justified text.Justified text.</p>
+		<p class="text-nowrap">No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.</p>
+		<p class="text-uppercase">No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.</p>
+		<p class="text-capitalize">o wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.No wrap text.<abbr title="attribute">attr</abbr></p>
+
+		<p><blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+		<footer>------小帅同学</footer></blockquote></p>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<ol>
+			<li>==</li>
+			<li>==</li>
+			<li>==</li>
+			<li>==</li>
+			<li>==</li>
+		</ol>
+		<ul class="list-unstyled">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+
+		<ul class="list-inline">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<div class="row">
+			<dl>
+				<dt>hha </dt>
+				<dd class="col-md-1" style="width:100px; white-space:nowrap; text-overflow: ellipsis; overflow: hidden;">这是一段信息这是一段信息这是一段信息这是一段信息这是一段信息这是一段信息这是一段信息这是一段信息这是一段信息这是一段信息这是一段信息这是一段信息这是一段信息这是一段信息</dd>
+			</dl>
+		</div>
+		<kbd>For</kbd> example, <code>&lt;section&gt;</code> <code>should</code> be wrapped as <pre>inline</pre>.
+		
+		<pre>inline inline inline inline inline inline inline inline inline inline inline inline inline inline inline inline inline inline inline </pre>
+		<var>y</var>=<var>x</var>+<var>m</var>
+		<samp>This text is meant to be treated as sample output from a computer program.</samp>
+
+		<table class="table table-bordered table-hover table-condensed">
+			<tr>
+				<th>序号</th>
+				<th>姓名</th>
+				<th>成绩</th>
+			</tr>
+			<tr class="active">
+				<td>1</td>
+				<td>小帅</td>
+				<td>100</td>
+			</tr>
+			<tr class="success">
+				<td>2</td>
+				<td>小超</td>
+				<td>101</td>
+			</tr>
+			<tr class="warning">
+				<td>3</td>
+				<td>巧银</td>
+				<td>102</td>
+			</tr>
+			<tr class="info">
+				<td>4</td>
+				<td>小达</td>
+				<td>99</td>
+			</tr>
+			<tr class="danger">
+				<td>5</td>
+				<td>hha</td>
+				<td>200</td>
+			</tr>
+		</table>
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>姓名</th>
+						<th>成绩</th>
+					</tr>
+				</thead>
+				<tbody>
+				<tr scope="row" class="danger">
+					<td>2</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>hha</td>
+					<td>200</td>
+				</tr>
+				<tr scope="row" class="danger">
+					<td>2</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>hha</td>
+					<td>200</td>
+				</tr>
+				<tr scope="row" class="danger">
+					<td>2</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>hha</td>
+					<td>200</td>
+				</tr>
+				<tr scope="row" class="danger">
+					<td>2</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>hha</td>
+					<td>200</td>
+				</tr>
+				<tr scope="row" class="danger">
+					<td>2</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>hha</td>
+					<td>200</td>
+				</tr>
+				</tbody>
+
+			</table>
+		</div>
+<div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Table heading</th>
+            <th>Table heading</th>
+            <th>Table heading</th>
+            <th>Table heading</th>
+            <th>Table heading</th>
+            <th>Table heading</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+<form class="form-inline">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<form class="form-inline">
+  <div class="form-group">
+  	<div class="input-group">
+	    <label class="input-group-addon" for="exampleInputEmail1">Email address</label>
+	    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+	    <div class="input-group-addon"></div>
+  	</div>
+
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+	</div>
+	
+</body>
+</html>

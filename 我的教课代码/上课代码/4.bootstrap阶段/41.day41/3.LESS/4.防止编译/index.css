@@ -1,0 +1,7 @@
+p {
+  font-size: @fs-20px;
+  color: #ffc8c8;
+  width: 1120px;
+  float: right;
+  background: red;
+}
