@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D饼状图</title>
+</head>
+<body>
+	<div id="canvasDiv"></div>
+	<script src="jquery-3.2.1.js"></script>
+	<script src="ichartjs/ichart.1.2.min.js"></script>
+	<script src="ichartjs/dist/ichart.coordinate.js"></script>
+	<script src="ichartjs/dist/ichartjs.column.js"></script>
+	<script>
+		$(function(){ 
+            var data = [ //百分比。。。。。具体的数值
+                        {name : 'A',value : 86/(86+136+220), Count: 86,color:'#750000'},
+                        {name : 'B',value : 136/(86+136+220),Count: 136,color:'#003d79'},
+                        {name : 'C',value : 200/(86+136+220),Count: 200,color:'#969696'}
+                    ];
+            var chart = new iChart.Pie3D({
+                render : 'canvasDiv',  //图标渲染的DOM id
+                data:data,  //必须属性，图标的数据源
+                animation:true,  //开启动画
+            });    
+            chart.draw(); 
+		});
+    </script>
+</body>
+</html>

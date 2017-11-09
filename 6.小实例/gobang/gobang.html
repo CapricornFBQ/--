@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>gobang</title>
+	<style>
+		.grid {
+			width:42px;
+			height: 42px;
+			border:1px solid black;
+			background-color: orange;
+			float: left;
+		}
+		.wrapper {
+			position: relative;
+			width: 616px;
+			height: 616px;
+			margin:0 auto;
+			background-color: skyblue;
+		}
+		img {
+			position: absolute;
+			width: 44px;
+			height: 44px;
+		}
+		.hint {
+			width: 616px;
+			height: 46px;
+			margin:0 auto;
+			vertical-align: middle;
+		}
+		p {
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div class="hint"><p for="">当前需要下子方：</p><img id="hint" src="images/q.png" alt=""></div>
+	<div class="wrapper">
+
+	</div>
+	<script>
+		//5-1..........防止重复落子，创建一个二维数组，在每次落子时进行判断并添加元素--------
+		var pieceData = [];
+		for (var i=0; i<15; i++) {
+			var pieceDataArray = []
+			for (var j=0; j<15; j++) {
+				pieceDataArray[j] = 0;   //先把元素中所有的值定义为0；当有棋子落下时，对值进行更改
+			}
+			pieceData.push(pieceDataArray);
+		}
+
+
+
+		//1..........画棋盘---------------------------------------------------
+		var wrapper = document.getElementsByClassName("wrapper")[0];
+		for (var i=0; i<196; i ++) {
+			var grid = document.createElement("div");
+			grid.className = "grid";
+			wrapper.appendChild(grid);
+		}
+		//2...........落子-----------------------------------------------------
+		wrapper.onclick = function(event) {
+			//创建的元素默认为单个元素，可以直接拿过来用--
+			var piece = document.createElement("img");
+			
+			//4...............更改棋子提示颜色和要下的颜色---------------------通过判断提示的颜色，对提示的颜色和下子的颜色进行改变
+			var hintPicture = document.getElementById("hint") ;
+			if( hintPicture.getAttribute("src") == "images/w.png") {
+				hintPicture.setAttribute("src", "images/q.png");
+				piece.setAttribute("src","images/w.png");
+			} else {
+				hintPicture.setAttribute("src", "images/w.png");
+				piece.setAttribute("src","images/q.png");
+			}
+
+			//此时需要定义img的position为absolute，及wrapper的position为relative，然后进行元素的位置属性进行设定
+			var pieceX = event.pageX - wrapper.offsetLeft ;
+			var pieceY = event.pageY - wrapper.offsetTop;
+			pieceX = piecePosition(pieceX);  //用位置函数进行处理的值，必须是没有经过棋子半值处理的值，处理完之后在减去棋子半值
+			pieceY = piecePosition(pieceY);
+
+
+			//5-2对落下的棋子进行判断-----------------------------------------------
+			if (pieceData[pieceX/44][pieceY/44] != 0) {
+				alert("请不要重复落子！")
+				//!!!!如果出现这种情况，这次的点击事件必须作废；用return结束这个函数
+				return;
+			}else if (piece.getAttribute("src") == "images/q.png") {
+				pieceData[pieceX/44][pieceY/44] = 1;    //如果下的颜色为黑色，则在该位置存入1 ；
+			}else {
+				pieceData[pieceX/44][pieceY/44] = 2;	//如果下的颜色为黑色，则在该位置存入2 ；
+			}
+
+			piece.style.left = pieceX - 22 + "px";
+			piece.style.top = pieceY - 22 + "px";
+			wrapper.appendChild(piece);
+			
+			//调用判断函数进行验证，看是否五子成线？
+			vertical(pieceX/44, pieceY/44);
+			level(pieceX/44, pieceY/44);
+			fourFiveDegree(pieceX/44, pieceY/44);
+			oneThreeFiveDegree(pieceX/44, pieceY/44);
+
+		}
+		
+		//3..............用一个函数对坐标进行修饰加工--------------------------
+		function piecePosition(pos) {
+			//每个格子宽度为44px；
+			var x = pos%44;
+			//对输入的位置进行加工，如果在格子的左半部分，那么直接把输入位置近似到左边的角落，如果在有伴部分，则把位置近似到右边的角落
+			if (x>=22) {
+				return pos-x+44 ;
+			}else {
+				return pos-x;
+			}
+		}
+		//6..............定义验证五子成线函数-----------------------------------
+		//垂直方向=============================================================
+		function vertical(x,y) {
+			//输入两个参数，（元素的数组位置），然后检测该元素以上和一下分别五个元素，看有么有成功五子成线
+			var piecePicture = pieceData[x][y];
+			var count = 0;
+			var i = 1;
+			var k = 1;
+			var num = y;
+			while (i<=5) {
+				if(pieceData[x][num] == piecePicture) {
+					count ++;
+				}else{
+					break;
+				}
+				num --;
+				i++;
+			}
+			num = y+1;
+			while (k<5) {
+				if(pieceData[x][num] == piecePicture) {
+					count ++;
+				}else{
+					break;
+				}
+				num ++;
+				k++;
+			}
+			if(piecePicture == 1 && count >= 5) {
+				alert("黑子胜出！")
+			}else if (piecePicture == 2 && count >= 5){
+				alert("白子胜出！")
+			}
+		}
+		//垂直方向=============================================================
+		function level(x,y) {
+			//输入两个参数，（元素的数组位置），然后检测该元素以上和一下分别五个元素，看有么有成功五子成线
+			var piecePicture = pieceData[x][y];
+			var count = 0;
+			var i = 1;
+			var k = 1;
+			var num = x;
+			while (i<=5) {
+				if(pieceData[num][y] == piecePicture) {
+					count ++;
+				}else{
+					break;
+				}
+				num --;
+				i++;
+			}
+			num = x+1;
+			while (k<5) {
+				if(pieceData[num][y] == piecePicture) {
+					count ++;
+				}else{
+					break;
+				}
+				num ++;
+				k++;
+			}
+			if(piecePicture == 1 && count >= 5) {
+				alert("黑子胜出！")
+			}else if (piecePicture == 2 && count >= 5){
+				alert("白子胜出！")
+			}
+		}
+		//右斜45°方向=============================================================
+		function fourFiveDegree(x,y) {
+			//输入两个参数，（元素的数组位置），然后检测该元素以上和一下分别五个元素，看有么有成功五子成线
+			var piecePicture = pieceData[x][y];
+			var count = 0;
+			var i = 1;
+			var k = 1;
+			var num = x;
+			var yNum =y;
+			while (i<=5) {
+				if(pieceData[num][yNum] == piecePicture) {
+					count ++;
+				}else{
+					break;
+				}
+				num --;
+				yNum ++;
+				i++;
+			}
+			num = x+1;
+			yNum =y-1;
+			while (k<5) {
+				if(pieceData[num][yNum] == piecePicture) {
+					count ++;
+				}else{
+					break;
+				}
+				num ++;
+				yNum--;
+				k++;
+			}
+			if(piecePicture == 1 && count >= 5) {
+				alert("黑子胜出！")
+			}else if (piecePicture == 2 && count >= 5){
+				alert("白子胜出！")
+			}
+		}
+		//左斜45°方向=============================================================
+		function oneThreeFiveDegree(x,y) {
+			//输入两个参数，（元素的数组位置），然后检测该元素以上和一下分别五个元素，看有么有成功五子成线
+			var piecePicture = pieceData[x][y];
+			var count = 0;
+			var i = 1;
+			var k = 1;
+			var num = x;
+			var yNum =y;
+			while (i<=5) {
+				if(pieceData[num][yNum] == piecePicture) {
+					count ++;
+				}else{
+					break;
+				}
+				num --;
+				yNum --;
+				i++;
+			}
+			num = x+1;
+			yNum =y+1;
+			while (k<5) {
+				if(pieceData[num][yNum] == piecePicture) {
+					count ++;
+				}else{
+					break;
+				}
+				num ++;
+				yNum++;
+				k++;
+			}
+			if(piecePicture == 1 && count >= 5) {
+				alert("黑子胜出！")
+			}else if (piecePicture == 2 && count >= 5){
+				alert("白子胜出！")
+			}
+		}
+	</script>
+</body>
+</html>

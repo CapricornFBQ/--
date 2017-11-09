@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Web存储</title>
+</head>
+<body>
+	<!-- 
+		Web存储：在客户端存储数据
+		主要使用两种方式：1.没有时间限制的数据存储——localStorage
+						  2.针对一个session的数据存储——sessionStorage
+		以前这些功能都是使用cookie来实现，但是cookie效率很低，慢慢被弃用了
+		使用方法： 把这两个作为对象来使用
+
+
+
+		localStorage的常用方法：
+		.key = value         //设置数据
+		.setItem(key, value)   //必须有两个参数
+		.getItem(key)    //获取某一条数据
+		.removeItem(key) //删除某一条数据
+		.clear()         //删除所有数据
+ 
+
+		json字符串和json对象的关系，一般传递数据都是使用的json格式的字符串，操作时都必须转化为json格式的对象
+		var Json = JSON.stringify(obj)    js=======>json
+		只有当json转化为js对象之后，才可以使用js对象的方法
+		var js   = JSON.parse(json)       json=====>js
+	 -->
+	 <script>
+		 // 当做一个对象来实现属性存储
+	 	localStorage.lastName = "smith"
+	 	document.write(localStorage.lastName+"<br>")
+		
+	 	//用json格式存储使用=========只能使用json格式============================
+		var data = {"name":"xiaoshuai","age":18};
+		var json = JSON.stringify(data);
+		console.log(json)
+		// 设置字符，以json的格式
+		localStorage.setItem("me",json)
+		// 取出字符，以js对象的格式
+		var obj = JSON.parse(localStorage.getItem("me"));
+		document.write(obj.name+"<br>");
+		document.write(obj['name']+"<br>");
+
+
+		//会一直记录，关了以后再打开还可以使用
+	 	if(localStorage.page){
+	 		localStorage.page++;
+	 		document.write(localStorage.page+"<br>");
+	 	}else {
+	 		localStorage.page = 1;
+	 	}
+
+
+	 	sessionStorage.page = 1;
+	 	document.write(sessionStorage.page+"<br>")
+
+	 	// 记录一个账户的查看页码
+	 	if(sessionStorage.pagecount) {
+	 		sessionStorage.pagecount = Number(sessionStorage.pagecount) +1;
+	 	}else {
+	 		sessionStorage.pagecount = 1;
+	 	}
+	 	document.write ("Visits" + sessionStorage.pagecount + "times"+"<br>")
+	 </script>
+</body>
+</html>

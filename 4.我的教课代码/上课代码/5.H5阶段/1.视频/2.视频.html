@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>视频</title>
+	<style>
+		button {
+			display: block;
+		}
+		video {
+			width: 400px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+<!-- 
+<video> 元素支持三种视频格式： MP4, WebM, 和 Ogg:
+mp4应该为AVC编码格式，不能是MPEG4编码格式 -->
+	<button>播放/暂停</button>
+	<video src="2.mp4" type="video/mp4">
+		 <!-- <source src="">  可以通过source添加多个视频，默认播放第一个可以识别的资源-->
+	</video>
+	<!-- 添加控制内容 -->
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+	$(function() {
+		$("button").click(function() {
+			var videoObj = $("video")
+			console.log(videoObj[0].paused);  
+			//.paused属性表示视频是否暂停   myVid.volume=0.2; volume为控制音量的属性，从0到1分别表示为最大音量的百分比
+			if(videoObj[0].paused){
+				videoObj[0].play();  //.play()方法用于继续播放视频 这些方法都只能在原生的js上使用
+			}else {
+				videoObj[0].pause(); //.pause()方法用于暂停视频
+			}
+		})
+	})
+	</script>
+</body>
+</html>

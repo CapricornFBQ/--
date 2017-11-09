@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2d饼状图</title>
+</head>
+<body>
+	<div id="canvasDiv"></div>
+	<script src="jquery-3.2.1.js"></script>
+	<script src="ichartjs/ichart.1.2.min.js"></script>
+	<script src="ichartjs/dist/ichartjs.base.js"></script>
+	<script src="ichartjs/dist/ichartjs.pie.js"></script>
+	<script>
+		$(function(){ 
+            var data = [ //百分比。。。。。具体的数值
+                        {name : 'A',value : 86/(86+136+220), Count: 86,color:'#750000'},
+                        {name : 'B',value : 136/(86+136+220),Count: 136,color:'#003d79'},
+                        {name : 'C',value : 200/(86+136+220),Count: 200,color:'#969696'}
+                    ];
+            var chart = new iChart.Pie2D({
+                offset_angle:-100,  //第一个扇形区的角度， 默认0为三点钟方向
+                render : 'canvasDiv',  //图标渲染的DOM id
+                title:{   //标题配置
+                    text:'Defect Priority',
+                    color:'#000',
+                    height:40,
+                    border:{     
+                        enable:true,
+                        width:[0,0,2,0],
+                        color:'#444'
+                    }
+                },
+                padding:'0 10', //内边距同css
+                footnote:{   //注脚
+                    text:'StatCounter Global Stats,design by ichartjs',
+                    color:'#000',
+                    height:30,
+                    border:{
+                        enable:true,
+                        width:[2,0,0,0],
+                        color:'#000'
+                    }
+                },
+                // separate_angle: 15,   //所有扇形分离的角度，默认为0
+                width : 600,
+                height : 400,
+                data:data,  //必须属性，图标的数据源
+                shadow:true,  //是否启用阴影效果
+                shadow_color:'#15353a', 
+                shadow_blur:10,  //阴影的模糊程度，默认为4
+                background_color : '#FFFFFF',
+                gradient:true,//开启渐变
+                color_factor:0.3, //颜色相对于背景色的变化值 （0.01-0.5）默认为0.15
+                gradient_mode:'RadialGradientOutIn',
+                showpercent:true,  //是否显示为百分比值
+                decimalsnum:0,  //小数点精确度
+                legend:{      //图列配置说明 
+                    offsetx:50,   //平移位置
+                    offsety:-50,
+                    enable:true,  //默认为false
+                    padding:100,
+                    color:'#444',  
+                    border:{  //配置说明的边框，默认有边框，最好设置为没有
+                        width:[0,0,0,0],
+                        color:'#343b3e'
+                    },
+                    background_color : null,  //配置说明的背景色
+                },
+                sub_option:{   //扇形的配置项                    
+                    border:{
+                        enable:true,  //一般默认为false（不开启）
+                        width:4,
+                        color:'#111'
+                    },
+                    label : {  //提示原点，可以关闭
+                        sign:false,
+                        fontsize:14,
+                        color:'#000000'
+                    },
+                     
+                    listeners:{
+                        parseText:function(d, t){
+                            return d.get('name')+"("+ d.get('Count')+")"+"  "+d.get('value');
+                        }
+                    }
+                },
+                // border:{  //整体图表的边框
+                //     width:[0,20,0,20],
+                //     color:'#1e2223'
+                // }
+                animation:true,  //开启动画
+                animation_duration:1000, //动画持续时间（毫秒） 默认为1000ms
+
+            });    
+            // chart.draw()  //单纯的渲染显示
+            // chart.bound(2);  //使...弹出（拿出一块）
+            chart.toggle();  //可以点击决定是否弹出
+		});
+    </script>
+</body>
+</html>

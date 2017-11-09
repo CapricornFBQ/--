@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>画布</title>
+	<style>
+		canvas{
+			width:600px;
+			height: 300px;
+			border:1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<canvas></canvas>
+	<script>
+	var canvas = document.querySelector("canvas");  //获取画布
+	var context = canvas.getContext("2d");  //获取画布内容为“2d”
+	//开始在内容添加东西
+	//
+	//1. 绘制填充的多边形
+	context.beginPath();  //画图前先开始路径
+	context.moveTo(10,10);  //移到位置
+	context.lineTo(50,50); //开始连线
+	context.lineTo(10,50);
+	context.lineTo(10,10);
+	context.closePath();  //关闭路径
+	context.fillStyle = "#ccc"; //设置填充颜色
+	context.fill() ;  //执行填充
+
+	// //2. 绘制边框
+	// context.lineWidth = 5;  //设置边框线宽
+	// context.strokeStyle = "black";  //设置边框的颜色
+	// context.stroke();  //执行边框绘制
+
+	//3.绘制线段
+	context.beginPath();
+	context.moveTo(60,10);
+	context.lineTo(100,100);
+	context.closePath();
+	context.strokeStyle = "#ccc";
+	    // 绘制边框
+		context.lineWidth = 5;  //设置边框线宽
+		context.strokeStyle = "black";  //设置边框的颜色
+	context.stroke();
+
+    //4.绘制圆弧
+    context.beginPath();//重新规划路径
+    //arc参数x,y,radius,begindegree,enddegree,最后一个参数确定绘制方向，false为顺时针（默认false），true为逆时针
+    context.arc(150,50,25,0,0.5*Math.PI,true);
+    // context.closePath();//结束并封闭路径   自动将不封闭的首尾线段连接起来  如果不封闭就是一个单纯圆弧
+    context.lineWidth = 2;//圆弧宽
+    context.strokeStyle = "red";//圆弧颜色
+    context.stroke();
+
+
+
+    //5.绘制填充圆
+    context.beginPath();
+    context.arc(25,125,25,0,2*Math.PI);
+    context.closePath();
+    context.fillStyle = "green";//圆弧填充颜色
+    context.fill();  //进行填充
+
+
+   	
+	</script>
+</body>
+</html>

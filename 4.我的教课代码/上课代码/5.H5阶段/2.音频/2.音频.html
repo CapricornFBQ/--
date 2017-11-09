@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>音频</title>
+	<style>
+	audio {
+		width:200px;
+		height: 40px;
+		background-color: #ccc;
+	}
+	</style>
+</head>
+<body>
+<!-- 音频使用audio标签，支持三种音频格式文件: MP3, Wav, 和 Ogg: -->
+	<button>暂停/播放</button>
+	<button>音量-0</button>
+	<button>音量-0.5</button>
+	<button>音量-1</button>
+	<audio src="Delacey - Dream It Possible.mp3"></audio>
+	<script>
+	document.querySelectorAll("button")[0].onclick = function() {
+		var audioObj = document.querySelector("audio");
+		if(audioObj.paused) {
+			audioObj.play();
+		}else{
+			audioObj.pause();
+		}
+	}
+	//通过volume来控制音量
+	document.querySelectorAll("button")[1].onclick = function() {
+		document.querySelector("audio").volume = 0;
+	}
+	document.querySelectorAll("button")[2].onclick = function() {
+		document.querySelector("audio").volume = 0.5;
+	}
+	document.querySelectorAll("button")[3].onclick = function() {
+		document.querySelector("audio").volume = 1;
+	}
+	</script>
+</body>
+</html>

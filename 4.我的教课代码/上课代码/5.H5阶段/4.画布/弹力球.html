@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹力球</title>
+	<style>
+		canvas {
+			width:600px;
+			height: 600px;
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<canvas></canvas>
+	<script>
+		var canvas = document.querySelector("canvas");
+		canvas.width = 600;
+		canvas.height = 600;
+		var ctx = canvas.getContext("2d");
+
+		var bollX = 10;
+		var bollY = 10;
+		var bollRad = 10;
+		var speed = 1;
+
+
+		function Move() {
+			ctx.clearRect(0,0,canvas.width,canvas.height)
+
+			ctx.beginPath();
+			ctx.arc(bollX,bollY,bollRad,0,2*Math.PI)
+			ctx.strokeStyle = "black";
+			ctx.stroke();
+
+			bollY = bollY+speed;
+		}
+
+		setInterval(Move,1)
+
+
+	</script>
+</body>
+</html>

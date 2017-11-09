@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽</title>
+	<style>
+		div {
+			width:500px;
+			height: 300px;
+			border:1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<img src="1.gif" alt="">
+	<p draggable="true">这是一段文字</p>
+	
+	<!-- 
+		1.如何让一个元素的默认变成可以拖动：draggable="true"
+		
+		2.如何监听拖动事件     有三个事件：①开始拖动ondargstart ②拖动中ondrag ③拖动结束ondragend
+
+		3.如何监听一个元素放到了另一个元素上 有四个事件：①进入目标ondragenter ②在目标中拖动ondragover ③离开目标ondragleave ④在目标中放下托动物 ondrop
+
+		4.如何让一个元素可以开始放置其他元素 防止默认事件发生：e.preventDefault()  可以去掉斜杠的示意
+		
+		*选讲*5.如何更改拖拽的数据,即：如何产生数据交换？使用事件对象的属性dataTransfer其中两个核心方法为setData()设置数据和getData()接收数据
+		*
+		6.如何使使被拖动的元素真的放下？  可以用dataTransfer的dropEffect和effectAllowed属性
+			dropEffect必须在dragenter事件处理函数中使用，可能的值有
+				1.none不能把元素拖放至此 
+				2.move 移动到目标 
+				3.copy复制到目标
+				4.link目标打开拖动元素（拖动元素必须是连接并有URL）
+			effectAllowed属性值也是字符串，表示允许拖动元素那种dropEffect要使用这个属性，必须在dragst事件处理函数中设置，可能的值有
+				1.uninitialized没有设置任何拖放行为 
+				2.none不能有任何行为 
+				3.copy仅允许dropEffect值为copy 
+				4.link仅允许dropEffect值为link 
+				5.move仅允许dropEffect值为move 
+				6.copyLink允许dropEffect值为copy和link 
+				7.copyMove允许dropEffect值为copy和Mmve 
+				8.linkMove允许dropEffect值为link和move 
+				9.all允许任意dropEffect
+
+	 -->
+	<script>
+
+
+	//1---------2
+	//被拖动的元素
+	//格式：被拖动的元素.事件
+	// document.querySelector("p").ondragstart = function() {
+	// 	console.log("开始拖拽")
+	// };
+	// document.querySelector("p").ondrag = function() {
+	// 	console.log("拖拽中")
+	// };
+	// document.querySelector("p").ondragend = function() {
+	// 	console.log("拖拽结束")
+	// };
+	
+	 
+
+
+	
+	// 3---------4
+	//进入目标
+	//格式：进入的目标.事件
+	// document.querySelector("div").ondragenter = function() {
+	// 	console.log("我进来了");
+	// }
+	// document.querySelector("div").ondragover = function(e) {
+	// 	console.log("我在里面动");
+	// 	e.preventDefault();   //只需要在dragover事件中进行调用即可
+	// }
+	// document.querySelector("div").ondragleave = function() {
+	// 	console.log("我离开了");
+	// }
+	// document.querySelector("div").ondrop = function() {
+	// 	console.log("我放下了")
+	// }
+	 
+
+
+
+	// 5---------
+	//更改交换的数据
+	// document.querySelector("p").ondragstart = function(e) {
+	// 	e.dataTransfer.setData("text","这是一段新数据")
+	// };
+	// document.querySelector("div").ondragover = function(e) {
+	// 	e.preventDefault();   //只需要在dragover事件中进行调用即可
+	// }
+	// document.querySelector("div").ondrop = function(e) {
+	// 	var text = e.dataTransfer.getData("text");
+	// 	console.log(text)
+	// }
+	// 6---------
+
+	//放入目标中=======图片   图片与文字进行区分是通过解解格式进行区分
+	document.querySelector("img").addEventListener("dragstart", function(e) {
+		console.log(e.dataTransfer.getData('text/uri-list'));
+	});
+	//放入目标中=======文字
+	document.querySelector("p").addEventListener("dragstart", function(e) {
+		console.log(e.dataTransfer.getData('text/plain'));
+	});
+
+	document.querySelector("div").addEventListener("dragover", function(e) {
+		e.preventDefault();   //只需要在dragover事件中进行调用即可
+	})
+	document.querySelector("div").addEventListener("drop", function(e) {
+		console.log(e.target)
+		var data = e.dataTransfer.getData('text/uri-list');
+		if(data){
+			this.appendChild(document.querySelector("img"));
+		}else {
+			this.appendChild(document.querySelector("p"));
+		}
+		
+		
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>应用缓存</title>
+</head>
+<body>
+	<!-- 
+		应用缓存可以创建cache manifest文件，在应用离线时，访问应用
+		有三个优势： 1.离线浏览
+					 2.大大提高资源加载速度
+					 3.减少服务器的负载
+		应用缓存目前除了IE浏览器，其他的都是支持的
+
+		使用方法：在html标签添加manifest属性，其属性值为.appcache拓展名
+		例：<html manifest="demo.appcache">
+
+		注：manifest 文件需要配置正确的 MIME-type，即 "text/cache-manifest"。必须在 web 服务器上进行配置。
+
+		MIME-type的用处：后台告诉浏览器该资源的媒体类型
+		常见的MIME类型：
+			超文本标记语言文本 .html,.html text/html 
+			普通文本 .txt text/plain 
+			RTF文本 .rtf application/rtf 
+			GIF图形 .gif image/gif 
+			JPEG图形 .ipeg,.jpg image/jpeg 
+			au声音文件 .au audio/basic 
+			MIDI音乐文件 mid,.midi audio/midi,audio/x-midi 
+			RealAudio音乐文件 .ra, .ram audio/x-pn-realaudio 
+			MPEG文件 .mpg,.mpeg video/mpeg 
+			AVI文件 .avi video/x-msvideo 
+	 -->
+</body>
+</html>

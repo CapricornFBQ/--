@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图表demo</title>
+</head>
+<body>
+	<div id="canvasDiv"></div>
+	<script src="jquery-3.2.1.js"></script>
+	<script src="ichartjs/ichart.1.2.min.js"></script>
+	<script>
+	//定义数据列表
+	var data = [
+		{name: 'M', value:107, color:'#a5c2d5'},
+		{name: 'y', value:103, color:'#aaa'},
+		{name: 'F', value:108, color:'#a552da'},
+		{name: 'r', value:117, color:'#addddd'},
+		{name: 'i', value:112, color:'#a9cadc'},
+		{name: 'e', value:110, color:'#a5c2d5'},
+		{name: 'n', value:107, color:'#a44444'},
+		{name: 'd', value:110, color:'#6522d5'}
+	]
+	$(function() {
+		var chart = new iChart.Column2D({
+			render: 'canvasDiv',  //渲染的Dom目标，canvasDiv为Dom的ID
+			data: data, //绑定数据
+			title: 'My Friend\'s Height In Alphabet', //设置标题
+			width: 600,  //设置宽度，默认单位为px
+			height: 500,  //设置高度，默认单位为px
+			shadow:true,   //激活阴影
+			shadow_color: 'black',  //设置阴影的颜色
+			coordinate: {//配置自定义坐标轴
+				scale:[{//配置自定义坐标轴   如果不配置，就会按照默认的显示
+					position: 'left', //配置左值轴
+					start_scale: 100, //设置开始的刻度为100
+					end_scale: 126, //设置结束刻度
+					scale_space: 2, // 设置刻度的间距
+					listeners: {//配置事件
+						parseText: function(t, x, y) {
+							//设置解析值轴文本
+							return {text:t+"cm"}
+						}
+					}
+				}]
+			}
+		})
+		//调用绘图方法开始绘图
+		chart.draw();
+	})
+	</script>
+</body>
+</html>
